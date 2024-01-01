@@ -8,6 +8,7 @@ URL modification uses RegEx.
 Current supports:
 
 - [SearXNG](https://searx.space/) instances
+- [StartPage](https://www.startpage.com)
 
 Built-in redirection:
 

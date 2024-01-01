@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.5
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://searx.tiekoetter.com/search*
@@ -16,8 +16,14 @@
 (function() {
     'use strict';
 
+    // Function to extract top-level domain from a URL
+    const extractTopLevelDomain = (url) => {
+        const matches = url.match(/^(https?:\/\/[^\/]+)/);
+        return matches ? matches[1] : url;
+    };
+
     // Define URL modification rules
-    const urlRules = [
+    const urlModificationRules = [
         {
             matchRegex: /^https?:\/\/www\.reddit\.com(.*)/,
             replaceWith: 'https://old.reddit.com$1'
@@ -45,43 +51,80 @@
         // Add more rules here as needed
     ];
 
-    // Function to extract the top-level domain from a URL
-    const extractTopLevelDomain = (url) => {
-        const matches = url.match(/^(https?:\/\/[^\/]+)/);
-        return matches ? matches[1] : '';
+    // Define enhanced selector rules for each search engine
+    const selectorRules = {
+        'searx': [
+            {
+                selector: 'a.url_wrapper',
+                childSelector: '.url_i1',
+                updateChildText: true,
+                useTopLevelDomain: true // Flag for using top-level domain
+            },
+            {
+                selector: 'h3 a'
+            }
+        ],
+        'startpage': [
+            {
+                selector: 'a.w-gl__result-url.result-link',
+                updateText: true
+            },
+            {
+                selector: 'a.w-gl__result-title.result-link'
+            }
+        ]
+        // Additional search engines can be defined here...
     };
 
-    // Function to modify URLs
-    const modifyUrls = () => {
-        document.querySelectorAll('article.result').forEach(article => {
-            urlRules.forEach(rule => {
-                // Modify href of <a> with class "url_wrapper"
-                const urlWrapper = article.querySelector('a.url_wrapper');
-                if (urlWrapper && rule.matchRegex.test(urlWrapper.href)) {
-                    const originalHref = urlWrapper.href;
-                    urlWrapper.href = originalHref.replace(rule.matchRegex, rule.replaceWith);
+    // Function to modify URLs and optionally text
+    const modifyUrls = (engine) => {
+        const selectors = selectorRules[engine];
+        if (selectors) {
+            selectors.forEach(rule => {
+                document.querySelectorAll(rule.selector).forEach(element => {
+                    urlModificationRules.forEach(urlRule => {
+                        if (element.href && urlRule.matchRegex.test(element.href)) {
+                            const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
+                            element.href = newHref;
 
-                    // Extract and update the top-level domain
-                    const topLevelDomain = extractTopLevelDomain(urlWrapper.href);
-                    const topLevelDomainSpan = article.querySelector('span.url_i1');
-                    if (topLevelDomainSpan) {
-                        topLevelDomainSpan.textContent = topLevelDomain;
-                    }
-                }
+                            // Check if text content update is needed
+                            if (rule.updateText) {
+                                element.textContent = newHref;
+                            }
 
-                // Modify href under <h3>
-                const h3Link = article.querySelector('h3 a');
-                if (h3Link && rule.matchRegex.test(h3Link.href)) {
-                    h3Link.href = h3Link.href.replace(rule.matchRegex, rule.replaceWith);
-                }
+                            // Check if child text content update is needed
+                            if (rule.updateChildText && rule.childSelector) {
+                                const childElement = element.querySelector(rule.childSelector);
+                                if (childElement) {
+                                    const textContent = rule.useTopLevelDomain ? extractTopLevelDomain(newHref) : newHref;
+                                    childElement.textContent = textContent;
+                                }
+                            }
+                        }
+                    });
+                });
             });
-        });
+        }
     };
 
-    // Run the script on page load
-    modifyUrls();
+    // Determine which search engine the script is running on
+    const getSearchEngine = () => {
+        const host = window.location.host;
+        if (host.includes('searx')) {
+            return 'searx';
+        } else if (host.includes('startpage')) {
+            return 'startpage';
+        }
+        // Additional search engines can be added here
+    };
 
-    // Observe DOM changes to handle dynamic content
-    const observer = new MutationObserver(modifyUrls);
-    observer.observe(document.body, { childList: true, subtree: true });
+    // Run the script for the current search engine
+    const currentEngine = getSearchEngine();
+    if (currentEngine) {
+        modifyUrls(currentEngine);
+
+        // Observe DOM changes to handle dynamic content
+        const observer = new MutationObserver(() => modifyUrls(currentEngine));
+        observer.observe(document.body, { childList: true, subtree: true });
+    }
 })();
