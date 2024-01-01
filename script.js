@@ -1,16 +1,17 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      1.7.1
+// @version      1.7.3
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
+// @match        *://www.google.com/search?*q=*
 // @match        *://searx.tiekoetter.com/search*
 // @match        *://search.disroot.org/search*
 // @match        *://www.startpage.com/search*
 // @match        *://www.startpage.com/sp/search*
 // @match        *://search.brave.com/search*
 // @match        *://duckduckgo.com
-// @match        *://duckduckgo.com/?q=*
+// @match        *://duckduckgo.com/?*q=*
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
@@ -50,12 +51,21 @@
 
     // Define enhanced selector rules for each search engine
     const selectorRules = {
+        'google': [
+            {
+                selector: 'div.yuRUbf div span a',
+                childSelector: 'div.byrV5b cite',
+                updateChildText: true,
+                useTopLevelDomain: true, // Flag for using top-level domain
+                containProtocol: true
+            }
+        ],
         'searx': [
             {
                 selector: 'article a.url_wrapper',
                 childSelector: '.url_i1',
                 updateChildText: true,
-                useTopLevelDomain: true, // Flag for using top-level domain
+                useTopLevelDomain: true,
                 containProtocol: true
             },
             {
@@ -97,6 +107,9 @@
 
     // User-defined list of search engine instance URLs
     const searchEngines = {
+        'google': [
+            'www.google.com'
+        ],
         'searx': [
             'searx.tiekoetter.com',
             'search.disroot.org'
