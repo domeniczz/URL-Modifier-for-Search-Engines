@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      1.6
+// @version      1.7.1
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://searx.tiekoetter.com/search*
@@ -9,6 +9,8 @@
 // @match        *://www.startpage.com/search*
 // @match        *://www.startpage.com/sp/search*
 // @match        *://search.brave.com/search*
+// @match        *://duckduckgo.com
+// @match        *://duckduckgo.com/?q=*
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
