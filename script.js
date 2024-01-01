@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.6
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://searx.tiekoetter.com/search*
 // @match        *://search.disroot.org/search*
 // @match        *://www.startpage.com/search*
 // @match        *://www.startpage.com/sp/search*
+// @match        *://search.brave.com/search*
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
@@ -52,10 +53,11 @@
                 selector: 'a.url_wrapper',
                 childSelector: '.url_i1',
                 updateChildText: true,
-                useTopLevelDomain: true // Flag for using top-level domain
+                useTopLevelDomain: true, // Flag for using top-level domain
+                containProtocol: true
             },
             {
-                selector: 'h3 a'
+                selector: 'h3 a[rel="noreferrer"]'
             }
         ],
         'startpage': [
@@ -66,16 +68,33 @@
             {
                 selector: 'a.w-gl__result-title.result-link'
             }
+        ],
+        'brave': [
+            {
+                selector: 'a.h.svelte-1dihpoi',
+                childSelector: 'cite.snippet-url.svelte-1ygzem6 span.netloc.text-small-bold.svelte-1ygzem6',
+                updateChildText: true,
+                useTopLevelDomain: true,
+                containProtocol: false
+            }
         ]
         // Additional search engines can be defined here...
     };
 
-    // User-defined list of SearX instance URLs
-    const searxInstances = [
-        'https://searx.tiekoetter.com/search',
-        'https://search.disroot.org/search',
-        // Add more SearX instance URLs as needed
-    ];
+    // User-defined list of search engine instance URLs
+    const searchEngines = {
+        'searx': [
+            'searx.tiekoetter.com',
+            'search.disroot.org'
+        ],
+        'startpage': [
+            'www.startpage.com'
+        ],
+        'brave': [
+            'search.brave.com'
+        ],
+        // ... more search engines
+    };
 
     // Function to modify URLs and optionally text
     const modifyUrls = (engine) => {
@@ -84,20 +103,22 @@
             selectors.forEach(rule => {
                 document.querySelectorAll(rule.selector).forEach(element => {
                     urlModificationRules.forEach(urlRule => {
+                        let newHref = "error";
                         if (element.href && urlRule.matchRegex.test(element.href)) {
-                            const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
+                            newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
                             element.href = newHref;
 
                             // Check if text content update is needed
                             if (rule.updateText) {
-                                element.textContent = newHref;
+                                let textContent = rule.useTopLevelDomain ? extractTopLevelDomain(newHref, rule.containProtocol) : newHref;
+                                element.textContent = textContent;
                             }
 
                             // Check if child text content update is needed
                             if (rule.updateChildText && rule.childSelector) {
-                                const childElement = element.querySelector(rule.childSelector);
+                                let childElement = element.querySelector(rule.childSelector);
                                 if (childElement) {
-                                    const textContent = rule.useTopLevelDomain ? extractTopLevelDomain(newHref) : newHref;
+                                    let textContent = rule.useTopLevelDomain ? extractTopLevelDomain(newHref, rule.containProtocol) : newHref;
                                     childElement.textContent = textContent;
                                 }
                             }
@@ -109,22 +130,21 @@
     };
 
     // Function to extract top-level domain from a URL
-    const extractTopLevelDomain = (url) => {
-        const matches = url.match(/^(https?:\/\/[^\/]+)/);
+    const extractTopLevelDomain = (url, containProtocol) => {
+        let regex = containProtocol ? /^(https?:\/\/[^\/]+)/ : /^(?:https?:\/\/)?([^\/]+)/;
+        let matches = url.match(regex);
         return matches ? matches[1] : url;
     };
 
-    // Determine which search engine the script is running on
+    // Improved function to determine the search engine
     const getSearchEngine = () => {
-        const host = window.location.host;
-        const path = window.location.pathname;
+        let host = window.location.host;
 
-        if (searxInstances.some(instance => host + path.startsWith(instance))) {
-            return 'searx';
-        } else if (host.includes('startpage')) {
-            return 'startpage';
+        for (let engine in searchEngines) {
+            if (searchEngines[engine].some(instanceHost => host.includes(instanceHost))) {
+                return engine;
+            }
         }
-        // Additional search engines can be added here
     };
 
     // Run the script for the current search engine
