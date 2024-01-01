@@ -16,12 +16,6 @@
 (function() {
     'use strict';
 
-    // Function to extract top-level domain from a URL
-    const extractTopLevelDomain = (url) => {
-        const matches = url.match(/^(https?:\/\/[^\/]+)/);
-        return matches ? matches[1] : url;
-    };
-
     // Define URL modification rules
     const urlModificationRules = [
         {
@@ -76,6 +70,13 @@
         // Additional search engines can be defined here...
     };
 
+    // User-defined list of SearX instance URLs
+    const searxInstances = [
+        'https://searx.tiekoetter.com/search',
+        'https://search.disroot.org/search',
+        // Add more SearX instance URLs as needed
+    ];
+
     // Function to modify URLs and optionally text
     const modifyUrls = (engine) => {
         const selectors = selectorRules[engine];
@@ -107,10 +108,18 @@
         }
     };
 
+    // Function to extract top-level domain from a URL
+    const extractTopLevelDomain = (url) => {
+        const matches = url.match(/^(https?:\/\/[^\/]+)/);
+        return matches ? matches[1] : url;
+    };
+
     // Determine which search engine the script is running on
     const getSearchEngine = () => {
         const host = window.location.host;
-        if (host.includes('searx')) {
+        const path = window.location.pathname;
+
+        if (searxInstances.some(instance => host + path.startsWith(instance))) {
             return 'searx';
         } else if (host.includes('startpage')) {
             return 'startpage';
@@ -120,6 +129,7 @@
 
     // Run the script for the current search engine
     const currentEngine = getSearchEngine();
+
     if (currentEngine) {
         modifyUrls(currentEngine);
 
