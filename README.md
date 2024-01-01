@@ -10,6 +10,7 @@ Current supports:
 - [SearXNG](https://searx.space/) instances
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
+- [DuckDuckGo](https://duckduck)
 
 Built-in redirection:
 

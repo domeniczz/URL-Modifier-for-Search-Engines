@@ -50,14 +50,14 @@
     const selectorRules = {
         'searx': [
             {
-                selector: 'a.url_wrapper',
+                selector: 'article a.url_wrapper',
                 childSelector: '.url_i1',
                 updateChildText: true,
                 useTopLevelDomain: true, // Flag for using top-level domain
                 containProtocol: true
             },
             {
-                selector: 'h3 a[rel="noreferrer"]'
+                selector: 'h3 a'
             }
         ],
         'startpage': [
@@ -77,6 +77,18 @@
                 useTopLevelDomain: true,
                 containProtocol: false
             }
+        ],
+        'duckduckgo': [
+            {
+                selector: 'a.eVNpHGjtxRBq_gLOfGDr.LQNqh2U1kzYxREs65IJu'
+            },
+            {
+                selector: 'div.mwuQiMOjmFJ5vmN6Vcqw.LQVY1Jpkk8nyJ6HBWKAk a.Rn_JXVtoPVAFyGkcaXyK',
+                childSelector: 'span',
+                updateChildText: true,
+                useTopLevelDomain: true,
+                containProtocol: true
+            }
         ]
         // Additional search engines can be defined here...
     };
@@ -92,6 +104,9 @@
         ],
         'brave': [
             'search.brave.com'
+        ],
+        'duckduckgo': [
+            'duckduckgo.com'
         ],
         // ... more search engines
     };
