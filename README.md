@@ -26,13 +26,19 @@ Can't support [Bing](https://www.bing.com), because it only provide intermediate
 
 **Built-in redirection**:
 
-- Reddit -> Old Reddit
-- Wikipedia -> Wikiwand
-- Medium -> Freedium
+- Reddit -> [Old Reddit](https://old.reddit.com)
+- Twitter -> [Nitter](https://nitter.net)
+- Youtube -> [Invidious](https://docs.invidious.io/instances) (instance [yewtu.be](https://yewtu.be))
+- Stack Overflow -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (instance [code.whatever.social](https://code.whatever.social))
+- Wikipedia -> [Wikiwand](https://www.wikiwand.com)
+- Medium -> [Freedium](https://freedium.cfd)
+- Imgur -> [Rimgo](https://rimgo.codeberg.page/) (instance [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
 - ArXiv PDF -> ArXiv Abstract
 - ...
 
 You can add custom redirection rules into the script yourself.
+
+Other alternatives privacy friendly frontends, see [LibRedirect](https://libredirect.github.io/index.html).
 
 ---
 
@@ -64,6 +70,15 @@ URL modification rules in [regular expression](https://en.wikipedia.org/wiki/Reg
 | updateText        | flag for whether to update the text or href value of the element |
 | childSelector     | selector for child DOM element under parent element          |
 | updateChildText   | flag for whether to update the inner text of the child element |
-| useTopLevelDomain | flag for whether to use top-level domain in text             |
-| containProtocol   | flag for whether to contain protocol (e.g. https://) in top-level domain |
+| useTopLevelDomain | flag for whether to use the domain instead of full URL in text |
+| containProtocol   | flag for whether to contain protocol (e.g. https://) in the domain |
+
+### searchEngines
+
+User-defined list of search engine instance URLs
+
+| Variable                 | Description                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | search engine's domain                                       |
+| resultContainerSelectors | optional, set search result container DOM, to narrow down the range of dynamic observation |
 
