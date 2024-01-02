@@ -20,30 +20,30 @@
 (function() {
     'use strict';
 
-    // Define URL modification rules
+    // Define URL modification rules with precompiled regex
     const urlModificationRules = [
         {
-            matchRegex: /^https?:\/\/www\.reddit\.com(.*)/,
+            matchRegex: new RegExp(/^https?:\/\/www\.reddit\.com(.*)/),
             replaceWith: 'https://old.reddit.com$1'
         },
         {
-            matchRegex: /^https?:\/\/(en(.m)?|simple)\.wikipedia.org\/wiki\/(?!Special:Search)(\w+)/,
-            replaceWith: 'https://www.wikiwand.com/en/$3'
+            matchRegex: new RegExp(/^https?:\/\/(?:en.?m?|simple)\.wikipedia.org\/wiki\/(?!Special:Search)(.*)/),
+            replaceWith: 'https://www.wikiwand.com/en/$1'
         },
         {
-            matchRegex: /^https?:\/\/zh(\.m)?\.wikipedia\.org\/(zh-hans|wiki)\/(.*)/,
-            replaceWith: 'https://www.wikiwand.com/zh-hans/$3'
+            matchRegex: new RegExp(/^https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*)/),
+            replaceWith: 'https://www.wikiwand.com/zh-hans/$1'
         },
         {
-            matchRegex: /^https?:\/\/((\w+\.)?medium\.com\/.*)/,
+            matchRegex: new RegExp(/^https?:\/\/((\w+\.)?medium\.com\/.*)/),
             replaceWith: 'https://freedium.cfd/https://$1'
         },
         {
-            matchRegex: /^https?:\/\/((.*)arxiv\.org\/pdf|arxiv-export-lb.library.cornell.edu\/(pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(.*)/,
-            replaceWith: 'https://arxiv.org/abs/$4'
+            matchRegex: new RegExp(/^https?:\/\/(?:(?:.*)arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
+            replaceWith: 'https://arxiv.org/abs/$1'
         },
         {
-            matchRegex: /^https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\//,
+            matchRegex: new RegExp(/^https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\//),
             replaceWith: 'https://$1'
         }
         // Add more rules here as needed
@@ -128,63 +128,78 @@
 
     // Function to modify URLs and optionally text
     const modifyUrls = (engine) => {
-        const selectors = selectorRules[engine];
-        if (selectors) {
-            selectors.forEach(rule => {
-                document.querySelectorAll(rule.selector).forEach(element => {
-                    urlModificationRules.forEach(urlRule => {
-                        let newHref = "error";
-                        if (element.href && urlRule.matchRegex.test(element.href)) {
-                            newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
-                            element.href = newHref;
-
-                            // Check if text content update is needed
-                            if (rule.updateText) {
-                                let textContent = rule.useTopLevelDomain ? extractTopLevelDomain(newHref, rule.containProtocol) : newHref;
-                                element.textContent = textContent;
-                            }
-
-                            // Check if child text content update is needed
-                            if (rule.updateChildText && rule.childSelector) {
-                                let childElement = element.querySelector(rule.childSelector);
-                                if (childElement) {
-                                    let textContent = rule.useTopLevelDomain ? extractTopLevelDomain(newHref, rule.containProtocol) : newHref;
-                                    childElement.textContent = textContent;
+        try {
+            const selectors = selectorRules[engine];
+            if (selectors) {
+                selectors.forEach(rule => {
+                    const elements = document.querySelectorAll(rule.selector);
+                    if (elements.length > 0) {
+                        elements.forEach(element => {
+                            urlModificationRules.forEach(urlRule => {
+                                if (element.href && urlRule.matchRegex.test(element.href)) {
+                                    const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
+                                    element.href = newHref;
+                                    updateTextContent(element, rule, newHref);
                                 }
-                            }
-                        }
-                    });
+                            });
+                        });
+                    }
                 });
-            });
+            }
+        } catch (error) {
+            console.error("URL Modifier Script Error: ", error);
         }
+    };
+
+    // Function to update text content
+    const updateTextContent = (element, rule, newHref) => {
+        if (rule.updateText) {
+            element.textContent = getUpdatedText(newHref, rule);
+        }
+        if (rule.updateChildText && rule.childSelector) {
+            const childElement = element.querySelector(rule.childSelector);
+            if (childElement) {
+                childElement.textContent = getUpdatedText(newHref, rule);
+            }
+        }
+    };
+
+    // Function to get updated text
+    const getUpdatedText = (url, rule) => {
+        return rule.useTopLevelDomain ? extractTopLevelDomain(url, rule.containProtocol) : url;
     };
 
     // Function to extract top-level domain from a URL
     const extractTopLevelDomain = (url, containProtocol) => {
-        let regex = containProtocol ? /^(https?:\/\/[^\/]+)/ : /^(?:https?:\/\/)?([^\/]+)/;
-        let matches = url.match(regex);
+        const regex = containProtocol ? /^(https?:\/\/[^\/]+)/ : /^(?:https?:\/\/)?([^\/]+)/;
+        const matches = url.match(regex);
         return matches ? matches[1] : url;
     };
 
     // Improved function to determine the search engine
     const getSearchEngine = () => {
-        let host = window.location.host;
-
-        for (let engine in searchEngines) {
-            if (searchEngines[engine].some(instanceHost => host.includes(instanceHost))) {
-                return engine;
+        try {
+            const host = window.location.host;
+            for (const engine in searchEngines) {
+                if (searchEngines[engine].some(instanceHost => host.includes(instanceHost))) {
+                    return engine;
+                }
             }
+        } catch (error) {
+            console.error("Error determining search engine: ", error);
         }
     };
 
     // Run the script for the current search engine
-    const currentEngine = getSearchEngine();
-
-    if (currentEngine) {
-        modifyUrls(currentEngine);
-
-        // Observe DOM changes to handle dynamic content
-        const observer = new MutationObserver(() => modifyUrls(currentEngine));
-        observer.observe(document.body, { childList: true, subtree: true });
+    try {
+        const currentEngine = getSearchEngine();
+        if (currentEngine) {
+            modifyUrls(currentEngine);
+            // Observe DOM changes to handle dynamic content
+            const observer = new MutationObserver(() => modifyUrls(currentEngine));
+            observer.observe(document.body, { childList: true, subtree: true });
+        }
+    } catch (error) {
+        console.error("Error executing URL Modifier Script: ", error);
     }
 })();
