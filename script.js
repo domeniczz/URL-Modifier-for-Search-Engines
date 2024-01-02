@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      1.7.3
+// @version      1.8
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -27,6 +27,18 @@
             replaceWith: 'https://old.reddit.com$1'
         },
         {
+            matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
+            replaceWith: 'https://nitter.net/$1$2'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
+            replaceWith: 'https://yewtu.be/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/.*)/),
+            replaceWith: 'https://code.whatever.social$1'
+        },
+        {
             matchRegex: new RegExp(/^https?:\/\/(?:en.?m?|simple)\.wikipedia.org\/wiki\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
         },
@@ -37,6 +49,10 @@
         {
             matchRegex: new RegExp(/^https?:\/\/((\w+\.)?medium\.com\/.*)/),
             replaceWith: 'https://freedium.cfd/https://$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/imgur.com\/(a\/)?((?!gallery)\w+)/),
+            replaceWith: 'https://rimgo.totaldarkness.net/a/$1$2'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:(?:.*)arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
@@ -95,7 +111,7 @@
                 selector: 'a.eVNpHGjtxRBq_gLOfGDr.LQNqh2U1kzYxREs65IJu'
             },
             {
-                selector: 'div.mwuQiMOjmFJ5vmN6Vcqw.LQVY1Jpkk8nyJ6HBWKAk a.Rn_JXVtoPVAFyGkcaXyK',
+                selector: 'a.Rn_JXVtoPVAFyGkcaXyK',
                 childSelector: 'span',
                 updateChildText: true,
                 useTopLevelDomain: true,
@@ -107,22 +123,45 @@
 
     // User-defined list of search engine instance URLs
     const searchEngines = {
-        'google': [
-            'www.google.com'
-        ],
-        'searx': [
-            'searx.tiekoetter.com',
-            'search.disroot.org'
-        ],
-        'startpage': [
-            'www.startpage.com'
-        ],
-        'brave': [
-            'search.brave.com'
-        ],
-        'duckduckgo': [
-            'duckduckgo.com'
-        ],
+        'google': {
+            hosts: ['www.google.com'],
+            // search results container
+            // you can ignore this parameter if you don't want to set it, just delete it
+            // defult value is 'body'
+            resultContainerSelectors: ['div.GyAeWb#rcnt']
+        },
+        'searx': {
+            hosts: [
+                'searx.tiekoetter.com',
+                'search.disroot.org'
+            ],
+            resultContainerSelectors: [
+                'main#main_results'
+                // 'maindiv#main_results div#urls'
+                // 'div#sidebar div#infoboxes'
+            ]
+        },
+        'startpage': {
+            hosts: ['www.startpage.com'],
+            resultContainerSelectors: [
+                'div.show-results'
+                // 'div.sidebar-results'
+            ]
+        },
+        'brave': {
+            hosts: ['search.brave.com'],
+            resultContainerSelectors: [
+                'main.main-column'
+                // 'aside.sidebar'
+            ]
+        },
+        'duckduckgo': {
+            hosts: ['duckduckgo.com'],
+            resultContainerSelectors: [
+                'section[data-testid="mainline"][data-area="mainline"]'
+                // 'section[data-testid="sidebar"][data-area="sidebar"]'
+            ]
+        },
         // ... more search engines
     };
 
@@ -177,12 +216,16 @@
     };
 
     // Improved function to determine the search engine
-    const getSearchEngine = () => {
+    const getSearchEngineInfo = () => {
         try {
             const host = window.location.host;
             for (const engine in searchEngines) {
-                if (searchEngines[engine].some(instanceHost => host.includes(instanceHost))) {
-                    return engine;
+                if (searchEngines[engine].hosts.some(instanceHost => host.includes(instanceHost))) {
+                    const selectors = searchEngines[engine].resultContainerSelectors || ['body']; // Default to 'body' if not specified
+                    return {
+                        engine,
+                        selectors: selectors
+                    };
                 }
             }
         } catch (error) {
@@ -190,14 +233,29 @@
         }
     };
 
+    const observeToExecute = (engine, selector) => {
+        const resultContainers = document.querySelectorAll(selector);
+        if (resultContainers) {
+            resultContainers.forEach(resultContainer => {
+                modifyUrls(engine.engine);
+                // Observe changes in each result container
+                const observer = new MutationObserver(() => modifyUrls(engine));
+                observer.observe(resultContainer, { childList: true, subtree: true });
+            });
+        }
+        // else {
+        //     // Check again after a short delay if the container is not found
+        //     setTimeout(() => setUpObserver(engine, selector), 500);
+        // }
+    };
+
     // Run the script for the current search engine
     try {
-        const currentEngine = getSearchEngine();
-        if (currentEngine) {
-            modifyUrls(currentEngine);
-            // Observe DOM changes to handle dynamic content
-            const observer = new MutationObserver(() => modifyUrls(currentEngine));
-            observer.observe(document.body, { childList: true, subtree: true });
+        const engineInfo = getSearchEngineInfo();
+        if (engineInfo) {
+            engineInfo.selectors.forEach(containerSelector => {
+                observeToExecute(engineInfo.engine, containerSelector);
+            });
         }
     } catch (error) {
         console.error("Error executing URL Modifier Script: ", error);
