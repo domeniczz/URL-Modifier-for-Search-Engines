@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      1.8
+// @version      1.8.1
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -12,6 +12,8 @@
 // @match        *://search.brave.com/search*
 // @match        *://duckduckgo.com
 // @match        *://duckduckgo.com/?*q=*
+// @match        *://metager.org/meta/meta.ger3*
+// @match        *://metager.de/meta/meta.ger3*
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
@@ -31,7 +33,7 @@
             replaceWith: 'https://nitter.net/$1$2'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
+            matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
             replaceWith: 'https://yewtu.be/$1'
         },
         {
@@ -39,7 +41,7 @@
             replaceWith: 'https://code.whatever.social$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:en.?m?|simple)\.wikipedia.org\/wiki\/(?!Special:Search)(.*)/),
+            matchRegex: new RegExp(/^https?:\/\/(?:en\.?m?|simple)\.wikipedia\.org\/wiki\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
         },
         {
@@ -47,12 +49,16 @@
             replaceWith: 'https://www.wikiwand.com/zh-hans/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/((\w+\.)?medium\.com\/.*)/),
+            matchRegex: new RegExp(/^https?:\/\/((?:(?:\w+\.)?medium|towardsdatascience)\.com\/.*)/),
             replaceWith: 'https://freedium.cfd/https://$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/imgur.com\/(a\/)?((?!gallery)\w+)/),
+            matchRegex: new RegExp(/^https?:\/\/imgur\.com\/(a\/)?((?!gallery)\w+)/),
             replaceWith: 'https://rimgo.totaldarkness.net/a/$1$2'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/.*/),
+            replaceWith: 'https://text.npr.org/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:(?:.*)arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
@@ -61,6 +67,10 @@
         {
             matchRegex: new RegExp(/^https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\//),
             replaceWith: 'https://$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/github\.ink\/(.*)/),
+            replaceWith: 'https://github.com/$1'
         }
         // Add more rules here as needed
     ];
@@ -117,6 +127,16 @@
                 useTopLevelDomain: true,
                 containProtocol: true
             }
+        ],
+        'metager': [
+            {
+                selector: 'h2.result-title a'
+            },
+            {
+                selector: 'div.result-subheadline a',
+                updateText: true,
+                containProtocol: false
+            }
         ]
         // Additional search engines can be defined here...
     };
@@ -162,6 +182,13 @@
                 // 'section[data-testid="sidebar"][data-area="sidebar"]'
             ]
         },
+        'metager': {
+            hosts: [
+                'metager.org',
+                'metager.de'
+            ],
+            resultContainerSelectors: ['div#results']
+        }
         // ... more search engines
     };
 
@@ -191,14 +218,15 @@
     };
 
     // Function to update text content
-    const updateTextContent = (element, rule, newHref) => {
+    const updateTextContent = (element, rule, newUrl) => {
         if (rule.updateText) {
-            element.textContent = getUpdatedText(newHref, rule);
+            const newValue = rule.containProtocol ? newUrl : removeProtocol(newUrl);
+            element.textContent = getUpdatedText(newValue, rule);
         }
         if (rule.updateChildText && rule.childSelector) {
             const childElement = element.querySelector(rule.childSelector);
             if (childElement) {
-                childElement.textContent = getUpdatedText(newHref, rule);
+                childElement.textContent = getUpdatedText(newUrl, rule);
             }
         }
     };
@@ -213,6 +241,10 @@
         const regex = containProtocol ? /^(https?:\/\/[^\/]+)/ : /^(?:https?:\/\/)?([^\/]+)/;
         const matches = url.match(regex);
         return matches ? matches[1] : url;
+    };
+
+    const removeProtocol = (url) => {
+        return url.replace(/^https?:\/\//, '');
     };
 
     // Improved function to determine the search engine
