@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      1.8.1
+// @version      1.9
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -14,10 +14,13 @@
 // @match        *://duckduckgo.com/?*q=*
 // @match        *://metager.org/meta/meta.ger3*
 // @match        *://metager.de/meta/meta.ger3*
+// @match        *://www.mojeek.com/search?q=*
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
 // ==/UserScript==
+
+// DuckDuckGo, Metager, Brave
 
 (function() {
     'use strict';
@@ -35,6 +38,7 @@
         {
             matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
             replaceWith: 'https://yewtu.be/$1'
+            // replaceWith: 'https://piped.video/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/.*)/),
@@ -47,6 +51,10 @@
         {
             matchRegex: new RegExp(/^https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*)/),
             replaceWith: 'https://www.wikiwand.com/zh-hans/$1'
+        },
+        {
+            matchRegex: new RegExp(/https?:\/\/([a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(.*)/),
+            replaceWith: 'https://www.wikiwand.com/$1/$2'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/((?:(?:\w+\.)?medium|towardsdatascience)\.com\/.*)/),
@@ -83,8 +91,10 @@
                 childSelector: 'div.byrV5b cite',
                 updateChildText: true,
                 useTopLevelDomain: true, // Flag for using top-level domain
-                containProtocol: true
+                containProtocol: true,
+                displayMethod: 1
             }
+            // ... [Other rules for Google]
         ],
         'searx': [
             {
@@ -92,7 +102,8 @@
                 childSelector: '.url_i1',
                 updateChildText: true,
                 useTopLevelDomain: true,
-                containProtocol: true
+                containProtocol: true,
+                displayMethod: 1
             },
             {
                 selector: 'h3 a'
@@ -101,7 +112,8 @@
         'startpage': [
             {
                 selector: 'a.w-gl__result-url.result-link',
-                updateText: true
+                updateText: true,
+                displayMethod: 2
             },
             {
                 selector: 'a.w-gl__result-title.result-link'
@@ -113,7 +125,8 @@
                 childSelector: 'cite.snippet-url.svelte-1ygzem6 span.netloc.text-small-bold.svelte-1ygzem6',
                 updateChildText: true,
                 useTopLevelDomain: true,
-                containProtocol: false
+                containProtocol: false,
+                displayMethod: 1
             }
         ],
         'duckduckgo': [
@@ -125,7 +138,8 @@
                 childSelector: 'span',
                 updateChildText: true,
                 useTopLevelDomain: true,
-                containProtocol: true
+                containProtocol: true,
+                displayMethod: 1
             }
         ],
         'metager': [
@@ -137,6 +151,17 @@
                 updateText: true,
                 containProtocol: false
             }
+        ],
+        'mojeek': [
+            {
+                selector: 'li a.ob',
+                childSelector: 'span.url',
+                updateChildText: true,
+                useTopLevelDomain: true,
+                containProtocol: true,
+                displayMethod: 1
+            }
+            // ... [Other rules for Mojeek]
         ]
         // Additional search engines can be defined here...
     };
@@ -188,6 +213,9 @@
                 'metager.de'
             ],
             resultContainerSelectors: ['div#results']
+        },
+        'mojeek': {
+            hosts: ['mojeek.com']
         }
         // ... more search engines
     };
@@ -219,17 +247,47 @@
 
     // Function to update text content
     const updateTextContent = (element, rule, newUrl) => {
-        if (rule.updateText) {
-            const newValue = rule.containProtocol ? newUrl : removeProtocol(newUrl);
-            element.textContent = getUpdatedText(newValue, rule);
-        }
-        if (rule.updateChildText && rule.childSelector) {
-            const childElement = element.querySelector(rule.childSelector);
-            if (childElement) {
-                childElement.textContent = getUpdatedText(newUrl, rule);
+        if (rule.updateText || (rule.updateChildText && rule.childSelector)) {
+            const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
+            if (targetElement) {
+                let originalUrlLength = newUrl.trim().length;
+                let maxLength = Math.min(originalUrlLength, 70);
+                let formattedUrl = '';
+                switch (rule.displayMethod) {
+                    case 1:
+                        formattedUrl = formatMethod1(newUrl, maxLength);
+                        break;
+                    case 2:
+                        formattedUrl = newUrl; // Full URL with protocol
+                        break;
+                    case 3:
+                        formattedUrl = removeProtocol(newUrl); // Full URL without protocol
+                        break;
+                }
+                targetElement.textContent = formattedUrl;
             }
         }
     };
+
+    // Function for Method 1 (Breadcrumb Style URLs), leaving 'https://' intact
+    const formatMethod1 = (url, maxLength) => {
+        // Split the URL while keeping 'https://' intact
+        let parts = url.replace('https://', 'https›').split('/');
+        parts[0] = parts[0].replace('https›', 'https://'); // Restore 'https://'
+
+        // Join the URL parts with ' › ' and check if it exceeds maxLength
+        let joinedUrl = parts.join(' › ');
+        if (joinedUrl.length > maxLength) {
+            // Apply truncation based on maxLength
+            let truncatedUrl = joinedUrl.slice(0, maxLength - 3); // Reserve space for '...'
+            truncatedUrl += '...';
+            joinedUrl = truncatedUrl;
+        }
+
+        // Decode the URL to convert encoded characters to their original form
+        return decodeURIComponent(joinedUrl);
+    };
+
 
     // Function to get updated text
     const getUpdatedText = (url, rule) => {
