@@ -19,6 +19,8 @@ URL modification uses Regular Expression.
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
 - [DuckDuckGo](https://duckduck)
+- [Metager](https://metager.org)
+- [Mojeek](https://www.mojeek.com)
 
 You can manually add HTML selector in the code to support other search engines.
 
@@ -26,12 +28,13 @@ Can't support [Bing](https://www.bing.com), because it only provide intermediate
 
 **Built-in redirection**:
 
+- Wikipedia -> [Wikiwand](https://www.wikiwand.com)
 - Reddit -> [Old Reddit](https://old.reddit.com)
 - Twitter -> [Nitter](https://nitter.net)
 - Youtube -> [Invidious](https://docs.invidious.io/instances) (instance [yewtu.be](https://yewtu.be))
 - Stack Overflow -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (instance [code.whatever.social](https://code.whatever.social))
-- Wikipedia -> [Wikiwand](https://www.wikiwand.com)
 - Medium -> [Freedium](https://freedium.cfd)
+- NPR -> [NPR Text](https://text.npr.org)
 - Imgur -> [Rimgo](https://rimgo.codeberg.page/) (instance [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
 - ArXiv PDF -> ArXiv Abstract
 - ...
@@ -64,14 +67,14 @@ URL modification rules in [regular expression](https://en.wikipedia.org/wiki/Reg
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) rules for each search engine results
 
-| Variable          | Description                                                  |
-| ----------------- | ------------------------------------------------------------ |
-| selector          | selector for DOM element                                     |
-| updateText        | flag for whether to update the text or href value of the element |
-| childSelector     | selector for child DOM element under parent element          |
-| updateChildText   | flag for whether to update the inner text of the child element |
-| useTopLevelDomain | flag for whether to use the domain instead of full URL in text |
-| containProtocol   | flag for whether to contain protocol (e.g. https://) in the domain |
+| Variable        | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| selector        | selector for DOM element                                     |
+| updateText      | flag for whether to update the text or href value of the element |
+| childSelector   | selector for child DOM element under parent element          |
+| updateChildText | flag for whether to update the inner text of the child element |
+| containProtocol | flag for whether to contain protocol (e.g. https://) in the domain |
+| displayMethod   | required, URL display method.<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
 
 ### searchEngines
 
