@@ -20,8 +20,6 @@
 // @license      GPL-2.0-only
 // ==/UserScript==
 
-// DuckDuckGo, Metager, Brave
-
 (function() {
     'use strict';
 
@@ -122,9 +120,8 @@
         'brave': [
             {
                 selector: 'a.h.svelte-1dihpoi',
-                childSelector: 'cite.snippet-url.svelte-1ygzem6 span.netloc.text-small-bold.svelte-1ygzem6',
+                childSelector: 'cite.snippet-url.svelte-1ygzem6 span',
                 updateChildText: true,
-                useTopLevelDomain: true,
                 containProtocol: false,
                 displayMethod: 1
             }
@@ -137,7 +134,6 @@
                 selector: 'a.Rn_JXVtoPVAFyGkcaXyK',
                 childSelector: 'span',
                 updateChildText: true,
-                useTopLevelDomain: true,
                 containProtocol: true,
                 displayMethod: 1
             }
@@ -149,7 +145,8 @@
             {
                 selector: 'div.result-subheadline a',
                 updateText: true,
-                containProtocol: false
+                containProtocol: false,
+                displayMethod: 3
             }
         ],
         'mojeek': [
@@ -233,7 +230,7 @@
                                 if (element.href && urlRule.matchRegex.test(element.href)) {
                                     const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
                                     element.href = newHref;
-                                    updateTextContent(element, rule, newHref);
+                                    updateTextContent(element, rule, newHref, engine);
                                 }
                             });
                         });
@@ -246,26 +243,54 @@
     };
 
     // Function to update text content
-    const updateTextContent = (element, rule, newUrl) => {
+    const updateTextContent = (element, rule, newUrl, engine) => {
         if (rule.updateText || (rule.updateChildText && rule.childSelector)) {
-            const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
-            if (targetElement) {
-                let originalUrlLength = newUrl.trim().length;
-                let maxLength = Math.min(originalUrlLength, 70);
-                let formattedUrl = '';
-                switch (rule.displayMethod) {
-                    case 1:
-                        formattedUrl = formatMethod1(newUrl, maxLength);
-                        break;
-                    case 2:
-                        formattedUrl = newUrl; // Full URL with protocol
-                        break;
-                    case 3:
-                        formattedUrl = removeProtocol(newUrl); // Full URL without protocol
-                        break;
-                }
-                targetElement.textContent = formattedUrl;
+            // Special handling for DuckDuckGo and Brave
+            if (engine === 'duckduckgo' || engine === 'brave') {
+                updateDoubleElementContent(element, rule, newUrl);
+            } else {
+                // General handling for other search engines
+                const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
+                updateSingleElementText(targetElement, rule, newUrl);
             }
+        }
+    };
+
+    // Function to update text for multi elements (i.e. DuckDuckGo, Brave)
+    const updateDoubleElementContent = (element, rule, newUrl) => {
+        // Remove the "https://" protocol if containProtocol is false
+        newUrl = rule.containProtocol ? newUrl : removeProtocol(newUrl);
+
+        let formattedUrl = formatMethod1(newUrl, 70); // Assume max length 70 for splitting
+        let urlParts = formattedUrl.split(' › ');
+
+        // Correctly select the first and second <span> elements
+        let spans = element.querySelectorAll(rule.childSelector);
+
+        if (spans && spans.length >= 2) {
+            spans[0].textContent = urlParts[0]; // Update the first part
+            spans[1].textContent = ' › ' + urlParts.slice(1).join(' › '); // Update the second part
+        } else {
+            console.error("Script: Expected structure not found for Double Element URL update!");
+        }
+    };
+
+    // Function to update text for a single element
+    const updateSingleElementText = (targetElement, rule, newUrl) => {
+        if (targetElement) {
+            let formattedUrl = '';
+            switch (rule.displayMethod) {
+                case 1:
+                    formattedUrl = formatMethod1(newUrl, rule.maxLength);
+                    break;
+                case 2:
+                    formattedUrl = newUrl; // Full URL with protocol
+                    break;
+                case 3:
+                    formattedUrl = decodeURIComponent(removeProtocol(newUrl)); // Full URL without protocol
+                    break;
+            }
+            targetElement.textContent = formattedUrl;
         }
     };
 
@@ -286,19 +311,6 @@
 
         // Decode the URL to convert encoded characters to their original form
         return decodeURIComponent(joinedUrl);
-    };
-
-
-    // Function to get updated text
-    const getUpdatedText = (url, rule) => {
-        return rule.useTopLevelDomain ? extractTopLevelDomain(url, rule.containProtocol) : url;
-    };
-
-    // Function to extract top-level domain from a URL
-    const extractTopLevelDomain = (url, containProtocol) => {
-        const regex = containProtocol ? /^(https?:\/\/[^\/]+)/ : /^(?:https?:\/\/)?([^\/]+)/;
-        const matches = url.match(regex);
-        return matches ? matches[1] : url;
     };
 
     const removeProtocol = (url) => {
