@@ -267,7 +267,7 @@
         // Correctly select the first and second <span> elements
         let spans = element.querySelectorAll(rule.childSelector);
 
-        if (spans && spans.length >= 2) {
+        if (spans && (spans.length >= 2 || spans.length <= 1)) {
             spans[0].textContent = urlParts[0]; // Update the first part
             spans[1].textContent = ' › ' + urlParts.slice(1).join(' › '); // Update the second part
         } else {
@@ -344,12 +344,7 @@
                 const observer = new MutationObserver(() => modifyUrls(engine));
                 observer.observe(resultContainer, { childList: true, subtree: true });
             });
-        }
-        // else {
-        //     // Check again after a short delay if the container is not found
-        //     setTimeout(() => setUpObserver(engine, selector), 500);
-        // }
-    };
+        }    };
 
     // Run the script for the current search engine
     try {
