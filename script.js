@@ -7,6 +7,7 @@
 // @match        *://www.google.com/search?*q=*
 // @match        *://searx.tiekoetter.com/search*
 // @match        *://search.disroot.org/search*
+// @match        *://priv.au/search*
 // @match        *://www.startpage.com/search*
 // @match        *://www.startpage.com/sp/search*
 // @match        *://search.brave.com/search*
@@ -15,10 +16,13 @@
 // @match        *://metager.org/meta/meta.ger3*
 // @match        *://metager.de/meta/meta.ger3*
 // @match        *://www.mojeek.com/search?q=*
+// @match        *://www.qwant.com/?q=*
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
 // ==/UserScript==
+
+// TODO: qwant breadcrumb URL display issue
 
 (function() {
     'use strict';
@@ -33,15 +37,15 @@
             matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
             replaceWith: 'https://nitter.net/$1$2'
         },
-        {
-            matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
-            replaceWith: 'https://yewtu.be/$1'
-            // replaceWith: 'https://piped.video/$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/.*)/),
-            replaceWith: 'https://code.whatever.social$1'
-        },
+        // {
+        //     matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
+        //     replaceWith: 'https://yewtu.be/$1'
+        //     // replaceWith: 'https://piped.video/$1'
+        // },
+        // {
+        //     matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/.*)/),
+        //     replaceWith: 'https://code.whatever.social$1'
+        // },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:en\.?m?|simple)\.wikipedia\.org\/wiki\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
@@ -51,7 +55,7 @@
             replaceWith: 'https://www.wikiwand.com/zh-hans/$1'
         },
         {
-            matchRegex: new RegExp(/https?:\/\/([a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(.*)/),
+            matchRegex: new RegExp(/^https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(.*)/),
             replaceWith: 'https://www.wikiwand.com/$1/$2'
         },
         {
@@ -91,6 +95,10 @@
                 useTopLevelDomain: true, // Flag for using top-level domain
                 containProtocol: true,
                 displayMethod: 1
+            },
+            {
+                hasSubResults: true, // Indicating the search engine can have sub-results
+                subResultSelector: 'table tr h3 a' // Selector for sub-results
             }
             // ... [Other rules for Google]
         ],
@@ -136,6 +144,26 @@
                 updateChildText: true,
                 containProtocol: true,
                 displayMethod: 1
+            },
+            {
+                hasSubResults: true, // Indicating Google has sub-results
+                subResultSelector: 'ul.b269SZlC2oyR13Fcc4Iy li a.f3uDrYrWF3Exrfp1m3Og' // Selector for sub-results
+            }
+        ],
+        'qwant': [
+            {
+                selector: 'div._35zId._3A7p7.RMB_d.eoseI a.external'
+            },
+            {
+                selector: 'div._35zId._3WA-c a.external',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                displayMethod: 1
+            },
+            {
+                hasSubResults: true, // Indicating Google has sub-results
+                subResultSelector: 'div._12BMd div._2-LMx._2E8gc._16lFV.Ks7KS.tCpbb.m_hqb a.external' // Selector for sub-results
             }
         ],
         'metager': [
@@ -175,7 +203,8 @@
         'searx': {
             hosts: [
                 'searx.tiekoetter.com',
-                'search.disroot.org'
+                'search.disroot.org',
+                'priv.au'
             ],
             resultContainerSelectors: [
                 'main#main_results'
@@ -204,6 +233,12 @@
                 // 'section[data-testid="sidebar"][data-area="sidebar"]'
             ]
         },
+        'qwant': {
+            hosts: ['qwant.com'],
+            resultContainerSelectors: [
+                'div._35zId'
+            ]
+        },
         'metager': {
             hosts: [
                 'metager.org',
@@ -223,22 +258,33 @@
             const selectors = selectorRules[engine];
             if (selectors) {
                 selectors.forEach(rule => {
-                    const elements = document.querySelectorAll(rule.selector);
-                    if (elements.length > 0) {
-                        elements.forEach(element => {
-                            urlModificationRules.forEach(urlRule => {
-                                if (element.href && urlRule.matchRegex.test(element.href)) {
-                                    const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
-                                    element.href = newHref;
-                                    updateTextContent(element, rule, newHref, engine);
-                                }
-                            });
-                        });
+                    // Modify main results
+                    processElements(rule.selector, rule, engine);
+
+                    // Modify sub-results if applicable
+                    if (rule.hasSubResults && rule.subResultSelector) {
+                        processElements(rule.subResultSelector, rule, engine);
                     }
                 });
             }
         } catch (error) {
             console.error("URL Modifier Script Error: ", error);
+        }
+    };
+
+    // Function to process elements based on selector and rule
+    const processElements = (selector, rule, engine) => {
+        const elements = document.querySelectorAll(selector);
+        if (elements.length > 0) {
+            elements.forEach(element => {
+                urlModificationRules.forEach(urlRule => {
+                    if (element.href && urlRule.matchRegex.test(element.href)) {
+                        const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
+                        element.href = newHref;
+                        updateTextContent(element, rule, newHref, engine);
+                    }
+                });
+            });
         }
     };
 
@@ -267,7 +313,7 @@
         // Correctly select the first and second <span> elements
         let spans = element.querySelectorAll(rule.childSelector);
 
-        if (spans && (spans.length >= 2 || spans.length <= 1)) {
+        if (spans && spans.length >= 2) {
             spans[0].textContent = urlParts[0]; // Update the first part
             spans[1].textContent = ' › ' + urlParts.slice(1).join(' › '); // Update the second part
         } else {
@@ -344,7 +390,8 @@
                 const observer = new MutationObserver(() => modifyUrls(engine));
                 observer.observe(resultContainer, { childList: true, subtree: true });
             });
-        }    };
+        }
+    };
 
     // Run the script for the current search engine
     try {

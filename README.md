@@ -85,14 +85,16 @@ URL modification rules in [regular expression](https://en.wikipedia.org/wiki/Reg
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) rules for the DOM elements needs updating for search engine results
 
-| Variable        | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| selector        | selector for DOM element                                     |
-| updateText      | flag for whether to update the text or href value of the element |
-| childSelector   | selector for child DOM element under parent element          |
-| updateChildText | flag for whether to update the inner text of the child element |
-| containProtocol | flag for whether to contain protocol (e.g. https://) in the domain |
-| displayMethod   | required, URL display method<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
+| Variable          | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| selector          | selector for DOM element                                     |
+| updateText        | flag for whether to update the text or href value of the element |
+| childSelector     | selector for child DOM element under parent element          |
+| updateChildText   | flag for whether to update the inner text of the child element |
+| containProtocol   | flag for whether to contain protocol (e.g. https://) in the domain |
+| displayMethod     | required, URL display method<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
+| hasSubResults     | flag for whether the search engine can have sub-results      |
+| subResultSelector | selector for sub-results                                     |
 
 ### searchEngines
 

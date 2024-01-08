@@ -93,6 +93,8 @@ Arama motoru sonuçları için güncellenmesi gereken DOM öğelerinin [Seçici]
 | updateChildText | çocuk öğenin iç metnini güncelleme bayrağı |
 | containProtocol | alan adında protokolü (örn. https://) içerme bayrağı |
 | displayMethod   | gerekli, URL gösterim yöntemi<br/>yöntem 1: breadcrumb formatı<br/>yöntem 2: tam URL<br/>yöntem 3: protokol olmadan tam URL |
+| hasSubResults   | arama motorunun alt sonuçlara sahip olup olmadığını belirten bayrak |
+| subResultSelector | alt sonuçlar için seçici |
 
 ### searchEngines
 

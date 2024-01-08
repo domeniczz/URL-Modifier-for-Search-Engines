@@ -93,6 +93,8 @@ Reglas de [Selector](https://developer.mozilla.org/es/docs/Web/API/Document_obje
 | updateChildText | indicador de si actualizar el texto interno del elemento hijo |
 | containProtocol | indicador de si incluir el protocolo (ej. https://) en el dominio |
 | displayMethod   | requerido, método de visualización de URL<br/>método 1: formato de migas de pan<br/>método 2: URL completa<br/>método 3: URL completa sin protocolo |
+| hasSubResults     | indicador de si el motor de búsqueda puede tener subresultados |
+| subResultSelector | selector para subresultados                                   |
 
 ### motoresDeBúsqueda
 

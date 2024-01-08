@@ -93,6 +93,8 @@ Regole [Selettore](https://developer.mozilla.org/en-US/docs/Web/API/Document_obj
 | updateChildText  | flag per se aggiornare il testo interno dell'elemento figlio   |
 | containProtocol  | flag per se includere il protocollo (es. https://) nel dominio |
 | displayMethod    | richiesto, metodo di visualizzazione dell'URL<br/>metodo 1: formato breadcrumb<br/>metodo 2: URL completo<br/>metodo 3: URL completo senza protocollo |
+| hasSubResults     | flag per stabilire se il motore di ricerca può avere sub-risultati |
+| subResultSelector | selettore per sub-risultati                                       |
 
 ### MotoriDiRicerca
 

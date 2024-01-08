@@ -93,6 +93,8 @@ URL-Modifikationsregeln in [regulären Ausdrücken](https://de.wikipedia.org/wik
 | updateChildText | Flag, ob der Innentext des Kind-Elements aktualisiert werden soll |
 | containProtocol | Flag, ob das Protokoll (z. B. https://) in der Domain enthalten sein soll |
 | displayMethod   | erforderlich, Anzeigemethode der URL<br/>Methode 1: Breadcrumb-Format<br/>Methode 2: vollständige URL<br/>Methode 3: vollständige URL ohne Protokoll |
+| hasSubResults     | Flag, ob die Suchmaschine Unterergebnisse haben kann |
+| subResultSelector | Selektor für Unterergebnisse                         |
 
 ### searchEngines
 

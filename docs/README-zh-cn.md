@@ -93,6 +93,8 @@ URL 修改使用正则表达式。
 | updateChildText | 是否更新子元素的内部文本的标志                               |
 | containProtocol | 是否在域中包含协议（例如 https://）的标志                    |
 | displayMethod   | 必需，URL 显示方法<br/>方法1：面包屑格式<br/>方法2：完整 URL<br/>方法3：无协议的完整 URL |
+| hasSubResults     | 是否有子结果的标志                |
+| subResultSelector | 子结果选择器                      |
 
 ### searchEngines
 

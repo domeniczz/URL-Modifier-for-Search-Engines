@@ -93,6 +93,8 @@ Regras de [seleção](https://developer.mozilla.org/en-US/docs/Web/API/Document_
 | updateChildText | flag para atualizar o texto interno do elemento filho        |
 | containProtocol | flag para incluir protocolo (ex: https://) no domínio        |
 | displayMethod   | obrigatório, método de exibição da URL<br/>método 1: formato breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sem protocolo |
+| hasSubResults     | indicador de si el motor de búsqueda puede tener subresultados |
+| subResultSelector | selector para subresultados                                    |
 
 ### motoresDeBusca
 
