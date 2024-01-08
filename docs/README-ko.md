@@ -30,6 +30,8 @@
 
 URL 수정은 정규 표현식을 사용합니다.
 
+Codeberg 저장소: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 ### 검색 엔진 지원
 
 - [Google](https://www.google.com)

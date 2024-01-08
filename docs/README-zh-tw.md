@@ -30,6 +30,8 @@
 
 URL 修改使用正則表達式。
 
+Codeberg 儲存庫: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 ### 支持的搜索引擎
 
 - [Google](https://www.google.com)

@@ -30,6 +30,8 @@
 
 URL の変更正規表現を使用します。
 
+Codeberg リポジトリ: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 ### 対応する検索エンジン
 
 - [Google](https://www.google.com)

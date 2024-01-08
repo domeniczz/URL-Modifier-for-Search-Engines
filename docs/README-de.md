@@ -30,6 +30,8 @@ Dieses Tampermonkey-Skript verbessert Ihre Nutzung von Suchmaschinen, indem es U
 
 URL-Modifikation verwendet Reguläre Ausdrücke.
 
+Codeberg Repository: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 ### Unterstützung für Suchmaschinen
 
 - [Google](https://www.google.com)

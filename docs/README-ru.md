@@ -30,6 +30,8 @@
 
 Модификация URL осуществляется с использованием регулярных выражений.
 
+Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 ### Поддержка поисковых систем
 
 - [Google](https://www.google.com)

@@ -30,6 +30,8 @@ This Tampermonkey script enhances your search engine usage by modifying URLs in 
 
 URL modification uses Regular Expression.
 
+Codeberg Repository: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 ### Search Engine support
 
 - [Google](https://www.google.com)

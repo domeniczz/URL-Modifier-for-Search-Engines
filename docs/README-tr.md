@@ -30,6 +30,8 @@ Bu Tampermonkey betiği, arama motorları sonuçlarındaki URL'leri değiştirer
 
 URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 
+Codeberg Depo: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 ### Desteklenen Arama Motorları
 
 - [Google](https://www.google.com)

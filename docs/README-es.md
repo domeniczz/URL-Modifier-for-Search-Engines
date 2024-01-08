@@ -30,6 +30,8 @@ Este script de Tampermonkey mejora tu uso de motores de búsqueda modificando UR
 
 La modificación de URL utiliza Expresión Regular.
 
+Codeberg Repositorio: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 ### Soporte de Motores de Búsqueda
 
 - [Google](https://www.google.com)
