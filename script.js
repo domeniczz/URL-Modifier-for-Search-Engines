@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      1.9
+// @version      2.0
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -105,11 +105,12 @@
         'searx': [
             {
                 selector: 'article a.url_wrapper',
-                childSelector: '.url_i1',
+                childSelector: 'span span',
                 updateChildText: true,
                 useTopLevelDomain: true,
                 containProtocol: true,
-                displayMethod: 1
+                displayMethod: 1,
+                multiElementsForUrlDisplay: true
             },
             {
                 selector: 'h3 a'
@@ -131,7 +132,8 @@
                 childSelector: 'cite.snippet-url.svelte-1ygzem6 span',
                 updateChildText: true,
                 containProtocol: false,
-                displayMethod: 1
+                displayMethod: 1,
+                multiElementsForUrlDisplay: true
             }
         ],
         'duckduckgo': [
@@ -143,7 +145,8 @@
                 childSelector: 'span',
                 updateChildText: true,
                 containProtocol: true,
-                displayMethod: 1
+                displayMethod: 1,
+                multiElementsForUrlDisplay: true
             },
             {
                 hasSubResults: true, // Indicating Google has sub-results
@@ -159,7 +162,8 @@
                 childSelector: 'span',
                 updateChildText: true,
                 containProtocol: false,
-                displayMethod: 1
+                displayMethod: 1,
+                multiElementsForUrlDisplay: true
             },
             {
                 hasSubResults: true, // Indicating Google has sub-results
@@ -281,7 +285,7 @@
                     if (element.href && urlRule.matchRegex.test(element.href)) {
                         const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
                         element.href = newHref;
-                        updateTextContent(element, rule, newHref, engine);
+                        updateTextContent(element, rule, newHref);
                     }
                 });
             });
@@ -289,16 +293,23 @@
     };
 
     // Function to update text content
-    const updateTextContent = (element, rule, newUrl, engine) => {
+    const updateTextContent = (element, rule, newUrl) => {
         if (rule.updateText || (rule.updateChildText && rule.childSelector)) {
             // Special handling for DuckDuckGo and Brave
-            if (engine === 'duckduckgo' || engine === 'brave') {
+            if (rule.multiElementsForUrlDisplay) {
                 updateDoubleElementContent(element, rule, newUrl);
             } else {
                 // General handling for other search engines
                 const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
                 updateSingleElementText(targetElement, rule, newUrl);
             }
+        }
+    };
+
+    // Function to clear existing content of an element
+    const clearElementContent = (element) => {
+        if (element) {
+            element.textContent = '';
         }
     };
 
@@ -314,6 +325,7 @@
         let spans = element.querySelectorAll(rule.childSelector);
 
         if (spans && spans.length >= 2) {
+            spans.forEach(clearElementContent);
             spans[0].textContent = urlParts[0]; // Update the first part
             spans[1].textContent = ' › ' + urlParts.slice(1).join(' › '); // Update the second part
         } else {
@@ -324,6 +336,7 @@
     // Function to update text for a single element
     const updateSingleElementText = (targetElement, rule, newUrl) => {
         if (targetElement) {
+            clearElementContent(targetElement);
             let formattedUrl = '';
             switch (rule.displayMethod) {
                 case 1:
@@ -337,6 +350,8 @@
                     break;
             }
             targetElement.textContent = formattedUrl;
+        } else {
+            console.error("Script: Expected element not found for Single Element URL update!");
         }
     };
 

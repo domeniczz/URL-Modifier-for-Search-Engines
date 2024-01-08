@@ -93,6 +93,7 @@ URL の変更正規表現を使用します。
 | updateChildText | 子要素の内部テキストを更新するかどうかのフラグ               |
 | containProtocol | ドメインにプロトコル（例：https://）を含むかどうかのフラグ   |
 | displayMethod   | 必須、URL 表示方法<br/>方法1：パンくずリスト形式<br/>方法2：フル URL<br/>方法3：プロトコルなしのフル URL |
+| multiElementsForUrlDisplay | URL 表示のために複数の DOM 要素に分割されているかのフラグ |
 | hasSubResults     | 検索エンジンにサブ結果があるかどうかのフラグ |
 | subResultSelector | サブ結果のセレクター                           |
 
