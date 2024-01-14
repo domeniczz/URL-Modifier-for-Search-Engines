@@ -96,8 +96,6 @@ Codeberg 儲存庫: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-
 | containProtocol | 是否在域名中包含協議（例如https://）的標誌                   |
 | displayMethod   | 必需，URL 顯示方法<br/>方法1：麵包屑格式<br/>方法2：完整 URL<br/>方法3：不帶協議的完整 URL |
 | multiElementsForUrlDisplay | 是否將顯示的 URL 分割成多個 DOM 元素 |
-| hasSubResults     | 是否有子結果的標誌              |
-| subResultSelector | 子結果的選擇器                   |
 
 ### searchEngines
 

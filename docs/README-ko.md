@@ -96,8 +96,6 @@ Codeberg 저장소: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-
 | containProtocol | 도메인에 프로토콜(예: https://)을 포함할지 여부 플래그               |
 | displayMethod   | 필수, URL 표시 방법<br/>방법 1: 빵 부스러기 형식<br/>방법 2: 전체 URL<br/>방법 3: 프로토콜 없는 전체 URL |
 | multiElementsForUrlDisplay | URL 표시가 여러 DOM 요소로 분리되는지 여부의 플래그 |
-| hasSubResults     | 검색 엔진에 하위 결과가 있는지 여부를 나타내는 플래그 |
-| subResultSelector | 하위 결과를 위한 선택기                            |
 
 ### searchEngines
 

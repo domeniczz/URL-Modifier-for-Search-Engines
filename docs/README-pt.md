@@ -96,8 +96,6 @@ Regras de [seleção](https://developer.mozilla.org/en-US/docs/Web/API/Document_
 | containProtocol | flag para incluir protocolo (ex: https://) no domínio        |
 | displayMethod   | obrigatório, método de exibição da URL<br/>método 1: formato breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sem protocolo |
 | multiElementsForUrlDisplay | indicador de si la URL mostrada se divide en varios elementos del DOM |
-| hasSubResults     | indicador de si el motor de búsqueda puede tener subresultados |
-| subResultSelector | selector para subresultados                                    |
 
 ### motoresDeBusca
 

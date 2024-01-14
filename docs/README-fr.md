@@ -96,8 +96,6 @@ Règles de [sélecteur](https://developer.mozilla.org/fr/docs/Web/API/Document_o
 | containProtocol | drapeau pour savoir s'il faut inclure le protocole (par exemple, https://) dans le domaine |
 | displayMethod   | requis, méthode d'affichage de l'URL<br/>méthode 1 : format fil d'Ariane<br/>méthode 2 : URL complète<br/>méthode 3 : URL complète sans protocole |
 | multiElementsForUrlDisplay | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments du DOM |
-| hasSubResults     | indicateur pour savoir si le moteur de recherche peut avoir des sous-résultats |
-| subResultSelector | sélecteur pour les sous-résultats                                             |
 
 ### searchEngines
 

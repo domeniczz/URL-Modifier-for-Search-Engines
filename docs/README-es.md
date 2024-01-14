@@ -96,8 +96,6 @@ Reglas de [Selector](https://developer.mozilla.org/es/docs/Web/API/Document_obje
 | containProtocol | indicador de si incluir el protocolo (ej. https://) en el dominio |
 | displayMethod   | requerido, método de visualización de URL<br/>método 1: formato de migas de pan<br/>método 2: URL completa<br/>método 3: URL completa sin protocolo |
 | multiElementsForUrlDisplay | indicador de si la URL mostrada está dividida en múltiples elementos del DOM |
-| hasSubResults     | indicador de si el motor de búsqueda puede tener subresultados |
-| subResultSelector | selector para subresultados                                   |
 
 ### motoresDeBúsqueda
 

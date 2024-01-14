@@ -96,8 +96,6 @@ URL modification rules in [regular expression](https://en.wikipedia.org/wiki/Reg
 | containProtocol            | flag for whether to contain protocol (e.g. https://) in the domain |
 | displayMethod              | required, URL display method<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
 | multiElementsForUrlDisplay | flag for whether the displayed URL is separated into multiple DOM elements |
-| hasSubResults              | flag for whether the search engine can have sub-results      |
-| subResultSelector          | selector for sub-results                                     |
 
 ### searchEngines
 
