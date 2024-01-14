@@ -1,13 +1,72 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      2.0.5
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
-// @match        *://searx.tiekoetter.com/search*
 // @match        *://search.disroot.org/search*
+// @match        *://searx.tiekoetter.com/search*
+// @match        *://search.bus-hit.me/search*
+// @match        *://search.inetol.net/search*
 // @match        *://priv.au/search*
+// @match        *://searx.be/search*
+// @match        *://searxng.site/search*
+// @match        *://search.hbubli.cc/search*
+// @match        *://search.im-in.space/search*
+// @match        *://opnxng.com/search*
+// @match        *://search.upinmars.com/search*
+// @match        *://search.sapti.me/search*
+// @match        *://freesearch.club/search*
+// @match        *://xo.wtf/search*
+// @match        *://www.gruble.de/search*
+// @match        *://searx.tuxcloud.net/search*
+// @match        *://baresearch.org/search*
+// @match        *://searx.daetalytica.io/search*
+// @match        *://etsi.me/search*
+// @match        *://search.leptons.xyz/search*
+// @match        *://search.rowie.at/search*
+// @match        *://search.mdosch.de/search*
+// @match        *://searx.catfluori.de/search*
+// @match        *://searx.si/search*
+// @match        *://searx.namejeff.xyz/search*
+// @match        *://search.itstechtime.com/search*
+// @match        *://s.mble.dk/search*
+// @match        *://searx.kutay.dev/search*
+// @match        *://ooglester.com/search*
+// @match        *://searx.ox2.fr/search*
+// @match        *://searx.techsaviours.org/search*
+// @match        *://searx.perennialte.ch/search*
+// @match        *://s.trung.fun/search*
+// @match        *://search.in.projectsegfau.lt/search*
+// @match        *://search.projectsegfau.lt/search*
+// @match        *://darmarit.org/searx/search*
+// @match        *://searx.lunar.icu/search*
+// @match        *://nyc1.sx.ggtyler.dev/search*
+// @match        *://search.rhscz.eu/search*
+// @match        *://paulgo.io/search*
+// @match        *://northboot.xyz/search*
+// @match        *://searx.zhenyapav.com/search*
+// @match        *://searxng.ch/search*
+// @match        *://copp.gg/search*
+// @match        *://searx.sev.monster/search*
+// @match        *://searx.oakleycord.dev/search*
+// @match        *://searx.juancord.xyz/search*
+// @match        *://searx.work/search*
+// @match        *://search.ononoki.org/search*
+// @match        *://search.demoniak.ch/search*
+// @match        *://searx.cthd.icu/search*
+// @match        *://searx.fmhy.net/search*
+// @match        *://searx.headpat.exchange/search*
+// @match        *://sex.finaltek.net/search*
+// @match        *://search.gcomm.ch/search*
+// @match        *://search.smnz.de/search*
+// @match        *://searx.ankha.ac/search*
+// @match        *://search.lvkaszus.pl/search*
+// @match        *://searx.nobulart.com/search*
+// @match        *://sx.t-1.org/search*
+// @match        *://www.jabber-germany.de/searx/search*
+// @match        *://sx.catgirl.cloud/search*
 // @match        *://www.startpage.com/search*
 // @match        *://www.startpage.com/sp/search*
 // @match        *://search.brave.com/search*
@@ -22,8 +81,6 @@
 // @license      GPL-2.0-only
 // ==/UserScript==
 
-// TODO: qwant breadcrumb URL display issue
-
 (function() {
     'use strict';
 
@@ -37,15 +94,15 @@
             matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
             replaceWith: 'https://nitter.net/$1$2'
         },
-        // {
-        //     matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
-        //     replaceWith: 'https://yewtu.be/$1'
-        //     // replaceWith: 'https://piped.video/$1'
-        // },
-        // {
-        //     matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/.*)/),
-        //     replaceWith: 'https://code.whatever.social$1'
-        // },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
+            replaceWith: 'https://yewtu.be/$1'
+            // replaceWith: 'https://piped.video/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/.*)/),
+            replaceWith: 'https://code.whatever.social$1'
+        },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:en\.?m?|simple)\.wikipedia\.org\/wiki\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
@@ -69,6 +126,14 @@
         {
             matchRegex: new RegExp(/^https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/.*/),
             replaceWith: 'https://text.npr.org/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(?:m|www)\.imdb\.com(.*)/),
+            replaceWith: 'https://ld.vern.cc$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(?:[a-z]+)\.slashdot\.org(.*)/),
+            replaceWith: 'https://slashdot.org$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:(?:.*)arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
@@ -97,8 +162,8 @@
                 displayMethod: 1
             },
             {
-                hasSubResults: true, // Indicating the search engine can have sub-results
-                subResultSelector: 'table tr h3 a' // Selector for sub-results
+                // Selector for sub-results
+                selector: 'table tr h3 a'
             }
             // ... [Other rules for Google]
         ],
@@ -149,8 +214,8 @@
                 multiElementsForUrlDisplay: true
             },
             {
-                hasSubResults: true, // Indicating Google has sub-results
-                subResultSelector: 'ul.b269SZlC2oyR13Fcc4Iy li a.f3uDrYrWF3Exrfp1m3Og' // Selector for sub-results
+                // Selector for sub-results
+                selector: 'ul.b269SZlC2oyR13Fcc4Iy li a.f3uDrYrWF3Exrfp1m3Og'
             }
         ],
         'qwant': [
@@ -166,8 +231,8 @@
                 multiElementsForUrlDisplay: true
             },
             {
-                hasSubResults: true, // Indicating Google has sub-results
-                subResultSelector: 'div._12BMd div._2-LMx._2E8gc._16lFV.Ks7KS.tCpbb.m_hqb a.external' // Selector for sub-results
+                // Selector for sub-results
+                subResultSelector: 'div._12BMd div._2-LMx._2E8gc._16lFV.Ks7KS.tCpbb.m_hqb a.external'
             }
         ],
         'metager': [
@@ -206,9 +271,68 @@
         },
         'searx': {
             hosts: [
-                'searx.tiekoetter.com',
                 'search.disroot.org',
-                'priv.au'
+                'searx.tiekoetter.com',
+                'search.bus-hit.me',
+                'search.inetol.net',
+                'priv.au',
+                'searx.be',
+                'searxng.site',
+                'search.hbubli.cc',
+                'search.im-in.space',
+                'opnxng.com',
+                'search.upinmars.com',
+                'search.sapti.me',
+                'freesearch.club',
+                'xo.wtf',
+                'www.gruble.de',
+                'searx.tuxcloud.net',
+                'baresearch.org',
+                'searx.daetalytica.io',
+                'etsi.me',
+                'search.leptons.xyz',
+                'search.rowie.at',
+                'search.mdosch.de',
+                'searx.catfluori.de',
+                'searx.si',
+                'searx.namejeff.xyz',
+                'search.itstechtime.com',
+                's.mble.dk',
+                'searx.kutay.dev',
+                'ooglester.com',
+                'searx.ox2.fr',
+                'searx.techsaviours.org',
+                'searx.perennialte.ch',
+                's.trung.fun',
+                'search.in.projectsegfau.lt',
+                'search.projectsegfau.lt',
+                'darmarit.org',
+                'searx.lunar.icu',
+                'nyc1.sx.ggtyler.dev',
+                'search.rhscz.eu',
+                'paulgo.io',
+                'northboot.xyz',
+                'searx.zhenyapav.com',
+                'searxng.ch',
+                'copp.gg',
+                'searx.sev.monster',
+                'searx.oakleycord.dev',
+                'searx.juancord.xyz',
+                'searx.work',
+                'search.ononoki.org',
+                'search.demoniak.ch',
+                'searx.cthd.icu',
+                'searx.fmhy.net',
+                'searx.headpat.exchange',
+                'sex.finaltek.net',
+                'search.gcomm.ch',
+                'search.smnz.de',
+                'searx.ankha.ac',
+                'search.lvkaszus.pl',
+                'searx.nobulart.com',
+                'sx.t-1.org',
+                'www.jabber-germany.de',
+                'sx.catgirl.cloud'
             ],
             resultContainerSelectors: [
                 'main#main_results'
@@ -257,19 +381,20 @@
     };
 
     // Function to modify URLs and optionally text
-    const modifyUrls = (engine) => {
+    const modifyUrls = (engine, observer, resultContainer) => {
         try {
             const selectors = selectorRules[engine];
             if (selectors) {
-                selectors.forEach(rule => {
-                    // Modify main results
-                    processElements(rule.selector, rule, engine);
+                // Disconnect the observer to prevent recursive triggering
+                observer.disconnect();
 
-                    // Modify sub-results if applicable
-                    if (rule.hasSubResults && rule.subResultSelector) {
-                        processElements(rule.subResultSelector, rule, engine);
-                    }
+                // Modify results
+                selectors.forEach(rule => {
+                    processElements(rule.selector, rule, engine);
                 });
+
+                // Reconnect the observer after DOM modifications are done
+                observer.observe(resultContainer, { childList: true, subtree: true });
             }
         } catch (error) {
             console.error("URL Modifier Script Error: ", error);
@@ -400,10 +525,10 @@
         const resultContainers = document.querySelectorAll(selector);
         if (resultContainers) {
             resultContainers.forEach(resultContainer => {
-                modifyUrls(engine.engine);
                 // Observe changes in each result container
-                const observer = new MutationObserver(() => modifyUrls(engine));
+                const observer = new MutationObserver(() => modifyUrls(engine, observer, resultContainer));
                 observer.observe(resultContainer, { childList: true, subtree: true });
+                modifyUrls(engine, observer, resultContainer);
             });
         }
     };
