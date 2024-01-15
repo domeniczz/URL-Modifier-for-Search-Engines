@@ -35,7 +35,7 @@ Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-S
 ### Поддержка поисковых систем
 
 - [Google](https://www.google.com)
-- [SearXNG](https://searx.space/) (Tiekötter & Disroot)
+- [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
 - [DuckDuckGo](https://duckduckgo.com)
@@ -61,7 +61,10 @@ Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-S
 
 Вы можете добавить собственные правила переадресации в скрипт.
 
-Другие альтернативные приватные фронтенды, смотрите [LibRedirect](https://libredirect.github.io/index.html).
+Другие альтернативные приватные фронтенды, смотрите:
+
+- [LibRedirect](https://libredirect.github.io/index.html)
+- [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 
 ---
 

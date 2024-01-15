@@ -35,10 +35,10 @@ Codeberg リポジトリ: https://codeberg.org/Domenic/URL-Modifier-for-Search-E
 ### 対応する検索エンジン
 
 - [Google](https://www.google.com)
-- [SearXNG](https://searx.space/) (Tiekötter & Disroot)
+- [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
-- [DuckDuckGo](https://duckduck)
+- [DuckDuckGo](https://duckduckgo.com)
 - [Metager](https://metager.org)
 - [Mojeek](https://www.mojeek.com)
 
@@ -61,7 +61,10 @@ Codeberg リポジトリ: https://codeberg.org/Domenic/URL-Modifier-for-Search-E
 
 スクリプトにカスタムのリダイレクションルールを追加できます。
 
-他のプライバシーに配慮した代替フロントエンドについては、[LibRedirect](https://libredirect.github.io/index.html) を参照してください。
+プライバシーに焦点を当てた他の代替フロントエンドについては、こちらを参照してください：
+
+- [LibRedirect](https://libredirect.github.io/index.html)
+- [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 
 ---
 

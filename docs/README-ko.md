@@ -35,10 +35,10 @@ Codeberg 저장소: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-
 ### 검색 엔진 지원
 
 - [Google](https://www.google.com)
-- [SearXNG](https://searx.space/) (Tiekötter & Disroot)
+- [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
-- [DuckDuckGo](https://duckduck)
+- [DuckDuckGo](https://duckduckgo.com)
 - [Metager](https://metager.org)
 - [Mojeek](https://www.mojeek.com)
 
@@ -61,7 +61,10 @@ Codeberg 저장소: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-
 
 스크립트에 사용자 정의 리디렉션 규칙을 추가할 수 있습니다.
 
-기타 대체 사이트 프론트엔드는 [LibRedirect](https://libredirect.github.io/index.html) 참조.
+기타 개인정보 보호에 중점을 둔 대체 웹사이트 프런트엔드는 다음을 참조하세요：
+
+- [LibRedirect](https://libredirect.github.io/index.html)
+- [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 
 ---
 

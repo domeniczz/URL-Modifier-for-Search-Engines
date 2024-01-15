@@ -35,10 +35,10 @@ Codeberg Repositorio: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engin
 ### Soporte de Motores de Búsqueda
 
 - [Google](https://www.google.com)
-- [SearXNG](https://searx.space) (Tiekötter & Disroot)
+- [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
-- [DuckDuckGo](https://duckduck)
+- [DuckDuckGo](https://duckduckgo.com)
 - [Metager](https://metager.org)
 - [Mojeek](https://www.mojeek.com)
 
@@ -61,7 +61,10 @@ No puede soportar [Bing](https://www.bing.com), porque solo proporciona enlaces 
 
 Puedes añadir tus propias reglas de redirección en el script.
 
-Para otras alternativas de frontends amigables con la privacidad, ver [LibRedirect](https://libredirect.github.io/index.html).
+Para otras alternativas de frontends amigables con la privacidad, ver:
+
+- [LibRedirect](https://libredirect.github.io/index.html)
+- [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 
 ---
 

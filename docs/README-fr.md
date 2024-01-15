@@ -35,7 +35,7 @@ Codeberg Dépôt: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Re
 ### Prise en charge des moteurs de recherche
 
 - [Google](https://www.google.com)
-- [SearXNG](https://searx.space/) (Tiekötter & Disroot)
+- [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
 - [DuckDuckGo](https://duckduckgo.com)
@@ -61,7 +61,10 @@ Ne peut pas prendre en charge [Bing](https://www.bing.com), car il fournit uniqu
 
 Vous pouvez ajouter des règles de redirection personnalisées dans le script vous-même.
 
-Autres alternatives de frontaux respectueux de la vie privée, voir [LibRedirect](https://libredirect.github.io/index.html).
+Autres alternatives de frontaux respectueux de la vie privée, voir:
+
+- [LibRedirect](https://libredirect.github.io/index.html)
+- [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 
 ---
 

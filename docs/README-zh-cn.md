@@ -35,7 +35,7 @@ Codeberg 仓库: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Res
 ### 支持的搜索引擎
 
 - [Google](https://www.google.com)
-- [SearXNG](https://searx.space) (Tiekötter & Disroot)
+- [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
 - [DuckDuckGo](https://duckduckgo.com)
@@ -61,7 +61,10 @@ Codeberg 仓库: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Res
 
 您可以自行添加自定义重定向规则到脚本中。
 
-其他隐私友好的前端替代品，参见 [LibRedirect](https://libredirect.github.io/index.html)。
+其他隐私友好的前端替代品，参见：
+
+- [LibRedirect](https://libredirect.github.io/index.html)
+- [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 
 ---
 

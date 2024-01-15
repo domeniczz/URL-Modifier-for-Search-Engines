@@ -35,10 +35,10 @@ Codeberg Depo: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Resul
 ### Desteklenen Arama Motorları
 
 - [Google](https://www.google.com)
-- [SearXNG](https://searx.space/) (Tiekötter & Disroot)
+- [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
-- [DuckDuckGo](https://duckduck)
+- [DuckDuckGo](https://duckduckgo.com)
 - [Metager](https://metager.org)
 - [Mojeek](https://www.mojeek.com)
 
@@ -61,7 +61,10 @@ Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyeb
 
 Betik içine kendiniz özel yönlendirme kuralları ekleyebilirsiniz.
 
-Diğer alternatif gizlilik dostu ön uçlar için, [LibRedirect](https://libredirect.github.io/index.html)’i görün.
+Diğer gizlilik dostu ön uçlar için bkz:
+
+- [LibRedirect](https://libredirect.github.io/index.html)
+- [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 
 ---
 
