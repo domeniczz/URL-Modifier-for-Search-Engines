@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.0.5
+// @version      2.0.6
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -95,12 +95,12 @@
             replaceWith: 'https://nitter.net/$1$2'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
+            matchRegex: new Exp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
             replaceWith: 'https://yewtu.be/$1'
             // replaceWith: 'https://piped.video/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/.*)/),
+            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
             replaceWith: 'https://code.whatever.social$1'
         },
         {
@@ -116,7 +116,7 @@
             replaceWith: 'https://www.wikiwand.com/$1/$2'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/((?:(?:\w+\.)?medium|towardsdatascience)\.com\/.*)/),
+            matchRegex: new RegExp(/^https?:\/\/((?:(?:\w+\.)?medium|towardsdatascience)\.com\/(?=.*-)(?:[\w@.]+\/[\w-]+$|[\w\/-]+$))/),
             replaceWith: 'https://freedium.cfd/https://$1'
         },
         {
@@ -482,9 +482,18 @@
 
     // Function for Method 1 (Breadcrumb Style URLs), leaving 'https://' intact
     const formatMethod1 = (url, maxLength) => {
-        // Split the URL while keeping 'https://' intact
-        let parts = url.replace('https://', 'https›').split('/');
-        parts[0] = parts[0].replace('https›', 'https://'); // Restore 'https://'
+        // Split the URL while keeping 'https://' intact; Replace the second occurrence of 'https://' with 'https', if exists    
+        // Replace the first occurrence of 'https://' with a placeholder
+        url = url.replace('https://', 'https›');
+        // Deal with the second 'https://'
+        let secondHttpsIndex = url.indexOf('https://');
+        if (secondHttpsIndex !== -1) {
+            url = url.substring(0, secondHttpsIndex) + 'https/' + url.substring(secondHttpsIndex + 8);
+        }
+        // Split the URL with '/'
+        let parts = url.split('/');
+        // Restore the first 'https://' in the URL
+        parts[0] = parts[0].replace('https›', 'https://');
 
         // Join the URL parts with ' › ' and check if it exceeds maxLength
         let joinedUrl = parts.join(' › ');
