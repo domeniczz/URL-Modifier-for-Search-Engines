@@ -182,6 +182,10 @@
         {
             matchRegex: new RegExp(/^https?:\/\/(?:[a-z]+)\.slashdot\.org(.*)/),
             replaceWith: 'https://slashdot.org$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.snopes\.com(.*)/),
+            replaceWith: 'https://sd.vern.cc$1'
         }
         // Add more rules here as needed
     ];
