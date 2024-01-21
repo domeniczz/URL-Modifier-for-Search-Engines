@@ -26,11 +26,12 @@
 
 [Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 스크립트, GreasyFork 에서 설치: [검색 엔진용 URL 수정기](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
 
+- Github 저장소: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
+- Codeberg 저장소: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 이 Tampermonkey 스크립트는 검색 엔진 검색 결과의 URL을 수정하여 대체 사이트로 리디렉션함으로써 검색 엔진 사용을 향상시킵니다. 보다 맞춤화되고 효율적인 브라우징 경험을 제공합니다.
 
 URL 수정은 정규 표현식을 사용합니다.
-
-Codeberg 저장소: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
 
 ### 검색 엔진 지원
 
@@ -52,7 +53,7 @@ Codeberg 저장소: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Old Reddit](https://old.reddit.com)
-- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (instance [quetre.iket.me](https://quetre.iket.me)
+- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (instance [quetre.iket.me](https://quetre.iket.me))
 - [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (instance [yewtu.be](https://yewtu.be))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (instance [code.whatever.social](https://code.whatever.social))
@@ -61,8 +62,11 @@ Codeberg 저장소: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-
 - [IMDB](https://www.imdb.com) -> [LibreMDB](https://github.com/zyachel/libremdb#instances) (instance [ld.vern.cc](https://ld.vern.cc))
 - [Goodreads](https://www.goodreads.com) -> [BiblioReads](https://github.com/nesaku/BiblioReads#instances) (instance [bl.vern.cc](https://bl.vern.cc))
 - [Urban Dictionary](https://www.urbandictionary.com) -> [Rural Dictionary](https://codeberg.org/zortazert/rural-dictionary#headline-2) (instance [rd.vern.cc](https://rd.vern.cc))
+- [GitHub.ink](https://github.ink) -> [GitHub](https://github.com)
 - [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page) (instance [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
 - [Pixiv](https://www.pixiv.net) -> [PixivFE](https://codeberg.org/VnPower/pixivfe#instances) (instance [pixivfe.exozy.me](https://pixivfe.exozy.me))
+- [Genius](https://genius.com) -> [Dumb](https://github.com/rramiachraf/dumb#public-instances) (instance [dm.vern.cc](https://dm.vern.cc))
+- [Snopes](https://www.snopes.com) -> [Suds](https://git.vern.cc/cobra/Suds/src/branch/main/instances.json) (instance [sd.vern.cc](https://sd.vern.cc))
 - ArXiv PDF -> ArXiv Abstract
 - ...
 

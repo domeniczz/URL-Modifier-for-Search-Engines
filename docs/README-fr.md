@@ -26,11 +26,12 @@
 
 Un script [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), à installer depuis GreasyFork : [Modificateur d'URL pour les moteurs de recherche](https://greasyfork.org/fr/scripts/483597-url-modifier-for-search-engines).
 
+- Github Dépôt: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
+- Codeberg Dépôt: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+
 Ce script Tampermonkey améliore votre utilisation des moteurs de recherche en modifiant les URL dans les résultats de recherche des moteurs de recherche, redirigeant vers des sites alternatifs. Permet une expérience de navigation plus personnalisée et efficace.
 
 La modification d'URL utilise l'Expression Régulière.
-
-Codeberg Dépôt: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
 
 ### Prise en charge des moteurs de recherche
 
@@ -52,7 +53,7 @@ Ne peut pas prendre en charge [Bing](https://www.bing.com), car il fournit uniqu
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Old Reddit](https://old.reddit.com)
-- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (instance [quetre.iket.me](https://quetre.iket.me)
+- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (instance [quetre.iket.me](https://quetre.iket.me))
 - [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (instance [yewtu.be](https://yewtu.be))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (instance [code.whatever.social](https://code.whatever.social))
@@ -61,8 +62,11 @@ Ne peut pas prendre en charge [Bing](https://www.bing.com), car il fournit uniqu
 - [IMDB](https://www.imdb.com) -> [LibreMDB](https://github.com/zyachel/libremdb#instances) (instance [ld.vern.cc](https://ld.vern.cc))
 - [Goodreads](https://www.goodreads.com) -> [BiblioReads](https://github.com/nesaku/BiblioReads#instances) (instance [bl.vern.cc](https://bl.vern.cc))
 - [Urban Dictionary](https://www.urbandictionary.com) -> [Rural Dictionary](https://codeberg.org/zortazert/rural-dictionary#headline-2) (instance [rd.vern.cc](https://rd.vern.cc))
+- [GitHub.ink](https://github.ink) -> [GitHub](https://github.com)
 - [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page) (instance [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
 - [Pixiv](https://www.pixiv.net) -> [PixivFE](https://codeberg.org/VnPower/pixivfe#instances) (instance [pixivfe.exozy.me](https://pixivfe.exozy.me))
+- [Genius](https://genius.com) -> [Dumb](https://github.com/rramiachraf/dumb#public-instances) (instance [dm.vern.cc](https://dm.vern.cc))
+- [Snopes](https://www.snopes.com) -> [Suds](https://git.vern.cc/cobra/Suds/src/branch/main/instances.json) (instance [sd.vern.cc](https://sd.vern.cc))
 - ArXiv PDF -> ArXiv Abstract
 - ...
 
