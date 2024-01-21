@@ -39,7 +39,9 @@ Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-S
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
 - [DuckDuckGo](https://duckduckgo.com)
+- [Qwant](https://www.qwant.com)
 - [Metager](https://metager.org)
+- [4get](https://4get.ca/instances)
 - [Mojeek](https://www.mojeek.com)
 
 Você pode adicionar manualmente o seletor DOM no código para suportar outros motores de busca.
@@ -50,12 +52,17 @@ Não pode suportar o [Bing](https://www.bing.com), pois ele só fornece links in
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Old Reddit](https://old.reddit.com)
+- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (instance [quetre.iket.me](https://quetre.iket.me)
 - [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
-- [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (instância [yewtu.be](https://yewtu.be))
-- [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (instância [code.whatever.social](https://code.whatever.social))
-- [Medium](https://medium.com/) -> [Freedium](https://freedium.cfd)
+- [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (instance [yewtu.be](https://yewtu.be))
+- [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (instance [code.whatever.social](https://code.whatever.social))
+- [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [NPR](https://www.npr.org) -> [NPR Text](https://text.npr.org)
-- [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page/) (instância [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
+- [IMDB](https://www.imdb.com) -> [LibreMDB](https://github.com/zyachel/libremdb#instances) (instance [ld.vern.cc](https://ld.vern.cc))
+- [Goodreads](https://www.goodreads.com) -> [BiblioReads](https://github.com/nesaku/BiblioReads#instances) (instance [bl.vern.cc](https://bl.vern.cc))
+- [Urban Dictionary](https://www.urbandictionary.com) -> [Rural Dictionary](https://codeberg.org/zortazert/rural-dictionary#headline-2) (instance [rd.vern.cc](https://rd.vern.cc))
+- [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page) (instance [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
+- [Pixiv](https://www.pixiv.net) -> [PixivFE](https://codeberg.org/VnPower/pixivfe#instances) (instance [pixivfe.exozy.me](https://pixivfe.exozy.me))
 - ArXiv PDF -> ArXiv Abstract
 - ...
 
@@ -77,7 +84,7 @@ Outras alternativas de frontends amigáveis à privacidade, veja:
 
 ## Wiki
 
-### regrasDeModificaçãoDeURL
+### urlModificationRules
 
 Regras de modificação de URL em [expressão regular](https://pt.wikipedia.org/wiki/Express%C3%A3o_regular)
 
@@ -86,7 +93,7 @@ Regras de modificação de URL em [expressão regular](https://pt.wikipedia.org/
 | matchRegex  | expressão regular para combinar URLs originais |
 | replaceWith | expressão regular para substituição            |
 
-### regrasDeSeleção
+### selectorRules
 
 Regras de [seleção](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) para elementos DOM que precisam ser atualizados nos resultados do motor de busca
 
@@ -100,7 +107,7 @@ Regras de [seleção](https://developer.mozilla.org/en-US/docs/Web/API/Document_
 | displayMethod   | obrigatório, método de exibição da URL<br/>método 1: formato breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sem protocolo |
 | multiElementsForUrlDisplay | indicador de si la URL mostrada se divide en varios elementos del DOM |
 
-### motoresDeBusca
+### searchEngines
 
 Lista definida pelo usuário de domínios de motores de busca
 
@@ -108,3 +115,4 @@ Lista definida pelo usuário de domínios de motores de busca
 | ------------------------ | ------------------------------------------------------------ |
 | hosts                    | domínio do motor de busca                                    |
 | resultContainerSelectors | opcional, define o contêiner do resultado da busca DOM, para reduzir a faixa de observação dinâmica |
+

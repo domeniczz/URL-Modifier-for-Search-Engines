@@ -39,7 +39,9 @@ Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-S
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
 - [DuckDuckGo](https://duckduckgo.com)
+- [Qwant](https://www.qwant.com)
 - [Metager](https://metager.org)
+- [4get](https://4get.ca/instances)
 - [Mojeek](https://www.mojeek.com)
 
 Вы можете вручную добавить селектор DOM в код, чтобы поддержать другие поисковые системы.
@@ -50,12 +52,17 @@ Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-S
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Old Reddit](https://old.reddit.com)
+- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (instance [quetre.iket.me](https://quetre.iket.me)
 - [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
-- [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (инстанс [yewtu.be](https://yewtu.be))
-- [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (инстанс [code.whatever.social](https://code.whatever.social))
-- [Medium](https://medium.com/) -> [Freedium](https://freedium.cfd)
+- [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (instance [yewtu.be](https://yewtu.be))
+- [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (instance [code.whatever.social](https://code.whatever.social))
+- [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [NPR](https://www.npr.org) -> [NPR Text](https://text.npr.org)
-- [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page/) (инстанс [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
+- [IMDB](https://www.imdb.com) -> [LibreMDB](https://github.com/zyachel/libremdb#instances) (instance [ld.vern.cc](https://ld.vern.cc))
+- [Goodreads](https://www.goodreads.com) -> [BiblioReads](https://github.com/nesaku/BiblioReads#instances) (instance [bl.vern.cc](https://bl.vern.cc))
+- [Urban Dictionary](https://www.urbandictionary.com) -> [Rural Dictionary](https://codeberg.org/zortazert/rural-dictionary#headline-2) (instance [rd.vern.cc](https://rd.vern.cc))
+- [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page) (instance [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
+- [Pixiv](https://www.pixiv.net) -> [PixivFE](https://codeberg.org/VnPower/pixivfe#instances) (instance [pixivfe.exozy.me](https://pixivfe.exozy.me))
 - ArXiv PDF -> ArXiv Abstract
 - ...
 
@@ -77,7 +84,7 @@ Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-S
 
 ## Вики
 
-### Правила модификации URL
+### urlModificationRules
 
 Правила модификации URL в [регулярных выражениях](https://ru.wikipedia.org/wiki/Регулярные_выражения)
 
@@ -86,7 +93,7 @@ Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-S
 | matchRegex  | регулярное выражение для сопоставления оригинальных URL |
 | replaceWith | регулярное выражение для замены                         |
 
-### Правила селекторов
+### selectorRules
 
 [Селекторы](https://developer.mozilla.org/ru/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) для обновления DOM-элементов результатов поисковых систем
 
@@ -100,7 +107,7 @@ Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-S
 | displayMethod   | обязательно, метод отображения URL<br/>метод 1: формат "хлебные крошки"<br/>метод 2: полный URL<br/>метод 3: полный URL без протокола |
 | multiElementsForUrlDisplay | флаг того, отображается ли URL в нескольких элементах DOM |
 
-### Поисковые системы
+### searchEngines
 
 Список доменов поисковых систем, определенных пользователем
 
@@ -108,3 +115,4 @@ Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-S
 | ------------------------ | ------------------------------------------------------------ |
 | hosts                    | домен поисковой системы                                      |
 | resultContainerSelectors | опционально, установить контейнер DOM результатов поиска, чтобы сузить диапазон динамического наблюдения |
+
