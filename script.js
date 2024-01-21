@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.0.6
+// @version      2.0.8
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -72,14 +72,30 @@
 // @match        *://search.brave.com/search*
 // @match        *://duckduckgo.com
 // @match        *://duckduckgo.com/?*q=*
+// @match        *://www.qwant.com/?q=*
 // @match        *://metager.org/meta/meta.ger3*
 // @match        *://metager.de/meta/meta.ger3*
+// @match        *://4get.ca/web?s=*
+// @match        *://4get.silly.computer/web?s=*
+// @match        *://4get.plunked.party/web?s=*
+// @match        *://4get.konakona.moe/web?s=*
+// @match        *://4get.sijh.net/web?s=*
+// @match        *://4get.hbubli.cc/web?s=*
+// @match        *://4get.perennialte.ch/web?s=*
+// @match        *://4get.zzls.xyz/web?s=*
+// @match        *://4getus.zzls.xyz/web?s=*
+// @match        *://4get.seitan-ayoub.lol/web?s=*
+// @match        *://4get.dcs0.hu/web?s=*
+// @match        *://4get.psily.garden/web?s=*
+// @match        *://4get.lvkaszus.pl/web?s=*
+// @match        *://4get.kizuki.lol/web?s=*
 // @match        *://www.mojeek.com/search?q=*
-// @match        *://www.qwant.com/?q=*
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
 // ==/UserScript==
+
+// TODO: Modification of URL of widgets
 
 (function() {
     'use strict';
@@ -91,18 +107,22 @@
             replaceWith: 'https://old.reddit.com$1'
         },
         {
+            matchRegex: new RegExp(/^https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+$|profile\/.*)/),
+            replaceWith: 'https://quetre.iket.me/$1'
+        },
+        {
             matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
             replaceWith: 'https://nitter.net/$1$2'
         },
-        {
-            matchRegex: new Exp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?v=[\w-]+|playlist\?list=[\w-]+)/),
-            replaceWith: 'https://yewtu.be/$1'
-            // replaceWith: 'https://piped.video/$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
-            replaceWith: 'https://code.whatever.social$1'
-        },
+        // {
+        //     matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
+        //     replaceWith: 'https://code.whatever.social$1'
+        // },
+        // {
+        //     matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?(?:[\w=&]+&)?v=[\w-]+|playlist\?list=[\w-]+)/),
+        //     replaceWith: 'https://yewtu.be/$1'
+        //     // replaceWith: 'https://piped.video/$1'
+        // }
         {
             matchRegex: new RegExp(/^https?:\/\/(?:en\.?m?|simple)\.wikipedia\.org\/wiki\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
@@ -112,28 +132,36 @@
             replaceWith: 'https://www.wikiwand.com/zh-hans/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(.*)/),
+            matchRegex: new RegExp(/^https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/$1/$2'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/((?:(?:\w+\.)?medium|towardsdatascience)\.com\/(?=.*-)(?:[\w@.]+\/[\w-]+$|[\w\/-]+$))/),
+            matchRegex: new RegExp(/^https?:\/\/((?:(?:\w+\.)?medium|towardsdatascience)\.com\/(?=.*-)(?:[\w\/-]+$|[\w@.]+\/[\w-]+$))/),
             replaceWith: 'https://freedium.cfd/https://$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/imgur\.com\/(a\/)?((?!gallery)\w+)/),
-            replaceWith: 'https://rimgo.totaldarkness.net/a/$1$2'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/.*/),
-            replaceWith: 'https://text.npr.org/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:m|www)\.imdb\.com(.*)/),
             replaceWith: 'https://ld.vern.cc$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:[a-z]+)\.slashdot\.org(.*)/),
-            replaceWith: 'https://slashdot.org$1'
+            matchRegex: new RegExp(/^https?:\/\/www\.goodreads\.com\/((?:(?:[a-z]+\/)?book\/show|work\/quotes|series|author\/show)\/[\w.-]+)/),
+            replaceWith: 'https://bl.vern.cc/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.urbandictionary\.com\/(define\.php\?term=.*)/),
+            replaceWith: 'https://rd.vern.cc/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/imgur\.com\/(a\/)?((?!gallery)\w+)/),
+            replaceWith: 'https://rimgo.totaldarkness.net/a/$1$2'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*/),
+            replaceWith: 'https://pixivfe.exozy.me/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*)/),
+            replaceWith: 'https://dm.vern.cc/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:(?:.*)arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
@@ -144,8 +172,16 @@
             replaceWith: 'https://$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/github\.ink\/(.*)/),
-            replaceWith: 'https://github.com/$1'
+            matchRegex: new RegExp(/^https?:\/\/github\.ink(.*)/),
+            replaceWith: 'https://github.com$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/.*/),
+            replaceWith: 'https://text.npr.org/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(?:[a-z]+)\.slashdot\.org(.*)/),
+            replaceWith: 'https://slashdot.org$1'
         }
         // Add more rules here as needed
     ];
@@ -246,6 +282,17 @@
                 displayMethod: 3
             }
         ],
+        '4get': [
+            {
+                selector: 'div.text-result a.hover'
+            },
+            {
+                selector: 'div.text-result div.sublinks a'
+            },
+            {
+                selector: 'div.right-wrapper div.answer-wrapper div.answer div.answer-title a.answer-title'
+            }
+        ],
         'mojeek': [
             {
                 selector: 'li a.ob',
@@ -255,7 +302,6 @@
                 containProtocol: true,
                 displayMethod: 1
             }
-            // ... [Other rules for Mojeek]
         ]
         // Additional search engines can be defined here...
     };
@@ -374,6 +420,25 @@
             ],
             resultContainerSelectors: ['div#results']
         },
+        '4get': {
+            hosts: [
+                '4get.ca',
+                '4get.silly.computer',
+                '4get.plunked.party',
+                '4get.konakona.moe',
+                '4get.sijh.net',
+                '4get.hbubli.cc',
+                '4get.perennialte.ch',
+                '4get.zzls.xyz',
+                '4getus.zzls.xyz',
+                '4get.seitan-ayoub.lol',
+                '4get.dcs0.hu',
+                '4get.psily.garden',
+                '4get.lvkaszus.pl',
+                '4get.kizuki.lol'
+            ],
+            resultContainerSelectors: ['div#overflow']
+        },
         'mojeek': {
             hosts: ['mojeek.com']
         }
@@ -420,7 +485,6 @@
     // Function to update text content
     const updateTextContent = (element, rule, newUrl) => {
         if (rule.updateText || (rule.updateChildText && rule.childSelector)) {
-            // Special handling for DuckDuckGo and Brave
             if (rule.multiElementsForUrlDisplay) {
                 updateDoubleElementContent(element, rule, newUrl);
             } else {
@@ -480,9 +544,9 @@
         }
     };
 
-    // Function for Method 1 (Breadcrumb Style URLs), leaving 'https://' intact
+    // Function for Method 1 (Breadcrumb style URLs), leaving 'https://' intact
     const formatMethod1 = (url, maxLength) => {
-        // Split the URL while keeping 'https://' intact; Replace the second occurrence of 'https://' with 'https', if exists    
+        // Split the URL while keeping 'https://' intact; Replace the second occurrence of 'https://' with 'https', if exists
         // Replace the first occurrence of 'https://' with a placeholder
         url = url.replace('https://', 'https›');
         // Deal with the second 'https://'
@@ -508,6 +572,7 @@
         return decodeURIComponent(joinedUrl);
     };
 
+    // Remove 'https://' from the URL link
     const removeProtocol = (url) => {
         return url.replace(/^https?:\/\//, '');
     };
