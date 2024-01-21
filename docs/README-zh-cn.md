@@ -33,6 +33,14 @@
 
 URL 修改使用正则表达式。
 
+<div align="center">
+    <span>不修改 URL 的搜索结果：</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-without_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/><br/>
+    <span>修改 URL 的搜索结果后：</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
+</div>
+
+
 ### 支持的搜索引擎
 
 - [Google](https://www.google.com)
@@ -76,6 +84,9 @@ URL 修改使用正则表达式。
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [vern.cc](https://vern.cc)
+- [farside.link](https://farside.link)
+- [whatever.social](https://launch.whatever.social)
 
 ---
 

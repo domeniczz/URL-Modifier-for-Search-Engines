@@ -33,6 +33,13 @@ Este script do Tampermonkey melhora o uso do seu motor de busca modificando URLs
 
 A modificação de URL usa Expressão Regular.
 
+<div align="center">
+    <span>Resultado da pesquisa sem modificação de URL:</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-without_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/><br/>
+    <span>Resultado da pesquisa após a modificação da URL:</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
+</div>
+
 ### Suporte a Motores de Busca
 
 - [Google](https://www.google.com)
@@ -76,6 +83,9 @@ Outras alternativas de frontends amigáveis à privacidade, veja:
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [vern.cc](https://vern.cc)
+- [farside.link](https://farside.link)
+- [whatever.social](https://launch.whatever.social)
 
 ---
 

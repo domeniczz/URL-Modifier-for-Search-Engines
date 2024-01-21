@@ -33,6 +33,13 @@
 
 URL の変更正規表現を使用します。
 
+<div align="center">
+    <span>URL 変更なしの検索結果：</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-without_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/><br/>
+    <span>URL 変更後の検索結果：</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
+</div>
+
 ### 対応する検索エンジン
 
 - [Google](https://www.google.com)
@@ -76,6 +83,9 @@ URL の変更正規表現を使用します。
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [vern.cc](https://vern.cc)
+- [farside.link](https://farside.link)
+- [whatever.social](https://launch.whatever.social)
 
 ---
 

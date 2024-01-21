@@ -33,6 +33,13 @@ Ce script Tampermonkey améliore votre utilisation des moteurs de recherche en m
 
 La modification d'URL utilise l'Expression Régulière.
 
+<div align="center">
+    <span>Résultat de recherche sans modification d'URL:</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-without_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/><br/>
+    <span>Résultat de recherche après modification d'URL:</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
+</div>
+
 ### Prise en charge des moteurs de recherche
 
 - [Google](https://www.google.com)
@@ -76,6 +83,9 @@ Autres alternatives de frontaux respectueux de la vie privée, voir:
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [vern.cc](https://vern.cc)
+- [farside.link](https://farside.link)
+- [whatever.social](https://launch.whatever.social)
 
 ---
 
