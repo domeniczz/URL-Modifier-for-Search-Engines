@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.0.8
+// @version      2.1
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -90,6 +90,7 @@
 // @match        *://4get.lvkaszus.pl/web?s=*
 // @match        *://4get.kizuki.lol/web?s=*
 // @match        *://www.mojeek.com/search?q=*
+// @match        *://www.torry.io/search*
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
@@ -114,15 +115,15 @@
             matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
             replaceWith: 'https://nitter.net/$1$2'
         },
-        // {
-        //     matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
-        //     replaceWith: 'https://code.whatever.social$1'
-        // },
-        // {
-        //     matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?(?:[\w=&]+&)?v=[\w-]+|playlist\?list=[\w-]+)/),
-        //     replaceWith: 'https://yewtu.be/$1'
-        //     // replaceWith: 'https://piped.video/$1'
-        // }
+        {
+            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
+            replaceWith: 'https://code.whatever.social$1'
+        },
+        {
+            matchRegex: new Exp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?(?:[\w=&]+&)?v=[\w-]+|playlist\?list=[\w-]+)/),
+            replaceWith: 'https://yewtu.be/$1'
+            // replaceWith: 'https://piped.video/$1'
+        }
         {
             matchRegex: new RegExp(/^https?:\/\/(?:en\.?m?|simple)\.wikipedia\.org\/wiki\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
@@ -194,7 +195,7 @@
     const selectorRules = {
         'google': [
             {
-                selector: 'div.yuRUbf div span a',
+                selector: 'div.MjjYud div.yuRUbf div span a',
                 childSelector: 'div.byrV5b cite',
                 updateChildText: true,
                 useTopLevelDomain: true, // Flag for using top-level domain
@@ -203,7 +204,7 @@
             },
             {
                 // Selector for sub-results
-                selector: 'table tr h3 a'
+                selector: 'div.MjjYud div.HiHjCd a'
             }
             // ... [Other rules for Google]
         ],
@@ -305,6 +306,19 @@
                 useTopLevelDomain: true,
                 containProtocol: true,
                 displayMethod: 1
+            }
+        ],
+        'torry': [
+            {
+                selector: 'div.searpList p a.toranclick',
+                updateText: true,
+                displayMethod: 2
+            },
+            {
+                selector: 'div.searpList div h2 a.toranclick',
+            },
+            {
+                selector: 'div.searpList ul li a',
             }
         ]
         // Additional search engines can be defined here...
@@ -445,12 +459,17 @@
         },
         'mojeek': {
             hosts: ['mojeek.com']
+        },
+        'torry': {
+            hosts: ['torry.io'],
+            resultContainerSelectors: ['div.searpListouterappend'],
+            attribute: 'data-target'
         }
         // ... more search engines
     };
 
     // Function to modify URLs and optionally text
-    const modifyUrls = (engine, observer, resultContainer) => {
+    const modifyUrls = (engine, observer, resultContainer, engineInfo) => {
         try {
             const selectors = selectorRules[engine];
             if (selectors) {
@@ -459,7 +478,7 @@
 
                 // Modify results
                 selectors.forEach(rule => {
-                    processElements(rule.selector, rule, engine);
+                    processElements(rule.selector, rule, engineInfo);
                 });
 
                 // Reconnect the observer after DOM modifications are done
@@ -471,17 +490,25 @@
     };
 
     // Function to process elements based on selector and rule
-    const processElements = (selector, rule, engine) => {
+    const processElements = (selector, rule, engineInfo) => {
         const elements = document.querySelectorAll(selector);
+        const additionalAttribute = engineInfo.attribute; // Get the additional attribute if specified
         if (elements.length > 0) {
             elements.forEach(element => {
-                urlModificationRules.forEach(urlRule => {
+                for (let i = 0; i < urlModificationRules.length; i++) {
+                    const urlRule = urlModificationRules[i];
                     if (element.href && urlRule.matchRegex.test(element.href)) {
                         const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
                         element.href = newHref;
                         updateTextContent(element, rule, newHref);
+                        break;
+                    } else if (additionalAttribute && urlRule.matchRegex.test(element.getAttribute(additionalAttribute))) {
+                        const newURL = element.getAttribute(additionalAttribute).replace(urlRule.matchRegex, urlRule.replaceWith);
+                        element.setAttribute(additionalAttribute, newURL);
+                        updateTextContent(element, rule, newURL);
+                        break;
                     }
-                });
+                }
             });
         }
     };
@@ -588,9 +615,11 @@
             for (const engine in searchEngines) {
                 if (searchEngines[engine].hosts.some(instanceHost => host.includes(instanceHost))) {
                     const selectors = searchEngines[engine].resultContainerSelectors || ['body']; // Default to 'body' if not specified
+                    const attribute = searchEngines[engine].attribute; // Get the attribute if specified
                     return {
                         engine,
-                        selectors: selectors
+                        selectors: selectors,
+                        attribute: attribute
                     };
                 }
             }
@@ -599,14 +628,14 @@
         }
     };
 
-    const observeToExecute = (engine, selector) => {
+    const observeToExecute = (engine, selector, engineInfo) => {
         const resultContainers = document.querySelectorAll(selector);
         if (resultContainers) {
             resultContainers.forEach(resultContainer => {
                 // Observe changes in each result container
-                const observer = new MutationObserver(() => modifyUrls(engine, observer, resultContainer));
+                const observer = new MutationObserver(() => modifyUrls(engine, observer, resultContainer, engineInfo));
                 observer.observe(resultContainer, { childList: true, subtree: true });
-                modifyUrls(engine, observer, resultContainer);
+                modifyUrls(engine, observer, resultContainer, engineInfo);
             });
         }
     };
@@ -616,7 +645,7 @@
         const engineInfo = getSearchEngineInfo();
         if (engineInfo) {
             engineInfo.selectors.forEach(containerSelector => {
-                observeToExecute(engineInfo.engine, containerSelector);
+                observeToExecute(engineInfo.engine, containerSelector, engineInfo);
             });
         }
     } catch (error) {
