@@ -51,6 +51,7 @@ URL modification uses Regular Expression.
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
 - [Mojeek](https://www.mojeek.com)
+- [Torry](https://www.torry.io)
 
 You can manually add DOM selector in the code to support other search engines.
 
@@ -129,4 +130,5 @@ User-defined list of search engine domains
 | ------------------------ | ------------------------------------------------------------ |
 | hosts                    | search engine's domain                                       |
 | resultContainerSelectors | optional, set search result container DOM, to narrow down the range of dynamic observation |
+| attribute                | specify additional URL link attribute in &lt;a&gt; other than 'href' (e.g. 'data-target')<br/>no need to specify this if all the link attributes are 'href' |
 

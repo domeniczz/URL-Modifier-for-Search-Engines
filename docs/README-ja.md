@@ -51,6 +51,7 @@ URL の変更正規表現を使用します。
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
 - [Mojeek](https://www.mojeek.com)
+- [Torry](https://www.torry.io)
 
 他の検索エンジンに対応するために、コードに DOM セレクタを手動で追加できます。
 
@@ -129,4 +130,5 @@ URL の変更正規表現を使用します。
 | ------------------------ | ------------------------------------------------------------ |
 | hosts                    | 検索エンジンのドメイン                                       |
 | resultContainerSelectors | オプション、検索結果コンテナの DOM を設定し、動的観察の範囲を狭める |
+| attribute                | &lt;a&gt; タグの 'href' 以外の追加の URL リンク属性を指定します（例：'data-target'）<br/>すべてのリンク属性が 'href' の場合は、これを指定する必要はありません |
 

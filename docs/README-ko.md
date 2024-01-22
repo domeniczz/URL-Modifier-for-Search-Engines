@@ -51,6 +51,7 @@ URL 수정은 정규 표현식을 사용합니다.
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
 - [Mojeek](https://www.mojeek.com)
+- [Torry](https://www.torry.io)
 
 다른 검색 엔진을 지원하기 위해 코드에 DOM 선택자를 수동으로 추가할 수 있습니다.
 
@@ -129,4 +130,5 @@ URL 수정은 정규 표현식을 사용합니다.
 | -------------------------- | ------------------------------------------------------------ |
 | hosts                      | 검색 엔진의 도메인                                           |
 | resultContainerSelectors   | 선택 사항, 검색 결과 컨테이너 DOM 설정, 동적 관찰 범위를 좁히기 위함 |
+| attribute                  | &lt;a&gt; 요소에서 'href' 이외의 추가 URL 링크 속성을 지정합니다 (예: 'data-target')<br/>모든 링크 속성이 'href'인 경우에는 이 부분을 지정할 필요가 없습니다 |
 

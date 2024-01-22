@@ -51,6 +51,7 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
 - [Mojeek](https://www.mojeek.com)
+- [Torry](https://www.torry.io)
 
 Sie können manuell DOM-Selektor im Code hinzufügen, um andere Suchmaschinen zu unterstützen.
 
@@ -129,4 +130,5 @@ Benutzerdefinierte Liste von Suchmaschinendomains
 | ------------------------ | ------------------------------------------------------------ |
 | hosts                    | Domain der Suchmaschine                                      |
 | resultContainerSelectors | optional, Suchergebnis-Container-DOM einstellen, um den Bereich der dynamischen Beobachtung einzugrenzen |
+| attribute                | Geben Sie ein zusätzliches URL-Link-Attribut in &lt;a&gt; an, das neben 'href' verwendet wird (z.B. 'data-target')<br/>Wenn alle Link-Attribute 'href' sind, ist keine zusätzliche Angabe erforderlich. |
 

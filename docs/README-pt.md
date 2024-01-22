@@ -51,6 +51,7 @@ A modificação de URL usa Expressão Regular.
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
 - [Mojeek](https://www.mojeek.com)
+- [Torry](https://www.torry.io)
 
 Você pode adicionar manualmente o seletor DOM no código para suportar outros motores de busca.
 
@@ -129,4 +130,5 @@ Lista definida pelo usuário de domínios de motores de busca
 | ------------------------ | ------------------------------------------------------------ |
 | hosts                    | domínio do motor de busca                                    |
 | resultContainerSelectors | opcional, define o contêiner do resultado da busca DOM, para reduzir a faixa de observação dinâmica |
+| attribute                | especifique atributo de link adicional em &lt;a&gt; além de 'href' (por exemplo, 'data-target')<br/>não é necessário especificar isso se todos os atributos de link forem 'href' |
 

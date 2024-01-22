@@ -52,6 +52,7 @@ URL 修改使用正则表达式。
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
 - [Mojeek](https://www.mojeek.com)
+- [Torry](https://www.torry.io)
 
 您可以手动在代码中添加 DOM 选择器以支持其他搜索引擎。
 
@@ -130,4 +131,5 @@ URL 修改使用正则表达式。
 | ------------------------ | --------------------------------------------- |
 | hosts                    | 搜索引擎的域名                                |
 | resultContainerSelectors | 可选，设置搜索结果容器DOM，以缩小动态观察范围 |
+| attribute                | 指定 &lt;a&gt; 中的其他 URL 链接属性，除了 'href' 之外的属性（如 'data-target'）<br/>如果所有链接属性都是 'href'，则无需指定此项 |
 

@@ -51,6 +51,7 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
 - [Mojeek](https://www.mojeek.com)
+- [Torry](https://www.torry.io)
 
 Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyebilirsiniz.
 
@@ -129,4 +130,5 @@ Kullanıcı tanımlı arama motoru domainleri listesi
 | ------------------------ | ------------------------------------------------------------ |
 | hosts                    | arama motorunun domaini                                     |
 | resultContainerSelectors | isteğe bağlı, arama sonucu konteyner DOM'unu ayarlayın, dinamik gözlemin kapsamını daraltmak için |
+| attribute                | &lt;a&gt; içinde 'href' dışındaki diğer URL bağlantısı özniteliğini belirtin (örneğin 'data-target')<br/>Eğer tüm bağlantı öznitelikleri 'href' ise belirtmeye gerek yoktur |
 
