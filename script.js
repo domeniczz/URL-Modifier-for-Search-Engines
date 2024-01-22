@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.1
+// @version      2.2
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -73,6 +73,8 @@
 // @match        *://duckduckgo.com
 // @match        *://duckduckgo.com/?*q=*
 // @match        *://www.qwant.com/?q=*
+// @match        *://www.ecosia.org/search?*
+// @match        *://swisscows.com/*/web?query=*
 // @match        *://metager.org/meta/meta.ger3*
 // @match        *://metager.de/meta/meta.ger3*
 // @match        *://4get.ca/web?s=*
@@ -89,7 +91,11 @@
 // @match        *://4get.psily.garden/web?s=*
 // @match        *://4get.lvkaszus.pl/web?s=*
 // @match        *://4get.kizuki.lol/web?s=*
+// @match        *://stract.com/search?*
+// @match        *://www.etools.ch/searchSubmit.do*
+// @match        *://www.etools.ch/mobileSearch.do*
 // @match        *://www.mojeek.com/search?q=*
+// @match        *://yep.com/web?q=*
 // @match        *://www.torry.io/search*
 // @grant        none
 // @run-at       document-end
@@ -115,15 +121,15 @@
             matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
             replaceWith: 'https://nitter.net/$1$2'
         },
+        // {
+        //     matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
+        //     replaceWith: 'https://code.whatever.social$1'
+        // },
         {
-            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
-            replaceWith: 'https://code.whatever.social$1'
-        },
-        {
-            matchRegex: new Exp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?(?:[\w=&]+&)?v=[\w-]+|playlist\?list=[\w-]+)/),
-            replaceWith: 'https://yewtu.be/$1'
+            matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?(?:[\w=&]+&)?v=[\w-]+|playlist\?list=[\w-]+)/),
+            replaceWith: 'https://iv.datura.network/$1'
             // replaceWith: 'https://piped.video/$1'
-        }
+        },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:en\.?m?|simple)\.wikipedia\.org\/wiki\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
@@ -273,7 +279,37 @@
             },
             {
                 // Selector for sub-results
-                subResultSelector: 'div._12BMd div._2-LMx._2E8gc._16lFV.Ks7KS.tCpbb.m_hqb a.external'
+                selector: 'div._12BMd div._2-LMx._2E8gc._16lFV.Ks7KS.tCpbb.m_hqb a.external'
+            }
+        ],
+        'ecosia': [
+            {
+                selector: 'div.mainline__result-wrapper div.result__header div.result__info a',
+                childSelector: 'span span',
+                updateChildText: true,
+                containProtocol: true,
+                displayMethod: 1,
+                multiElementsForUrlDisplay: true
+            },
+            {
+                selector: 'div.mainline__result-wrapper div.result__header div.result__title a'
+            },
+            {
+                selector: 'div.mainline__result-wrapper div.result__extra-content div ul li a'
+            },
+            {
+                selector: 'div.mainline__result-wrapper div.entity-links ul li a'
+            },
+            {
+                selector: 'aside.sidebar article div.entity-links ul li a'
+            }
+        ],
+        'swisscows': [
+            {
+                selector: 'article.item-web a',
+                updateText: true,
+                containProtocol: false,
+                displayMethod: 1
             }
         ],
         'metager': [
@@ -283,7 +319,6 @@
             {
                 selector: 'div.result-subheadline a',
                 updateText: true,
-                containProtocol: false,
                 displayMethod: 3
             }
         ],
@@ -298,13 +333,45 @@
                 selector: 'div.right-wrapper div.answer-wrapper div.answer div.answer-title a.answer-title'
             }
         ],
+        'stract': [
+            {
+                selector: 'div.grid div div div div div a',
+                updateText: true,
+                displayMethod: 2
+            },
+            {
+                selector: 'div.grid div div div div a'
+            }
+        ],
+        'etools': [
+            {
+                // searchSubmit.do
+                selector: 'td.record a.title'
+            },
+            {
+                // mobileSearch.do
+                selector: 'p a.title'
+            }
+        ],
         'mojeek': [
             {
-                selector: 'li a.ob',
+                selector: 'ul.results-standard li a.ob',
                 childSelector: 'span.url',
                 updateChildText: true,
                 useTopLevelDomain: true,
                 containProtocol: true,
+                displayMethod: 1
+            },
+            {
+                selector: 'div.infobox.infobox-top a'
+            }
+        ],
+        'yep': [
+            {
+                selector: 'div.css-102xgmn-card div div a',
+                childSelector: 'div span',
+                updateChildText: true,
+                containProtocol: false,
                 displayMethod: 1
             }
         ],
@@ -431,6 +498,19 @@
                 'div._35zId'
             ]
         },
+        'ecosia': {
+            hosts: ['ecosia.org'],
+            resultContainerSelectors: [
+                'section.mainline.web__mainline',
+                'aside.sidebar.web__sidebar'
+            ]
+        },
+        'swisscows': {
+            hosts: ['swisscows.com'],
+            resultContainerSelectors: [
+                'section.container.page-results'
+            ]
+        },
         'metager': {
             hosts: [
                 'metager.org',
@@ -457,8 +537,20 @@
             ],
             resultContainerSelectors: ['div#overflow']
         },
+        'stract': {
+            hosts: ['stract.com'],
+            resultContainerSelectors: ['div.col-start-1.flex']
+        },
+        'etools': {
+            hosts: ['etools.ch'],
+            // resultContainerSelectors: ['table.result']
+        },
         'mojeek': {
-            hosts: ['mojeek.com']
+            hosts: ['mojeek.com'],
+            resultContainerSelectors: ['div.container.serp-results']
+        },
+        'yep': {
+            hosts: ['yep.com']
         },
         'torry': {
             hosts: ['torry.io'],
@@ -485,7 +577,7 @@
                 observer.observe(resultContainer, { childList: true, subtree: true });
             }
         } catch (error) {
-            console.error("URL Modifier Script Error: ", error);
+            console.error("URL Modification Error: ", error);
         }
     };
 
@@ -496,40 +588,44 @@
         if (elements.length > 0) {
             elements.forEach(element => {
                 for (let i = 0; i < urlModificationRules.length; i++) {
-                    const urlRule = urlModificationRules[i];
-                    if (element.href && urlRule.matchRegex.test(element.href)) {
-                        const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
-                        element.href = newHref;
-                        updateTextContent(element, rule, newHref);
-                        break;
-                    } else if (additionalAttribute && urlRule.matchRegex.test(element.getAttribute(additionalAttribute))) {
-                        const newURL = element.getAttribute(additionalAttribute).replace(urlRule.matchRegex, urlRule.replaceWith);
-                        element.setAttribute(additionalAttribute, newURL);
-                        updateTextContent(element, rule, newURL);
-                        break;
+                    try {
+                        const urlRule = urlModificationRules[i];
+                        // update attribute 'href'
+                        if (element.href && urlRule.matchRegex.test(element.href)) {
+                            const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
+                            element.href = newHref;
+                            updateTextContent(element, rule, newHref);
+                            break;
+                        }
+                        // update specified attribute that is not 'href'
+                        else if (additionalAttribute && urlRule.matchRegex.test(element.getAttribute(additionalAttribute))) {
+                            const newURL = element.getAttribute(additionalAttribute).replace(urlRule.matchRegex, urlRule.replaceWith);
+                            element.setAttribute(additionalAttribute, newURL);
+                            updateTextContent(element, rule, newURL);
+                            break;
+                        }
+                    } catch (error) {
+                        console.error("Update Link/Text Error: ", error);
                     }
                 }
             });
         }
     };
 
-    // Function to update text content
+    // Function to update text content (displayed url)
     const updateTextContent = (element, rule, newUrl) => {
         if (rule.updateText || (rule.updateChildText && rule.childSelector)) {
-            if (rule.multiElementsForUrlDisplay) {
-                updateDoubleElementContent(element, rule, newUrl);
-            } else {
-                // General handling for other search engines
-                const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
-                updateSingleElementText(targetElement, rule, newUrl);
+            try {
+                if (rule.multiElementsForUrlDisplay) {
+                    updateDoubleElementContent(element, rule, newUrl);
+                } else {
+                    // General handling for other search engines
+                    const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
+                    updateSingleElementText(targetElement, rule, newUrl);
+                }
+            } catch (error) {
+                console.error("Update Displayed URL Error: ", error);
             }
-        }
-    };
-
-    // Function to clear existing content of an element
-    const clearElementContent = (element) => {
-        if (element) {
-            element.textContent = '';
         }
     };
 
@@ -555,12 +651,15 @@
 
     // Function to update text for a single element
     const updateSingleElementText = (targetElement, rule, newUrl) => {
+        if (!targetElement) {
+            console.error("Target DOM Element not found for Single-Element Text update!");
+            return;
+        }
         if (targetElement) {
-            clearElementContent(targetElement);
             let formattedUrl = '';
             switch (rule.displayMethod) {
                 case 1:
-                    formattedUrl = formatMethod1(newUrl, rule.maxLength);
+                    formattedUrl = formatMethod1(newUrl, rule.maxLength, rule.containProtocol);
                     break;
                 case 2:
                     formattedUrl = newUrl; // Full URL with protocol
@@ -569,14 +668,21 @@
                     formattedUrl = decodeURIComponent(removeProtocol(newUrl)); // Full URL without protocol
                     break;
             }
-            targetElement.textContent = formattedUrl;
+            if (rule.updateText) {
+                updateTextNodeOnlyWithoutOverwrite(targetElement, formattedUrl);
+            } else {
+                targetElement.textContent = formattedUrl;
+            }
         } else {
             console.error("Script: Expected element not found for Single Element URL update!");
         }
     };
 
     // Function for Method 1 (Breadcrumb style URLs), leaving 'https://' intact
-    const formatMethod1 = (url, maxLength) => {
+    const formatMethod1 = (url, maxLength, containProtocol) => {
+        if (!containProtocol) {
+            url = removeProtocol(url);
+        }
         // Split the URL while keeping 'https://' intact; Replace the second occurrence of 'https://' with 'https', if exists
         // Replace the first occurrence of 'https://' with a placeholder
         url = url.replace('https://', 'https›');
@@ -603,9 +709,32 @@
         return decodeURIComponent(joinedUrl);
     };
 
+    // Function to update only the text node within an element, leave the child elements, if exist, intact
+    const updateTextNodeOnlyWithoutOverwrite = (element, newContent) => {
+        let foundTextNode = false;
+        // Iterate through child nodes
+        for (const node of element.childNodes) {
+            // Identify and update the first text node
+            if (node.nodeType === Node.TEXT_NODE) {
+                node.nodeValue = newContent;
+                foundTextNode = true;
+                break; // Stop after updating the first text node
+            }
+        }
+    };
+
     // Remove 'https://' from the URL link
     const removeProtocol = (url) => {
         return url.replace(/^https?:\/\//, '');
+    };
+
+    // Function to clear existing content of an element
+    const clearElementContent = (element) => {
+        if (element) {
+            element.textContent = '';
+        } else {
+
+        }
     };
 
     // Improved function to determine the search engine
