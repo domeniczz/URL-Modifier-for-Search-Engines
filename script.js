@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.2
+// @version      2.2.1
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
+// @match        *://yandex.com/search/?text=*
+// @match        *://yandex.ru/search/?text=*
 // @match        *://search.disroot.org/search*
 // @match        *://searx.tiekoetter.com/search*
 // @match        *://search.bus-hit.me/search*
@@ -121,10 +123,10 @@
             matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
             replaceWith: 'https://nitter.net/$1$2'
         },
-        // {
-        //     matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
-        //     replaceWith: 'https://code.whatever.social$1'
-        // },
+        {
+            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
+            replaceWith: 'https://code.whatever.social$1'
+        },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?(?:[\w=&]+&)?v=[\w-]+|playlist\?list=[\w-]+)/),
             replaceWith: 'https://iv.datura.network/$1'
@@ -159,8 +161,8 @@
             replaceWith: 'https://rd.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/imgur\.com\/(a\/)?((?!gallery)\w+)/),
-            replaceWith: 'https://rimgo.totaldarkness.net/a/$1$2'
+            matchRegex: new RegExp(/^https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)/),
+            replaceWith: 'https://rimgo.totaldarkness.net/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*/),
@@ -213,6 +215,17 @@
                 selector: 'div.MjjYud div.HiHjCd a'
             }
             // ... [Other rules for Google]
+        ],
+        'yandex': [
+            {
+                selector: 'ul#search-result li div.Organic-Subtitle div a',
+                updateChildText: true,
+                containProtocol: false,
+                displayMethod: 1,
+            },
+            {
+                selector: 'ul#search-result li div.Organic div a',
+            }
         ],
         'searx': [
             {
@@ -394,11 +407,18 @@
     // User-defined list of search engine instance URLs
     const searchEngines = {
         'google': {
-            hosts: ['www.google.com'],
+            hosts: ['google.com'],
             // search results container
             // you can ignore this parameter if you don't want to set it, just delete it
             // defult value is 'body'
             resultContainerSelectors: ['div.GyAeWb#rcnt']
+        },
+        'yandex': {
+            hosts: [
+                'yandex.com',
+                'yandex.ru'
+            ],
+            resultContainerSelectors: ['div.main__container']
         },
         'searx': {
             hosts: [
@@ -472,7 +492,7 @@
             ]
         },
         'startpage': {
-            hosts: ['www.startpage.com'],
+            hosts: ['startpage.com'],
             resultContainerSelectors: [
                 'div.show-results'
                 // 'div.sidebar-results'
@@ -594,14 +614,18 @@
                         if (element.href && urlRule.matchRegex.test(element.href)) {
                             const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
                             element.href = newHref;
-                            updateTextContent(element, rule, newHref);
+                            if (rule.updateText || rule.updateChildText) {
+                                updateTextContent(element, rule, newHref);
+                            }
                             break;
                         }
                         // update specified attribute that is not 'href'
                         else if (additionalAttribute && urlRule.matchRegex.test(element.getAttribute(additionalAttribute))) {
                             const newURL = element.getAttribute(additionalAttribute).replace(urlRule.matchRegex, urlRule.replaceWith);
                             element.setAttribute(additionalAttribute, newURL);
-                            updateTextContent(element, rule, newURL);
+                            if (rule.updateText || rule.updateChildText) {
+                                updateTextContent(element, rule, newURL);
+                            }
                             break;
                         }
                     } catch (error) {
@@ -614,18 +638,16 @@
 
     // Function to update text content (displayed url)
     const updateTextContent = (element, rule, newUrl) => {
-        if (rule.updateText || (rule.updateChildText && rule.childSelector)) {
-            try {
-                if (rule.multiElementsForUrlDisplay) {
-                    updateDoubleElementContent(element, rule, newUrl);
-                } else {
-                    // General handling for other search engines
-                    const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
-                    updateSingleElementText(targetElement, rule, newUrl);
-                }
-            } catch (error) {
-                console.error("Update Displayed URL Error: ", error);
+        try {
+            if (rule.multiElementsForUrlDisplay) {
+                updateDoubleElementContent(element, rule, newUrl);
+            } else {
+                // General handling for other search engines
+                const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
+                updateSingleElementText(targetElement, rule, newUrl);
             }
+        } catch (error) {
+            console.error("Update Displayed URL Error: ", error);
         }
     };
 
@@ -634,7 +656,7 @@
         // Remove the "https://" protocol if containProtocol is false
         newUrl = rule.containProtocol ? newUrl : removeProtocol(newUrl);
 
-        let formattedUrl = formatMethod1(newUrl, 70); // Assume max length 70 for splitting
+        let formattedUrl = formatMethod1(newUrl, 70, rule.containProtocol); // Assume max length 70 for splitting
         let urlParts = formattedUrl.split(' › ');
 
         // Correctly select the first and second <span> elements
@@ -669,7 +691,7 @@
                     break;
             }
             if (rule.updateText) {
-                updateTextNodeOnlyWithoutOverwrite(targetElement, formattedUrl);
+                updateTextWithoutOverwriteChildNodes(targetElement, formattedUrl);
             } else {
                 targetElement.textContent = formattedUrl;
             }
@@ -710,7 +732,7 @@
     };
 
     // Function to update only the text node within an element, leave the child elements, if exist, intact
-    const updateTextNodeOnlyWithoutOverwrite = (element, newContent) => {
+    const updateTextWithoutOverwriteChildNodes = (element, newContent) => {
         let foundTextNode = false;
         // Iterate through child nodes
         for (const node of element.childNodes) {
