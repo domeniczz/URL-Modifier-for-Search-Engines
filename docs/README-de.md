@@ -43,6 +43,7 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 ### Unterstützung für Suchmaschinen
 
 - [Google](https://www.google.com)
+- [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
@@ -61,6 +62,8 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 Sie können manuell DOM-Selektor im Code hinzufügen, um andere Suchmaschinen zu unterstützen.
 
 Kann [Bing](https://www.bing.com) nicht unterstützen, da es nur Zwischenlinks bereitstellt.
+
+> Kurze Anmerkung: [Kagi](https://kagi.com) ist eine Suchmaschine mit integrierter URL-Umleitungsfunktion, die es sich lohnt, auszuprobieren. Ich bin ein Nutzer von Kagi und bin sehr zufrieden mit diesem Produkt, deshalb gebe ich ihnen hier einen Hinweis.
 
 ### Eingebaute Weiterleitung
 
@@ -89,6 +92,7 @@ Andere alternative datenschutzfreundliche Frontends finden Sie unter:
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [vern.cc](https://vern.cc)
 - [farside.link](https://farside.link)
 - [whatever.social](https://launch.whatever.social)

@@ -43,6 +43,7 @@ La modificación de URL utiliza Expresión Regular.
 ### Soporte de Motores de Búsqueda
 
 - [Google](https://www.google.com)
+- [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
@@ -61,6 +62,8 @@ La modificación de URL utiliza Expresión Regular.
 Puedes añadir manualmente un selector DOM en el código para soportar otros motores de búsqueda.
 
 No puede soportar [Bing](https://www.bing.com), porque solo proporciona enlaces intermedios.
+
+> Solo un pequeño apunte, [Kagi](https://kagi.com) es un motor de búsqueda con funcionalidad de redirección de URL incorporada, que vale la pena probar. Soy usuario de Kagi y estoy muy satisfecho con este producto, así que les estoy dando un reconocimiento aquí.
 
 ### Redirecciones integradas
 
@@ -89,6 +92,7 @@ Para otras alternativas de frontends amigables con la privacidad, ver:
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [vern.cc](https://vern.cc)
 - [farside.link](https://farside.link)
 - [whatever.social](https://launch.whatever.social)

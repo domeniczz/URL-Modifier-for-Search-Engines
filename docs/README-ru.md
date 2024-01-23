@@ -43,6 +43,7 @@
 ### Поддержка поисковых систем
 
 - [Google](https://www.google.com)
+- [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
@@ -61,6 +62,8 @@
 Вы можете вручную добавить селектор DOM в код, чтобы поддержать другие поисковые системы.
 
 Не может поддерживать [Bing](https://www.bing.com), потому что он предоставляет только промежуточные ссылки.
+
+> Просто заметка сбоку, [Kagi](https://kagi.com) - это поисковик с встроенной функцией перенаправления URL-адресов, которую стоит попробовать. Я пользователь Kagi и очень доволен этим продуктом, поэтому я делаю им рекламу здесь.
 
 ### Встроенные переадресации
 
@@ -89,6 +92,7 @@
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [vern.cc](https://vern.cc)
 - [farside.link](https://farside.link)
 - [whatever.social](https://launch.whatever.social)

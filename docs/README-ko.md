@@ -43,6 +43,7 @@ URL 수정은 정규 표현식을 사용합니다.
 ### 검색 엔진 지원
 
 - [Google](https://www.google.com)
+- [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
@@ -61,6 +62,8 @@ URL 수정은 정규 표현식을 사용합니다.
 다른 검색 엔진을 지원하기 위해 코드에 DOM 선택자를 수동으로 추가할 수 있습니다.
 
 [Bing](https://www.bing.com) 은 중간 링크만 제공하기 때문에 지원할 수 없습니다.
+
+> 한 가지 부가 정보로, [Kagi](https://kagi.com) 는 내장된 URL 리다이렉션 기능이 있는 검색 엔진으로, 시도해보기 가치가 있습니다. 저는 Kagi 의 사용자이며 이 제품에 매우 만족하고 있으므로 여기에서 그들에게 소개합니다.
 
 ### 내장 리디렉션
 
@@ -89,6 +92,7 @@ URL 수정은 정규 표현식을 사용합니다.
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [vern.cc](https://vern.cc)
 - [farside.link](https://farside.link)
 - [whatever.social](https://launch.whatever.social)

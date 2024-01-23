@@ -43,6 +43,7 @@ La modifica dell'URL utilizza Espressioni Regolari.
 ### Supporto ai motori di ricerca
 
 - [Google](https://www.google.com)
+- [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
@@ -61,6 +62,8 @@ La modifica dell'URL utilizza Espressioni Regolari.
 Puoi aggiungere manualmente il selettore DOM nel codice per supportare altri motori di ricerca.
 
 Non può supportare [Bing](https://www.bing.com), perché fornisce solo collegamenti intermedi.
+
+> Just a side note, [Kagi](https://kagi.com) è un motore di ricerca con funzionalità di reindirizzamento URL integrate, vale la pena provarlo. Sono un utente di Kagi, e sono molto soddisfatto di questo prodotto, quindi voglio fare loro una menzione qui.
 
 ### Reindirizzamenti integrati
 
@@ -89,6 +92,7 @@ Altre alternative di interfacce front-end rispettose della privacy, vedi:
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [vern.cc](https://vern.cc)
 - [farside.link](https://farside.link)
 - [whatever.social](https://launch.whatever.social)

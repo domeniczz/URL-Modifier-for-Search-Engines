@@ -43,6 +43,7 @@ URL 修改使用正則表達式。
 ### 支持的搜索引擎
 
 - [Google](https://www.google.com)
+- [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
@@ -61,6 +62,8 @@ URL 修改使用正則表達式。
 您可以在代碼中手動添加 DOM 選擇器以支援其他搜索引擎。
 
 無法支援 [Bing](https://www.bing.com)，因為它只提供中間鏈接。
+
+> 順便一提，[Kagi](https://kagi.com) 是一個內建 URL 重定向功能的搜尋引擎，值得一試。我是 Kagi 的用戶，我對這個產品很滿意，因此在這裡為他們做個廣告。
 
 ### 內置重定向
 
@@ -85,10 +88,11 @@ URL 修改使用正則表達式。
 
 您可以在腳本中自行添加自定義重定向規則。
 
-其他替代隱私友好前端，請參見：
+其他隱私前端替代，請參見：
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [vern.cc](https://vern.cc)
 - [farside.link](https://farside.link)
 - [whatever.social](https://launch.whatever.social)

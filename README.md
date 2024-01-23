@@ -43,6 +43,7 @@ URL modification uses Regular Expression.
 ### Search Engine Support
 
 - [Google](https://www.google.com)
+- [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
@@ -61,6 +62,8 @@ URL modification uses Regular Expression.
 You can manually add DOM selector in the code to support other search engines.
 
 Can't support [Bing](https://www.bing.com), because it only provide intermediate links.
+
+> Just a side note, [Kagi](https://kagi.com) is a search engine with built-in URL redirection functionality, worth trying out. I am a user of Kagi, and I am very satisfied with this product, so I'm giving them a shout-out here.
 
 ### Built-in Redirection
 
@@ -89,6 +92,7 @@ Other alternatives privacy friendly frontends, see:
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [vern.cc](https://vern.cc)
 - [farside.link](https://farside.link)
 - [whatever.social](https://launch.whatever.social)

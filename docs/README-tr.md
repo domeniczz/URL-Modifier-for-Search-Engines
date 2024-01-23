@@ -43,6 +43,7 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 ### Desteklenen Arama Motorları
 
 - [Google](https://www.google.com)
+- [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
@@ -61,6 +62,8 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyebilirsiniz.
 
 [Bing](https://www.bing.com) desteklenemez, çünkü yalnızca ara bağlantılar sağlar.
+
+> Sadece bir yan not olarak, [Kagi](https://kagi.com), yerleşik URL yönlendirme işlevine sahip bir arama motoru, denemeye değer bir ürün. Ben Kagi kullanıcısıyım ve bu üründen çok memnunum, bu yüzden burada onlara bir övgü veriyorum.
 
 ### Yerleşik yönlendirmeler
 
@@ -89,6 +92,7 @@ Diğer gizlilik dostu ön uçlar için bkz:
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [vern.cc](https://vern.cc)
 - [farside.link](https://farside.link)
 - [whatever.social](https://launch.whatever.social)

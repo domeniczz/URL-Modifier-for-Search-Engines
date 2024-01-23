@@ -43,6 +43,7 @@ URL の変更正規表現を使用します。
 ### 対応する検索エンジン
 
 - [Google](https://www.google.com)
+- [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
 - [Brave](https://search.brave.com)
@@ -60,7 +61,9 @@ URL の変更正規表現を使用します。
 
 他の検索エンジンに対応するために、コードに DOM セレクタを手動で追加できます。
 
-[Bing](https://www.bing.com)は中間リンクのみを提供しているため、対応できません。
+[Bing](https://www.bing.com) は中間リンクのみを提供しているため、対応できません。
+
+> ちなみに、[Kagi](https://kagi.com) は組み込みの URL リダイレクト機能を備えた検索エンジンです。試してみる価値があります。私は Kagi のユーザーで、この製品に非常に満足していますので、ここで彼らにシャウトアウトしています。
 
 ### 組み込みのリダイレクト
 
@@ -89,6 +92,7 @@ URL の変更正規表現を使用します。
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
+- [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [vern.cc](https://vern.cc)
 - [farside.link](https://farside.link)
 - [whatever.social](https://launch.whatever.social)
