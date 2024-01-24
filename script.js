@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.2.1
+// @version      2.2.4
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -76,6 +76,7 @@
 // @match        *://duckduckgo.com/?*q=*
 // @match        *://www.qwant.com/?q=*
 // @match        *://www.ecosia.org/search?*
+// @match        *://presearch.com/search?q=*
 // @match        *://swisscows.com/*/web?query=*
 // @match        *://metager.org/meta/meta.ger3*
 // @match        *://metager.de/meta/meta.ger3*
@@ -112,8 +113,8 @@
     // Define URL modification rules with precompiled regex
     const urlModificationRules = [
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.reddit\.com(.*)/),
-            replaceWith: 'https://old.reddit.com$1'
+            matchRegex: new RegExp(/^https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*)/),
+            replaceWith: 'https://safereddit.com/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+$|profile\/.*)/),
@@ -126,11 +127,6 @@
         {
             matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
             replaceWith: 'https://code.whatever.social$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/(?:www\.)?youtube\.com\/(@[\w-]+|watch\?(?:[\w=&]+&)?v=[\w-]+|playlist\?list=[\w-]+)/),
-            replaceWith: 'https://iv.datura.network/$1'
-            // replaceWith: 'https://piped.video/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:en\.?m?|simple)\.wikipedia\.org\/wiki\/(?!Special:Search)(.*)/),
@@ -147,6 +143,18 @@
         {
             matchRegex: new RegExp(/^https?:\/\/((?:(?:\w+\.)?medium|towardsdatascience)\.com\/(?=.*-)(?:[\w\/-]+$|[\w@.]+\/[\w-]+$))/),
             replaceWith: 'https://freedium.cfd/https://$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|shorts\/|user\/).*)/),
+            replaceWith: 'https://vid.puffyan.us/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/^https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*)/),
+            replaceWith: 'https://hyperpipe.surge.sh/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.twitch\.tv\/(\w+)$/),
+            replaceWith: 'https://ttv.vern.cc/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:m|www)\.imdb\.com(.*)/),
@@ -315,6 +323,17 @@
             },
             {
                 selector: 'aside.sidebar article div.entity-links ul li a'
+            }
+        ],
+        'presearch': [
+            {
+                selector: 'div.relative div.w-auto a',
+                childSelector: 'div',
+                updateChildText: true,
+                displayMethod: 3,
+            },
+            {
+                selector: 'div.relative div.inline-block a'
             }
         ],
         'swisscows': [
@@ -514,9 +533,7 @@
         },
         'qwant': {
             hosts: ['qwant.com'],
-            resultContainerSelectors: [
-                'div._35zId'
-            ]
+            resultContainerSelectors: ['div._35zId']
         },
         'ecosia': {
             hosts: ['ecosia.org'],
@@ -524,6 +541,10 @@
                 'section.mainline.web__mainline',
                 'aside.sidebar.web__sidebar'
             ]
+        },
+        'presearch': {
+            hosts: ['presearch.com'],
+            resultContainerSelectors: ['div.w-full']
         },
         'swisscows': {
             hosts: ['swisscows.com'],
@@ -614,18 +635,14 @@
                         if (element.href && urlRule.matchRegex.test(element.href)) {
                             const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
                             element.href = newHref;
-                            if (rule.updateText || rule.updateChildText) {
-                                updateTextContent(element, rule, newHref);
-                            }
+                            updateTextContent(element, rule, newHref);
                             break;
                         }
                         // update specified attribute that is not 'href'
                         else if (additionalAttribute && urlRule.matchRegex.test(element.getAttribute(additionalAttribute))) {
                             const newURL = element.getAttribute(additionalAttribute).replace(urlRule.matchRegex, urlRule.replaceWith);
                             element.setAttribute(additionalAttribute, newURL);
-                            if (rule.updateText || rule.updateChildText) {
-                                updateTextContent(element, rule, newURL);
-                            }
+                            updateTextContent(element, rule, newURL);
                             break;
                         }
                     } catch (error) {
@@ -638,16 +655,18 @@
 
     // Function to update text content (displayed url)
     const updateTextContent = (element, rule, newUrl) => {
-        try {
-            if (rule.multiElementsForUrlDisplay) {
-                updateDoubleElementContent(element, rule, newUrl);
-            } else {
-                // General handling for other search engines
-                const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
-                updateSingleElementText(targetElement, rule, newUrl);
+        if (rule.updateText || rule.updateChildText) {
+            try {
+                if (rule.multiElementsForUrlDisplay) {
+                    updateDoubleElementContent(element, rule, newUrl);
+                } else {
+                    // General handling for other search engines
+                    const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
+                    updateSingleElementText(targetElement, rule, newUrl);
+                }
+            } catch (error) {
+                console.error("Update Displayed URL Error: ", error);
             }
-        } catch (error) {
-            console.error("Update Displayed URL Error: ", error);
         }
     };
 
