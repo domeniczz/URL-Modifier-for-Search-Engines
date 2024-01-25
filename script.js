@@ -129,19 +129,15 @@
             replaceWith: 'https://ao.vern.cc$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:en\.?m?|simple)\.wikipedia\.org\/wiki\/(?!Special:Search)(.*)/),
-            replaceWith: 'https://www.wikiwand.com/en/$1'
+            matchRegex: new RegExp(/^https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*)/),
+            replaceWith: 'https://www.wikiwand.com/$1/$2'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*)/),
             replaceWith: 'https://www.wikiwand.com/zh-hans/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*)/),
-            replaceWith: 'https://www.wikiwand.com/$1/$2'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/((?:(?:\w+\.)?medium|towardsdatascience)\.com\/(?=.*-)(?:[\w\/-]+$|[\w@.]+\/[\w-]+$))/),
+            matchRegex: new RegExp(/^https?:\/\/((?:(?:.*?)?medium|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:[\w\/-]+|[\w@.]+\/[\w-]+))(?:\?source=.*)?/),
             replaceWith: 'https://freedium.cfd/https://$1'
         },
         {
@@ -426,6 +422,9 @@
             }
         ],
         'mojeek': [
+            {
+                selector: 'ul.results-standard li h2 a.title'
+            },
             {
                 selector: 'ul.results-standard li a.ob',
                 childSelector: 'span.url',
