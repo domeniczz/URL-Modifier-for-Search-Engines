@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.2.6
+// @version      2.2.8
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
-// @match        *://www.google.com/search?*q=*
-// @match        *://yandex.com/search/?text=*
-// @match        *://yandex.ru/search/?text=*
+// @match        *://www.google.com/search?*
+// @match        *://yandex.com/search/?*
+// @match        *://yandex.ru/search/?*
 // @match        *://search.disroot.org/search*
 // @match        *://searx.tiekoetter.com/search*
 // @match        *://search.bus-hit.me/search*
@@ -73,39 +73,37 @@
 // @match        *://www.startpage.com/sp/search*
 // @match        *://search.brave.com/search*
 // @match        *://duckduckgo.com
-// @match        *://duckduckgo.com/?*q=*
-// @match        *://www.qwant.com/?q=*
+// @match        *://duckduckgo.com/?*
+// @match        *://www.qwant.com/?*
 // @match        *://www.ecosia.org/search?*
-// @match        *://presearch.com/search?q=*
-// @match        *://swisscows.com/*/web?query=*
-// @match        *://metager.org/meta/meta.ger3*
-// @match        *://metager.de/meta/meta.ger3*
-// @match        *://4get.ca/web?s=*
-// @match        *://4get.silly.computer/web?s=*
-// @match        *://4get.plunked.party/web?s=*
-// @match        *://4get.konakona.moe/web?s=*
-// @match        *://4get.sijh.net/web?s=*
-// @match        *://4get.hbubli.cc/web?s=*
-// @match        *://4get.perennialte.ch/web?s=*
-// @match        *://4get.zzls.xyz/web?s=*
-// @match        *://4getus.zzls.xyz/web?s=*
-// @match        *://4get.seitan-ayoub.lol/web?s=*
-// @match        *://4get.dcs0.hu/web?s=*
-// @match        *://4get.psily.garden/web?s=*
-// @match        *://4get.lvkaszus.pl/web?s=*
-// @match        *://4get.kizuki.lol/web?s=*
+// @match        *://presearch.com/search?*
+// @match        *://swisscows.com/*/web?*
+// @match        *://metager.org/meta/*
+// @match        *://metager.de/meta/*
+// @match        *://4get.ca/web?*
+// @match        *://4get.silly.computer/web?*
+// @match        *://4get.plunked.party/web?*
+// @match        *://4get.konakona.moe/web?*
+// @match        *://4get.sijh.net/web?*
+// @match        *://4get.hbubli.cc/web?*
+// @match        *://4get.perennialte.ch/web?*
+// @match        *://4get.zzls.xyz/web?*
+// @match        *://4getus.zzls.xyz/web?*
+// @match        *://4get.seitan-ayoub.lol/web?*
+// @match        *://4get.dcs0.hu/web?*
+// @match        *://4get.psily.garden/web?*
+// @match        *://4get.lvkaszus.pl/web?*
+// @match        *://4get.kizuki.lol/web?*
 // @match        *://stract.com/search?*
 // @match        *://www.etools.ch/searchSubmit.do*
 // @match        *://www.etools.ch/mobileSearch.do*
-// @match        *://www.mojeek.com/search?q=*
-// @match        *://yep.com/web?q=*
+// @match        *://www.mojeek.com/search?*
+// @match        *://yep.com/web?*
 // @match        *://www.torry.io/search*
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
 // ==/UserScript==
-
-// TODO: Modification of URL of widgets
 
 (function() {
     'use strict';
@@ -141,11 +139,11 @@
             replaceWith: 'https://freedium.cfd/https://$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|shorts\/|user\/).*)/),
+            matchRegex: new RegExp(/^https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*)/),
             replaceWith: 'https://vid.puffyan.us/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/^https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*)/),
+            matchRegex: new RegExp(/^https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*)/),
             replaceWith: 'https://hyperpipe.surge.sh/$1'
         },
         {
@@ -255,10 +253,13 @@
                 displayMethod: 1
             },
             {
-                // Selector for sub-results
+                // selector for sub-results
                 selector: 'div.MjjYud div.HiHjCd a'
+            },
+            {
+                // selector for sidebar links
+                selector: 'div.TQc1id#rhs a'
             }
-            // ... [Other rules for Google]
         ],
         'yandex': [
             {
@@ -273,7 +274,7 @@
         ],
         'searx': [
             {
-                selector: 'article a.url_wrapper',
+                selector: 'article.result a.url_wrapper',
                 childSelector: 'span span',
                 updateChildText: true,
                 useTopLevelDomain: true,
@@ -282,7 +283,10 @@
                 multiElementsForUrlDisplay: true
             },
             {
-                selector: 'h3 a'
+                selector: 'article.result h3 a'
+            },
+            {
+                selector: 'aside.infobox div.urls ul li a'
             }
         ],
         'startpage': [
@@ -293,6 +297,9 @@
             },
             {
                 selector: 'a.w-gl__result-title.result-link'
+            },
+            {
+                selector: 'div.sx-kp-main a'
             }
         ],
         'brave': [
@@ -303,6 +310,9 @@
                 containProtocol: false,
                 displayMethod: 1,
                 multiElementsForUrlDisplay: true
+            },
+            {
+                selector: 'div.snippet a'
             }
         ],
         'duckduckgo': [
@@ -320,11 +330,14 @@
             {
                 // Selector for sub-results
                 selector: 'ul.b269SZlC2oyR13Fcc4Iy li a.f3uDrYrWF3Exrfp1m3Og'
+            },
+            {
+                selector: 'div.react-module div section div a'
             }
         ],
         'qwant': [
             {
-                selector: 'div._35zId._3A7p7.RMB_d.eoseI a.external'
+                selector: 'div._35zId._3A7p7 a.external'
             },
             {
                 selector: 'div._35zId._3WA-c a.external',
@@ -337,6 +350,9 @@
             {
                 // Selector for sub-results
                 selector: 'div._12BMd div._2-LMx._2E8gc._16lFV.Ks7KS.tCpbb.m_hqb a.external'
+            },
+            {
+                selector: 'div._3McWE.is-sidebar a.external'
             }
         ],
         'ecosia': [
@@ -359,6 +375,9 @@
             },
             {
                 selector: 'aside.sidebar article div.entity-links ul li a'
+            },
+            {
+                selector: 'aside.sidebar article div.entity__content p a'
             }
         ],
         'presearch': [
@@ -388,6 +407,12 @@
                 selector: 'div.result-subheadline a',
                 updateText: true,
                 displayMethod: 3
+            },
+            {
+                selector: 'div.quicktip div.quicktip-headline h1 a'
+            },
+            {
+                selector: 'div.quicktip div.quicktip-detail h2 a'
             }
         ],
         '4get': [
@@ -403,12 +428,18 @@
         ],
         'stract': [
             {
-                selector: 'div.grid div div div div div a',
+                selector: 'div.grid div div.flex div div div a',
                 updateText: true,
                 displayMethod: 2
             },
             {
-                selector: 'div.grid div div div div a'
+                selector: 'div.grid div div.flex div div a'
+            },
+            {
+                selector: 'div.mb-5.text-xl a'
+            },
+            {
+                selector: 'div.text-sm a.text-link'
             }
         ],
         'etools': [
@@ -434,7 +465,7 @@
                 displayMethod: 1
             },
             {
-                selector: 'div.infobox.infobox-top a'
+                selector: 'div.infobox p a'
             }
         ],
         'yep': [
@@ -552,22 +583,21 @@
         'startpage': {
             hosts: ['startpage.com'],
             resultContainerSelectors: [
-                'div.show-results'
-                // 'div.sidebar-results'
+                'div.show-results',
             ]
         },
         'brave': {
             hosts: ['search.brave.com'],
             resultContainerSelectors: [
-                'main.main-column'
-                // 'aside.sidebar'
+                'main.main-column',
+                'aside.sidebar'
             ]
         },
         'duckduckgo': {
             hosts: ['duckduckgo.com'],
             resultContainerSelectors: [
-                'section[data-testid="mainline"][data-area="mainline"]'
-                // 'section[data-testid="sidebar"][data-area="sidebar"]'
+                'section[data-testid="mainline"][data-area="mainline"]',
+                'section[data-testid="sidebar"][data-area="sidebar"]'
             ]
         },
         'qwant': {
@@ -596,7 +626,10 @@
                 'metager.org',
                 'metager.de'
             ],
-            resultContainerSelectors: ['div#results']
+            resultContainerSelectors: [
+                'div#results',
+                'div#additions-container'
+            ]
         },
         '4get': {
             hosts: [
@@ -619,7 +652,10 @@
         },
         'stract': {
             hosts: ['stract.com'],
-            resultContainerSelectors: ['div.col-start-1.flex']
+            resultContainerSelectors: [
+                'div.col-start-1',
+                'div.row-start-2'
+            ]
         },
         'etools': {
             hosts: ['etools.ch'],
