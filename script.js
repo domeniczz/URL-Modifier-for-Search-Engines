@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.2.4
+// @version      2.2.6
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*q=*
@@ -126,7 +126,7 @@
         },
         {
             matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
-            replaceWith: 'https://code.whatever.social$1'
+            replaceWith: 'https://ao.vern.cc$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/(?:en\.?m?|simple)\.wikipedia\.org\/wiki\/(?!Special:Search)(.*)/),
@@ -169,18 +169,6 @@
             replaceWith: 'https://rd.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)/),
-            replaceWith: 'https://rimgo.totaldarkness.net/$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*/),
-            replaceWith: 'https://pixivfe.exozy.me/$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*)/),
-            replaceWith: 'https://dm.vern.cc/$1'
-        },
-        {
             matchRegex: new RegExp(/^https?:\/\/(?:(?:.*)arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
             replaceWith: 'https://arxiv.org/abs/$1'
         },
@@ -197,13 +185,65 @@
             replaceWith: 'https://text.npr.org/$1'
         },
         {
+            matchRegex: new RegExp(/^https?:\/\/news\.ycombinator\.com\/item\?id=(\d+)/),
+            replaceWith: 'https://www.hckrnws.com/stories/$1'
+        },
+        {
             matchRegex: new RegExp(/^https?:\/\/(?:[a-z]+)\.slashdot\.org(.*)/),
             replaceWith: 'https://slashdot.org$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.snopes\.com(.*)/),
             replaceWith: 'https://sd.vern.cc$1'
-        }
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.instructables\.com\/(.*)/),
+            replaceWith: 'https://ds.vern.cc/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*)/),
+            replaceWith: 'https://dm.vern.cc/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(.*?)\.bandcamp\.com\//),
+            replaceWith: 'https://tn.vern.cc/artist.php?name=$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(.*?)\.bandcamp\.com\/(.*?)\/(.*)/),
+            replaceWith: 'https://tn.vern.cc/release.php?artist=$1&type=$2&name=$3'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/bandcamp\.com\/search\?q=(.*)/),
+            replaceWith: 'https://tn.vern.cc/search.php?query=$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/f4\.bcbits\.com\/img\/(.*)/),
+            replaceWith: 'https://tn.vern.cc/image.php?file=$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/t4\.bcbits\.com\/stream\/(.*?)\/(.*?)\/(.*?)\?token=(.*)/),
+            replaceWith: 'https://tn.vern.cc/audio.php?directory=$1&format=$2&file=$3&token=$4'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)/),
+            replaceWith: 'https://rimgo.totaldarkness.net/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*/),
+            replaceWith: 'https://pixivfe.exozy.me/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/knowyourmeme\.com\/(.*)/),
+            replaceWith: 'https://mm.vern.cc/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/tenor\.com\/((?:view|search)\/.*)/),
+            replaceWith: 'https://sp.vern.cc/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(?:\w+\.)?ifunny\.co\/(picture\/.*)/),
+            replaceWith: 'https://uf.vern.cc/$1'
+        },
         // Add more rules here as needed
     ];
 
