@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.3
+// @version      2.3.1
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
-// @match        *://www.google.com/search?*
+// @match        *://www.google.com*/search?*
 // @match        *://yandex.com/search/?*
 // @match        *://yandex.ru/search/?*
 // @match        *://search.disroot.org/search*
@@ -97,6 +97,8 @@
 // @match        *://stract.com/search?*
 // @match        *://www.etools.ch/searchSubmit.do*
 // @match        *://www.etools.ch/mobileSearch.do*
+// @match        *://search.lilo.org/?*
+// @match        *://search.entireweb.com/search?*
 // @match        *://www.mojeek.com/search?*
 // @match        *://yep.com/web?*
 // @match        *://www.torry.io/search*
@@ -458,6 +460,25 @@
                 selector: 'p a.title'
             }
         ],
+        'lilo': [
+            {
+                selector: 'div.lilo-text-result div a'
+            },
+            {
+                selector: 'div.column a'
+            }
+        ],
+        'entireweb': [
+            {
+                selector: 'div.gsc-webResult.gsc-result a'
+            },
+            {
+                selector: 'div.web-result a'
+            },
+            {
+                selector: 'div#infobox-list div.card-body a'
+            }
+        ],
         'mojeek': [
             {
                 selector: 'ul.results-standard li h2 a.title'
@@ -631,10 +652,6 @@
             hosts: ['swisscows.com'],
             resultContainerSelectors: ['section.container.page-results']
         },
-        'entireweb': {
-            hosts: ['search.entireweb.com'],
-            resultContainerSelectors: ['div.container.search-container']
-        },
         'metager': {
             hosts: [
                 'metager.org',
@@ -674,6 +691,14 @@
         'etools': {
             hosts: ['etools.ch'],
             // resultContainerSelectors: ['table.result']
+        },
+        'lilo': {
+            hosts: ['search.lilo.org'],
+            resultContainerSelectors: ['div.container#content']
+        },
+        'entireweb': {
+            hosts: ['search.entireweb.com'],
+            resultContainerSelectors: ['div.container.search-container']
         },
         'mojeek': {
             hosts: ['mojeek.com'],
