@@ -6,27 +6,31 @@
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a><br/>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a>
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
 **目录**：
 
-- [简介](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#简介)
-- [待办事项](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#待办事项)
-- [维基](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#维基)
+- [简介](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md#简介)
+- [待办事项](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md#待办事项)
+- [维基](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md#维基)
 
 ## 简介
 
-[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 脚本，从 GreasyFork 安装：[搜索引擎结果 URL 修改器](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines)。
+[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 脚本，从 Greasy Fork 安装：[搜索引擎结果 URL 修改器](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines)。
 
-- Github 仓库: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
+- GitHub 仓库: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
 - Codeberg 仓库: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
 
 修改搜索引擎搜索结果中的 URL，重定向到其他网站或进行其他有用的修改。
@@ -56,6 +60,8 @@ URL 修改使用正则表达式。
 - [4get](https://4get.ca/instances)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
+- [Lilo](https://search.lilo.org)
+- [Entireweb](https://www.entireweb.com)
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
@@ -63,6 +69,8 @@ URL 修改使用正则表达式。
 您可以手动在代码中添加 DOM 选择器以支持其他搜索引擎。
 
 无法支持 [Bing](https://www.bing.com)，因为它只提供中间链接。
+
+4get、Lilo 和 Entireweb 在链接变更时不会相应地更改显示的 URL。这个问题的存在是因为我希望我的代码尽可能地通用化，但这些搜索引擎具有不寻常的显示 URL 的 DOM 结构，考虑到它们相对较小的用户基础，支持这些搜索引擎变得很麻烦。
 
 > 顺便一提，[Kagi](https://kagi.com) 是一个内置 URL 重定向功能的搜索引擎，值得一试。我是 Kagi 的用户，我对这个产品很满意，因此在这里给他们做个广告。
 
@@ -129,7 +137,7 @@ URL 修改使用正则表达式。
 
 [正则表达式](https://zh.wikipedia.org/zh-cn/正则表达式)的 URL 修改规则
 
-| 变量        | 描述                      |
+| 参数        | 描述                      |
 | ----------- | ------------------------- |
 | matchRegex  | 匹配原始 URL 的正则表达式 |
 | replaceWith | 替换的正则表达式          |
@@ -138,7 +146,7 @@ URL 修改使用正则表达式。
 
 搜索引擎结果需要更新的 DOM 元素的[选择器](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)规则
 
-| 变量            | 描述                                                         |
+| 参数            | 描述                                                         |
 | --------------- | ------------------------------------------------------------ |
 | selector        | DOM 元素的选择器                                             |
 | updateText      | 是否更新元素的文本或 href 值的标志                           |

@@ -6,27 +6,31 @@
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a><br/>
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a>
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
 **목록**:
 
-- [소개](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#소개)
-- [할 일](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#할-일)
-- [위키](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#위키)
+- [소개](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md#소개)
+- [할 일](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md#할-일)
+- [위키](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md#위키)
 
 ## 소개
 
-[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 스크립트, GreasyFork 에서 설치: [검색 엔진용 URL 수정기](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 스크립트, Greasy Fork 에서 설치: [검색 엔진용 URL 수정기](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
 
-- Github 저장소: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
+- GitHub 저장소: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
 - Codeberg 저장소: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
 
 이 Tampermonkey 스크립트는 검색 엔진 검색 결과의 URL을 수정하여 대체 사이트로 리디렉션함으로써 검색 엔진 사용을 향상시킵니다. 보다 맞춤화되고 효율적인 브라우징 경험을 제공합니다.
@@ -56,6 +60,8 @@ URL 수정은 정규 표현식을 사용합니다.
 - [4get](https://4get.ca/instances)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
+- [Lilo](https://search.lilo.org)
+- [Entireweb](https://www.entireweb.com)
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
@@ -63,6 +69,8 @@ URL 수정은 정규 표현식을 사용합니다.
 다른 검색 엔진을 지원하기 위해 코드에 DOM 선택자를 수동으로 추가할 수 있습니다.
 
 [Bing](https://www.bing.com) 은 중간 링크만 제공하기 때문에 지원할 수 없습니다.
+
+4get, Lilo, 및 Entireweb 은 링크가 변경될 때 표시되는 URL 을 상응하게 변경하지 않습니다. 이 문제는 제 코드를 가능한 한 일반화하려고 하지만, 이 검색 엔진들은 URL 을 표시하기 위한 독특한 DOM 구조를 가지고 있어, 상대적으로 작은 사용자 기반을 고려할 때 이 엔진들을 지원하는 것이 번거롭습니다.
 
 > 한 가지 부가 정보로, [Kagi](https://kagi.com) 는 내장된 URL 리다이렉션 기능이 있는 검색 엔진으로, 시도해보기 가치가 있습니다. 저는 Kagi 의 사용자이며 이 제품에 매우 만족하고 있으므로 여기에서 그들에게 소개합니다.
 

@@ -6,27 +6,31 @@
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a><br/>
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a>
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
 **Каталог**:
 
-- [Введение](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#Introduction)
-- [Список задач](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#TODO)
-- [Вики](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#Wiki)
+- [Введение](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md#Introduction)
+- [Список задач](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md#Список-задач)
+- [Вики](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md#Вики)
 
 ## Введение
 
-Скрипт для [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), установить с GreasyFork: [URL Modifier for Search Engines](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+Скрипт для [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), установить с Greasy Fork: [URL Modifier for Search Engines](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
 
-- Github Репозиторий: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
+- GitHub Репозиторий: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
 - Codeberg Репозиторий: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
 
 Этот скрипт для Tampermonkey улучшает использование поисковых систем, изменяя URL-адреса в результатах поиска, перенаправляя на альтернативные сайты. Обеспечивает более настраиваемый и эффективный опыт просмотра.
@@ -56,6 +60,8 @@
 - [4get](https://4get.ca/instances)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
+- [Lilo](https://search.lilo.org)
+- [Entireweb](https://www.entireweb.com)
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
@@ -63,6 +69,8 @@
 Вы можете вручную добавить селектор DOM в код, чтобы поддержать другие поисковые системы.
 
 Не может поддерживать [Bing](https://www.bing.com), потому что он предоставляет только промежуточные ссылки.
+
+4get, Lilo и Entireweb не изменяют отображаемые URL-адреса соответственно при изменении ссылок. Эта проблема возникает из-за того, что я стремлюсь сделать свой код максимально универсальным, но у этих поисковых систем необычная структура DOM для отображения URL-адресов, что делает поддержку этих систем утомительной, учитывая их относительно небольшую пользовательскую базу.
 
 > Просто заметка сбоку, [Kagi](https://kagi.com) - это поисковик с встроенной функцией перенаправления URL-адресов, которую стоит попробовать. Я пользователь Kagi и очень доволен этим продуктом, поэтому я делаю им рекламу здесь.
 

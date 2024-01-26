@@ -6,27 +6,31 @@
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a><br/>
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a>
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
 **Katalog**:
 
-- [Einführung](https://github.com/domeniczz/URL-Modifier-für-Suchmaschinen#Einführung)
-- [TODO](https://github.com/domeniczz/URL-Modifier-für-Suchmaschinen#TODO)
-- [Wiki](https://github.com/domeniczz/URL-Modifier-für-Suchmaschinen#Wiki)
+- [Einführung](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md#Einführung)
+- [Aufgabenliste](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md#Aufgabenliste)
+- [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md#Wiki)
 
 ## Einführung
 
-Ein [Tampermonkey](https://github.com/Tampermonkey/tampermonkey)-Skript, installiert von GreasyFork: [URL-Modifier für Suchmaschinen](https://greasyfork.org/de/scripts/483597-url-modifier-für-suchmaschinen).
+Ein [Tampermonkey](https://github.com/Tampermonkey/tampermonkey)-Skript, installiert von Greasy Fork: [URL-Modifier für Suchmaschinen](https://greasyfork.org/de/scripts/483597-url-modifier-für-suchmaschinen).
 
-- Github Repository: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
+- GitHub Repository: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
 - Codeberg Repository: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
 
 Dieses Tampermonkey-Skript verbessert Ihre Nutzung von Suchmaschinen, indem es URLs in den Suchergebnissen von Suchmaschinen modifiziert und zu alternativen Seiten weiterleitet. Ermöglicht ein personalisierteres und effizienteres Surferlebnis.
@@ -56,6 +60,8 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 - [4get](https://4get.ca/instances)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
+- [Lilo](https://search.lilo.org)
+- [Entireweb](https://www.entireweb.com)
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
@@ -63,6 +69,8 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 Sie können manuell DOM-Selektor im Code hinzufügen, um andere Suchmaschinen zu unterstützen.
 
 Kann [Bing](https://www.bing.com) nicht unterstützen, da es nur Zwischenlinks bereitstellt.
+
+4get, Lilo und Entireweb ändern die angezeigten URLs nicht entsprechend, wenn Links geändert werden. Dieses Problem besteht, weil ich versuche, meinen Code so allgemein wie möglich zu gestalten, aber diese Suchmaschinen haben eine ungewöhnliche DOM-Struktur zur Anzeige von URLs, was es mühsam macht, diese Motoren zu unterstützen, angesichts ihrer relativ kleinen Benutzerbasis.
 
 > Kurze Anmerkung: [Kagi](https://kagi.com) ist eine Suchmaschine mit integrierter URL-Umleitungsfunktion, die es sich lohnt, auszuprobieren. Ich bin ein Nutzer von Kagi und bin sehr zufrieden mit diesem Produkt, deshalb gebe ich ihnen hier einen Hinweis.
 
@@ -116,7 +124,7 @@ Andere alternative datenschutzfreundliche Frontends finden Sie unter:
 
 ---
 
-## TODO
+## Aufgabenliste
 
 1. Unterstützung für weitere Suchmaschinen hinzufügen.
 2. Den Code überarbeiten, um ihn leichter lesbar und modifizierbar zu machen.

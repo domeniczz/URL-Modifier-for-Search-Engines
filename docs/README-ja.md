@@ -6,27 +6,31 @@
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a><br/>
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
 	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a>
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
 **カタログ**:
 
-- [イントロダクション](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#イントロダクション)
-- [TODO](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#TODO)
-- [ウィキ](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#ウィキ)
+- [イントロダクション](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md#イントロダクション)
+- [やるべきこと](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md#やるべきこと)
+- [ウィキ](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md#ウィキ)
 
 ## イントロダクション
 
-[Tampermonkey](https://github.com/Tampermonkey/tampermonkey)のスクリプト、GreasyFork からインストール: [検索エンジン用 URL 修正](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines)。
+[Tampermonkey](https://github.com/Tampermonkey/tampermonkey)のスクリプト、Greasy Fork からインストール: [検索エンジン用 URL 修正](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines)。
 
-- Github リポジトリ: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
+- GitHub リポジトリ: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
 - Codeberg リポジトリ: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
 
 この Tampermonkey スクリプトは、検索エンジンの検索結果の URL を変更し、別のサイトにリダイレクトすることで、よりカスタマイズされた効率的なブラウジング体験を提供します。
@@ -56,6 +60,8 @@ URL の変更正規表現を使用します。
 - [4get](https://4get.ca/instances)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
+- [Lilo](https://search.lilo.org)
+- [Entireweb](https://www.entireweb.com)
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
@@ -63,6 +69,8 @@ URL の変更正規表現を使用します。
 他の検索エンジンに対応するために、コードに DOM セレクタを手動で追加できます。
 
 [Bing](https://www.bing.com) は中間リンクのみを提供しているため、対応できません。
+
+4get、Lilo、および Entireweb は、リンクが変更された場合に表示される URL をそれに応じて変更しません。この問題は、私ができるだけ一般化されたコードを作成しようとしているために存在しますが、これらの検索エンジンは URL を表示するための特異な DOM 構造を持っており、比較的少ないユーザーベースを考慮するとこれらのエンジンをサポートすることは面倒です。
 
 > ちなみに、[Kagi](https://kagi.com) は組み込みの URL リダイレクト機能を備えた検索エンジンです。試してみる価値があります。私は Kagi のユーザーで、この製品に非常に満足していますので、ここで彼らにシャウトアウトしています。
 
@@ -116,7 +124,7 @@ URL の変更正規表現を使用します。
 
 ---
 
-## TODO
+## やるべきこと
 
 1. より多くの検索エンジンに対応する。
 2. コードをより読みやすく、変更しやすくリファクタリングする。
