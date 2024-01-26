@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.2.8
+// @version      2.3
 // @description  Modify URLs in search results of search engines
 // @author       Domenic
 // @match        *://www.google.com/search?*
@@ -159,6 +159,11 @@
             replaceWith: 'https://bl.vern.cc/$1'
         },
         {
+            // only support English Fandom sites
+            matchRegex: new RegExp(/^https?:\/\/((?!www|community).*?)\.fandom\.com\/wiki\/(.*)/),
+            replaceWith: 'https://antifandom.com/$1/wiki/$2'
+        },
+        {
             matchRegex: new RegExp(/^https?:\/\/www\.urbandictionary\.com\/(define\.php\?term=.*)/),
             replaceWith: 'https://rd.vern.cc/$1'
         },
@@ -173,6 +178,10 @@
         {
             matchRegex: new RegExp(/^https?:\/\/github\.ink(.*)/),
             replaceWith: 'https://github.com$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.reuters\.com\/((?=.*\/)(?=.*-).*)/),
+            replaceWith: 'https://nu.vern.cc/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/.*/),
@@ -368,10 +377,7 @@
                 selector: 'div.mainline__result-wrapper div.result__header div.result__title a'
             },
             {
-                selector: 'div.mainline__result-wrapper div.result__extra-content div ul li a'
-            },
-            {
-                selector: 'div.mainline__result-wrapper div.entity-links ul li a'
+                selector: 'div.mainline__result-wrapper div ul li a'
             },
             {
                 selector: 'aside.sidebar article div.entity-links ul li a'
@@ -466,6 +472,12 @@
             },
             {
                 selector: 'div.infobox p a'
+            },
+            {
+                selector: 'div.results.news-results li a'
+            },
+            {
+                selector: 'div.right-col div.results ul li a'
             }
         ],
         'yep': [
@@ -617,9 +629,11 @@
         },
         'swisscows': {
             hosts: ['swisscows.com'],
-            resultContainerSelectors: [
-                'section.container.page-results'
-            ]
+            resultContainerSelectors: ['section.container.page-results']
+        },
+        'entireweb': {
+            hosts: ['search.entireweb.com'],
+            resultContainerSelectors: ['div.container.search-container']
         },
         'metager': {
             hosts: [
@@ -706,17 +720,16 @@
                 for (let i = 0; i < urlModificationRules.length; i++) {
                     try {
                         const urlRule = urlModificationRules[i];
-                        // update attribute 'href'
-                        if (element.href && urlRule.matchRegex.test(element.href)) {
-                            const newHref = element.href.replace(urlRule.matchRegex, urlRule.replaceWith);
-                            element.href = newHref;
-                            updateTextContent(element, rule, newHref);
-                            break;
-                        }
-                        // update specified attribute that is not 'href'
-                        else if (additionalAttribute && urlRule.matchRegex.test(element.getAttribute(additionalAttribute))) {
-                            const newURL = element.getAttribute(additionalAttribute).replace(urlRule.matchRegex, urlRule.replaceWith);
-                            element.setAttribute(additionalAttribute, newURL);
+                        let urlToModify = element.href || (additionalAttribute && element.getAttribute(additionalAttribute));
+                        // update attribute
+                        if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
+                            // Generate redirected URL
+                            const newURL = urlToModify.replace(urlRule.matchRegex, urlRule.replaceWith);
+                            if (element.href) {
+                                element.href = newURL;
+                            } else if (additionalAttribute) {
+                                element.setAttribute(additionalAttribute, newURL);
+                            }
                             updateTextContent(element, rule, newURL);
                             break;
                         }
@@ -733,10 +746,12 @@
         if (rule.updateText || rule.updateChildText) {
             try {
                 if (rule.multiElementsForUrlDisplay) {
-                    updateDoubleElementContent(element, rule, newUrl);
+                    updateMultiElementContent(element, rule, newUrl);
                 } else {
-                    // General handling for other search engines
-                    const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
+                    let targetElement = element;
+                    if (rule.childSelector) {
+                        targetElement = element.querySelector(rule.childSelector)
+                    }
                     updateSingleElementText(targetElement, rule, newUrl);
                 }
             } catch (error) {
@@ -746,11 +761,11 @@
     };
 
     // Function to update text for multi elements (i.e. DuckDuckGo, Brave)
-    const updateDoubleElementContent = (element, rule, newUrl) => {
+    const updateMultiElementContent = (element, rule, newUrl) => {
         // Remove the "https://" protocol if containProtocol is false
         newUrl = rule.containProtocol ? newUrl : removeProtocol(newUrl);
 
-        let formattedUrl = formatMethod1(newUrl, 70, rule.containProtocol); // Assume max length 70 for splitting
+        let formattedUrl = formatMethod1(newUrl, rule.containProtocol); // Assume max length 70 for splitting
         let urlParts = formattedUrl.split(' › ');
 
         // Correctly select the first and second <span> elements
@@ -775,7 +790,7 @@
             let formattedUrl = '';
             switch (rule.displayMethod) {
                 case 1:
-                    formattedUrl = formatMethod1(newUrl, rule.maxLength, rule.containProtocol);
+                    formattedUrl = formatMethod1(newUrl, rule.containProtocol);
                     break;
                 case 2:
                     formattedUrl = newUrl; // Full URL with protocol
@@ -795,7 +810,7 @@
     };
 
     // Function for Method 1 (Breadcrumb style URLs), leaving 'https://' intact
-    const formatMethod1 = (url, maxLength, containProtocol) => {
+    const formatMethod1 = (url, containProtocol) => {
         if (!containProtocol) {
             url = removeProtocol(url);
         }
@@ -812,14 +827,8 @@
         // Restore the first 'https://' in the URL
         parts[0] = parts[0].replace('https›', 'https://');
 
-        // Join the URL parts with ' › ' and check if it exceeds maxLength
+        // Join the URL parts with ' › '
         let joinedUrl = parts.join(' › ');
-        if (joinedUrl.length > maxLength) {
-            // Apply truncation based on maxLength
-            let truncatedUrl = joinedUrl.slice(0, maxLength - 3); // Reserve space for '...'
-            truncatedUrl += '...';
-            joinedUrl = truncatedUrl;
-        }
 
         // Decode the URL to convert encoded characters to their original form
         return decodeURIComponent(joinedUrl);
