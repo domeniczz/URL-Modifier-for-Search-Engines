@@ -1,12 +1,15 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.3.1
-// @description  Modify URLs in search results of search engines
+// @version      2.3.2
+// @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
+
 // @match        *://www.google.com*/search?*
+
 // @match        *://yandex.com/search/?*
 // @match        *://yandex.ru/search/?*
+
 // @match        *://search.disroot.org/search*
 // @match        *://searx.tiekoetter.com/search*
 // @match        *://search.bus-hit.me/search*
@@ -70,17 +73,23 @@
 // @match        *://www.jabber-germany.de/searx/search*
 // @match        *://sx.catgirl.cloud/search*
 // @match        *://sx.vern.cc/searxng/search*
+
 // @match        *://www.startpage.com/search*
 // @match        *://www.startpage.com/sp/search*
+
 // @match        *://search.brave.com/search*
+
 // @match        *://duckduckgo.com
 // @match        *://duckduckgo.com/?*
+
 // @match        *://www.qwant.com/?*
 // @match        *://www.ecosia.org/search?*
 // @match        *://presearch.com/search?*
 // @match        *://swisscows.com/*/web?*
+
 // @match        *://metager.org/meta/*
 // @match        *://metager.de/meta/*
+
 // @match        *://4get.ca/web?*
 // @match        *://4get.silly.computer/web?*
 // @match        *://4get.plunked.party/web?*
@@ -95,14 +104,41 @@
 // @match        *://4get.psily.garden/web?*
 // @match        *://4get.lvkaszus.pl/web?*
 // @match        *://4get.kizuki.lol/web?*
+
+// @match        *://search.ahwx.org/search.php?*
+// @match        *://search2.ahwx.org/search.php?*
+// @match        *://search3.ahwx.org/search.php?*
+// @match        *://ly.owo.si/search.php?*
+// @match        *://librey.franklyflawless.org/search.php?*
+// @match        *://librey.org/search.php?*
+// @match        *://search.davidovski.xyz/search.php?*
+// @match        *://search.milivojevic.in.rs/search.php?*
+// @match        *://glass.prpl.wtf/search.php?*
+// @match        *://librex.uk.to/search.php?*
+// @match        *://librey.ix.tc/search.php?*
+// @match        *://search.funami.tech/search.php?*
+// @match        *://librex.retro-hax.net/search.php?*
+// @match        *://librex.nohost.network/search.php?*
+// @match        *://search.pabloferreiro.es/search.php?*
+// @match        *://librey.baczek.me/search.php?*
+// @match        *://lx.benike.me/search.php?*
+// @match        *://search.seitan-ayoub.lol/search.php?*
+// @match        *://librey.myroware.net/search.php?*
+// @match        *://librey.nezumi.party/search.php?*
+// @match        *://search.zeroish.xyz/search.php?*
+// @match        *://search.zeroish.xyz/search.php?*
+
 // @match        *://stract.com/search?*
+
 // @match        *://www.etools.ch/searchSubmit.do*
 // @match        *://www.etools.ch/mobileSearch.do*
+
 // @match        *://search.lilo.org/?*
 // @match        *://search.entireweb.com/search?*
 // @match        *://www.mojeek.com/search?*
 // @match        *://yep.com/web?*
 // @match        *://www.torry.io/search*
+
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
@@ -136,6 +172,10 @@
         {
             matchRegex: new RegExp(/^https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*)/),
             replaceWith: 'https://www.wikiwand.com/zh-hans/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*)/),
+            replaceWith: 'https://www.wikiwand.com/en/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/((?:(?:.*?)?medium|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:[\w\/-]+|[\w@.]+\/[\w-]+))(?:\?source=.*)?/),
@@ -268,7 +308,6 @@
                 selector: 'div.MjjYud div.yuRUbf div span a',
                 childSelector: 'div.byrV5b cite',
                 updateChildText: true,
-                useTopLevelDomain: true, // Flag for using top-level domain
                 containProtocol: true,
                 displayMethod: 1
             },
@@ -297,7 +336,6 @@
                 selector: 'article.result a.url_wrapper',
                 childSelector: 'span span',
                 updateChildText: true,
-                useTopLevelDomain: true,
                 containProtocol: true,
                 displayMethod: 1,
                 multiElementsForUrlDisplay: true
@@ -443,6 +481,19 @@
                 selector: 'div.right-wrapper div.answer-wrapper div.answer div.answer-title a.answer-title'
             }
         ],
+        'librey': [
+            {
+                selector: 'div.text-result-wrapper a',
+                updateText: true,
+                useTopLevelDomain: true,
+                displayMethod: 2
+            },
+            {
+                selector: 'p.special-result-container a',
+                updateText: true,
+                displayMethod: 2
+            },
+        ],
         'stract': [
             {
                 selector: 'div.grid div div.flex div div div a',
@@ -496,7 +547,6 @@
                 selector: 'ul.results-standard li a.ob',
                 childSelector: 'span.url',
                 updateChildText: true,
-                useTopLevelDomain: true,
                 containProtocol: true,
                 displayMethod: 1
             },
@@ -690,6 +740,36 @@
             ],
             resultContainerSelectors: ['div#overflow']
         },
+        'librey': {
+            hosts: [
+                'search.ahwx.org',
+                'search2.ahwx.org',
+                'search3.ahwx.org',
+                'ly.owo.si',
+                'librey.franklyflawless.org',
+                'librey.org',
+                'search.davidovski.xyz',
+                'search.milivojevic.in.rs',
+                'glass.prpl.wtf',
+                'librex.uk.to',
+                'librey.ix.tc',
+                'search.funami.tech',
+                'librex.retro-hax.net',
+                'librex.nohost.network',
+                'search.pabloferreiro.es',
+                'librey.baczek.me',
+                'lx.benike.me',
+                'search.seitan-ayoub.lol',
+                'librey.myroware.net',
+                'librey.nezumi.party',
+                'search.zeroish.xyz',
+                'search.zeroish.xyz'
+            ],
+            resultContainerSelectors: [
+                'div.text-result-container',
+                'p.special-result-container'
+            ]
+        },
         'stract': {
             hosts: ['stract.com'],
             resultContainerSelectors: [
@@ -758,13 +838,14 @@
                         // update attribute
                         if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
                             // Generate redirected URL
-                            const newURL = urlToModify.replace(urlRule.matchRegex, urlRule.replaceWith);
+                            let newUrl = urlToModify.replace(urlRule.matchRegex, urlRule.replaceWith);
+                            newUrl = rule.useTopLevelDomain ? extractTopLevelDomain(newUrl) : newUrl;
                             if (element.href) {
-                                element.href = newURL;
+                                element.href = newUrl;
                             } else if (additionalAttribute) {
-                                element.setAttribute(additionalAttribute, newURL);
+                                element.setAttribute(additionalAttribute, newUrl);
                             }
-                            updateTextContent(element, rule, newURL);
+                            updateTextContent(element, rule, newUrl);
                             break;
                         }
                     } catch (error) {
@@ -885,6 +966,12 @@
     // Remove 'https://' from the URL link
     const removeProtocol = (url) => {
         return url.replace(/^https?:\/\//, '');
+    };
+
+    // Extract the top level domain from URL link
+    const extractTopLevelDomain = (url) => {
+        const parsedUrl = new URL(url);
+        return `${parsedUrl.protocol}//${parsedUrl.hostname}/`;
     };
 
     // Function to clear existing content of an element
