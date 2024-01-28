@@ -69,6 +69,7 @@
 // @match        *://sx.t-1.org/search*
 // @match        *://www.jabber-germany.de/searx/search*
 // @match        *://sx.catgirl.cloud/search*
+// @match        *://sx.vern.cc/searxng/search*
 // @match        *://www.startpage.com/search*
 // @match        *://www.startpage.com/sp/search*
 // @match        *://search.brave.com/search*
@@ -170,20 +171,20 @@
             replaceWith: 'https://rd.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:(?:.*)arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
-            replaceWith: 'https://arxiv.org/abs/$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\//),
-            replaceWith: 'https://$1'
-        },
-        {
             matchRegex: new RegExp(/^https?:\/\/github\.ink(.*)/),
             replaceWith: 'https://github.com$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.reuters\.com\/((?=.*\/)(?=.*-).*)/),
             replaceWith: 'https://nu.vern.cc/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(www\.ft\.com\/content\/[\w-]+)/),
+            replaceWith: 'https://archive.today/https://$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(www\.bloomberg\.com\/(?:(?:[a-z]+\/)?news|opinion)\/[\w\/-]+).*/),
+            replaceWith: 'https://archive.today/https://$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/.*/),
@@ -196,6 +197,14 @@
         {
             matchRegex: new RegExp(/^https?:\/\/(?:[a-z]+)\.slashdot\.org(.*)/),
             replaceWith: 'https://slashdot.org$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(?:(?:.*)arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
+            replaceWith: 'https://arxiv.org/abs/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\//),
+            replaceWith: 'https://$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.snopes\.com(.*)/),

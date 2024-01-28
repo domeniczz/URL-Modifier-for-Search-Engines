@@ -82,32 +82,34 @@ URL 수정은 정규 표현식을 사용합니다.
 ### 내장 리디렉션
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
-- [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (e.g. [safereddit.com](https://safereddit.com))
-- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (e.g. [quetre.iket.me](https://quetre.iket.me))
+- [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (예를 들어 [safereddit.com](https://safereddit.com))
+- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (예를 들어 [quetre.iket.me](https://quetre.iket.me))
 - [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
-- [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (e.g. [code.whatever.social](https://code.whatever.social))
+- [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (예를 들어 [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
-- [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (e.g. [yewtu.be](https://yewtu.be))
-- [Youtube Music](https://music.youtube.com) -> [Hyperpipe](https://hyperpipe.codeberg.page) (e.g. [hyperpipe.surge.sh](https://hyperpipe.surge.sh))
-- [Twitch](https://www.twitch.tv) -> [SafeTwitch](https://codeberg.org/SafeTwitch/safetwitch#instances) (e.g. [ttv.vern.cc](https://ttv.vern.cc))
-- [IMDB](https://www.imdb.com) -> [LibreMDB](https://github.com/zyachel/libremdb#instances) (e.g. [ld.vern.cc](https://ld.vern.cc))
-- [Goodreads](https://www.goodreads.com) -> [BiblioReads](https://github.com/nesaku/BiblioReads#instances) (e.g. [bl.vern.cc](https://bl.vern.cc))
-- [Urban Dictionary](https://www.urbandictionary.com) -> [Rural Dictionary](https://codeberg.org/zortazert/rural-dictionary#headline-2) (e.g. [rd.vern.cc](https://rd.vern.cc))
+- [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (예를 들어 [yewtu.be](https://yewtu.be))
+- [Youtube Music](https://music.youtube.com) -> [Hyperpipe](https://hyperpipe.codeberg.page) (예를 들어 [hyperpipe.surge.sh](https://hyperpipe.surge.sh))
+- [Twitch](https://www.twitch.tv) -> [SafeTwitch](https://codeberg.org/SafeTwitch/safetwitch#instances) (예를 들어 [ttv.vern.cc](https://ttv.vern.cc))
+- [IMDB](https://www.imdb.com) -> [LibreMDB](https://github.com/zyachel/libremdb#instances) (예를 들어 [ld.vern.cc](https://ld.vern.cc))
+- [Goodreads](https://www.goodreads.com) -> [BiblioReads](https://github.com/nesaku/BiblioReads#instances) (예를 들어 [bl.vern.cc](https://bl.vern.cc))
+- [Urban Dictionary](https://www.urbandictionary.com) -> [Rural Dictionary](https://codeberg.org/zortazert/rural-dictionary#headline-2) (예를 들어 [rd.vern.cc](https://rd.vern.cc))
 - [GitHub.ink](https://github.ink) -> [GitHub](https://github.com)
-- [Hacker news](https://news.ycombinator.com) -> [hckrnws](https://github.com/rajatkulkarni95/hckrnws) (e.g. [hckrnws.com](https://hckrnws.com))
-- [Fandom](https://www.fandom.com) -> [BreezeWiki](https://docs.breezewiki.com/Links.html) (e.g. [antifandom.com](https://antifandom.com/))
+- [Hacker news](https://news.ycombinator.com) -> [hckrnws](https://github.com/rajatkulkarni95/hckrnws) (예를 들어 [hckrnws.com](https://hckrnws.com))
+- [Fandom](https://www.fandom.com) -> [BreezeWiki](https://docs.breezewiki.com/Links.html) (예를 들어 [antifandom.com](https://antifandom.com/))
+- [Reuters](https://www.reuters.com) -> [Neuters](https://github.com/HookedBehemoth/neuters) (예를 들어 [nu.vern.cc](https://nu.vern.cc))
+- [Financial Times](https://www.ft.com) -> [Webpage Archive](https://archive.today)
+- [Bloomberg](https://www.bloomberg.com) -> [Webpage Archive](https://archive.today)
 - [NPR](https://www.npr.org) -> [NPR Text](https://text.npr.org)
-- [Reuters](https://www.reuters.com) -> [Neuters](https://github.com/HookedBehemoth/neuters) (e.g. [nu.vern.cc](https://nu.vern.cc))
-- [Snopes](https://www.snopes.com) -> [Suds](https://git.vern.cc/cobra/Suds/src/branch/main/instances.json) (e.g. [sd.vern.cc](https://sd.vern.cc))
-- [Instructables](https://www.instructables.com) -> [Destructables](https://git.vern.cc/cobra/Destructables/src/branch/main/instances.json) (e.g. [ds.vern.cc](https://ds.vern.cc))
-- [Genius](https://genius.com) -> [Dumb](https://github.com/rramiachraf/dumb#public-instances) (e.g. [dm.vern.cc](https://dm.vern.cc))
-- [Bandcamp](https://bandcamp.com) -> [Tent](https://forgejo.sny.sh/sun/Tent#instances) (e.g. [tn.vern.cc](https://tn.vern.cc))
-- [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page) (e.g. [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
-- [Pixiv](https://www.pixiv.net) -> [PixivFE](https://codeberg.org/VnPower/pixivfe#instances) (e.g. [pixivfe.exozy.me](https://pixivfe.exozy.me))
-- [Know Your Meme](https://knowyourmeme.com) -> [MeMe](https://git.vern.cc/cobra/MeMe/src/branch/main/instances.json) (e.g. [mm.vern.cc](https://mm.vern.cc))
-- [Tenor](https://tenor.com) -> [Soprano](https://git.vern.cc/cobra/Soprano/src/branch/main/instances.json) (e.g. [sp.vern.cc](https://sp.vern.cc))
-- [iFunny](https://ifunny.co) -> [UNfunny](https://git.vern.cc/cobra/UNfunny/src/branch/main/instances.json) (e.g. [uf.vern.cc](https://uf.vern.cc))
-- ArXiv PDF -> ArXiv Abstract
+- [Snopes](https://www.snopes.com) -> [Suds](https://git.vern.cc/cobra/Suds/src/branch/main/instances.json) (예를 들어 [sd.vern.cc](https://sd.vern.cc))
+- [Instructables](https://www.instructables.com) -> [Destructables](https://git.vern.cc/cobra/Destructables/src/branch/main/instances.json) (예를 들어 [ds.vern.cc](https://ds.vern.cc))
+- [Genius](https://genius.com) -> [Dumb](https://github.com/rramiachraf/dumb#public-instances) (예를 들어 [dm.vern.cc](https://dm.vern.cc))
+- [Bandcamp](https://bandcamp.com) -> [Tent](https://forgejo.sny.sh/sun/Tent#instances) (예를 들어 [tn.vern.cc](https://tn.vern.cc))
+- [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page) (예를 들어 [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
+- [Pixiv](https://www.pixiv.net) -> [PixivFE](https://codeberg.org/VnPower/pixivfe#instances) (예를 들어 [pixivfe.exozy.me](https://pixivfe.exozy.me))
+- [Know Your Meme](https://knowyourmeme.com) -> [MeMe](https://git.vern.cc/cobra/MeMe/src/branch/main/instances.json) (예를 들어 [mm.vern.cc](https://mm.vern.cc))
+- [Tenor](https://tenor.com) -> [Soprano](https://git.vern.cc/cobra/Soprano/src/branch/main/instances.json) (예를 들어 [sp.vern.cc](https://sp.vern.cc))
+- [iFunny](https://ifunny.co) -> [UNfunny](https://git.vern.cc/cobra/UNfunny/src/branch/main/instances.json) (예를 들어 [uf.vern.cc](https://uf.vern.cc))
+- [ArXiv](https://arxiv.org) PDF (arxiv.org/pdf/\*.pdf) -> [ArXiv](https://arxiv.org) Abstract (arxiv.org/abs/\*)
 - ...
 
 스크립트에 사용자 정의 리디렉션 규칙을 추가할 수 있습니다.
@@ -117,10 +119,17 @@ URL 수정은 정규 표현식을 사용합니다.
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 - [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
+- [farside.link](https://farside.link)
+
+서비스 제공업체:
+
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
-- [farside.link](https://farside.link)
-- [whatever.social](https://launch.whatever.social)
+- [privacydev.net](https://privacydev.net/services.html)
+- [frontendfriendly.xyz](https://frontendfriendly.xyz)
+- [pussthecat.org](https://pussthecat.org)
+- [tiekoetter.com](https://www.tiekoetter.com/en/services)
+- ...
 
 ---
 

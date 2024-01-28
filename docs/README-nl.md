@@ -96,8 +96,10 @@ Vind meer zoekmachines:
 - [GitHub.ink](https://github.ink) -> [GitHub](https://github.com)
 - [Hacker news](https://news.ycombinator.com) -> [hckrnws](https://github.com/rajatkulkarni95/hckrnws) (bijv. [hckrnws.com](https://hckrnws.com))
 - [Fandom](https://www.fandom.com) -> [BreezeWiki](https://docs.breezewiki.com/Links.html) (bijv. [antifandom.com](https://antifandom.com))
-- [NPR](https://www.npr.org) -> [NPR Text](https://text.npr.org)
 - [Reuters](https://www.reuters.com) -> [Neuters](https://github.com/HookedBehemoth/neuters) (bijv. [nu.vern.cc](https://nu.vern.cc))
+- [Financial Times](https://www.ft.com) -> [Webpage Archive](https://archive.today)
+- [Bloomberg](https://www.bloomberg.com) -> [Webpage Archive](https://archive.today)
+- [NPR](https://www.npr.org) -> [NPR Text](https://text.npr.org)
 - [Snopes](https://www.snopes.com) -> [Suds](https://git.vern.cc/cobra/Suds/src/branch/main/instances.json) (bijv. [sd.vern.cc](https://sd.vern.cc))
 - [Instructables](https://www.instructables.com) -> [Destructables](https://git.vern.cc/cobra/Destructables/src/branch/main/instances.json) (bijv. [ds.vern.cc](https://ds.vern.cc))
 - [Genius](https://genius.com) -> [Dumb](https://github.com/rramiachraf/dumb#public-instances) (bijv. [dm.vern.cc](https://dm.vern.cc))
@@ -107,7 +109,7 @@ Vind meer zoekmachines:
 - [Know Your Meme](https://knowyourmeme.com) -> [MeMe](https://git.vern.cc/cobra/MeMe/src/branch/main/instances.json) (bijv. [mm.vern.cc](https://mm.vern.cc))
 - [Tenor](https://tenor.com) -> [Soprano](https://git.vern.cc/cobra/Soprano/src/branch/main/instances.json) (bijv. [sp.vern.cc](https://sp.vern.cc))
 - [iFunny](https://ifunny.co) -> [UNfunny](https://git.vern.cc/cobra/UNfunny/src/branch/main/instances.json) (bijv. [uf.vern.cc](https://uf.vern.cc))
-- ArXiv PDF -> ArXiv Abstract
+- [ArXiv](https://arxiv.org) PDF (arxiv.org/pdf/\*.pdf) -> [ArXiv](https://arxiv.org) Abstract (arxiv.org/abs/\*)
 - ...
 
 U kunt zelf aangepaste omleidingsregels aan het script toevoegen.
@@ -117,10 +119,17 @@ Andere alternatieven privacyvriendelijke frontends, zie:
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 - [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
+- [farside.link](https://farside.link)
+
+Dienstverleners:
+
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
-- [farside.link](https://farside.link)
-- [whatever.social](https://launch.whatever.social)
+- [privacydev.net](https://privacydev.net/services.html)
+- [frontendfriendly.xyz](https://frontendfriendly.xyz)
+- [pussthecat.org](https://pussthecat.org)
+- [tiekoetter.com](https://www.tiekoetter.com/en/services)
+- ...
 
 ---
 
