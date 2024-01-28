@@ -58,6 +58,7 @@
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@
 | childSelector              | انتخاب‌گر برای عنصر فرزند DOM زیر عنصر والد                  |
 | updateChildText            | پرچم برای آیا باید متن داخلی عنصر فرزند به‌روز رسانی شود      |
 | containProtocol            | پرچم برای آیا باید پروتکل (مثلاً https://) در دامنه وجود داشته باشد |
+| useTopLevelDomain | پرچم برای آیا از دامنه سطح بالا هنگام نمایش آدرس‌های اینترنتی استفاده شود |
 | displayMethod              | لازم، روش نمایش URL<br/>روش 1: فرمت breadcrumb<br/>روش 2: URL کامل<br/>روش 3: URL کامل بدون پروتکل |
 | multiElementsForUrlDisplay | پرچم برای آیا URL نمایش داده شده به چندین عنصر DOM تقسیم می‌شود |
 

@@ -58,6 +58,7 @@ La modification d'URL utilise l'Expression Régulière.
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ Fournisseurs de services:
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@ Règles de [sélecteur](https://developer.mozilla.org/fr/docs/Web/API/Document_o
 | childSelector   | sélecteur pour l'élément DOM enfant sous l'élément parent    |
 | updateChildText | drapeau pour savoir s'il faut mettre à jour le texte interne de l'élément enfant |
 | containProtocol | drapeau pour savoir s'il faut inclure le protocole (par exemple, https://) dans le domaine |
+| useTopLevelDomain | drapeau pour l'utilisation du domaine de premier niveau lors de l'affichage des URL |
 | displayMethod   | requis, méthode d'affichage de l'URL<br/>méthode 1 : format fil d'Ariane<br/>méthode 2 : URL complète<br/>méthode 3 : URL complète sans protocole |
 | multiElementsForUrlDisplay | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments du DOM |
 

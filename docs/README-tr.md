@@ -58,6 +58,7 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ Servis sağlayıcıları:
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@ Arama motoru sonuçları için güncellenmesi gereken DOM öğelerinin [Seçici]
 | childSelector   | ana öğenin altında çocuk DOM öğesi için seçici          |
 | updateChildText | çocuk öğenin iç metnini güncelleme bayrağı |
 | containProtocol | alan adında protokolü (örn. https://) içerme bayrağı |
+| useTopLevelDomain | URL'leri gösterirken en üst düzey alan adını kullanıp kullanmama bayrağı |
 | displayMethod   | gerekli, URL gösterim yöntemi<br/>yöntem 1: breadcrumb formatı<br/>yöntem 2: tam URL<br/>yöntem 3: protokol olmadan tam URL |
 | multiElementsForUrlDisplay  | URL'nin birden fazla DOM öğesine ayrılıp ayrılmadığını gösteren bayrak |
 

@@ -58,6 +58,7 @@ URL modification uses Regular Expression.
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ Service providers:
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@ URL modification rules in [regular expression](https://en.wikipedia.org/wiki/Reg
 | childSelector              | selector for child DOM element under parent element          |
 | updateChildText            | flag for whether to update the inner text of the child element |
 | containProtocol            | flag for whether to contain protocol (e.g. https://) in the domain |
+| useTopLevelDomain          | flag for whether to use the top-level domain when displaying URLs |
 | displayMethod              | required, URL display method<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
 | multiElementsForUrlDisplay | flag for whether the displayed URL is separated into multiple DOM elements |
 

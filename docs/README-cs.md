@@ -58,6 +58,7 @@ Modifikace URL využívá regulární výrazy.
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ Poskytovatelé služeb:
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -155,15 +157,16 @@ Pravidla pro modifikaci URL v [regulárním výrazu](https://cs.wikipedia.org/wi
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) pravidla pro aktualizaci DOM elementů ve výsledcích vyhledávače
 
-| Proměnná                    | Popis                                                       |
-| --------------------------- | ----------------------------------------------------------- |
-| selector                    | selector pro DOM element                                    |
-| updateText                  | příznak, zda aktualizovat text nebo hodnotu href elementu   |
-| childSelector               | selector pro dítě DOM elementu pod rodičovským elementem    |
-| updateChildText             | příznak, zda aktualizovat vnitřní text dítěte elementu      |
-| containProtocol             | příznak, zda zahrnovat protokol (např. https://) v doméně   |
-| displayMethod               | požadováno, metoda zobrazení URL<br/>metoda 1: formát drobečkové navigace<br/>metoda 2: celá URL<br/>metoda 3: celá URL bez protokolu |
-| multiElementsForUrlDisplay  | příznak, zda je zobrazená URL rozdělena do více DOM elementů |
+| Proměnná                   | Popis                                                        |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | selector pro DOM element                                     |
+| updateText                 | příznak, zda aktualizovat text nebo hodnotu href elementu    |
+| childSelector              | selector pro dítě DOM elementu pod rodičovským elementem     |
+| updateChildText            | příznak, zda aktualizovat vnitřní text dítěte elementu       |
+| containProtocol            | příznak, zda zahrnovat protokol (např. https://) v doméně    |
+| useTopLevelDomain          | příznak pro použití domény nejvyšší úrovně při zobrazování URL |
+| displayMethod              | požadováno, metoda zobrazení URL<br/>metoda 1: formát drobečkové navigace<br/>metoda 2: celá URL<br/>metoda 3: celá URL bez protokolu |
+| multiElementsForUrlDisplay | příznak, zda je zobrazená URL rozdělena do více DOM elementů |
 
 ### searchEngines
 

@@ -58,6 +58,7 @@
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@
 | childSelector   | селектор для дочернего DOM-элемента под родительским элементом |
 | updateChildText | флаг, нужно ли обновлять внутренний текст дочернего элемента |
 | containProtocol | флаг, нужно ли включать протокол (например, https://) в домен |
+| useTopLevelDomain | флаг для использования домена верхнего уровня при отображении URL-адресов |
 | displayMethod   | обязательно, метод отображения URL<br/>метод 1: формат "хлебные крошки"<br/>метод 2: полный URL<br/>метод 3: полный URL без протокола |
 | multiElementsForUrlDisplay | флаг того, отображается ли URL в нескольких элементах DOM |
 

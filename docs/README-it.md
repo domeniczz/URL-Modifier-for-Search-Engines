@@ -58,6 +58,7 @@ La modifica dell'URL utilizza Espressioni Regolari.
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ Fornitori di servizi:
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@ Regole [Selettore](https://developer.mozilla.org/en-US/docs/Web/API/Document_obj
 | childSelector    | selettore per l'elemento DOM figlio sotto l'elemento genitore  |
 | updateChildText  | flag per se aggiornare il testo interno dell'elemento figlio   |
 | containProtocol  | flag per se includere il protocollo (es. https://) nel dominio |
+| useTopLevelDomain | indicatore per se utilizzare il dominio di primo livello quando si visualizzano gli URL |
 | displayMethod    | richiesto, metodo di visualizzazione dell'URL<br/>metodo 1: formato breadcrumb<br/>metodo 2: URL completo<br/>metodo 3: URL completo senza protocollo |
 | multiElementsForUrlDisplay | indicatore per se l'URL visualizzato è suddiviso in più elementi DOM |
 

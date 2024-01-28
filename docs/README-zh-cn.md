@@ -58,6 +58,7 @@ URL 修改使用正则表达式。
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ URL 修改使用正则表达式。
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@ URL 修改使用正则表达式。
 | childSelector   | 父元素下子 DOM 元素的选择器                                  |
 | updateChildText | 是否更新子元素的内部文本的标志                               |
 | containProtocol | 是否在域中包含协议（例如 https://）的标志                    |
+| useTopLevelDomain | 是否在显示网址时使用顶级域名的标志 |
 | displayMethod   | 必需，URL 显示方法<br/>方法1：面包屑格式<br/>方法2：完整 URL<br/>方法3：无协议的完整 URL |
 | multiElementsForUrlDisplay | 是否将显示的 URL 分成多个 DOM 元素 |
 

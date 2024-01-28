@@ -58,6 +58,7 @@ URL の変更正規表現を使用します。
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ URL の変更正規表現を使用します。
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@ URL の変更正規表現を使用します。
 | childSelector   | 親要素の下の子 DOM 要素のセレクタ                            |
 | updateChildText | 子要素の内部テキストを更新するかどうかのフラグ               |
 | containProtocol | ドメインにプロトコル（例：https://）を含むかどうかのフラグ   |
+| useTopLevelDomain | URL 表示時にトップレベルドメインを使用するかどうかのフラグ |
 | displayMethod   | 必須、URL 表示方法<br/>方法1：パンくずリスト形式<br/>方法2：フル URL<br/>方法3：プロトコルなしのフル URL |
 | multiElementsForUrlDisplay | URL 表示のために複数の DOM 要素に分割されているかのフラグ |
 

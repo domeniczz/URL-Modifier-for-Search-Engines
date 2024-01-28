@@ -58,6 +58,7 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ Dienstleister:
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@ URL-Modifikationsregeln in [regulären Ausdrücken](https://de.wikipedia.org/wik
 | childSelector   | Selektor für Kind-DOM-Element unter übergeordnetem Element   |
 | updateChildText | Flag, ob der Innentext des Kind-Elements aktualisiert werden soll |
 | containProtocol | Flag, ob das Protokoll (z. B. https://) in der Domain enthalten sein soll |
+| useTopLevelDomain | Kennzeichen dafür, ob die Top-Level-Domain beim Anzeigen von URLs verwendet werden soll |
 | displayMethod   | erforderlich, Anzeigemethode der URL<br/>Methode 1: Breadcrumb-Format<br/>Methode 2: vollständige URL<br/>Methode 3: vollständige URL ohne Protokoll |
 | multiElementsForUrlDisplay | Kennzeichen dafür, ob die angezeigte URL in mehrere DOM-Elemente aufgeteilt ist |
 

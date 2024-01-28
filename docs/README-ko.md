@@ -58,6 +58,7 @@ URL 수정은 정규 표현식을 사용합니다.
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ URL 수정은 정규 표현식을 사용합니다.
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@ URL 수정은 정규 표현식을 사용합니다.
 | childSelector     | 부모 요소 아래의 자식 DOM 요소를 위한 선택자                                 |
 | updateChildText   | 자식 요소의 내부 텍스트 업데이트 여부 플  |
 | containProtocol | 도메인에 프로토콜(예: https://)을 포함할지 여부 플래그               |
+| useTopLevelDomain | URL 을 표시할 때 최상위 도메인을 사용할지 여부를 결정하는 플래그 |
 | displayMethod   | 필수, URL 표시 방법<br/>방법 1: 빵 부스러기 형식<br/>방법 2: 전체 URL<br/>방법 3: 프로토콜 없는 전체 URL |
 | multiElementsForUrlDisplay | URL 표시가 여러 DOM 요소로 분리되는지 여부의 플래그 |
 

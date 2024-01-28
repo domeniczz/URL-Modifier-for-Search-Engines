@@ -28,7 +28,7 @@
 
 ## 介紹
 
-一個[Tampermonkey](https://github.com/Tampermonkey/tampermonkey)腳本，從 Greasy Fork 安裝：[搜索引擎結果 URL 修改器](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines)。
+[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 腳本，從 Greasy Fork 安裝：[搜索引擎結果 URL 修改器](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines)。
 
 - GitHub 儲存庫: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
 - Codeberg 儲存庫: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
@@ -58,6 +58,7 @@ URL 修改使用正則表達式。
 - [Swisscows](https://swisscows.com)
 - [Metager](https://metager.org)
 - [4get](https://4get.ca/instances)
+- [LibreY](https://github.com/Ahwxorg/LibreY/blob/main/instances.json)
 - [Stract](https://stract.com)
 - [eTools](https://www.etools.ch)
 - [Lilo](https://search.lilo.org)
@@ -125,6 +126,7 @@ URL 修改使用正則表達式。
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
+- [projectsegfau.lt](https://projectsegfau.lt/instances)
 - [privacydev.net](https://privacydev.net/services.html)
 - [frontendfriendly.xyz](https://frontendfriendly.xyz)
 - [pussthecat.org](https://pussthecat.org)
@@ -162,6 +164,7 @@ URL 修改使用正則表達式。
 | childSelector   | 父元素下子 DOM 元素的選擇器                                  |
 | updateChildText | 是否更新子元素的內部文本的標誌                               |
 | containProtocol | 是否在域名中包含協議（例如https://）的標誌                   |
+| useTopLevelDomain | 是否在顯示網址時使用頂級域名的標誌 |
 | displayMethod   | 必需，URL 顯示方法<br/>方法1：麵包屑格式<br/>方法2：完整 URL<br/>方法3：不帶協議的完整 URL |
 | multiElementsForUrlDisplay | 是否將顯示的 URL 分割成多個 DOM 元素 |
 
