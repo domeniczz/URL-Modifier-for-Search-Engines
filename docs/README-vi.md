@@ -85,7 +85,7 @@ Tìm thêm công cụ tìm kiếm:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (ví dụ: [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (ví dụ: [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (ví dụ: [nitter.catsarch.com](https://nitter.catsarch.com))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (ví dụ: [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (ví dụ: [yewtu.be](https://yewtu.be))
@@ -132,6 +132,30 @@ Nhà cung cấp dịch vụ:
 - [pussthecat.org](https://pussthecat.org)
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
+
+Để sử dụng dễ dàng, chúng ta có thể sử dụng [Farside](https://github.com/benbusby/farside) để tự động chuyển hướng đến các phiên bản frontend thay thế tập trung vào quyền riêng tư thay vì tự viết các quy tắc biểu thức chính quy. Tuy nhiên, phương pháp này không hỗ trợ kiểm soát chi tiết hơn đối với các URL được ghép nối.
+
+> Thông tin cho bạn, wiki về cách thiết lập farside trong [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+
+- Mẫu bao gồm ví dụ: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
+
+- Chuyển hướng đến: `https://farside.link/$1`
+
+- Thêm vào script:
+
+  ```js
+  const urlModificationRules = [
+      {
+          matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+          replaceWith: 'https://farside.link/$1'
+      },
+      // ...
+  ];
+  ```
+  
+- URL ví dụ: `https://www.youtube.com/watch?v=abc123`
+
+- URL kết quả: `https://farside.link/youtube.com/watch?v=abc123`
 
 ---
 

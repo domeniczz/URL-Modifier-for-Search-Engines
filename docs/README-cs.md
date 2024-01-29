@@ -85,7 +85,7 @@ Najděte více vyhledávačů:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (např. [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (např. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (např. [nitter.catsarch.com](https://nitter.catsarch.com))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (např. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (např. [yewtu.be](https://yewtu.be))
@@ -132,6 +132,30 @@ Poskytovatelé služeb:
 - [pussthecat.org](https://pussthecat.org)
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
+
+Pro snadné použití můžeme použít [Farside](https://github.com/benbusby/farside), který automaticky přesměrovává na fungující instance alternativních frontendů zaměřených na soukromí, namísto vytváření vlastních pravidel regulárních výrazů. Tato metoda však nepodporuje jemnější kontrolu nad odpovídajícími URL.
+
+> Pro informaci, wiki pro nastavení farside v [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+
+- Vzor pro začlenění: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
+
+- Přesměrovat na: `https://farside.link/$1`
+
+- Přidat do skriptu:
+
+  ```js
+  const urlModificationRules = [
+      {
+          matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+          replaceWith: 'https://farside.link/$1'
+      },
+      // ...
+  ];
+  ```
+  
+- Příklad URL: `https://www.youtube.com/watch?v=abc123`
+
+- Výsledné URL: `https://farside.link/youtube.com/watch?v=abc123`
 
 ---
 

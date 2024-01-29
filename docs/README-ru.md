@@ -85,7 +85,7 @@
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (например [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (например [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (например [nitter.catsarch.com](https://nitter.catsarch.com))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (например [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (например [yewtu.be](https://yewtu.be))
@@ -132,6 +132,30 @@
 - [pussthecat.org](https://pussthecat.org)
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
+
+Для удобства использования мы можем использовать [Farside](https://github.com/benbusby/farside), который автоматически перенаправляет на работающие экземпляры альтернативных интерфейсов, ориентированных на конфиденциальность, вместо того, чтобы писать собственные правила регулярных выражений. Однако этот метод не поддерживает более тонкий контроль над соответствующими URL.
+
+> Для справки, вики по настройке farside в [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+
+- Пример шаблона включения: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
+
+- Перенаправить на: `https://farside.link/$1`
+
+- Добавить в скрипт:
+
+  ```js
+  const urlModificationRules = [
+      {
+          matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+          replaceWith: 'https://farside.link/$1'
+      },
+      // ...
+  ];
+  ```
+  
+- Пример URL: `https://www.youtube.com/watch?v=abc123`
+
+- Результат URL: `https://farside.link/youtube.com/watch?v=abc123`
 
 ---
 

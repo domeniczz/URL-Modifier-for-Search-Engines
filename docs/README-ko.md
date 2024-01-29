@@ -85,7 +85,7 @@ URL 수정은 정규 표현식을 사용합니다.
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (예를 들어 [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (예를 들어 [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (예를 들어 [nitter.catsarch.com](https://nitter.catsarch.com))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (예를 들어 [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (예를 들어 [yewtu.be](https://yewtu.be))
@@ -132,6 +132,30 @@ URL 수정은 정규 표현식을 사용합니다.
 - [pussthecat.org](https://pussthecat.org)
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
+
+간편한 사용을 위해 우리는 정규 표현식 규칙을 직접 작성하는 대신 개인 정보 보호를 중시하는 대체 프론트엔드로 자동 리디렉션하는 [Farside](https://github.com/benbusby/farside)를 사용할 수 있습니다. 하지만, 이 방법은 일치하는 URL에 대해 더 세밀한 제어를 지원하지 않습니다.
+
+> FYI, [Redirector](https://github.com/einaregilsson/Redirector)에서 farside 설정을 위한 위키: https://github.com/einaregilsson/Redirector
+
+- 포함 패턴 예시: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
+
+- 리디렉트 대상: `https://farside.link/$1`
+
+- 스크립트에 추가:
+
+  ```js
+  const urlModificationRules = [
+      {
+          matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+          replaceWith: 'https://farside.link/$1'
+      },
+      // ...
+  ];
+  ```
+  
+- 예시 URL: `https://www.youtube.com/watch?v=abc123`
+
+- 결과 URL: `https://farside.link/youtube.com/watch?v=abc123`
 
 ---
 

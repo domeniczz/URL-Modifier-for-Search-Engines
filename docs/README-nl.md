@@ -85,7 +85,7 @@ Vind meer zoekmachines:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (bijv. [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (bijv. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (bijv. [nitter.catsarch.com](https://nitter.catsarch.com))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (bijv. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (bijv. [yewtu.be](https://yewtu.be))
@@ -132,6 +132,30 @@ Dienstverleners:
 - [pussthecat.org](https://pussthecat.org)
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
+
+Voor gemakkelijk gebruik kunnen we [Farside](https://github.com/benbusby/farside) gebruiken, dat automatisch doorverwijst naar werkende instanties van op privacy gerichte alternatieve frontends, in plaats van zelf reguliere expressieregels te schrijven. Deze methode ondersteunt echter geen fijnmazige controle over overeenkomende URL's.
+
+> Ter informatie, wiki voor het instellen van farside in [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+
+- Inclusief patroonvoorbeeld: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
+
+- Omleiden naar: `https://farside.link/$1`
+
+- Toevoegen aan script:
+
+  ```js
+  const urlModificationRules = [
+      {
+          matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+          replaceWith: 'https://farside.link/$1'
+      },
+      // ...
+  ];
+  ```
+  
+- Voorbeeld URL: `https://www.youtube.com/watch?v=abc123`
+
+- Resultaat URL: `https://farside.link/youtube.com/watch?v=abc123`
 
 ---
 

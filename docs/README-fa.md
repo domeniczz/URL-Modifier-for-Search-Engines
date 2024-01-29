@@ -85,7 +85,7 @@
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (مثلاً [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (مثلاً [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (مثلاً [nitter.catsarch.com](https://nitter.catsarch.com))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (مثلاً [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (مثلاً [yewtu.be](https://yewtu.be))
@@ -132,6 +132,30 @@
 - [pussthecat.org](https://pussthecat.org)
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
+
+برای استفاده آسان، ما می‌توانیم از [Farside](https://github.com/benbusby/farside) استفاده کنیم که به طور خودکار به نسخه‌های کاری جایگزین‌های محوریت حریم خصوصی هدایت می‌کند به جای اینکه خودمان قواعد عبارت منظم را بنویسیم. با این حال، این روش از کنترل دقیق‌تر بر URL‌های مطابقت‌یافته پشتیبانی نمی‌کند.
+
+> برای اطلاعات بیشتر، ویکی برای راه‌اندازی farside در [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+
+- نمونه الگوی ورودی: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
+
+- هدایت به: `https://farside.link/$1`
+
+- اضافه کردن به اسکریپت:
+
+  ```js
+  const urlModificationRules = [
+      {
+          matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+          replaceWith: 'https://farside.link/$1'
+      },
+      // ...
+  ];
+  ```
+  
+- نمونه URL: `https://www.youtube.com/watch?v=abc123`
+
+- نتیجه URL: `https://farside.link/youtube.com/watch?v=abc123`
 
 ---
 

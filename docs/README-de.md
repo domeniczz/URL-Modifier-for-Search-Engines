@@ -85,7 +85,7 @@ Finde mehr Suchmaschinen:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (zum Beispiel [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (zum Beispiel [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (zum Beispiel [nitter.catsarch.com](https://nitter.catsarch.com))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (zum Beispiel [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (zum Beispiel [yewtu.be](https://yewtu.be))
@@ -132,6 +132,30 @@ Dienstleister:
 - [pussthecat.org](https://pussthecat.org)
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
+
+Für eine einfache Nutzung könnten wir [Farside](https://github.com/benbusby/farside) verwenden, das automatisch auf funktionierende Instanzen von datenschutzorientierten alternativen Frontends umleitet, anstatt eigene reguläre Ausdrucksregeln zu schreiben. Diese Methode unterstützt jedoch keine feinkörnige Kontrolle über abgeglichene URLs.
+
+> FYI, Wiki für das Einrichten von Farside in [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+
+- Einschlussmuster-Beispiel: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
+
+- Weiterleiten zu: `https://farside.link/$1`
+
+- Zum Skript hinzufügen:
+
+  ```js
+  const urlModificationRules = [
+      {
+          matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+          replaceWith: 'https://farside.link/$1'
+      },
+      // ...
+  ];
+  ```
+  
+- Beispiel-URL: `https://www.youtube.com/watch?v=abc123`
+
+- Ergebnis-URL: `https://farside.link/youtube.com/watch?v=abc123`
 
 ---
 

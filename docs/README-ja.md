@@ -85,7 +85,7 @@ URL の変更正規表現を使用します。
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (例えば [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (例えば [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://nitter.net)
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (例えば [nitter.catsarch.com](https://nitter.catsarch.com))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (例えば [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (例えば [yewtu.be](https://yewtu.be))
@@ -132,6 +132,30 @@ URL の変更正規表現を使用します。
 - [pussthecat.org](https://pussthecat.org)
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
+
+簡単な使用のために、私たちは独自に正規表現ルールを書く代わりに、[Farside](https://github.com/benbusby/farside)を使用して、プライバシー指向の代替フロントエンドへの自動リダイレクトを行うことができます。しかし、この方法はマッチしたURLに対して細かい制御をサポートしていません。
+
+> FYI, Farsideを[Redirector](https://github.com/einaregilsson/Redirector)で設定するためのwiki: https://github.com/einaregilsson/Redirector
+
+- インクルードパターンの例：`^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
+
+- リダイレクト先：`https://farside.link/$1`
+
+- スクリプトへの追加：
+
+  ```js
+  const urlModificationRules = [
+      {
+          matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+          replaceWith: 'https://farside.link/$1'
+      },
+      // ...
+  ];
+  ```
+  
+- 例のURL：`https://www.youtube.com/watch?v=abc123`
+
+- 結果のURL：`https://farside.link/youtube.com/watch?v=abc123`
 
 ---
 
