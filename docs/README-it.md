@@ -46,7 +46,7 @@ La modifica dell'URL utilizza Espressioni Regolari.
 
 ### Supporto ai motori di ricerca
 
-- [Google](https://www.google.com)
+- [Google](https://www.google.com/supported_domains)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)

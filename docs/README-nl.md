@@ -46,7 +46,7 @@ URL-wijziging gebruikt Regelmatige Expressie.
 
 ### Ondersteuning voor Zoekmachines
 
-- [Google](https://www.google.com)
+- [Google](https://www.google.com/supported_domains)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)

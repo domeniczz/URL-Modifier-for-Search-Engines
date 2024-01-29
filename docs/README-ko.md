@@ -46,7 +46,7 @@ URL 수정은 정규 표현식을 사용합니다.
 
 ### 검색 엔진 지원
 
-- [Google](https://www.google.com)
+- [Google](https://www.google.com/supported_domains)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)

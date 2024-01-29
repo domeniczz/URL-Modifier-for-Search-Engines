@@ -46,7 +46,7 @@ URL 修改使用正則表達式。
 
 ### 支持的搜索引擎
 
-- [Google](https://www.google.com)
+- [Google](https://www.google.com/supported_domains)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)

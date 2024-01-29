@@ -46,7 +46,7 @@ URL の変更正規表現を使用します。
 
 ### 対応する検索エンジン
 
-- [Google](https://www.google.com)
+- [Google](https://www.google.com/supported_domains)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
