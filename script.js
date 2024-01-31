@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.3.2.1
+// @version      2.3.2.2
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -228,7 +228,7 @@
 // @match        *://searx.ox2.fr/search*
 // @match        *://searx.techsaviours.org/search*
 // @match        *://searx.perennialte.ch/search*
-// @match        *://s.trung.fun/search*
+// @match        *://s.trung.fun/searxng/search*
 // @match        *://search.in.projectsegfau.lt/search*
 // @match        *://search.projectsegfau.lt/search*
 // @match        *://darmarit.org/searx/search*
@@ -271,10 +271,53 @@
 // @match        *://www.qwant.com/?*
 // @match        *://www.ecosia.org/search?*
 // @match        *://presearch.com/search?*
-// @match        *://swisscows.com/*/web?*
 
-// @match        *://metager.org/meta/*
-// @match        *://metager.de/meta/*
+// @match        *://swisscows.com/en/web?*
+// @match        *://swisscows.com/de/web?*
+// @match        *://swisscows.com/es/web?*
+// @match        *://swisscows.com/fr/web?*
+// @match        *://swisscows.com/it/web?*
+// @match        *://swisscows.com/lv/web?*
+// @match        *://swisscows.com/hu/web?*
+// @match        *://swisscows.com/nl/web?*
+// @match        *://swisscows.com/pt/web?*
+// @match        *://swisscows.com/ru/web?*
+// @match        *://swisscows.com/uk/web?*
+
+// @match        *://metager.org/meta/meta.ger3*
+// @match        *://metager.org/da-DK/meta/meta.ger3*
+// @match        *://metager.org/de-AT/meta/meta.ger3*
+// @match        *://metager.org/de-CH/meta/meta.ger3*
+// @match        *://metager.org/de-DE/meta/meta.ger3*
+// @match        *://metager.org/en-GB/meta/meta.ger3*
+// @match        *://metager.org/en-IE/meta/meta.ger3*
+// @match        *://metager.org/en-MY/meta/meta.ger3*
+// @match        *://metager.org/es-ES/meta/meta.ger3*
+// @match        *://metager.org/es-MX/meta/meta.ger3*
+// @match        *://metager.org/fi-FI/meta/meta.ger3*
+// @match        *://metager.org/fr-CA/meta/meta.ger3*
+// @match        *://metager.org/fr-FR/meta/meta.ger3*
+// @match        *://metager.org/it-IT/meta/meta.ger3*
+// @match        *://metager.org/nl-NL/meta/meta.ger3*
+// @match        *://metager.org/pl-PL/meta/meta.ger3*
+// @match        *://metager.org/sv-SE/meta/meta.ger3*
+// @match        *://metager.de/meta/meta.ger3*
+// @match        *://metager.de/da-DK/meta/meta.ger3*
+// @match        *://metager.de/de-AT/meta/meta.ger3*
+// @match        *://metager.de/de-CH/meta/meta.ger3*
+// @match        *://metager.de/de-DE/meta/meta.ger3*
+// @match        *://metager.de/en-GB/meta/meta.ger3*
+// @match        *://metager.de/en-IE/meta/meta.ger3*
+// @match        *://metager.de/en-MY/meta/meta.ger3*
+// @match        *://metager.de/es-ES/meta/meta.ger3*
+// @match        *://metager.de/es-MX/meta/meta.ger3*
+// @match        *://metager.de/fi-FI/meta/meta.ger3*
+// @match        *://metager.de/fr-CA/meta/meta.ger3*
+// @match        *://metager.de/fr-FR/meta/meta.ger3*
+// @match        *://metager.de/it-IT/meta/meta.ger3*
+// @match        *://metager.de/nl-NL/meta/meta.ger3*
+// @match        *://metager.de/pl-PL/meta/meta.ger3*
+// @match        *://metager.de/sv-SE/meta/meta.ger3*
 
 // @match        *://4get.ca/web?*
 // @match        *://4get.silly.computer/web?*
@@ -311,7 +354,6 @@
 // @match        *://search.seitan-ayoub.lol/search.php?*
 // @match        *://librey.myroware.net/search.php?*
 // @match        *://librey.nezumi.party/search.php?*
-// @match        *://search.zeroish.xyz/search.php?*
 // @match        *://search.zeroish.xyz/search.php?*
 
 // @match        *://stract.com/search?*
