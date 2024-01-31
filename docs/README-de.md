@@ -1,22 +1,22 @@
 # URL-Modifier-für-Suchmaschinen
 
 <div align="center">
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ Für eine einfache Nutzung könnten wir [Farside](https://github.com/benbusby/fa
 - Weiterleiten zu: `https://farside.link/$1`
 
 - Zum Skript hinzufügen:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ Für eine einfache Nutzung könnten wir [Farside](https://github.com/benbusby/fa
       // ...
   ];
   ```
-  
+
 - Beispiel-URL: `https://www.youtube.com/watch?v=abc123`
 
 - Ergebnis-URL: `https://farside.link/youtube.com/watch?v=abc123`
@@ -181,24 +181,23 @@ URL-Modifikationsregeln in [regulären Ausdrücken](https://de.wikipedia.org/wik
 
 [Selektor](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)-Regeln für die DOM-Elemente, die für Suchmaschinenergebnisse aktualisiert werden müssen
 
-| Variable        | Beschreibung                                                 |
-| --------------- | ------------------------------------------------------------ |
-| selector        | Selektor für DOM-Element                                     |
-| updateText      | Flag, ob der Text oder der href-Wert des Elements aktualisiert werden soll |
-| childSelector   | Selektor für Kind-DOM-Element unter übergeordnetem Element   |
-| updateChildText | Flag, ob der Innentext des Kind-Elements aktualisiert werden soll |
-| containProtocol | Flag, ob das Protokoll (z. B. https://) in der Domain enthalten sein soll |
-| useTopLevelDomain | Kennzeichen dafür, ob die Top-Level-Domain beim Anzeigen von URLs verwendet werden soll |
-| displayMethod   | erforderlich, Anzeigemethode der URL<br/>Methode 1: Breadcrumb-Format<br/>Methode 2: vollständige URL<br/>Methode 3: vollständige URL ohne Protokoll |
-| multiElementsForUrlDisplay | Kennzeichen dafür, ob die angezeigte URL in mehrere DOM-Elemente aufgeteilt ist |
+| Variable                   | Beschreibung                                                                                                                                         |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| selector                   | Selektor für DOM-Element                                                                                                                             |
+| updateText                 | Flag, ob der Text oder der href-Wert des Elements aktualisiert werden soll                                                                           |
+| childSelector              | Selektor für Kind-DOM-Element unter übergeordnetem Element                                                                                           |
+| updateChildText            | Flag, ob der Innentext des Kind-Elements aktualisiert werden soll                                                                                    |
+| containProtocol            | Flag, ob das Protokoll (z. B. https://) in der Domain enthalten sein soll                                                                            |
+| useTopLevelDomain          | Kennzeichen dafür, ob die Top-Level-Domain beim Anzeigen von URLs verwendet werden soll                                                              |
+| displayMethod              | erforderlich, Anzeigemethode der URL<br/>Methode 1: Breadcrumb-Format<br/>Methode 2: vollständige URL<br/>Methode 3: vollständige URL ohne Protokoll |
+| multiElementsForUrlDisplay | Kennzeichen dafür, ob die angezeigte URL in mehrere DOM-Elemente aufgeteilt ist                                                                      |
 
 ### searchEngines
 
 Benutzerdefinierte Liste von Suchmaschinendomains
 
-| Variable                 | Beschreibung                                                 |
-| ------------------------ | ------------------------------------------------------------ |
-| hosts                    | Domain der Suchmaschine                                      |
-| resultContainerSelectors | optional, Suchergebnis-Container-DOM einstellen, um den Bereich der dynamischen Beobachtung einzugrenzen |
+| Variable                 | Beschreibung                                                                                                                                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hosts                    | Domain der Suchmaschine                                                                                                                                                                                 |
+| resultContainerSelectors | optional, Suchergebnis-Container-DOM einstellen, um den Bereich der dynamischen Beobachtung einzugrenzen                                                                                                |
 | attribute                | Geben Sie ein zusätzliches URL-Link-Attribut in &lt;a&gt; an, das neben 'href' verwendet wird (z.B. 'data-target')<br/>Wenn alle Link-Attribute 'href' sind, ist keine zusätzliche Angabe erforderlich. |
-

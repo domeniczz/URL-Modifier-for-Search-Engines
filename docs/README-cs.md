@@ -1,22 +1,22 @@
 # Modifikátor-URL-pro-vyhledávače
 
 <div align="center">
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ Pro snadné použití můžeme použít [Farside](https://github.com/benbusby/fa
 - Přesměrovat na: `https://farside.link/$1`
 
 - Přidat do skriptu:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ Pro snadné použití můžeme použít [Farside](https://github.com/benbusby/fa
       // ...
   ];
   ```
-  
+
 - Příklad URL: `https://www.youtube.com/watch?v=abc123`
 
 - Výsledné URL: `https://farside.link/youtube.com/watch?v=abc123`
@@ -172,33 +172,32 @@ Pro snadné použití můžeme použít [Farside](https://github.com/benbusby/fa
 
 Pravidla pro modifikaci URL v [regulárním výrazu](https://cs.wikipedia.org/wiki/Regulární_výraz)
 
-| Proměnná     | Popis                                          |
-| ------------ | ---------------------------------------------- |
-| matchRegex   | regulární výraz pro shodu s původními URL      |
-| replaceWith  | regulární výraz pro nahrazení                  |
+| Proměnná    | Popis                                     |
+| ----------- | ----------------------------------------- |
+| matchRegex  | regulární výraz pro shodu s původními URL |
+| replaceWith | regulární výraz pro nahrazení             |
 
 ### selectorRules
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) pravidla pro aktualizaci DOM elementů ve výsledcích vyhledávače
 
-| Proměnná                   | Popis                                                        |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | selector pro DOM element                                     |
-| updateText                 | příznak, zda aktualizovat text nebo hodnotu href elementu    |
-| childSelector              | selector pro dítě DOM elementu pod rodičovským elementem     |
-| updateChildText            | příznak, zda aktualizovat vnitřní text dítěte elementu       |
-| containProtocol            | příznak, zda zahrnovat protokol (např. https://) v doméně    |
-| useTopLevelDomain          | příznak pro použití domény nejvyšší úrovně při zobrazování URL |
+| Proměnná                   | Popis                                                                                                                                 |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| selector                   | selector pro DOM element                                                                                                              |
+| updateText                 | příznak, zda aktualizovat text nebo hodnotu href elementu                                                                             |
+| childSelector              | selector pro dítě DOM elementu pod rodičovským elementem                                                                              |
+| updateChildText            | příznak, zda aktualizovat vnitřní text dítěte elementu                                                                                |
+| containProtocol            | příznak, zda zahrnovat protokol (např. https://) v doméně                                                                             |
+| useTopLevelDomain          | příznak pro použití domény nejvyšší úrovně při zobrazování URL                                                                        |
 | displayMethod              | požadováno, metoda zobrazení URL<br/>metoda 1: formát drobečkové navigace<br/>metoda 2: celá URL<br/>metoda 3: celá URL bez protokolu |
-| multiElementsForUrlDisplay | příznak, zda je zobrazená URL rozdělena do více DOM elementů |
+| multiElementsForUrlDisplay | příznak, zda je zobrazená URL rozdělena do více DOM elementů                                                                          |
 
 ### searchEngines
 
 Uživatelem definovaný seznam domén vyhledávačů
 
-| Proměnná                    | Popis                                                       |
-| --------------------------- | ----------------------------------------------------------- |
-| hosts                       | doména vyhledávače                                          |
-| resultContainerSelectors    | volitelné, nastavte DOM kontejner výsledků vyhledávání, aby se zúžil rozsah dynamického pozorování |
-| attribute                 | určení dalšího atributu odkazu URL v &lt;a&gt; kromě 'href' (např. 'data-target')<br/>není třeba toto specifikovat, pokud jsou všechny atributy odkazu 'href' |
-
+| Proměnná                 | Popis                                                                                                                                                         |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hosts                    | doména vyhledávače                                                                                                                                            |
+| resultContainerSelectors | volitelné, nastavte DOM kontejner výsledků vyhledávání, aby se zúžil rozsah dynamického pozorování                                                            |
+| attribute                | určení dalšího atributu odkazu URL v &lt;a&gt; kromě 'href' (např. 'data-target')<br/>není třeba toto specifikovat, pokud jsou všechny atributy odkazu 'href' |

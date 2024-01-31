@@ -2,21 +2,21 @@
 
 <div align="center">
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ Pour une utilisation facile, nous pourrions utiliser [Farside](https://github.co
 - Rediriger vers : `https://farside.link/$1`
 
 - Ajouter au script :
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ Pour une utilisation facile, nous pourrions utiliser [Farside](https://github.co
       // ...
   ];
   ```
-  
+
 - Exemple d'URL : `https://www.youtube.com/watch?v=abc123`
 
 - URL résultante : `https://farside.link/youtube.com/watch?v=abc123`
@@ -181,24 +181,23 @@ Règles de modification d'URL en [expression régulière](https://fr.wikipedia.o
 
 Règles de [sélecteur](https://developer.mozilla.org/fr/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) pour les éléments DOM nécessitant une mise à jour pour les résultats de recherche des moteurs de recherche
 
-| Variable        | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| selector        | sélecteur pour l'élément DOM                                 |
-| updateText      | drapeau pour savoir s'il faut mettre à jour le texte ou la valeur href de l'élément |
-| childSelector   | sélecteur pour l'élément DOM enfant sous l'élément parent    |
-| updateChildText | drapeau pour savoir s'il faut mettre à jour le texte interne de l'élément enfant |
-| containProtocol | drapeau pour savoir s'il faut inclure le protocole (par exemple, https://) dans le domaine |
-| useTopLevelDomain | drapeau pour l'utilisation du domaine de premier niveau lors de l'affichage des URL |
-| displayMethod   | requis, méthode d'affichage de l'URL<br/>méthode 1 : format fil d'Ariane<br/>méthode 2 : URL complète<br/>méthode 3 : URL complète sans protocole |
-| multiElementsForUrlDisplay | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments du DOM |
+| Variable                   | Description                                                                                                                                       |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| selector                   | sélecteur pour l'élément DOM                                                                                                                      |
+| updateText                 | drapeau pour savoir s'il faut mettre à jour le texte ou la valeur href de l'élément                                                               |
+| childSelector              | sélecteur pour l'élément DOM enfant sous l'élément parent                                                                                         |
+| updateChildText            | drapeau pour savoir s'il faut mettre à jour le texte interne de l'élément enfant                                                                  |
+| containProtocol            | drapeau pour savoir s'il faut inclure le protocole (par exemple, https://) dans le domaine                                                        |
+| useTopLevelDomain          | drapeau pour l'utilisation du domaine de premier niveau lors de l'affichage des URL                                                               |
+| displayMethod              | requis, méthode d'affichage de l'URL<br/>méthode 1 : format fil d'Ariane<br/>méthode 2 : URL complète<br/>méthode 3 : URL complète sans protocole |
+| multiElementsForUrlDisplay | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments du DOM                                                                 |
 
 ### searchEngines
 
 Liste définie par l'utilisateur des domaines des moteurs de recherche
 
-| Variable                 | Description                                                        |
-| ------------------------ | ------------------------------------------------------------------ |
-| hosts                    | domaine du moteur de recherche                                     |
-| resultContainerSelectors | optionnel, définit le conteneur de résultats de recherche DOM, pour réduire la portée de l'observation dynamique |
+| Variable                 | Description                                                                                                                                                                       |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hosts                    | domaine du moteur de recherche                                                                                                                                                    |
+| resultContainerSelectors | optionnel, définit le conteneur de résultats de recherche DOM, pour réduire la portée de l'observation dynamique                                                                  |
 | attribute                | spécifiez un attribut d'URL supplémentaire dans &lt;a&gt; autre que 'href' (par exemple 'data-target')<br/>pas besoin de spécifier cela si tous les attributs de lien sont 'href' |
-

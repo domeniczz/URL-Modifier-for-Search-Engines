@@ -1,22 +1,22 @@
 # 搜索引擎结果 URL 修改器
 
 <div align="center">
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ URL 修改使用正则表达式。
 - 重定向到：`https://farside.link/$1`
 
 - 添加到脚本：
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ URL 修改使用正则表达式。
       // ...
   ];
   ```
-  
+
 - 示例 URL：`https://www.youtube.com/watch?v=abc123`
 
 - 结果 URL：`https://farside.link/youtube.com/watch?v=abc123`
@@ -172,33 +172,32 @@ URL 修改使用正则表达式。
 
 [正则表达式](https://zh.wikipedia.org/zh-cn/正则表达式)的 URL 修改规则
 
-| 参数        | 描述                      |
-| ----------- | ------------------------- |
+| 参数          | 描述              |
+| ----------- | --------------- |
 | matchRegex  | 匹配原始 URL 的正则表达式 |
-| replaceWith | 替换的正则表达式          |
+| replaceWith | 替换的正则表达式        |
 
 ### selectorRules
 
 搜索引擎结果需要更新的 DOM 元素的[选择器](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)规则
 
-| 参数            | 描述                                                         |
-| --------------- | ------------------------------------------------------------ |
-| selector        | DOM 元素的选择器                                             |
-| updateText      | 是否更新元素的文本或 href 值的标志                           |
-| childSelector   | 父元素下子 DOM 元素的选择器                                  |
-| updateChildText | 是否更新子元素的内部文本的标志                               |
-| containProtocol | 是否在域中包含协议（例如 https://）的标志                    |
-| useTopLevelDomain | 是否在显示网址时使用顶级域名的标志 |
-| displayMethod   | 必需，URL 显示方法<br/>方法1：面包屑格式<br/>方法2：完整 URL<br/>方法3：无协议的完整 URL |
-| multiElementsForUrlDisplay | 是否将显示的 URL 分成多个 DOM 元素 |
+| 参数                         | 描述                                                          |
+| -------------------------- | ----------------------------------------------------------- |
+| selector                   | DOM 元素的选择器                                                  |
+| updateText                 | 是否更新元素的文本或 href 值的标志                                        |
+| childSelector              | 父元素下子 DOM 元素的选择器                                            |
+| updateChildText            | 是否更新子元素的内部文本的标志                                             |
+| containProtocol            | 是否在域中包含协议（例如 https://）的标志                                   |
+| useTopLevelDomain          | 是否在显示网址时使用顶级域名的标志                                           |
+| displayMethod              | 必需，URL 显示方法<br/>方法1：面包屑格式<br/>方法2：完整 URL<br/>方法3：无协议的完整 URL |
+| multiElementsForUrlDisplay | 是否将显示的 URL 分成多个 DOM 元素                                      |
 
 ### searchEngines
 
 用户定义的搜索引擎域名列表
 
-| 变量                     | 描述                                          |
-| ------------------------ | --------------------------------------------- |
-| hosts                    | 搜索引擎的域名                                |
-| resultContainerSelectors | 可选，设置搜索结果容器DOM，以缩小动态观察范围 |
+| 变量                       | 描述                                                                                        |
+| ------------------------ | ----------------------------------------------------------------------------------------- |
+| hosts                    | 搜索引擎的域名                                                                                   |
+| resultContainerSelectors | 可选，设置搜索结果容器DOM，以缩小动态观察范围                                                                  |
 | attribute                | 指定 &lt;a&gt; 中的其他 URL 链接属性，除了 'href' 之外的属性（如 'data-target'）<br/>如果所有链接属性都是 'href'，则无需指定此项 |
-

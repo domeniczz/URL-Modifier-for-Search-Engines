@@ -2,21 +2,21 @@
 
 <div align="center">
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ URL の変更正規表現を使用します。
 - リダイレクト先：`https://farside.link/$1`
 
 - スクリプトへの追加：
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ URL の変更正規表現を使用します。
       // ...
   ];
   ```
-  
+
 - 例のURL：`https://www.youtube.com/watch?v=abc123`
 
 - 結果のURL：`https://farside.link/youtube.com/watch?v=abc123`
@@ -172,33 +172,32 @@ URL の変更正規表現を使用します。
 
 [正規表現](https://ja.wikipedia.org/wiki/正規表現)の URL 変更ルール
 
-| 変数        | 説明                          |
-| ----------- | ----------------------------- |
+| 変数          | 説明                |
+| ----------- | ----------------- |
 | matchRegex  | 元の URL にマッチする正規表現 |
-| replaceWith | 置換のための正規表現          |
+| replaceWith | 置換のための正規表現        |
 
 ### selectorRules
 
 検索エンジンの結果に対する DOM 要素の[セレクタ](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)ルール
 
-| 変数            | 説明                                                         |
-| --------------- | ------------------------------------------------------------ |
-| selector        | DOM 要素のセレクタ                                           |
-| updateText      | 要素のテキストまたは href 値を更新するかどうかのフラグ       |
-| childSelector   | 親要素の下の子 DOM 要素のセレクタ                            |
-| updateChildText | 子要素の内部テキストを更新するかどうかのフラグ               |
-| containProtocol | ドメインにプロトコル（例：https://）を含むかどうかのフラグ   |
-| useTopLevelDomain | URL 表示時にトップレベルドメインを使用するかどうかのフラグ |
-| displayMethod   | 必須、URL 表示方法<br/>方法1：パンくずリスト形式<br/>方法2：フル URL<br/>方法3：プロトコルなしのフル URL |
-| multiElementsForUrlDisplay | URL 表示のために複数の DOM 要素に分割されているかのフラグ |
+| 変数                         | 説明                                                                  |
+| -------------------------- | ------------------------------------------------------------------- |
+| selector                   | DOM 要素のセレクタ                                                         |
+| updateText                 | 要素のテキストまたは href 値を更新するかどうかのフラグ                                      |
+| childSelector              | 親要素の下の子 DOM 要素のセレクタ                                                 |
+| updateChildText            | 子要素の内部テキストを更新するかどうかのフラグ                                             |
+| containProtocol            | ドメインにプロトコル（例：https://）を含むかどうかのフラグ                                   |
+| useTopLevelDomain          | URL 表示時にトップレベルドメインを使用するかどうかのフラグ                                     |
+| displayMethod              | 必須、URL 表示方法<br/>方法1：パンくずリスト形式<br/>方法2：フル URL<br/>方法3：プロトコルなしのフル URL |
+| multiElementsForUrlDisplay | URL 表示のために複数の DOM 要素に分割されているかのフラグ                                   |
 
 ### searchEngines
 
 ユーザー定義の検索エンジンドメインリスト
 
-| 変数                     | 説明                                                         |
-| ------------------------ | ------------------------------------------------------------ |
-| hosts                    | 検索エンジンのドメイン                                       |
-| resultContainerSelectors | オプション、検索結果コンテナの DOM を設定し、動的観察の範囲を狭める |
+| 変数                       | 説明                                                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------------------------------- |
+| hosts                    | 検索エンジンのドメイン                                                                                             |
+| resultContainerSelectors | オプション、検索結果コンテナの DOM を設定し、動的観察の範囲を狭める                                                                    |
 | attribute                | &lt;a&gt; タグの 'href' 以外の追加の URL リンク属性を指定します（例：'data-target'）<br/>すべてのリンク属性が 'href' の場合は、これを指定する必要はありません |
-

@@ -1,22 +1,22 @@
 # 검색 엔진용 URL 수정기
 
 <div align="center">
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ URL 수정은 정규 표현식을 사용합니다.
 - 리디렉트 대상: `https://farside.link/$1`
 
 - 스크립트에 추가:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ URL 수정은 정규 표현식을 사용합니다.
       // ...
   ];
   ```
-  
+
 - 예시 URL: `https://www.youtube.com/watch?v=abc123`
 
 - 결과 URL: `https://farside.link/youtube.com/watch?v=abc123`
@@ -172,33 +172,32 @@ URL 수정은 정규 표현식을 사용합니다.
 
 [정규 표현식](https://ko.wikipedia.org/wiki/정규_표현식) 을 사용한 URL 수정 규칙
 
-| 변수          | 설명                                         |
-| ------------- | -------------------------------------------- |
-| matchRegex    | 원본 URL 과 일치하는 정규 표현식              |
-| replaceWith   | 대체를 위한 정규 표현식                      |
+| 변수          | 설명                   |
+| ----------- | -------------------- |
+| matchRegex  | 원본 URL 과 일치하는 정규 표현식 |
+| replaceWith | 대체를 위한 정규 표현식        |
 
 ### selectorRules
 
 검색 엔진 결과를 위한 DOM 요소 업데이트용 [선택자](https://developer.mozilla.org/ko/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) 규칙
 
-| 변수              | 설명                                                                         |
-| ----------------- | ---------------------------------------------------------------------------- |
-| selector          | DOM 요소를 위한 선택자                                                       |
-| updateText        | 요소의 텍스트 또는 href 값 업데이트 여부 플래그                              |
-| childSelector     | 부모 요소 아래의 자식 DOM 요소를 위한 선택자                                 |
-| updateChildText   | 자식 요소의 내부 텍스트 업데이트 여부 플  |
-| containProtocol | 도메인에 프로토콜(예: https://)을 포함할지 여부 플래그               |
-| useTopLevelDomain | URL 을 표시할 때 최상위 도메인을 사용할지 여부를 결정하는 플래그 |
-| displayMethod   | 필수, URL 표시 방법<br/>방법 1: 빵 부스러기 형식<br/>방법 2: 전체 URL<br/>방법 3: 프로토콜 없는 전체 URL |
-| multiElementsForUrlDisplay | URL 표시가 여러 DOM 요소로 분리되는지 여부의 플래그 |
+| 변수                         | 설명                                                                          |
+| -------------------------- | --------------------------------------------------------------------------- |
+| selector                   | DOM 요소를 위한 선택자                                                              |
+| updateText                 | 요소의 텍스트 또는 href 값 업데이트 여부 플래그                                               |
+| childSelector              | 부모 요소 아래의 자식 DOM 요소를 위한 선택자                                                 |
+| updateChildText            | 자식 요소의 내부 텍스트 업데이트 여부 플                                                     |
+| containProtocol            | 도메인에 프로토콜(예: https://)을 포함할지 여부 플래그                                         |
+| useTopLevelDomain          | URL 을 표시할 때 최상위 도메인을 사용할지 여부를 결정하는 플래그                                      |
+| displayMethod              | 필수, URL 표시 방법<br/>방법 1: 빵 부스러기 형식<br/>방법 2: 전체 URL<br/>방법 3: 프로토콜 없는 전체 URL |
+| multiElementsForUrlDisplay | URL 표시가 여러 DOM 요소로 분리되는지 여부의 플래그                                            |
 
 ### searchEngines
 
 사용자 정의 검색 엔진 도메인 목록
 
-| 변수                       | 설명                                                         |
-| -------------------------- | ------------------------------------------------------------ |
-| hosts                      | 검색 엔진의 도메인                                           |
-| resultContainerSelectors   | 선택 사항, 검색 결과 컨테이너 DOM 설정, 동적 관찰 범위를 좁히기 위함 |
-| attribute                  | &lt;a&gt; 요소에서 'href' 이외의 추가 URL 링크 속성을 지정합니다 (예: 'data-target')<br/>모든 링크 속성이 'href'인 경우에는 이 부분을 지정할 필요가 없습니다 |
-
+| 변수                       | 설명                                                                                                             |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| hosts                    | 검색 엔진의 도메인                                                                                                     |
+| resultContainerSelectors | 선택 사항, 검색 결과 컨테이너 DOM 설정, 동적 관찰 범위를 좁히기 위함                                                                     |
+| attribute                | &lt;a&gt; 요소에서 'href' 이외의 추가 URL 링크 속성을 지정합니다 (예: 'data-target')<br/>모든 링크 속성이 'href'인 경우에는 이 부분을 지정할 필요가 없습니다 |

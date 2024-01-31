@@ -1,22 +1,22 @@
 # تغییردهنده-URL-برای-موتورهای-جستجو
 
 <div align="center">
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@
 - هدایت به: `https://farside.link/$1`
 
 - اضافه کردن به اسکریپت:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@
       // ...
   ];
   ```
-  
+
 - نمونه URL: `https://www.youtube.com/watch?v=abc123`
 
 - نتیجه URL: `https://farside.link/youtube.com/watch?v=abc123`
@@ -172,33 +172,32 @@
 
 قوانین تغییر URL در [عبارت باقاعده](https://fa.wikipedia.org/wiki/عبارت_باقاعده)
 
-| متغیر         | توضیحات                                   |
-| ----------- | --------------------------------------------- |
-| matchRegex  | عبارت باقاعده برای مطابقت با URLهای اصلی       |
-| replaceWith | عبارت باقاعده برای جایگزینی                   |
+| متغیر       | توضیحات                                  |
+| ----------- | ---------------------------------------- |
+| matchRegex  | عبارت باقاعده برای مطابقت با URLهای اصلی |
+| replaceWith | عبارت باقاعده برای جایگزینی              |
 
 ### selectorRules
 
 قوانین [انتخاب‌گر](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) برای به‌روز رسانی عناصر DOM نتایج جستجوی موتورهای جستجو
 
-| متغیر                        | توضیحات                                                  |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | انتخاب‌گر برای عنصر DOM                                      |
-| updateText                 | پرچم برای آیا باید متن یا مقدار href عنصر به‌روز رسانی شود    |
-| childSelector              | انتخاب‌گر برای عنصر فرزند DOM زیر عنصر والد                  |
-| updateChildText            | پرچم برای آیا باید متن داخلی عنصر فرزند به‌روز رسانی شود      |
-| containProtocol            | پرچم برای آیا باید پروتکل (مثلاً https://) در دامنه وجود داشته باشد |
-| useTopLevelDomain | پرچم برای آیا از دامنه سطح بالا هنگام نمایش آدرس‌های اینترنتی استفاده شود |
+| متغیر                      | توضیحات                                                                                            |
+| -------------------------- | -------------------------------------------------------------------------------------------------- |
+| selector                   | انتخاب‌گر برای عنصر DOM                                                                            |
+| updateText                 | پرچم برای آیا باید متن یا مقدار href عنصر به‌روز رسانی شود                                         |
+| childSelector              | انتخاب‌گر برای عنصر فرزند DOM زیر عنصر والد                                                        |
+| updateChildText            | پرچم برای آیا باید متن داخلی عنصر فرزند به‌روز رسانی شود                                           |
+| containProtocol            | پرچم برای آیا باید پروتکل (مثلاً https://) در دامنه وجود داشته باشد                                |
+| useTopLevelDomain          | پرچم برای آیا از دامنه سطح بالا هنگام نمایش آدرس‌های اینترنتی استفاده شود                          |
 | displayMethod              | لازم، روش نمایش URL<br/>روش 1: فرمت breadcrumb<br/>روش 2: URL کامل<br/>روش 3: URL کامل بدون پروتکل |
-| multiElementsForUrlDisplay | پرچم برای آیا URL نمایش داده شده به چندین عنصر DOM تقسیم می‌شود |
+| multiElementsForUrlDisplay | پرچم برای آیا URL نمایش داده شده به چندین عنصر DOM تقسیم می‌شود                                    |
 
 ### searchEngines
 
 لیست تعریف شده توسط کاربر از دامنه‌های موتور جستجو
 
-| متغیر                      | توضیحات                                                  |
-| ------------------------ | ------------------------------------------------------------ |
-| hosts                    | دامنه موتور جستجو                                            |
-| resultContainerSelectors | اختیاری، مشخص کردن ظرف نتیجه جستجو DOM، برای محدود کردن دامنه مشاهده دینامیک |
+| متغیر                    | توضیحات                                                                                                                                             |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hosts                    | دامنه موتور جستجو                                                                                                                                   |
+| resultContainerSelectors | اختیاری، مشخص کردن ظرف نتیجه جستجو DOM، برای محدود کردن دامنه مشاهده دینامیک                                                                        |
 | attribute                | مشخص کردن ویژگی لینک URL اضافی در &lt;a&gt; به جز 'href' (مثلاً 'data-target')<br/>نیازی به مشخص کردن این نیست اگر تمام ویژگی‌های لینک 'href' هستند |
-

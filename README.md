@@ -1,22 +1,22 @@
 # URL-Modifier-for-Search-Engines
 
 <div align="center">
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ For easy usage, we could use [Farside](https://github.com/benbusby/farside) that
 - Redirect to: `https://farside.link/$1`
 
 - Add to script:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -181,24 +181,23 @@ URL modification rules in [regular expression](https://en.wikipedia.org/wiki/Reg
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) rules for the DOM elements needs updating for search engine results
 
-| Variable                   | Description                                                  |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | selector for DOM element                                     |
-| updateText                 | flag for whether to update the text or href value of the element |
-| childSelector              | selector for child DOM element under parent element          |
-| updateChildText            | flag for whether to update the inner text of the child element |
-| containProtocol            | flag for whether to contain protocol (e.g. https://) in the domain |
-| useTopLevelDomain          | flag for whether to use the top-level domain when displaying URLs |
+| Variable                   | Description                                                                                                                 |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| selector                   | selector for DOM element                                                                                                    |
+| updateText                 | flag for whether to update the text or href value of the element                                                            |
+| childSelector              | selector for child DOM element under parent element                                                                         |
+| updateChildText            | flag for whether to update the inner text of the child element                                                              |
+| containProtocol            | flag for whether to contain protocol (e.g. https://) in the domain                                                          |
+| useTopLevelDomain          | flag for whether to use the top-level domain when displaying URLs                                                           |
 | displayMethod              | required, URL display method<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
-| multiElementsForUrlDisplay | flag for whether the displayed URL is separated into multiple DOM elements |
+| multiElementsForUrlDisplay | flag for whether the displayed URL is separated into multiple DOM elements                                                  |
 
 ### searchEngines
 
 User-defined list of search engine domains
 
-| Variable                 | Description                                                  |
-| ------------------------ | ------------------------------------------------------------ |
-| hosts                    | search engine's domain                                       |
-| resultContainerSelectors | optional, set search result container DOM, to narrow down the range of dynamic observation |
+| Variable                 | Description                                                                                                                                                 |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hosts                    | search engine's domain                                                                                                                                      |
+| resultContainerSelectors | optional, set search result container DOM, to narrow down the range of dynamic observation                                                                  |
 | attribute                | specify additional URL link attribute in &lt;a&gt; other than 'href' (e.g. 'data-target')<br/>no need to specify this if all the link attributes are 'href' |
-

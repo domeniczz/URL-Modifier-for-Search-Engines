@@ -1,22 +1,22 @@
 # Bộ-Chỉnh-Sửa-URL-cho-Các-Công-Cụ-Tìm-Kiếm
 
 <div align="center">
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ Nhà cung cấp dịch vụ:
 - Chuyển hướng đến: `https://farside.link/$1`
 
 - Thêm vào script:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ Nhà cung cấp dịch vụ:
       // ...
   ];
   ```
-  
+
 - URL ví dụ: `https://www.youtube.com/watch?v=abc123`
 
 - URL kết quả: `https://farside.link/youtube.com/watch?v=abc123`
@@ -172,33 +172,32 @@ Nhà cung cấp dịch vụ:
 
 Quy tắc chỉnh sửa URL bằng [biểu thức chính quy](https://vi.wikipedia.org/wiki/Biểu_thức_chính_quy)
 
-| Biến             | Mô tả                                     |
-| ---------------- | ----------------------------------------- |
-| matchRegex       | biểu thức chính quy để khớp với URL gốc   |
-| replaceWith      | biểu thức chính quy cho thay thế          |
+| Biến        | Mô tả                                   |
+| ----------- | --------------------------------------- |
+| matchRegex  | biểu thức chính quy để khớp với URL gốc |
+| replaceWith | biểu thức chính quy cho thay thế        |
 
 ### selectorRules
 
 Quy tắc [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) cho các phần tử DOM cần cập nhật trong kết quả tìm kiếm của công cụ tìm kiếm
 
-| Biến                         | Mô tả                                                        |
-| ---------------------------- | ------------------------------------------------------------ |
-| selector                     | selector cho phần tử DOM                                     |
-| updateText                   | cờ cho dù có cập nhật văn bản hay giá trị href của phần tử hay không |
-| childSelector                | selector cho phần tử DOM con dưới phần tử cha                |
-| updateChildText              | cờ cho dù có cập nhật văn bản bên trong của phần tử con hay không |
-| containProtocol              | cờ cho dù có chứa giao thức (ví dụ: https://) trong miền hay không |
-| useTopLevelDomain | cờ để xác định có sử dụng tên miền cấp cao nhất khi hiển thị URL hay không |
-| displayMethod                | bắt buộc, phương thức hiển thị URL<br/>phương thức 1: định dạng breadcrumb<br/>phương thức 2: URL đầy đủ<br/>phương thức 3: URL đầy đủ không có giao thức |
-| multiElementsForUrlDisplay | cờ cho dù URL hiển thị được chia thành nhiều phần tử DOM khác nhau |
+| Biến                       | Mô tả                                                                                                                                                     |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| selector                   | selector cho phần tử DOM                                                                                                                                  |
+| updateText                 | cờ cho dù có cập nhật văn bản hay giá trị href của phần tử hay không                                                                                      |
+| childSelector              | selector cho phần tử DOM con dưới phần tử cha                                                                                                             |
+| updateChildText            | cờ cho dù có cập nhật văn bản bên trong của phần tử con hay không                                                                                         |
+| containProtocol            | cờ cho dù có chứa giao thức (ví dụ: https://) trong miền hay không                                                                                        |
+| useTopLevelDomain          | cờ để xác định có sử dụng tên miền cấp cao nhất khi hiển thị URL hay không                                                                                |
+| displayMethod              | bắt buộc, phương thức hiển thị URL<br/>phương thức 1: định dạng breadcrumb<br/>phương thức 2: URL đầy đủ<br/>phương thức 3: URL đầy đủ không có giao thức |
+| multiElementsForUrlDisplay | cờ cho dù URL hiển thị được chia thành nhiều phần tử DOM khác nhau                                                                                        |
 
 ### searchEngines
 
 Danh sách do người dùng định nghĩa của các miền công cụ tìm kiếm
 
-| Biến                         | Mô tả                                                        |
-| ---------------------------- | ------------------------------------------------------------ |
-| hosts                        | miền của công cụ tìm kiếm                                    |
-| resultContainerSelectors     | tùy chọn, thiết lập bộ chọn DOM cho kết quả tìm kiếm, để thu hẹp phạm vi quan sát động |
-| attribute                    | chỉ định thuộc tính liên kết URL bổ sung trong &lt;a&gt; khác với 'href' (ví dụ: 'data-target')<br/>không cần chỉ định nếu tất cả các thuộc tính liên kết đều là 'href' |
-
+| Biến                     | Mô tả                                                                                                                                                                   |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hosts                    | miền của công cụ tìm kiếm                                                                                                                                               |
+| resultContainerSelectors | tùy chọn, thiết lập bộ chọn DOM cho kết quả tìm kiếm, để thu hẹp phạm vi quan sát động                                                                                  |
+| attribute                | chỉ định thuộc tính liên kết URL bổ sung trong &lt;a&gt; khác với 'href' (ví dụ: 'data-target')<br/>không cần chỉ định nếu tất cả các thuộc tính liên kết đều là 'href' |

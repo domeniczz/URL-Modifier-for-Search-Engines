@@ -2,21 +2,21 @@
 
 <div align="center">
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@
 - Перенаправить на: `https://farside.link/$1`
 
 - Добавить в скрипт:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@
       // ...
   ];
   ```
-  
+
 - Пример URL: `https://www.youtube.com/watch?v=abc123`
 
 - Результат URL: `https://farside.link/youtube.com/watch?v=abc123`
@@ -181,24 +181,23 @@
 
 [Селекторы](https://developer.mozilla.org/ru/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) для обновления DOM-элементов результатов поисковых систем
 
-| Переменная      | Описание                                                     |
-| --------------- | ------------------------------------------------------------ |
-| selector        | селектор DOM-элемента                                        |
-| updateText      | флаг, нужно ли обновлять текст или значение href элемента    |
-| childSelector   | селектор для дочернего DOM-элемента под родительским элементом |
-| updateChildText | флаг, нужно ли обновлять внутренний текст дочернего элемента |
-| containProtocol | флаг, нужно ли включать протокол (например, https://) в домен |
-| useTopLevelDomain | флаг для использования домена верхнего уровня при отображении URL-адресов |
-| displayMethod   | обязательно, метод отображения URL<br/>метод 1: формат "хлебные крошки"<br/>метод 2: полный URL<br/>метод 3: полный URL без протокола |
-| multiElementsForUrlDisplay | флаг того, отображается ли URL в нескольких элементах DOM |
+| Переменная                 | Описание                                                                                                                              |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| selector                   | селектор DOM-элемента                                                                                                                 |
+| updateText                 | флаг, нужно ли обновлять текст или значение href элемента                                                                             |
+| childSelector              | селектор для дочернего DOM-элемента под родительским элементом                                                                        |
+| updateChildText            | флаг, нужно ли обновлять внутренний текст дочернего элемента                                                                          |
+| containProtocol            | флаг, нужно ли включать протокол (например, https://) в домен                                                                         |
+| useTopLevelDomain          | флаг для использования домена верхнего уровня при отображении URL-адресов                                                             |
+| displayMethod              | обязательно, метод отображения URL<br/>метод 1: формат "хлебные крошки"<br/>метод 2: полный URL<br/>метод 3: полный URL без протокола |
+| multiElementsForUrlDisplay | флаг того, отображается ли URL в нескольких элементах DOM                                                                             |
 
 ### searchEngines
 
 Список доменов поисковых систем, определенных пользователем
 
-| Переменная               | Описание                                                     |
-| ------------------------ | ------------------------------------------------------------ |
-| hosts                    | домен поисковой системы                                      |
-| resultContainerSelectors | опционально, установить контейнер DOM результатов поиска, чтобы сузить диапазон динамического наблюдения |
+| Переменная               | Описание                                                                                                                                                  |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hosts                    | домен поисковой системы                                                                                                                                   |
+| resultContainerSelectors | опционально, установить контейнер DOM результатов поиска, чтобы сузить диапазон динамического наблюдения                                                  |
 | attribute                | укажите дополнительный атрибут URL-ссылки в &lt;a&gt; помимо 'href' (например, 'data-target')<br/>не нужно указывать это, если все атрибуты ссылки 'href' |
-

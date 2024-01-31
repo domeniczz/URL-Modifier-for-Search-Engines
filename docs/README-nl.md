@@ -1,22 +1,22 @@
 # URL-Wijzigingsmodule-voor-Zoekmachines
 
 <div align="center">
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ Voor gemakkelijk gebruik kunnen we [Farside](https://github.com/benbusby/farside
 - Omleiden naar: `https://farside.link/$1`
 
 - Toevoegen aan script:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ Voor gemakkelijk gebruik kunnen we [Farside](https://github.com/benbusby/farside
       // ...
   ];
   ```
-  
+
 - Voorbeeld URL: `https://www.youtube.com/watch?v=abc123`
 
 - Resultaat URL: `https://farside.link/youtube.com/watch?v=abc123`
@@ -172,33 +172,32 @@ Voor gemakkelijk gebruik kunnen we [Farside](https://github.com/benbusby/farside
 
 URL-wijzigingsregels in [reguliere expressie](https://nl.wikipedia.org/wiki/Reguliere_expressie)
 
-| Variabele   | Beschrijving                                   |
-| ----------- | --------------------------------------------- |
+| Variabele   | Beschrijving                                             |
+| ----------- | -------------------------------------------------------- |
 | matchRegex  | reguliere expressie voor het matchen van originele URL's |
-| replaceWith | reguliere expressie voor vervanging            |
+| replaceWith | reguliere expressie voor vervanging                      |
 
 ### selectorRules
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) regels voor de DOM-elementen die moeten worden bijgewerkt voor zoekmachine resultaten
 
-| Variabele                  | Beschrijving                                                 |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | selector voor DOM-element                                    |
-| updateText                 | vlag voor het al dan niet updaten van de tekst of href-waarde van het element |
-| childSelector              | selector voor kind DOM-element onder ouder element           |
-| updateChildText            | vlag voor het al dan niet updaten van de binnentekst van het kind element |
-| containProtocol            | vlag voor het al dan niet bevatten van protocol (bijv. https://) in de domein |
-| useTopLevelDomain          | vlag voor het al dan niet gebruiken van het topleveldomein bij het weergeven van URL's |
+| Variabele                  | Beschrijving                                                                                                                             |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| selector                   | selector voor DOM-element                                                                                                                |
+| updateText                 | vlag voor het al dan niet updaten van de tekst of href-waarde van het element                                                            |
+| childSelector              | selector voor kind DOM-element onder ouder element                                                                                       |
+| updateChildText            | vlag voor het al dan niet updaten van de binnentekst van het kind element                                                                |
+| containProtocol            | vlag voor het al dan niet bevatten van protocol (bijv. https://) in de domein                                                            |
+| useTopLevelDomain          | vlag voor het al dan niet gebruiken van het topleveldomein bij het weergeven van URL's                                                   |
 | displayMethod              | vereist, URL-weergavemethode<br/>methode 1: breadcrumb-formaat<br/>methode 2: volledige URL<br/>methode 3: volledige URL zonder protocol |
-| multiElementsForUrlDisplay | vlag voor of de weergegeven URL is opgesplitst in meerdere DOM-elementen |
+| multiElementsForUrlDisplay | vlag voor of de weergegeven URL is opgesplitst in meerdere DOM-elementen                                                                 |
 
 ### searchEngines
 
 Door de gebruiker gedefinieerde lijst met domeinen van zoekmachines
 
-| Variabele                | Beschrijving                                                  |
-| ------------------------ | ------------------------------------------------------------ |
-| hosts                    | domein van de zoekmachine                                     |
-| resultContainerSelectors | optioneel, stel zoekresultaat container DOM in, om de reikwijdte van dynamische observatie te verkleinen |
+| Variabele                | Beschrijving                                                                                                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| hosts                    | domein van de zoekmachine                                                                                                                                          |
+| resultContainerSelectors | optioneel, stel zoekresultaat container DOM in, om de reikwijdte van dynamische observatie te verkleinen                                                           |
 | attribute                | specificeer extra URL-linkattribuut in &lt;a&gt; anders dan 'href' (bijv. 'data-target')<br/>niet nodig om dit te specificeren als alle linkattributen 'href' zijn |
-

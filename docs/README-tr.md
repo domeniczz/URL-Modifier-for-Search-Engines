@@ -2,21 +2,21 @@
 
 <div align="center">
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ Kolay kullanım için, kendi düzenli ifade kurallarımızı yazmak yerine, gizl
 - Yönlendirilecek: `https://farside.link/$1`
 
 - Betiğe ekle:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ Kolay kullanım için, kendi düzenli ifade kurallarımızı yazmak yerine, gizl
       // ...
   ];
   ```
-  
+
 - Örnek URL: `https://www.youtube.com/watch?v=abc123`
 
 - Sonuç URL: `https://farside.link/youtube.com/watch?v=abc123`
@@ -172,33 +172,32 @@ Kolay kullanım için, kendi düzenli ifade kurallarımızı yazmak yerine, gizl
 
 Düzenli ifadeyle [URL değiştirme kuralları](https://tr.wikipedia.org/wiki/Düzenli_ifade)
 
-| Değişken    | Açıklama                                       |
-| ----------- | --------------------------------------------- |
+| Değişken    | Açıklama                                         |
+| ----------- | ------------------------------------------------ |
 | matchRegex  | orijinal URL'leri eşleştirmek için düzenli ifade |
-| replaceWith | değiştirme için düzenli ifade            |
+| replaceWith | değiştirme için düzenli ifade                    |
 
 ### selectorRules
 
 Arama motoru sonuçları için güncellenmesi gereken DOM öğelerinin [Seçici](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) kuralları
 
-| Değişken        | Açıklama                                                  |
-| --------------- | ------------------------------------------------------------ |
-| selector        | DOM öğesinin seçicisi                                      |
-| updateText      | öğenin metin veya href değerini güncelleme bayrağı |
-| childSelector   | ana öğenin altında çocuk DOM öğesi için seçici          |
-| updateChildText | çocuk öğenin iç metnini güncelleme bayrağı |
-| containProtocol | alan adında protokolü (örn. https://) içerme bayrağı |
-| useTopLevelDomain | URL'leri gösterirken en üst düzey alan adını kullanıp kullanmama bayrağı |
-| displayMethod   | gerekli, URL gösterim yöntemi<br/>yöntem 1: breadcrumb formatı<br/>yöntem 2: tam URL<br/>yöntem 3: protokol olmadan tam URL |
-| multiElementsForUrlDisplay  | URL'nin birden fazla DOM öğesine ayrılıp ayrılmadığını gösteren bayrak |
+| Değişken                   | Açıklama                                                                                                                    |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| selector                   | DOM öğesinin seçicisi                                                                                                       |
+| updateText                 | öğenin metin veya href değerini güncelleme bayrağı                                                                          |
+| childSelector              | ana öğenin altında çocuk DOM öğesi için seçici                                                                              |
+| updateChildText            | çocuk öğenin iç metnini güncelleme bayrağı                                                                                  |
+| containProtocol            | alan adında protokolü (örn. https://) içerme bayrağı                                                                        |
+| useTopLevelDomain          | URL'leri gösterirken en üst düzey alan adını kullanıp kullanmama bayrağı                                                    |
+| displayMethod              | gerekli, URL gösterim yöntemi<br/>yöntem 1: breadcrumb formatı<br/>yöntem 2: tam URL<br/>yöntem 3: protokol olmadan tam URL |
+| multiElementsForUrlDisplay | URL'nin birden fazla DOM öğesine ayrılıp ayrılmadığını gösteren bayrak                                                      |
 
 ### searchEngines
 
 Kullanıcı tanımlı arama motoru domainleri listesi
 
-| Değişken                 | Açıklama                                                  |
-| ------------------------ | ------------------------------------------------------------ |
-| hosts                    | arama motorunun domaini                                     |
-| resultContainerSelectors | isteğe bağlı, arama sonucu konteyner DOM'unu ayarlayın, dinamik gözlemin kapsamını daraltmak için |
+| Değişken                 | Açıklama                                                                                                                                                                    |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hosts                    | arama motorunun domaini                                                                                                                                                     |
+| resultContainerSelectors | isteğe bağlı, arama sonucu konteyner DOM'unu ayarlayın, dinamik gözlemin kapsamını daraltmak için                                                                           |
 | attribute                | &lt;a&gt; içinde 'href' dışındaki diğer URL bağlantısı özniteliğini belirtin (örneğin 'data-target')<br/>Eğer tüm bağlantı öznitelikleri 'href' ise belirtmeye gerek yoktur |
-

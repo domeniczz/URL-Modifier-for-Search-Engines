@@ -1,22 +1,22 @@
 # Modificador-de-URL-para-Motores-de-Busca
 
 <div align="center">
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
-	<a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
@@ -142,7 +142,7 @@ Para uso fácil, podemos usar o [Farside](https://github.com/benbusby/farside) q
 - Redirecionar para: `https://farside.link/$1`
 
 - Adicionar ao script:
-
+  
   ```js
   const urlModificationRules = [
       {
@@ -152,7 +152,7 @@ Para uso fácil, podemos usar o [Farside](https://github.com/benbusby/farside) q
       // ...
   ];
   ```
-  
+
 - Exemplo de URL: `https://www.youtube.com/watch?v=abc123`
 
 - URL Resultante: `https://farside.link/youtube.com/watch?v=abc123`
@@ -181,24 +181,23 @@ Regras de modificação de URL em [expressão regular](https://pt.wikipedia.org/
 
 Regras de [seleção](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) para elementos DOM que precisam ser atualizados nos resultados do motor de busca
 
-| Variável        | Descrição                                                    |
-| --------------- | ------------------------------------------------------------ |
-| selector        | seletor para elemento DOM                                    |
-| updateText      | flag para atualizar o texto ou valor href do elemento        |
-| childSelector   | seletor para elemento DOM filho sob elemento pai             |
-| updateChildText | flag para atualizar o texto interno do elemento filho        |
-| containProtocol | flag para incluir protocolo (ex: https://) no domínio        |
-| useTopLevelDomain | sinalizador para se usar o domínio de nível superior ao exibir URLs |
-| displayMethod   | obrigatório, método de exibição da URL<br/>método 1: formato breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sem protocolo |
-| multiElementsForUrlDisplay | indicador de si la URL mostrada se divide en varios elementos del DOM |
+| Variável                   | Descrição                                                                                                                                   |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| selector                   | seletor para elemento DOM                                                                                                                   |
+| updateText                 | flag para atualizar o texto ou valor href do elemento                                                                                       |
+| childSelector              | seletor para elemento DOM filho sob elemento pai                                                                                            |
+| updateChildText            | flag para atualizar o texto interno do elemento filho                                                                                       |
+| containProtocol            | flag para incluir protocolo (ex: https://) no domínio                                                                                       |
+| useTopLevelDomain          | sinalizador para se usar o domínio de nível superior ao exibir URLs                                                                         |
+| displayMethod              | obrigatório, método de exibição da URL<br/>método 1: formato breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sem protocolo |
+| multiElementsForUrlDisplay | indicador de si la URL mostrada se divide en varios elementos del DOM                                                                       |
 
 ### searchEngines
 
 Lista definida pelo usuário de domínios de motores de busca
 
-| Variável                 | Descrição                                                    |
-| ------------------------ | ------------------------------------------------------------ |
-| hosts                    | domínio do motor de busca                                    |
-| resultContainerSelectors | opcional, define o contêiner do resultado da busca DOM, para reduzir a faixa de observação dinâmica |
+| Variável                 | Descrição                                                                                                                                                                        |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hosts                    | domínio do motor de busca                                                                                                                                                        |
+| resultContainerSelectors | opcional, define o contêiner do resultado da busca DOM, para reduzir a faixa de observação dinâmica                                                                              |
 | attribute                | especifique atributo de link adicional em &lt;a&gt; além de 'href' (por exemplo, 'data-target')<br/>não é necessário especificar isso se todos os atributos de link forem 'href' |
-
