@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.3.2.2
+// @version      2.3.3
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -366,6 +366,10 @@
 // @match        *://www.mojeek.com/search?*
 // @match        *://yep.com/web?*
 // @match        *://www.torry.io/search*
+// @match        *://youcare.world/all?*
+// @match        *://search.seznam.cz/?*
+// @match        *://search.gmx.com/web/result?*
+// @match        *://search.gmx.com/web?*
 
 // @grant        none
 // @run-at       document-end
@@ -378,22 +382,6 @@
     // Define URL modification rules with precompiled regex
     const urlModificationRules = [
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*)/),
-            replaceWith: 'https://safereddit.com/$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+$|profile\/.*)/),
-            replaceWith: 'https://quetre.iket.me/$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
-            replaceWith: 'https://nitter.net/$1$2'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
-            replaceWith: 'https://ao.vern.cc$1'
-        },
-        {
             matchRegex: new RegExp(/^https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/$1/$2'
         },
@@ -404,6 +392,22 @@
         {
             matchRegex: new RegExp(/^https?:\/\/wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*)/),
+            replaceWith: 'https://safereddit.com/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+$|profile\/.*)/),
+            replaceWith: 'https://quetre.iket.me/$1'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
+            replaceWith: 'https://nitter.catsarch.com/$1$2'
+        },
+        {
+            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
+            replaceWith: 'https://ao.vern.cc$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/((?:(?:.*?)?medium|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:[\w\/-]+|[\w@.]+\/[\w-]+))(?:\?source=.*)?/),
@@ -537,7 +541,7 @@
                 childSelector: 'div.byrV5b cite',
                 updateChildText: true,
                 containProtocol: true,
-                displayMethod: 1
+                urlDisplayMethod: 1
             },
             {
                 // selector for sub-results
@@ -553,7 +557,7 @@
                 selector: 'ul#search-result li div.Organic-Subtitle div a',
                 updateChildText: true,
                 containProtocol: false,
-                displayMethod: 1,
+                urlDisplayMethod: 1,
             },
             {
                 selector: 'ul#search-result li div.Organic div a',
@@ -565,7 +569,6 @@
                 childSelector: 'span span',
                 updateChildText: true,
                 containProtocol: true,
-                displayMethod: 1,
                 multiElementsForUrlDisplay: true
             },
             {
@@ -578,8 +581,8 @@
         'startpage': [
             {
                 selector: 'a.w-gl__result-url.result-link',
-                updateText: true,
-                displayMethod: 2
+                updateTextWithoutOverwrite: true,
+                urlDisplayMethod: 2
             },
             {
                 selector: 'a.w-gl__result-title.result-link'
@@ -590,15 +593,17 @@
         ],
         'brave': [
             {
-                selector: 'a.h.svelte-1dihpoi',
-                childSelector: 'cite.snippet-url.svelte-1ygzem6 span',
+                selector: 'div.snippet a.h',
+                childSelector: 'div.site cite.snippet-url span',
                 updateChildText: true,
                 containProtocol: false,
-                displayMethod: 1,
                 multiElementsForUrlDisplay: true
             },
             {
-                selector: 'div.snippet a'
+                selector: 'div#discussions.snippet a',
+            },
+            {
+                selector: 'div#infobox-snippet.snippet a'
             }
         ],
         'duckduckgo': [
@@ -610,7 +615,6 @@
                 childSelector: 'span',
                 updateChildText: true,
                 containProtocol: true,
-                displayMethod: 1,
                 multiElementsForUrlDisplay: true
             },
             {
@@ -630,7 +634,6 @@
                 childSelector: 'span',
                 updateChildText: true,
                 containProtocol: false,
-                displayMethod: 1,
                 multiElementsForUrlDisplay: true
             },
             {
@@ -647,7 +650,6 @@
                 childSelector: 'span span',
                 updateChildText: true,
                 containProtocol: true,
-                displayMethod: 1,
                 multiElementsForUrlDisplay: true
             },
             {
@@ -668,7 +670,7 @@
                 selector: 'div.relative div.w-auto a',
                 childSelector: 'div',
                 updateChildText: true,
-                displayMethod: 3,
+                urlDisplayMethod: 3,
             },
             {
                 selector: 'div.relative div.inline-block a'
@@ -677,9 +679,9 @@
         'swisscows': [
             {
                 selector: 'article.item-web a',
-                updateText: true,
+                updateTextWithoutOverwrite: true,
                 containProtocol: false,
-                displayMethod: 1
+                urlDisplayMethod: 1
             }
         ],
         'metager': [
@@ -688,8 +690,8 @@
             },
             {
                 selector: 'div.result-subheadline a',
-                updateText: true,
-                displayMethod: 3
+                updateTextWithoutOverwrite: true,
+                urlDisplayMethod: 3
             },
             {
                 selector: 'div.quicktip div.quicktip-headline h1 a'
@@ -712,21 +714,21 @@
         'librey': [
             {
                 selector: 'div.text-result-wrapper a',
-                updateText: true,
+                updateTextWithoutOverwrite: true,
                 useTopLevelDomain: true,
-                displayMethod: 2
+                urlDisplayMethod: 2
             },
             {
                 selector: 'p.special-result-container a',
-                updateText: true,
-                displayMethod: 2
+                updateTextWithoutOverwrite: true,
+                urlDisplayMethod: 2
             },
         ],
         'stract': [
             {
                 selector: 'div.grid div div.flex div div div a',
-                updateText: true,
-                displayMethod: 2
+                updateTextWithoutOverwrite: true,
+                urlDisplayMethod: 2
             },
             {
                 selector: 'div.grid div div.flex div div a'
@@ -748,25 +750,6 @@
                 selector: 'p a.title'
             }
         ],
-        'lilo': [
-            {
-                selector: 'div.lilo-text-result div a'
-            },
-            {
-                selector: 'div.column a'
-            }
-        ],
-        'entireweb': [
-            {
-                selector: 'div.gsc-webResult.gsc-result a'
-            },
-            {
-                selector: 'div.web-result a'
-            },
-            {
-                selector: 'div#infobox-list div.card-body a'
-            }
-        ],
         'mojeek': [
             {
                 selector: 'ul.results-standard li h2 a.title'
@@ -776,7 +759,7 @@
                 childSelector: 'span.url',
                 updateChildText: true,
                 containProtocol: true,
-                displayMethod: 1
+                urlDisplayMethod: 1
             },
             {
                 selector: 'div.infobox p a'
@@ -794,14 +777,14 @@
                 childSelector: 'div span',
                 updateChildText: true,
                 containProtocol: false,
-                displayMethod: 1
+                urlDisplayMethod: 1
             }
         ],
         'torry': [
             {
                 selector: 'div.searpList p a.toranclick',
-                updateText: true,
-                displayMethod: 2
+                updateTextWithoutOverwrite: true,
+                urlDisplayMethod: 2
             },
             {
                 selector: 'div.searpList div h2 a.toranclick',
@@ -809,7 +792,70 @@
             {
                 selector: 'div.searpList ul li a',
             }
-        ]
+        ],
+        'lilo': [
+            {
+                selector: 'div.lilo-text-result div a'
+            },
+            {
+                selector: 'div.column a'
+            }
+        ],
+        'entireweb': [
+            {
+                parentSelector: 'div.web-result',
+                childLinkSelector: 'a.web-result-title',
+                childTextSelector: 'div.web-result-domain',
+                updateTextWithoutOverwrite: true,
+                urlDisplayMethod: 3
+            },
+            {
+                selector: 'div#infobox-list.card div.card-body a'
+            },
+            {
+                parentSelector: 'div.gsc-webResult.gsc-result',
+                childLinkSelector: 'a.gs-title',
+                childTextSelector: 'div.gsc-url-top',
+                updateTextByOverwrite: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
+            }
+        ],
+        'gmx': [
+            {
+                selector: 'div.eMd a.eMdhl'
+            },
+            {
+                selector: 'div.eMd a.eMdu',
+                updateChildText: true,
+                containProtocol: true,
+                multiElementsForUrlDisplay: true
+            },
+        ],
+        'youcare': [
+            {
+                selector: 'div.search-results div div div.search-result-item-text a.search-result-item-text__title'
+            },
+            {
+                selector: 'div.search-results div div div.search-result-item-text a.search-result-item-text-sitename'
+            },
+            {
+                selector: 'div.search-results div div div.search-result-item-text a.search-result-item-text__header-url',
+                updateTextWithoutOverwrite: true,
+                containProtocol: true,
+                urlDisplayMethod: 1
+            },
+        ],
+        'seznam': [
+            {
+                selector: 'div.f2c528 h3 a'
+            },
+            {
+                selector: 'div.f2c528 a.d5e75c',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
+            },
+        ],
         // Additional search engines can be defined here...
     };
 
@@ -1009,14 +1055,6 @@
             hosts: ['etools.ch'],
             // resultContainerSelectors: ['table.result']
         },
-        'lilo': {
-            hosts: ['search.lilo.org'],
-            resultContainerSelectors: ['div.container#content']
-        },
-        'entireweb': {
-            hosts: ['search.entireweb.com'],
-            resultContainerSelectors: ['div.container.search-container']
-        },
         'mojeek': {
             hosts: ['mojeek.com'],
             resultContainerSelectors: ['div.container.serp-results']
@@ -1028,6 +1066,24 @@
             hosts: ['torry.io'],
             resultContainerSelectors: ['div.searpListouterappend'],
             attribute: 'data-target'
+        },
+        'lilo': {
+            hosts: ['search.lilo.org'],
+            resultContainerSelectors: ['div.container#content']
+        },
+        'entireweb': {
+            hosts: ['search.entireweb.com'],
+            resultContainerSelectors: ['div.container.search-container']
+        },
+        'gmx': {
+            hosts: ['search.gmx.com']
+        },
+        'youcare': {
+            hosts: ['youcare.world']
+        },
+        'seznam': {
+            hosts: ['search.seznam.cz'],
+            resultContainerSelectors: ['div.PageWrapper.SearchPage#searchpage-root'],
         }
         // ... more search engines
     };
@@ -1042,7 +1098,11 @@
 
                 // Modify results
                 selectors.forEach(rule => {
-                    processElements(rule.selector, rule, engineInfo);
+                    if (rule.selector) {
+                        processElements(rule.selector, rule, engineInfo);
+                    } else if (rule.parentSelector) {
+                        processParentElements(rule.parentSelector, rule, engineInfo);
+                    }
                 });
 
                 // Reconnect the observer after DOM modifications are done
@@ -1053,7 +1113,7 @@
         }
     };
 
-    // Function to process elements based on selector and rule
+    // Function to process elements specified by `selector`
     const processElements = (selector, rule, engineInfo) => {
         const elements = document.querySelectorAll(selector);
         const additionalAttribute = engineInfo.attribute; // Get the additional attribute if specified
@@ -1062,7 +1122,7 @@
                 for (let i = 0; i < urlModificationRules.length; i++) {
                     try {
                         const urlRule = urlModificationRules[i];
-                        let urlToModify = element.href || (additionalAttribute && element.getAttribute(additionalAttribute));
+                        let urlToModify = additionalAttribute ? element.getAttribute(additionalAttribute) : element.href;
                         // update attribute
                         if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
                             // Generate redirected URL
@@ -1084,9 +1144,43 @@
         }
     };
 
-    // Function to update text content (displayed url)
+    // Function to process elements specified by `parentSelector`
+    const processParentElements = (selector, rule, engineInfo) => {
+        const elements = document.querySelectorAll(selector);
+        const additionalAttribute = engineInfo.attribute; // Get the additional attribute if specified
+        if (elements.length > 0) {
+            elements.forEach(element => {
+                const linkElement = element.querySelector(rule.childLinkSelector);
+                const textElement = element.querySelector(rule.childTextSelector);
+
+                for (let i = 0; i < urlModificationRules.length; i++) {
+                    try {
+                        const urlRule = urlModificationRules[i];
+                        let urlToModify = additionalAttribute ? element.getAttribute(additionalAttribute) : linkElement.href;
+                        // update attribute
+                        if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
+                            // Generate redirected URL
+                            let newUrl = urlToModify.replace(urlRule.matchRegex, urlRule.replaceWith);
+                            newUrl = rule.useTopLevelDomain ? extractTopLevelDomain(newUrl) : newUrl;
+                            if (linkElement.href) {
+                                linkElement.href = newUrl;
+                            } else if (additionalAttribute) {
+                                linkElement.setAttribute(additionalAttribute, newUrl);
+                            }
+                            updateTextContent(textElement, rule, newUrl);
+                            break;
+                        }
+                    } catch (error) {
+                        console.error("Update Link/Text Error: ", error);
+                    }
+                }
+            });
+        }
+    };
+
+    // Function to update text content (displayed URL)
     const updateTextContent = (element, rule, newUrl) => {
-        if (rule.updateText || rule.updateChildText) {
+        if (rule.updateTextWithoutOverwrite || rule.updateTextByOverwrite || rule.updateChildText) {
             try {
                 if (rule.multiElementsForUrlDisplay) {
                     updateMultiElementContent(element, rule, newUrl);
@@ -1103,16 +1197,20 @@
         }
     };
 
-    // Function to update text for multi elements (i.e. DuckDuckGo, Brave)
-    const updateMultiElementContent = (element, rule, newUrl) => {
+    // Function to update text for multi elements (e.g. DuckDuckGo, Brave)
+    const updateMultiElementContent = (targetElement, rule, newUrl) => {
+        if (!targetElement) {
+            console.error("Target DOM Element not found for Multi-Element Text update!");
+            return;
+        }
         // Remove the "https://" protocol if containProtocol is false
         newUrl = rule.containProtocol ? newUrl : removeProtocol(newUrl);
 
-        let formattedUrl = formatMethod1(newUrl, rule.containProtocol); // Assume max length 70 for splitting
+        let formattedUrl = breadCumbFormat(newUrl, rule.containProtocol);
         let urlParts = formattedUrl.split(' › ');
 
         // Correctly select the first and second <span> elements
-        let spans = element.querySelectorAll(rule.childSelector);
+        let spans = targetElement.querySelectorAll(rule.childSelector);
 
         if (spans && spans.length >= 2) {
             spans.forEach(clearElementContent);
@@ -1129,31 +1227,29 @@
             console.error("Target DOM Element not found for Single-Element Text update!");
             return;
         }
-        if (targetElement) {
-            let formattedUrl = '';
-            switch (rule.displayMethod) {
-                case 1:
-                    formattedUrl = formatMethod1(newUrl, rule.containProtocol);
-                    break;
-                case 2:
-                    formattedUrl = newUrl; // Full URL with protocol
-                    break;
-                case 3:
-                    formattedUrl = decodeURIComponent(removeProtocol(newUrl)); // Full URL without protocol
-                    break;
-            }
-            if (rule.updateText) {
-                updateTextWithoutOverwriteChildNodes(targetElement, formattedUrl);
-            } else {
-                targetElement.textContent = formattedUrl;
-            }
+        let formattedUrl = '';
+        switch (rule.urlDisplayMethod) {
+            case 1:
+                formattedUrl = breadCumbFormat(newUrl, rule.containProtocol);
+                break;
+            case 2:
+                formattedUrl = newUrl; // Full URL with protocol
+                break;
+            case 3:
+                formattedUrl = decodeURIComponent(removeProtocol(newUrl)); // Full URL without protocol
+                break;
+        }
+        if (rule.updateTextWithoutOverwrite) {
+            updateTextWithoutOverwriteChildNodes(targetElement, formattedUrl);
+        } if (rule.updateTextByOverwrite) {
+            updateTextByOverwriteEverything(targetElement, formattedUrl);
         } else {
-            console.error("Script: Expected element not found for Single Element URL update!");
+            targetElement.textContent = formattedUrl;
         }
     };
 
     // Function for Method 1 (Breadcrumb style URLs), leaving 'https://' intact
-    const formatMethod1 = (url, containProtocol) => {
+    const breadCumbFormat = (url, containProtocol) => {
         if (!containProtocol) {
             url = removeProtocol(url);
         }
@@ -1189,6 +1285,12 @@
                 break; // Stop after updating the first text node
             }
         }
+    };
+
+    // Function to update the content by overwriting everything
+    const updateTextByOverwriteEverything = (element, newContent) => {
+        clearElementContent(element);
+        element.textContent = newContent;
     };
 
     // Remove 'https://' from the URL link
