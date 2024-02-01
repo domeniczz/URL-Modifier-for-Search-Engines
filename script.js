@@ -834,24 +834,28 @@
             },
             {
                 selector: 'div.eMd a.eMdu',
+                childSelector: 'span',
                 updateChildText: true,
                 containProtocol: true,
-                multiElementsForUrlDisplay: 1
+                multiElementsForUrlDisplay: 2
             },
         ],
         'youcare': [
             {
-                selector: 'div.search-results div div div.search-result-item-text a.search-result-item-text__title'
+                selector: 'div.search-result-item-text a.search-result-item-text__title'
             },
             {
-                selector: 'div.search-results div div div.search-result-item-text a.search-result-item-text-sitename'
+                selector: 'div.search-result-item-text div div a.search-result-item-text-sitename'
             },
             {
-                selector: 'div.search-results div div div.search-result-item-text a.search-result-item-text__header-url',
+                selector: 'div.search-result-item-text div div a.search-result-item-text__header-url',
                 updateTextWithoutOverwrite: true,
                 containProtocol: true,
                 urlDisplayMethod: 1
             },
+            {
+                selector: "div.search-results-view__side a"
+            }
         ],
         'seznam': [
             {
