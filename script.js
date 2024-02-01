@@ -1133,7 +1133,7 @@
                             } else if (additionalAttribute) {
                                 element.setAttribute(additionalAttribute, newUrl);
                             }
-                            updateTextContent(element, rule, newUrl);
+                            updateTextContent(element, rule, removeParameters(newUrl));
                             break;
                         }
                     } catch (error) {
@@ -1167,7 +1167,7 @@
                             } else if (additionalAttribute) {
                                 linkElement.setAttribute(additionalAttribute, newUrl);
                             }
-                            updateTextContent(textElement, rule, newUrl);
+                            updateTextContent(textElement, rule, removeParameters(newUrl));
                             break;
                         }
                     } catch (error) {
@@ -1302,6 +1302,11 @@
     const extractTopLevelDomain = (url) => {
         const parsedUrl = new URL(url);
         return `${parsedUrl.protocol}//${parsedUrl.hostname}/`;
+    };
+
+    // Remove parameters (the part behind ?) in the URL link
+    const removeParameters = (url) => {
+        return url.split('?')[0];
     };
 
     // Function to clear existing content of an element
