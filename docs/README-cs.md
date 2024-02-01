@@ -66,12 +66,15 @@ Modifikace URL využívá regulární výrazy.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 Do kódu můžete manuálně přidat DOM selektor pro podporu dalších vyhledávačů.
 
 Nelze podporovat [Bing](https://www.bing.com), protože poskytuje pouze prostřední odkazy.
 
-4get, Lilo a Entireweb nezmění zobrazené URL odpovídajícím způsobem, když jsou odkazy změněny. Tento problém existuje, protože se snažím mít svůj kód co nejuniverzálnější, ale tyto vyhledávače mají neobvyklou strukturu DOM pro zobrazení URL, což je zdlouhavé podporovat tyto vyhledávače s ohledem na jejich relativně malou uživatelskou základnu.
+4get nezmění zobrazené URL odpovídajícím způsobem, když jsou odkazy změněny. Tento problém existuje, protože se snažím mít svůj kód co nejuniverzálnější, ale tyto vyhledávače mají neobvyklou strukturu DOM pro zobrazení URL, což je zdlouhavé podporovat tyto vyhledávače s ohledem na jejich relativně malou uživatelskou základnu.
 
 > Jen tak mimochodem, [Kagi](https://kagi.com) je vyhledávač s vestavěnou funkcí přesměrování URL, který stojí za vyzkoušení. Jsem uživatelem Kagi a s tímto produktem jsem velmi spokojen, takže jim tady dávám výzvu.
 
@@ -181,23 +184,23 @@ Pravidla pro modifikaci URL v [regulárním výrazu](https://cs.wikipedia.org/wi
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) pravidla pro aktualizaci DOM elementů ve výsledcích vyhledávače
 
-| Proměnná                   | Popis                                                                                                                                 |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| selector                   | selector pro DOM element                                                                                                              |
-| updateText                 | příznak, zda aktualizovat text nebo hodnotu href elementu                                                                             |
-| childSelector              | selector pro dítě DOM elementu pod rodičovským elementem                                                                              |
-| updateChildText            | příznak, zda aktualizovat vnitřní text dítěte elementu                                                                                |
-| containProtocol            | příznak, zda zahrnovat protokol (např. https://) v doméně                                                                             |
-| useTopLevelDomain          | příznak pro použití domény nejvyšší úrovně při zobrazování URL                                                                        |
-| displayMethod              | požadováno, metoda zobrazení URL<br/>metoda 1: formát drobečkové navigace<br/>metoda 2: celá URL<br/>metoda 3: celá URL bez protokolu |
-| multiElementsForUrlDisplay | příznak, zda je zobrazená URL rozdělena do více DOM elementů                                                                          |
+| Proměnná                   | Popis                                                        |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | selector pro DOM element                                     |
+| updateText                 | příznak, zda aktualizovat text nebo hodnotu href elementu    |
+| childSelector              | selector pro dítě DOM elementu pod rodičovským elementem     |
+| updateChildText            | příznak, zda aktualizovat vnitřní text dítěte elementu       |
+| containProtocol            | příznak, zda zahrnovat protokol (např. https://) v doméně    |
+| useTopLevelDomain          | příznak pro použití domény nejvyšší úrovně při zobrazování URL |
+| urlDisplayMethod              | požadováno, metoda zobrazení URL<br/>metoda 1: formát drobečkové navigace<br/>metoda 2: celá URL<br/>metoda 3: celá URL bez protokolu |
+| multiElementsForUrlDisplay | příznak, zda je zobrazená URL rozdělena do více DOM elementů |
 
 ### searchEngines
 
 Uživatelem definovaný seznam domén vyhledávačů
 
-| Proměnná                 | Popis                                                                                                                                                         |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hosts                    | doména vyhledávače                                                                                                                                            |
-| resultContainerSelectors | volitelné, nastavte DOM kontejner výsledků vyhledávání, aby se zúžil rozsah dynamického pozorování                                                            |
+| Proměnná                 | Popis                                                        |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | doména vyhledávače                                           |
+| resultContainerSelectors | volitelné, nastavte DOM kontejner výsledků vyhledávání, aby se zúžil rozsah dynamického pozorování |
 | attribute                | určení dalšího atributu odkazu URL v &lt;a&gt; kromě 'href' (např. 'data-target')<br/>není třeba toto specifikovat, pokud jsou všechny atributy odkazu 'href' |

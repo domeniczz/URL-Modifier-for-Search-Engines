@@ -66,12 +66,15 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyebilirsiniz.
 
 [Bing](https://www.bing.com) desteklenemez, çünkü yalnızca ara bağlantılar sağlar.
 
-4get, Lilo ve Entireweb, linkler değiştirildiğinde görüntülenen URL'leri buna göre değiştirmiyorlar. Bu sorun, kodumu mümkün olduğunca genelleştirilmiş yapmayı amaçlamamdan kaynaklanıyor, ancak bu arama motorlarının URL'leri görüntülemek için alışılmadık bir DOM yapısı var ve bu da onları desteklemeyi, nispeten küçük kullanıcı tabanlarını göz önünde bulundurarak zahmetli hale getiriyor.
+4get linkler değiştirildiğinde görüntülenen URL'leri buna göre değiştirmiyorlar. Bu sorun, kodumu mümkün olduğunca genelleştirilmiş yapmayı amaçlamamdan kaynaklanıyor, ancak bu arama motorlarının URL'leri görüntülemek için alışılmadık bir DOM yapısı var ve bu da onları desteklemeyi, nispeten küçük kullanıcı tabanlarını göz önünde bulundurarak zahmetli hale getiriyor.
 
 > Sadece bir yan not olarak, [Kagi](https://kagi.com), yerleşik URL yönlendirme işlevine sahip bir arama motoru, denemeye değer bir ürün. Ben Kagi kullanıcısıyım ve bu üründen çok memnunum, bu yüzden burada onlara bir övgü veriyorum.
 
@@ -181,23 +184,23 @@ Düzenli ifadeyle [URL değiştirme kuralları](https://tr.wikipedia.org/wiki/D�
 
 Arama motoru sonuçları için güncellenmesi gereken DOM öğelerinin [Seçici](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) kuralları
 
-| Değişken                   | Açıklama                                                                                                                    |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| selector                   | DOM öğesinin seçicisi                                                                                                       |
-| updateText                 | öğenin metin veya href değerini güncelleme bayrağı                                                                          |
-| childSelector              | ana öğenin altında çocuk DOM öğesi için seçici                                                                              |
-| updateChildText            | çocuk öğenin iç metnini güncelleme bayrağı                                                                                  |
-| containProtocol            | alan adında protokolü (örn. https://) içerme bayrağı                                                                        |
-| useTopLevelDomain          | URL'leri gösterirken en üst düzey alan adını kullanıp kullanmama bayrağı                                                    |
-| displayMethod              | gerekli, URL gösterim yöntemi<br/>yöntem 1: breadcrumb formatı<br/>yöntem 2: tam URL<br/>yöntem 3: protokol olmadan tam URL |
-| multiElementsForUrlDisplay | URL'nin birden fazla DOM öğesine ayrılıp ayrılmadığını gösteren bayrak                                                      |
+| Değişken                   | Açıklama                                                     |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | DOM öğesinin seçicisi                                        |
+| updateText                 | öğenin metin veya href değerini güncelleme bayrağı           |
+| childSelector              | ana öğenin altında çocuk DOM öğesi için seçici               |
+| updateChildText            | çocuk öğenin iç metnini güncelleme bayrağı                   |
+| containProtocol            | alan adında protokolü (örn. https://) içerme bayrağı         |
+| useTopLevelDomain          | URL'leri gösterirken en üst düzey alan adını kullanıp kullanmama bayrağı |
+| urlDisplayMethod              | gerekli, URL gösterim yöntemi<br/>yöntem 1: breadcrumb formatı<br/>yöntem 2: tam URL<br/>yöntem 3: protokol olmadan tam URL |
+| multiElementsForUrlDisplay | URL'nin birden fazla DOM öğesine ayrılıp ayrılmadığını gösteren bayrak |
 
 ### searchEngines
 
 Kullanıcı tanımlı arama motoru domainleri listesi
 
-| Değişken                 | Açıklama                                                                                                                                                                    |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hosts                    | arama motorunun domaini                                                                                                                                                     |
-| resultContainerSelectors | isteğe bağlı, arama sonucu konteyner DOM'unu ayarlayın, dinamik gözlemin kapsamını daraltmak için                                                                           |
+| Değişken                 | Açıklama                                                     |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | arama motorunun domaini                                      |
+| resultContainerSelectors | isteğe bağlı, arama sonucu konteyner DOM'unu ayarlayın, dinamik gözlemin kapsamını daraltmak için |
 | attribute                | &lt;a&gt; içinde 'href' dışındaki diğer URL bağlantısı özniteliğini belirtin (örneğin 'data-target')<br/>Eğer tüm bağlantı öznitelikleri 'href' ise belirtmeye gerek yoktur |

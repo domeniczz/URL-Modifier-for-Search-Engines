@@ -66,12 +66,15 @@ La modificación de URL utiliza Expresión Regular.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 Puedes añadir manualmente un selector DOM en el código para soportar otros motores de búsqueda.
 
 No puede soportar [Bing](https://www.bing.com), porque solo proporciona enlaces intermedios.
 
-4get, Lilo y Entireweb no cambian las URL mostradas correspondientemente cuando se cambian los enlaces. Este problema existe porque intento hacer mi código lo más generalizado posible, pero estos motores de búsqueda tienen una estructura DOM inusual para mostrar URLs, lo que hace tedioso dar soporte a estos motores considerando su base de usuarios relativamente pequeña.
+4get no cambian las URL mostradas correspondientemente cuando se cambian los enlaces. Este problema existe porque intento hacer mi código lo más generalizado posible, pero estos motores de búsqueda tienen una estructura DOM inusual para mostrar URLs, lo que hace tedioso dar soporte a estos motores considerando su base de usuarios relativamente pequeña.
 
 > Solo un pequeño apunte, [Kagi](https://kagi.com) es un motor de búsqueda con funcionalidad de redirección de URL incorporada, que vale la pena probar. Soy usuario de Kagi y estoy muy satisfecho con este producto, así que les estoy dando un reconocimiento aquí.
 
@@ -181,23 +184,23 @@ Reglas de modificación de URL en [expresión regular](https://es.wikipedia.org/
 
 Reglas de [Selector](https://developer.mozilla.org/es/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) para los elementos DOM que necesitan actualización en los resultados de los motores de búsqueda
 
-| Variable                   | Descripción                                                                                                                                         |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| selector                   | selector para el elemento DOM                                                                                                                       |
-| updateText                 | indicador de si actualizar el texto o el valor href del elemento                                                                                    |
-| childSelector              | selector para el elemento DOM hijo bajo el elemento padre                                                                                           |
-| updateChildText            | indicador de si actualizar el texto interno del elemento hijo                                                                                       |
-| containProtocol            | indicador de si incluir el protocolo (ej. https://) en el dominio                                                                                   |
-| useTopLevelDomain          | indicador de si se debe usar el dominio de nivel superior al mostrar URLs                                                                           |
-| displayMethod              | requerido, método de visualización de URL<br/>método 1: formato de migas de pan<br/>método 2: URL completa<br/>método 3: URL completa sin protocolo |
-| multiElementsForUrlDisplay | indicador de si la URL mostrada está dividida en múltiples elementos del DOM                                                                        |
+| Variable                   | Descripción                                                  |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | selector para el elemento DOM                                |
+| updateText                 | indicador de si actualizar el texto o el valor href del elemento |
+| childSelector              | selector para el elemento DOM hijo bajo el elemento padre    |
+| updateChildText            | indicador de si actualizar el texto interno del elemento hijo |
+| containProtocol            | indicador de si incluir el protocolo (ej. https://) en el dominio |
+| useTopLevelDomain          | indicador de si se debe usar el dominio de nivel superior al mostrar URLs |
+| urlDisplayMethod              | requerido, método de visualización de URL<br/>método 1: formato de migas de pan<br/>método 2: URL completa<br/>método 3: URL completa sin protocolo |
+| multiElementsForUrlDisplay | indicador de si la URL mostrada está dividida en múltiples elementos del DOM |
 
 ### searchEngines
 
 Lista definida por el usuario de dominios de motores de búsqueda
 
-| Variable                 | Descripción                                                                                                                                                                    |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| hosts                    | dominio del motor de búsqueda                                                                                                                                                  |
-| resultContainerSelectors | opcional, establecer contenedor DOM de resultado de búsqueda, para reducir el rango de observación dinámica                                                                    |
+| Variable                 | Descripción                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | dominio del motor de búsqueda                                |
+| resultContainerSelectors | opcional, establecer contenedor DOM de resultado de búsqueda, para reducir el rango de observación dinámica |
 | attributed               | especificar atributo de enlace adicional en <a> aparte de 'href' (por ejemplo, 'data-target')<br/>no es necesario especificar esto si todos los atributos de enlace son 'href' |

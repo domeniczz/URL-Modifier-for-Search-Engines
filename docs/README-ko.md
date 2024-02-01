@@ -66,12 +66,15 @@ URL 수정은 정규 표현식을 사용합니다.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 다른 검색 엔진을 지원하기 위해 코드에 DOM 선택자를 수동으로 추가할 수 있습니다.
 
 [Bing](https://www.bing.com) 은 중간 링크만 제공하기 때문에 지원할 수 없습니다.
 
-4get, Lilo, 및 Entireweb 은 링크가 변경될 때 표시되는 URL 을 상응하게 변경하지 않습니다. 이 문제는 제 코드를 가능한 한 일반화하려고 하지만, 이 검색 엔진들은 URL 을 표시하기 위한 독특한 DOM 구조를 가지고 있어, 상대적으로 작은 사용자 기반을 고려할 때 이 엔진들을 지원하는 것이 번거롭습니다.
+4get 은 링크가 변경될 때 표시되는 URL 을 상응하게 변경하지 않습니다. 이 문제는 제 코드를 가능한 한 일반화하려고 하지만, 이 검색 엔진들은 URL 을 표시하기 위한 독특한 DOM 구조를 가지고 있어, 상대적으로 작은 사용자 기반을 고려할 때 이 엔진들을 지원하는 것이 번거롭습니다.
 
 > 한 가지 부가 정보로, [Kagi](https://kagi.com) 는 내장된 URL 리다이렉션 기능이 있는 검색 엔진으로, 시도해보기 가치가 있습니다. 저는 Kagi 의 사용자이며 이 제품에 매우 만족하고 있으므로 여기에서 그들에게 소개합니다.
 
@@ -172,32 +175,32 @@ URL 수정은 정규 표현식을 사용합니다.
 
 [정규 표현식](https://ko.wikipedia.org/wiki/정규_표현식) 을 사용한 URL 수정 규칙
 
-| 변수          | 설명                   |
-| ----------- | -------------------- |
+| 변수        | 설명                             |
+| ----------- | -------------------------------- |
 | matchRegex  | 원본 URL 과 일치하는 정규 표현식 |
-| replaceWith | 대체를 위한 정규 표현식        |
+| replaceWith | 대체를 위한 정규 표현식          |
 
 ### selectorRules
 
 검색 엔진 결과를 위한 DOM 요소 업데이트용 [선택자](https://developer.mozilla.org/ko/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) 규칙
 
-| 변수                         | 설명                                                                          |
-| -------------------------- | --------------------------------------------------------------------------- |
-| selector                   | DOM 요소를 위한 선택자                                                              |
-| updateText                 | 요소의 텍스트 또는 href 값 업데이트 여부 플래그                                               |
-| childSelector              | 부모 요소 아래의 자식 DOM 요소를 위한 선택자                                                 |
-| updateChildText            | 자식 요소의 내부 텍스트 업데이트 여부 플                                                     |
-| containProtocol            | 도메인에 프로토콜(예: https://)을 포함할지 여부 플래그                                         |
-| useTopLevelDomain          | URL 을 표시할 때 최상위 도메인을 사용할지 여부를 결정하는 플래그                                      |
-| displayMethod              | 필수, URL 표시 방법<br/>방법 1: 빵 부스러기 형식<br/>방법 2: 전체 URL<br/>방법 3: 프로토콜 없는 전체 URL |
-| multiElementsForUrlDisplay | URL 표시가 여러 DOM 요소로 분리되는지 여부의 플래그                                            |
+| 변수                       | 설명                                                         |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | DOM 요소를 위한 선택자                                       |
+| updateText                 | 요소의 텍스트 또는 href 값 업데이트 여부 플래그              |
+| childSelector              | 부모 요소 아래의 자식 DOM 요소를 위한 선택자                 |
+| updateChildText            | 자식 요소의 내부 텍스트 업데이트 여부 플                     |
+| containProtocol            | 도메인에 프로토콜(예: https://)을 포함할지 여부 플래그       |
+| useTopLevelDomain          | URL 을 표시할 때 최상위 도메인을 사용할지 여부를 결정하는 플래그 |
+| urlDisplayMethod              | 필수, URL 표시 방법<br/>방법 1: 빵 부스러기 형식<br/>방법 2: 전체 URL<br/>방법 3: 프로토콜 없는 전체 URL |
+| multiElementsForUrlDisplay | URL 표시가 여러 DOM 요소로 분리되는지 여부의 플래그          |
 
 ### searchEngines
 
 사용자 정의 검색 엔진 도메인 목록
 
-| 변수                       | 설명                                                                                                             |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| hosts                    | 검색 엔진의 도메인                                                                                                     |
-| resultContainerSelectors | 선택 사항, 검색 결과 컨테이너 DOM 설정, 동적 관찰 범위를 좁히기 위함                                                                     |
+| 변수                     | 설명                                                         |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | 검색 엔진의 도메인                                           |
+| resultContainerSelectors | 선택 사항, 검색 결과 컨테이너 DOM 설정, 동적 관찰 범위를 좁히기 위함 |
 | attribute                | &lt;a&gt; 요소에서 'href' 이외의 추가 URL 링크 속성을 지정합니다 (예: 'data-target')<br/>모든 링크 속성이 'href'인 경우에는 이 부분을 지정할 필요가 없습니다 |

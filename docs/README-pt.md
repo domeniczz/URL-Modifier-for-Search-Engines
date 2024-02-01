@@ -66,12 +66,15 @@ A modificação de URL usa Expressão Regular.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 Você pode adicionar manualmente o seletor DOM no código para suportar outros motores de busca.
 
 Não pode suportar o [Bing](https://www.bing.com), pois ele só fornece links intermediários.
 
-4get, Lilo e Entireweb não alteram as URLs exibidas correspondentemente quando os links são alterados. Esse problema existe porque eu busco tornar meu código o mais generalizado possível, mas esses motores de busca possuem uma estrutura de DOM incomum para exibir URLs, o que torna tedioso dar suporte a esses motores considerando sua base de usuários relativamente pequena.
+4get não alteram as URLs exibidas correspondentemente quando os links são alterados. Esse problema existe porque eu busco tornar meu código o mais generalizado possível, mas esses motores de busca possuem uma estrutura de DOM incomum para exibir URLs, o que torna tedioso dar suporte a esses motores considerando sua base de usuários relativamente pequena.
 
 > Apenas uma nota lateral, o [Kagi](https://kagi.com) é um mecanismo de busca com funcionalidade de redirecionamento de URL integrada, vale a pena experimentar. Sou um usuário do Kagi e estou muito satisfeito com este produto, por isso estou dando um destaque aqui.
 
@@ -181,23 +184,23 @@ Regras de modificação de URL em [expressão regular](https://pt.wikipedia.org/
 
 Regras de [seleção](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) para elementos DOM que precisam ser atualizados nos resultados do motor de busca
 
-| Variável                   | Descrição                                                                                                                                   |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| selector                   | seletor para elemento DOM                                                                                                                   |
-| updateText                 | flag para atualizar o texto ou valor href do elemento                                                                                       |
-| childSelector              | seletor para elemento DOM filho sob elemento pai                                                                                            |
-| updateChildText            | flag para atualizar o texto interno do elemento filho                                                                                       |
-| containProtocol            | flag para incluir protocolo (ex: https://) no domínio                                                                                       |
-| useTopLevelDomain          | sinalizador para se usar o domínio de nível superior ao exibir URLs                                                                         |
-| displayMethod              | obrigatório, método de exibição da URL<br/>método 1: formato breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sem protocolo |
-| multiElementsForUrlDisplay | indicador de si la URL mostrada se divide en varios elementos del DOM                                                                       |
+| Variável                   | Descrição                                                    |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | seletor para elemento DOM                                    |
+| updateText                 | flag para atualizar o texto ou valor href do elemento        |
+| childSelector              | seletor para elemento DOM filho sob elemento pai             |
+| updateChildText            | flag para atualizar o texto interno do elemento filho        |
+| containProtocol            | flag para incluir protocolo (ex: https://) no domínio        |
+| useTopLevelDomain          | sinalizador para se usar o domínio de nível superior ao exibir URLs |
+| urlDisplayMethod              | obrigatório, método de exibição da URL<br/>método 1: formato breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sem protocolo |
+| multiElementsForUrlDisplay | indicador de si la URL mostrada se divide en varios elementos del DOM |
 
 ### searchEngines
 
 Lista definida pelo usuário de domínios de motores de busca
 
-| Variável                 | Descrição                                                                                                                                                                        |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hosts                    | domínio do motor de busca                                                                                                                                                        |
-| resultContainerSelectors | opcional, define o contêiner do resultado da busca DOM, para reduzir a faixa de observação dinâmica                                                                              |
+| Variável                 | Descrição                                                    |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | domínio do motor de busca                                    |
+| resultContainerSelectors | opcional, define o contêiner do resultado da busca DOM, para reduzir a faixa de observação dinâmica |
 | attribute                | especifique atributo de link adicional em &lt;a&gt; além de 'href' (por exemplo, 'data-target')<br/>não é necessário especificar isso se todos os atributos de link forem 'href' |

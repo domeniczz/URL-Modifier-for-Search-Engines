@@ -66,12 +66,15 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 Sie können manuell DOM-Selektor im Code hinzufügen, um andere Suchmaschinen zu unterstützen.
 
 Kann [Bing](https://www.bing.com) nicht unterstützen, da es nur Zwischenlinks bereitstellt.
 
-4get, Lilo und Entireweb ändern die angezeigten URLs nicht entsprechend, wenn Links geändert werden. Dieses Problem besteht, weil ich versuche, meinen Code so allgemein wie möglich zu gestalten, aber diese Suchmaschinen haben eine ungewöhnliche DOM-Struktur zur Anzzum Beispiel von URLs, was es mühsam macht, diese Motoren zu unterstützen, angesichts ihrer relativ kleinen Benutzerbasis.
+4get ändern die angezeigten URLs nicht entsprechend, wenn Links geändert werden. Dieses Problem besteht, weil ich versuche, meinen Code so allgemein wie möglich zu gestalten, aber diese Suchmaschinen haben eine ungewöhnliche DOM-Struktur zur Anzzum Beispiel von URLs, was es mühsam macht, diese Motoren zu unterstützen, angesichts ihrer relativ kleinen Benutzerbasis.
 
 > Kurze Anmerkung: [Kagi](https://kagi.com) ist eine Suchmaschine mit integrierter URL-Umleitungsfunktion, die es sich lohnt, auszuprobieren. Ich bin ein Nutzer von Kagi und bin sehr zufrieden mit diesem Produkt, deshalb gebe ich ihnen hier einen Hinweis.
 
@@ -181,23 +184,23 @@ URL-Modifikationsregeln in [regulären Ausdrücken](https://de.wikipedia.org/wik
 
 [Selektor](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)-Regeln für die DOM-Elemente, die für Suchmaschinenergebnisse aktualisiert werden müssen
 
-| Variable                   | Beschreibung                                                                                                                                         |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| selector                   | Selektor für DOM-Element                                                                                                                             |
-| updateText                 | Flag, ob der Text oder der href-Wert des Elements aktualisiert werden soll                                                                           |
-| childSelector              | Selektor für Kind-DOM-Element unter übergeordnetem Element                                                                                           |
-| updateChildText            | Flag, ob der Innentext des Kind-Elements aktualisiert werden soll                                                                                    |
-| containProtocol            | Flag, ob das Protokoll (z. B. https://) in der Domain enthalten sein soll                                                                            |
-| useTopLevelDomain          | Kennzeichen dafür, ob die Top-Level-Domain beim Anzeigen von URLs verwendet werden soll                                                              |
-| displayMethod              | erforderlich, Anzeigemethode der URL<br/>Methode 1: Breadcrumb-Format<br/>Methode 2: vollständige URL<br/>Methode 3: vollständige URL ohne Protokoll |
-| multiElementsForUrlDisplay | Kennzeichen dafür, ob die angezeigte URL in mehrere DOM-Elemente aufgeteilt ist                                                                      |
+| Variable                   | Beschreibung                                                 |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | Selektor für DOM-Element                                     |
+| updateText                 | Flag, ob der Text oder der href-Wert des Elements aktualisiert werden soll |
+| childSelector              | Selektor für Kind-DOM-Element unter übergeordnetem Element   |
+| updateChildText            | Flag, ob der Innentext des Kind-Elements aktualisiert werden soll |
+| containProtocol            | Flag, ob das Protokoll (z. B. https://) in der Domain enthalten sein soll |
+| useTopLevelDomain          | Kennzeichen dafür, ob die Top-Level-Domain beim Anzeigen von URLs verwendet werden soll |
+| urlDisplayMethod              | erforderlich, Anzeigemethode der URL<br/>Methode 1: Breadcrumb-Format<br/>Methode 2: vollständige URL<br/>Methode 3: vollständige URL ohne Protokoll |
+| multiElementsForUrlDisplay | Kennzeichen dafür, ob die angezeigte URL in mehrere DOM-Elemente aufgeteilt ist |
 
 ### searchEngines
 
 Benutzerdefinierte Liste von Suchmaschinendomains
 
-| Variable                 | Beschreibung                                                                                                                                                                                            |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hosts                    | Domain der Suchmaschine                                                                                                                                                                                 |
-| resultContainerSelectors | optional, Suchergebnis-Container-DOM einstellen, um den Bereich der dynamischen Beobachtung einzugrenzen                                                                                                |
+| Variable                 | Beschreibung                                                 |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | Domain der Suchmaschine                                      |
+| resultContainerSelectors | optional, Suchergebnis-Container-DOM einstellen, um den Bereich der dynamischen Beobachtung einzugrenzen |
 | attribute                | Geben Sie ein zusätzliches URL-Link-Attribut in &lt;a&gt; an, das neben 'href' verwendet wird (z.B. 'data-target')<br/>Wenn alle Link-Attribute 'href' sind, ist keine zusätzliche Angabe erforderlich. |

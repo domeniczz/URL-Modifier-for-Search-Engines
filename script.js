@@ -569,7 +569,7 @@
                 childSelector: 'span span',
                 updateChildText: true,
                 containProtocol: true,
-                multiElementsForUrlDisplay: true
+                multiElementsForUrlDisplay: 1
             },
             {
                 selector: 'article.result h3 a'
@@ -597,7 +597,7 @@
                 childSelector: 'div.site cite.snippet-url span',
                 updateChildText: true,
                 containProtocol: false,
-                multiElementsForUrlDisplay: true
+                multiElementsForUrlDisplay: 1
             },
             {
                 selector: 'div#discussions.snippet a',
@@ -615,7 +615,7 @@
                 childSelector: 'span',
                 updateChildText: true,
                 containProtocol: true,
-                multiElementsForUrlDisplay: true
+                multiElementsForUrlDisplay: 1
             },
             {
                 // Selector for sub-results
@@ -634,7 +634,7 @@
                 childSelector: 'span',
                 updateChildText: true,
                 containProtocol: false,
-                multiElementsForUrlDisplay: true
+                multiElementsForUrlDisplay: 1
             },
             {
                 // Selector for sub-results
@@ -650,7 +650,7 @@
                 childSelector: 'span span',
                 updateChildText: true,
                 containProtocol: true,
-                multiElementsForUrlDisplay: true
+                multiElementsForUrlDisplay: 1
             },
             {
                 selector: 'div.mainline__result-wrapper div.result__header div.result__title a'
@@ -795,10 +795,17 @@
         ],
         'lilo': [
             {
-                selector: 'div.lilo-text-result div a'
+                selector: 'div.lilo-text-result div p a.has-text-grey-darker',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: true,
+                multiElementsForUrlDisplay: 2
             },
             {
-                selector: 'div.column a'
+                selector: 'div.lilo-text-result div a.has-text-primary'
+            },
+            {
+                selector: 'div.column.is-two-fifths a'
             }
         ],
         'entireweb': [
@@ -829,7 +836,7 @@
                 selector: 'div.eMd a.eMdu',
                 updateChildText: true,
                 containProtocol: true,
-                multiElementsForUrlDisplay: true
+                multiElementsForUrlDisplay: 1
             },
         ],
         'youcare': [
@@ -1205,19 +1212,38 @@
         }
         // Remove the "https://" protocol if containProtocol is false
         newUrl = rule.containProtocol ? newUrl : removeProtocol(newUrl);
-
         let formattedUrl = breadCumbFormat(newUrl, rule.containProtocol);
         let urlParts = formattedUrl.split(' › ');
 
-        // Correctly select the first and second <span> elements
-        let spans = targetElement.querySelectorAll(rule.childSelector);
+        const spans = targetElement.querySelectorAll(rule.childSelector)
 
-        if (spans && spans.length >= 2) {
-            spans.forEach(clearElementContent);
-            spans[0].textContent = urlParts[0]; // Update the first part
-            spans[1].textContent = ' › ' + urlParts.slice(1).join(' › '); // Update the second part
+        switch (rule.multiElementsForUrlDisplay) {
+            case 1:
+                parallelElements(urlParts, spans);
+                break;
+            case 2:
+                mixedElements(urlParts, spans, targetElement);
+                break;
+        }
+    };
+
+    const parallelElements = (urlParts, elements) => {
+        if (elements && elements.length >= 2) {
+            elements.forEach(clearElementContent);
+            elements[0].textContent = urlParts[0]; // Update the first part
+            elements[1].textContent = ' › ' + urlParts.slice(1).join(' › '); // Update the second part
         } else {
-            console.error("Script: Expected structure not found for Double Element URL update!");
+            console.error("Script: Expected structure not found for Multi-Element (parallel elements) URL update!");
+        }
+    };
+
+    const mixedElements = (urlParts, elements, parent) => {
+        if (elements && elements.length >= 1) {
+            elements.forEach(clearElementContent);
+            updateTextWithoutOverwriteChildNodes(parent, urlParts[0]); // Update the first part
+            elements[0].textContent = ' › ' + urlParts.slice(1).join(' › '); // Update the second part
+        } else {
+            console.error("Script: Expected structure not found for Multi-Element (mixed elements) URL update!");
         }
     };
 
@@ -1311,11 +1337,7 @@
 
     // Function to clear existing content of an element
     const clearElementContent = (element) => {
-        if (element) {
-            element.textContent = '';
-        } else {
-
-        }
+        element.textContent = '';
     };
 
     // Improved function to determine the search engine

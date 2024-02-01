@@ -66,12 +66,15 @@ La modification d'URL utilise l'Expression Régulière.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 Vous pouvez ajouter manuellement le sélecteur DOM dans le code pour prendre en charge d'autres moteurs de recherche.
 
 Ne peut pas prendre en charge [Bing](https://www.bing.com), car il fournit uniquement des liens intermédiaires.
 
-4get, Lilo et Entireweb ne changent pas les URL affichées en conséquence lorsque les liens sont modifiés. Ce problème existe car je cherche à rendre mon code aussi généralisé que possible, mais ces moteurs de recherche ont une structure DOM inhabituelle pour l'affichage des URL, ce qui rend fastidieux de soutenir ces moteurs compte tenu de leur base d'utilisateurs relativement petite.
+4get ne changent pas les URL affichées en conséquence lorsque les liens sont modifiés. Ce problème existe car je cherche à rendre mon code aussi généralisé que possible, mais ces moteurs de recherche ont une structure DOM inhabituelle pour l'affichage des URL, ce qui rend fastidieux de soutenir ces moteurs compte tenu de leur base d'utilisateurs relativement petite.
 
 > Juste une petite note, [Kagi](https://kagi.com) est un moteur de recherche avec une fonctionnalité de redirection d'URL intégrée, cela vaut la peine d'essayer. Je suis un utilisateur de Kagi, et je suis très satisfait de ce produit, alors je leur fais un coup de chapeau ici.
 
@@ -181,23 +184,23 @@ Règles de modification d'URL en [expression régulière](https://fr.wikipedia.o
 
 Règles de [sélecteur](https://developer.mozilla.org/fr/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) pour les éléments DOM nécessitant une mise à jour pour les résultats de recherche des moteurs de recherche
 
-| Variable                   | Description                                                                                                                                       |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| selector                   | sélecteur pour l'élément DOM                                                                                                                      |
-| updateText                 | drapeau pour savoir s'il faut mettre à jour le texte ou la valeur href de l'élément                                                               |
-| childSelector              | sélecteur pour l'élément DOM enfant sous l'élément parent                                                                                         |
-| updateChildText            | drapeau pour savoir s'il faut mettre à jour le texte interne de l'élément enfant                                                                  |
-| containProtocol            | drapeau pour savoir s'il faut inclure le protocole (par exemple, https://) dans le domaine                                                        |
-| useTopLevelDomain          | drapeau pour l'utilisation du domaine de premier niveau lors de l'affichage des URL                                                               |
-| displayMethod              | requis, méthode d'affichage de l'URL<br/>méthode 1 : format fil d'Ariane<br/>méthode 2 : URL complète<br/>méthode 3 : URL complète sans protocole |
-| multiElementsForUrlDisplay | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments du DOM                                                                 |
+| Variable                   | Description                                                  |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | sélecteur pour l'élément DOM                                 |
+| updateText                 | drapeau pour savoir s'il faut mettre à jour le texte ou la valeur href de l'élément |
+| childSelector              | sélecteur pour l'élément DOM enfant sous l'élément parent    |
+| updateChildText            | drapeau pour savoir s'il faut mettre à jour le texte interne de l'élément enfant |
+| containProtocol            | drapeau pour savoir s'il faut inclure le protocole (par exemple, https://) dans le domaine |
+| useTopLevelDomain          | drapeau pour l'utilisation du domaine de premier niveau lors de l'affichage des URL |
+| urlDisplayMethod              | requis, méthode d'affichage de l'URL<br/>méthode 1 : format fil d'Ariane<br/>méthode 2 : URL complète<br/>méthode 3 : URL complète sans protocole |
+| multiElementsForUrlDisplay | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments du DOM |
 
 ### searchEngines
 
 Liste définie par l'utilisateur des domaines des moteurs de recherche
 
-| Variable                 | Description                                                                                                                                                                       |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hosts                    | domaine du moteur de recherche                                                                                                                                                    |
-| resultContainerSelectors | optionnel, définit le conteneur de résultats de recherche DOM, pour réduire la portée de l'observation dynamique                                                                  |
+| Variable                 | Description                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | domaine du moteur de recherche                               |
+| resultContainerSelectors | optionnel, définit le conteneur de résultats de recherche DOM, pour réduire la portée de l'observation dynamique |
 | attribute                | spécifiez un attribut d'URL supplémentaire dans &lt;a&gt; autre que 'href' (par exemple 'data-target')<br/>pas besoin de spécifier cela si tous les attributs de lien sont 'href' |

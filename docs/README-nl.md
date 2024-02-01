@@ -66,12 +66,15 @@ URL-wijziging gebruikt Regelmatige Expressie.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 U kunt handmatig DOM-selector in de code toevoegen om andere zoekmachines te ondersteunen.
 
 Kan geen ondersteuning bieden voor [Bing](https://www.bing.com), omdat het alleen tussenliggende links verstrekt.
 
-4get, Lilo en Entireweb zullen de weergegeven URL's niet overeenkomstig veranderen wanneer links worden gewijzigd. Dit probleem bestaat omdat ik ernaar streef mijn code zo algemeen mogelijk te maken, maar deze zoekmachines hebben een ongebruikelijke DOM-structuur voor het weergeven van URL's wat het omslachtig maakt om deze zoekmachines te ondersteunen gezien hun relatief kleine gebruikersbasis.
+4get zullen de weergegeven URL's niet overeenkomstig veranderen wanneer links worden gewijzigd. Dit probleem bestaat omdat ik ernaar streef mijn code zo algemeen mogelijk te maken, maar deze zoekmachines hebben een ongebruikelijke DOM-structuur voor het weergeven van URL's wat het omslachtig maakt om deze zoekmachines te ondersteunen gezien hun relatief kleine gebruikersbasis.
 
 > Slechts een zijopmerking, [Kagi](https://kagi.com) is een zoekmachine met ingebouwde URL-omleidingsfunctionaliteit, het proberen waard. Ik ben een gebruiker van Kagi en ben zeer tevreden met dit product, dus ik geef ze hier een shout-out.
 
@@ -181,23 +184,23 @@ URL-wijzigingsregels in [reguliere expressie](https://nl.wikipedia.org/wiki/Regu
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) regels voor de DOM-elementen die moeten worden bijgewerkt voor zoekmachine resultaten
 
-| Variabele                  | Beschrijving                                                                                                                             |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| selector                   | selector voor DOM-element                                                                                                                |
-| updateText                 | vlag voor het al dan niet updaten van de tekst of href-waarde van het element                                                            |
-| childSelector              | selector voor kind DOM-element onder ouder element                                                                                       |
-| updateChildText            | vlag voor het al dan niet updaten van de binnentekst van het kind element                                                                |
-| containProtocol            | vlag voor het al dan niet bevatten van protocol (bijv. https://) in de domein                                                            |
-| useTopLevelDomain          | vlag voor het al dan niet gebruiken van het topleveldomein bij het weergeven van URL's                                                   |
-| displayMethod              | vereist, URL-weergavemethode<br/>methode 1: breadcrumb-formaat<br/>methode 2: volledige URL<br/>methode 3: volledige URL zonder protocol |
-| multiElementsForUrlDisplay | vlag voor of de weergegeven URL is opgesplitst in meerdere DOM-elementen                                                                 |
+| Variabele                  | Beschrijving                                                 |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | selector voor DOM-element                                    |
+| updateText                 | vlag voor het al dan niet updaten van de tekst of href-waarde van het element |
+| childSelector              | selector voor kind DOM-element onder ouder element           |
+| updateChildText            | vlag voor het al dan niet updaten van de binnentekst van het kind element |
+| containProtocol            | vlag voor het al dan niet bevatten van protocol (bijv. https://) in de domein |
+| useTopLevelDomain          | vlag voor het al dan niet gebruiken van het topleveldomein bij het weergeven van URL's |
+| urlDisplayMethod              | vereist, URL-weergavemethode<br/>methode 1: breadcrumb-formaat<br/>methode 2: volledige URL<br/>methode 3: volledige URL zonder protocol |
+| multiElementsForUrlDisplay | vlag voor of de weergegeven URL is opgesplitst in meerdere DOM-elementen |
 
 ### searchEngines
 
 Door de gebruiker gedefinieerde lijst met domeinen van zoekmachines
 
-| Variabele                | Beschrijving                                                                                                                                                       |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| hosts                    | domein van de zoekmachine                                                                                                                                          |
-| resultContainerSelectors | optioneel, stel zoekresultaat container DOM in, om de reikwijdte van dynamische observatie te verkleinen                                                           |
+| Variabele                | Beschrijving                                                 |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | domein van de zoekmachine                                    |
+| resultContainerSelectors | optioneel, stel zoekresultaat container DOM in, om de reikwijdte van dynamische observatie te verkleinen |
 | attribute                | specificeer extra URL-linkattribuut in &lt;a&gt; anders dan 'href' (bijv. 'data-target')<br/>niet nodig om dit te specificeren als alle linkattributen 'href' zijn |

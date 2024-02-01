@@ -66,12 +66,15 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 Bạn có thể tự thêm bộ chọn DOM vào mã để hỗ trợ thêm công cụ tìm kiếm khác.
 
 Không thể hỗ trợ [Bing](https://www.bing.com), vì nó chỉ cung cấp các liên kết trung gian.
 
-4get, Lilo và Entireweb sẽ không thay đổi URL hiển thị tương ứng khi liên kết được thay đổi. Vấn đề này tồn tại bởi vì tôi muốn mã của mình được tổng quát nhất có thể, nhưng những công cụ tìm kiếm này có cấu trúc DOM không thông thường để hiển thị URL, khiến việc hỗ trợ chúng trở nên phức tạp với lượng người dùng tương đối nhỏ.
+4get sẽ không thay đổi URL hiển thị tương ứng khi liên kết được thay đổi. Vấn đề này tồn tại bởi vì tôi muốn mã của mình được tổng quát nhất có thể, nhưng những công cụ tìm kiếm này có cấu trúc DOM không thông thường để hiển thị URL, khiến việc hỗ trợ chúng trở nên phức tạp với lượng người dùng tương đối nhỏ.
 
 > Chỉ là một lưu ý nhỏ, [Kagi](https://kagi.com) là một công cụ tìm kiếm với chức năng chuyển hướng URL tích hợp, đáng để thử. Tôi là một người dùng của Kagi, và tôi rất hài lòng với sản phẩm này, nên tôi muốn giới thiệu họ ở đây.
 
@@ -181,23 +184,23 @@ Quy tắc chỉnh sửa URL bằng [biểu thức chính quy](https://vi.wikiped
 
 Quy tắc [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) cho các phần tử DOM cần cập nhật trong kết quả tìm kiếm của công cụ tìm kiếm
 
-| Biến                       | Mô tả                                                                                                                                                     |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| selector                   | selector cho phần tử DOM                                                                                                                                  |
-| updateText                 | cờ cho dù có cập nhật văn bản hay giá trị href của phần tử hay không                                                                                      |
-| childSelector              | selector cho phần tử DOM con dưới phần tử cha                                                                                                             |
-| updateChildText            | cờ cho dù có cập nhật văn bản bên trong của phần tử con hay không                                                                                         |
-| containProtocol            | cờ cho dù có chứa giao thức (ví dụ: https://) trong miền hay không                                                                                        |
-| useTopLevelDomain          | cờ để xác định có sử dụng tên miền cấp cao nhất khi hiển thị URL hay không                                                                                |
-| displayMethod              | bắt buộc, phương thức hiển thị URL<br/>phương thức 1: định dạng breadcrumb<br/>phương thức 2: URL đầy đủ<br/>phương thức 3: URL đầy đủ không có giao thức |
-| multiElementsForUrlDisplay | cờ cho dù URL hiển thị được chia thành nhiều phần tử DOM khác nhau                                                                                        |
+| Biến                       | Mô tả                                                        |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | selector cho phần tử DOM                                     |
+| updateText                 | cờ cho dù có cập nhật văn bản hay giá trị href của phần tử hay không |
+| childSelector              | selector cho phần tử DOM con dưới phần tử cha                |
+| updateChildText            | cờ cho dù có cập nhật văn bản bên trong của phần tử con hay không |
+| containProtocol            | cờ cho dù có chứa giao thức (ví dụ: https://) trong miền hay không |
+| useTopLevelDomain          | cờ để xác định có sử dụng tên miền cấp cao nhất khi hiển thị URL hay không |
+| urlDisplayMethod              | bắt buộc, phương thức hiển thị URL<br/>phương thức 1: định dạng breadcrumb<br/>phương thức 2: URL đầy đủ<br/>phương thức 3: URL đầy đủ không có giao thức |
+| multiElementsForUrlDisplay | cờ cho dù URL hiển thị được chia thành nhiều phần tử DOM khác nhau |
 
 ### searchEngines
 
 Danh sách do người dùng định nghĩa của các miền công cụ tìm kiếm
 
-| Biến                     | Mô tả                                                                                                                                                                   |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hosts                    | miền của công cụ tìm kiếm                                                                                                                                               |
-| resultContainerSelectors | tùy chọn, thiết lập bộ chọn DOM cho kết quả tìm kiếm, để thu hẹp phạm vi quan sát động                                                                                  |
+| Biến                     | Mô tả                                                        |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | miền của công cụ tìm kiếm                                    |
+| resultContainerSelectors | tùy chọn, thiết lập bộ chọn DOM cho kết quả tìm kiếm, để thu hẹp phạm vi quan sát động |
 | attribute                | chỉ định thuộc tính liên kết URL bổ sung trong &lt;a&gt; khác với 'href' (ví dụ: 'data-target')<br/>không cần chỉ định nếu tất cả các thuộc tính liên kết đều là 'href' |

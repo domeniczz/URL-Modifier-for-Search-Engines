@@ -66,12 +66,15 @@ URL modification uses Regular Expression.
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 You can manually add DOM selector in the code to support other search engines.
 
 Can't support [Bing](https://www.bing.com), because it only provide intermediate links.
 
-4get, Lilo, and Entireweb won't change displayed URLs correspondingly when links are changed. This issue exists because I aim to make my code as generalized as possible, but these search engines have unusual DOM structure for displaying URLs, which makes it tedious to support these engines considering their relatively small user base.
+4get won't change displayed URLs correspondingly when links are changed. This issue exists because I aim to make my code as generalized as possible, but these search engines have unusual DOM structure for displaying URLs, which makes it tedious to support these engines considering their relatively small user base.
 
 > Just a side note, [Kagi](https://kagi.com) is a search engine with built-in URL redirection functionality, worth trying out. I am a user of Kagi, and I am very satisfied with this product, so I'm giving them a shout-out here.
 
@@ -181,23 +184,24 @@ URL modification rules in [regular expression](https://en.wikipedia.org/wiki/Reg
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) rules for the DOM elements needs updating for search engine results
 
-| Variable                   | Description                                                                                                                 |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| selector                   | selector for DOM element                                                                                                    |
-| updateText                 | flag for whether to update the text or href value of the element                                                            |
-| childSelector              | selector for child DOM element under parent element                                                                         |
-| updateChildText            | flag for whether to update the inner text of the child element                                                              |
-| containProtocol            | flag for whether to contain protocol (e.g. https://) in the domain                                                          |
-| useTopLevelDomain          | flag for whether to use the top-level domain when displaying URLs                                                           |
-| displayMethod              | required, URL display method<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
-| multiElementsForUrlDisplay | flag for whether the displayed URL is separated into multiple DOM elements                                                  |
+| Variable                   | Description                                                  |
+| -------------------------- | ------------------------------------------------------------ |
+| selector                   | selector for DOM element                                     |
+| updateTextWithoutOverwrite | flag for update the textnode without overwriting other nodes under the DOM element |
+| updateTextByOverwrite      | flag for update the content by overwriting everything under the DOM element |
+| updateChildText            | flag for whether to update the inner text of the child element |
+| childSelector              | selector for child DOM element under parent element          |
+| containProtocol            | flag for whether to contain protocol (e.g. https://) in the domain |
+| useTopLevelDomain          | flag for whether to use the top-level domain when displaying URLs |
+| urlDisplayMethod           | required, URL display method<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
+| multiElementsForUrlDisplay | flag for whether the displayed URL is separated into multiple DOM elements |
 
 ### searchEngines
 
 User-defined list of search engine domains
 
-| Variable                 | Description                                                                                                                                                 |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hosts                    | search engine's domain                                                                                                                                      |
-| resultContainerSelectors | optional, set search result container DOM, to narrow down the range of dynamic observation                                                                  |
+| Variable                 | Description                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | search engine's domain                                       |
+| resultContainerSelectors | optional, set search result container DOM, to narrow down the range of dynamic observation |
 | attribute                | specify additional URL link attribute in &lt;a&gt; other than 'href' (e.g. 'data-target')<br/>no need to specify this if all the link attributes are 'href' |

@@ -66,12 +66,15 @@ URL 修改使用正則表達式。
 - [Mojeek](https://www.mojeek.com)
 - [Yep](https://yep.com)
 - [Torry](https://www.torry.io)
+- [GMX](https://www.gmx.com)
+- [YouCare](https://youcare.world)
+- [Seznam](https://www.seznam.cz)
 
 您可以在代碼中手動添加 DOM 選擇器以支援其他搜索引擎。
 
 無法支援 [Bing](https://www.bing.com)，因為它只提供中間鏈接。
 
-4get、Lilo 和 Entireweb 在鏈接變更時不會相應地更改顯示的 URL。這個問題的存在是因為我希望我的代碼盡可能地通用化，但這些搜索引擎具有不尋常的顯示 URL 的 DOM 結構，考慮到它們相對較小的用戶基礎，支持這些搜索引擎變得很麻煩。
+4get 在鏈接變更時不會相應地更改顯示的 URL。這個問題的存在是因為我希望我的代碼盡可能地通用化，但這些搜索引擎具有不尋常的顯示 URL 的 DOM 結構，考慮到它們相對較小的用戶基礎，支持這些搜索引擎變得很麻煩。
 
 > 順便一提，[Kagi](https://kagi.com) 是一個內建 URL 重定向功能的搜尋引擎，值得一試。我是 Kagi 的用戶，我對這個產品很滿意，因此在這裡為他們做個廣告。
 
@@ -172,32 +175,32 @@ URL 修改使用正則表達式。
 
 [正則表達式](https://zh.wikipedia.org/zh-tw/正则表达式) 的URL 修改規則
 
-| 參數          | 描述                |
-| ----------- | ----------------- |
+| 參數        | 描述                          |
+| ----------- | ----------------------------- |
 | matchRegex  | 用於匹配原始 URL 的正則表達式 |
-| replaceWith | 用於替換的正則表達式        |
+| replaceWith | 用於替換的正則表達式          |
 
 ### selectorRules
 
 用於搜索引擎結果的 DOM 元素更新的[選擇器](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)規則
 
-| 參數                         | 描述                                                           |
+| 參數                       | 描述                                                         |
 | -------------------------- | ------------------------------------------------------------ |
-| selector                   | DOM 元素的選擇器                                                   |
-| updateText                 | 是否更新元素的文本或 href 值的標誌                                         |
-| childSelector              | 父元素下子 DOM 元素的選擇器                                             |
-| updateChildText            | 是否更新子元素的內部文本的標誌                                              |
-| containProtocol            | 是否在域名中包含協議（例如https://）的標誌                                    |
-| useTopLevelDomain          | 是否在顯示網址時使用頂級域名的標誌                                            |
-| displayMethod              | 必需，URL 顯示方法<br/>方法1：麵包屑格式<br/>方法2：完整 URL<br/>方法3：不帶協議的完整 URL |
-| multiElementsForUrlDisplay | 是否將顯示的 URL 分割成多個 DOM 元素                                      |
+| selector                   | DOM 元素的選擇器                                             |
+| updateText                 | 是否更新元素的文本或 href 值的標誌                           |
+| childSelector              | 父元素下子 DOM 元素的選擇器                                  |
+| updateChildText            | 是否更新子元素的內部文本的標誌                               |
+| containProtocol            | 是否在域名中包含協議（例如https://）的標誌                   |
+| useTopLevelDomain          | 是否在顯示網址時使用頂級域名的標誌                           |
+| urlDisplayMethod              | 必需，URL 顯示方法<br/>方法1：麵包屑格式<br/>方法2：完整 URL<br/>方法3：不帶協議的完整 URL |
+| multiElementsForUrlDisplay | 是否將顯示的 URL 分割成多個 DOM 元素                         |
 
 ### searchEngines
 
 用戶定義的搜索引擎域名列表
 
-| 參數                       | 描述                                                                              |
-| ------------------------ | ------------------------------------------------------------------------------- |
-| hosts                    | 搜索引擎的域名                                                                         |
-| resultContainerSelectors | 可選，設置搜索結果容器 DOM，以縮小動態觀察範圍                                                       |
+| 參數                     | 描述                                                         |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | 搜索引擎的域名                                               |
+| resultContainerSelectors | 可選，設置搜索結果容器 DOM，以縮小動態觀察範圍               |
 | attribute                | 指定 &lt;a&gt; 中的其他 URL 鏈接屬性，而不僅僅是 'href'（如 'data-target'）<br/>如果所有鏈接屬性都是 'href'， |
