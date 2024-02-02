@@ -394,6 +394,10 @@
 
     // Define URL modification rules with precompiled regex
     const urlModificationRules = [
+        // {
+        //     matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+        //     replaceWith: 'https://farside.link/$1'
+        // },
         {
             matchRegex: new RegExp(/^https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*)/),
             replaceWith: 'https://www.wikiwand.com/$1/$2'
@@ -409,6 +413,7 @@
         {
             matchRegex: new RegExp(/^https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*)/),
             replaceWith: 'https://safereddit.com/$1'
+            // replaceWith: 'https://lr.vern.cc/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+$|profile\/.*)/),
@@ -439,7 +444,7 @@
             replaceWith: 'https://ttv.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:m|www)\.imdb\.com(.*)/),
+            matchRegex: new RegExp(/^https?:\/\/(?:m|www)\.imdb\.com\/(title\/\w+).*/),
             replaceWith: 'https://ld.vern.cc$1'
         },
         {
@@ -454,10 +459,6 @@
         {
             matchRegex: new RegExp(/^https?:\/\/www\.urbandictionary\.com\/(define\.php\?term=.*)/),
             replaceWith: 'https://rd.vern.cc/$1'
-        },
-        {
-            matchRegex: new RegExp(/^https?:\/\/github\.ink(.*)/),
-            replaceWith: 'https://github.com$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.reuters\.com\/((?=.*\/)(?=.*-).*)/),
@@ -492,12 +493,17 @@
             replaceWith: 'https://$1'
         },
         {
+            matchRegex: new RegExp(/^https?:\/\/github\.ink(.*)/),
+            replaceWith: 'https://github.com$1'
+        },
+        {
             matchRegex: new RegExp(/^https?:\/\/www\.snopes\.com(.*)/),
             replaceWith: 'https://sd.vern.cc$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/www\.instructables\.com\/(.*)/),
             replaceWith: 'https://ds.vern.cc/$1'
+            // replaceWith: 'https://structables.private.coffee/$1'
         },
         {
             matchRegex: new RegExp(/^https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*)/),
