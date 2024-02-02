@@ -196,16 +196,19 @@ Regras de modificação de URL em [expressão regular](https://pt.wikipedia.org/
 
 Regras de [seleção](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) para elementos DOM que precisam ser atualizados nos resultados do motor de busca
 
-| Variável                   | Descrição                                                    |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | seletor para elemento DOM                                    |
-| updateText                 | flag para atualizar o texto ou valor href do elemento        |
-| childSelector              | seletor para elemento DOM filho sob elemento pai             |
-| updateChildText            | flag para atualizar o texto interno do elemento filho        |
-| containProtocol            | flag para incluir protocolo (ex: https://) no domínio        |
-| useTopLevelDomain          | sinalizador para se usar o domínio de nível superior ao exibir URLs |
-| urlDisplayMethod              | obrigatório, método de exibição da URL<br/>método 1: formato breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sem protocolo |
-| multiElementsForUrlDisplay | indicador de si la URL mostrada se divide en varios elementos del DOM |
+| Variável                             | Descrição                                                    |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | seletor para elemento DOM                                    |
+| parentSelector                       | seletor para o pai do elemento de link e do elemento de texto |
+| linkNodeSelector                     | seletor para o elemento de link sob o elemento especificado por `parentSelector` |
+| textNodeSelector                     | seletor para o elemento de texto sob o elemento especificado por `parentSelector` |
+| updateChildText                      | flag para se atualizar o texto interno do elemento filho especificado por `childSelector` |
+| childSelector                        | seletor para o elemento DOM filho sob o elemento especificado por `selector` ou `textNodeSelector` |
+| updateTextWithoutOverwrite           | flag para atualizar o textnode sem sobrescrever outros nós sob o elemento DOM |
+| updateTextByOverwritecontainProtocol | flag para atualizar o conteúdo sobrescrevendo tudo sob o elemento DOMflag para se incluir o protocolo (ex: https://) no domínio |
+| useTopLevelDomain                    | flag para se usar o domínio de nível superior ao exibir URLs |
+| urlDisplayMethod                     | obrigatório, método de exibição da URL<br/>método 1: formato breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sem protocolo |
+| multiElementsForUrlDisplay           | flag para se a URL exibida é separada em múltiplos elementos DOM |
 
 ### searchEngines
 

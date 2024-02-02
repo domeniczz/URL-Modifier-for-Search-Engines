@@ -196,16 +196,19 @@ Pravidla pro modifikaci URL v [regulárním výrazu](https://cs.wikipedia.org/wi
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) pravidla pro aktualizaci DOM elementů ve výsledcích vyhledávače
 
-| Proměnná                   | Popis                                                        |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | selector pro DOM element                                     |
-| updateText                 | příznak, zda aktualizovat text nebo hodnotu href elementu    |
-| childSelector              | selector pro dítě DOM elementu pod rodičovským elementem     |
-| updateChildText            | příznak, zda aktualizovat vnitřní text dítěte elementu       |
-| containProtocol            | příznak, zda zahrnovat protokol (např. https://) v doméně    |
-| useTopLevelDomain          | příznak pro použití domény nejvyšší úrovně při zobrazování URL |
-| urlDisplayMethod              | požadováno, metoda zobrazení URL<br/>metoda 1: formát drobečkové navigace<br/>metoda 2: celá URL<br/>metoda 3: celá URL bez protokolu |
-| multiElementsForUrlDisplay | příznak, zda je zobrazená URL rozdělena do více DOM elementů |
+| Proměnná                             | Popis                                                        |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | selektor pro DOM element                                     |
+| parentSelector                       | selektor pro rodiče odkazového elementu a textového elementu |
+| linkNodeSelector                     | selektor pro odkazový element pod elementem specifikovaným `parentSelector` |
+| textNodeSelector                     | selektor pro textový element pod elementem specifikovaným `parentSelector` |
+| updateChildText                      | příznak pro aktualizaci vnitřního textu dceřiného elementu specifikovaného `childSelector` |
+| childSelector                        | selektor pro dceřiný DOM element pod elementem specifikovaným `selector` nebo `textNodeSelector` |
+| updateTextWithoutOverwrite           | příznak pro aktualizaci textového uzlu bez přepisu ostatních uzlů pod DOM elementem |
+| updateTextByOverwritecontainProtocol | příznak pro aktualizaci obsahu přepisem všeho pod DOM elementem, příznak zda obsahovat protokol (např. https://) v doméně |
+| useTopLevelDomain                    | příznak zda použít top-level doménu při zobrazování URL      |
+| urlDisplayMethod                     | vyžadováno, metoda zobrazení URL<br/>metoda 1: formát drobečkové navigace<br/>metoda 2: plná URL<br/>metoda 3: plná URL bez protokolu |
+| multiElementsForUrlDisplay           | příznak zda je zobrazená URL rozdělena do více DOM elementů  |
 
 ### searchEngines
 

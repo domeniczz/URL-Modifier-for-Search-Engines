@@ -196,16 +196,19 @@ Quy tắc chỉnh sửa URL bằng [biểu thức chính quy](https://vi.wikiped
 
 Quy tắc [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) cho các phần tử DOM cần cập nhật trong kết quả tìm kiếm của công cụ tìm kiếm
 
-| Biến                       | Mô tả                                                        |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | selector cho phần tử DOM                                     |
-| updateText                 | cờ cho dù có cập nhật văn bản hay giá trị href của phần tử hay không |
-| childSelector              | selector cho phần tử DOM con dưới phần tử cha                |
-| updateChildText            | cờ cho dù có cập nhật văn bản bên trong của phần tử con hay không |
-| containProtocol            | cờ cho dù có chứa giao thức (ví dụ: https://) trong miền hay không |
-| useTopLevelDomain          | cờ để xác định có sử dụng tên miền cấp cao nhất khi hiển thị URL hay không |
-| urlDisplayMethod              | bắt buộc, phương thức hiển thị URL<br/>phương thức 1: định dạng breadcrumb<br/>phương thức 2: URL đầy đủ<br/>phương thức 3: URL đầy đủ không có giao thức |
-| multiElementsForUrlDisplay | cờ cho dù URL hiển thị được chia thành nhiều phần tử DOM khác nhau |
+| Biến                                 | Mô tả                                                        |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | bộ chọn cho phần tử DOM                                      |
+| parentSelector                       | bộ chọn cho phụ huynh của phần tử liên kết và phần tử văn bản |
+| linkNodeSelector                     | bộ chọn cho phần tử liên kết dưới phần tử được chỉ định bởi `parentSelector` |
+| textNodeSelector                     | bộ chọn cho phần tử văn bản dưới phần tử được chỉ định bởi `parentSelector` |
+| updateChildText                      | cờ cho dù cập nhật văn bản bên trong của phần tử con được chỉ định bởi `childSelector` |
+| childSelector                        | bộ chọn cho phần tử con DOM dưới phần tử được chỉ định bởi `selector` hoặc `textNodeSelector` |
+| updateTextWithoutOverwrite           | cờ cho việc cập nhật textnode mà không ghi đè lên các nút khác dưới phần tử DOM |
+| updateTextByOverwritecontainProtocol | cờ cho việc cập nhật nội dung bằng cách ghi đè lên mọi thứ dưới phần tử DOMcờ cho dù có chứa giao thức (ví dụ: https://) trong tên miền |
+| useTopLevelDomain                    | cờ cho dù sử dụng tên miền cấp cao nhất khi hiển thị URL     |
+| urlDisplayMethod                     | yêu cầu, phương thức hiển thị URL<br/>phương thức 1: định dạng breadcrumb<br/>phương thức 2: URL đầy đủ<br/>phương thức 3: URL đầy đủ không kèm giao thức |
+| multiElementsForUrlDisplay           | cờ cho dù URL hiển thị được tách ra thành nhiều phần tử DOM  |
 
 ### searchEngines
 

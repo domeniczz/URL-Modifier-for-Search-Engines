@@ -196,16 +196,19 @@ URL 修改使用正則表達式。
 
 用於搜索引擎結果的 DOM 元素更新的[選擇器](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)規則
 
-| 參數                       | 描述                                                         |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | DOM 元素的選擇器                                             |
-| updateText                 | 是否更新元素的文本或 href 值的標誌                           |
-| childSelector              | 父元素下子 DOM 元素的選擇器                                  |
-| updateChildText            | 是否更新子元素的內部文本的標誌                               |
-| containProtocol            | 是否在域名中包含協議（例如https://）的標誌                   |
-| useTopLevelDomain          | 是否在顯示網址時使用頂級域名的標誌                           |
-| urlDisplayMethod              | 必需，URL 顯示方法<br/>方法1：麵包屑格式<br/>方法2：完整 URL<br/>方法3：不帶協議的完整 URL |
-| multiElementsForUrlDisplay | 是否將顯示的 URL 分割成多個 DOM 元素                         |
+| 參數                                 | 描述                                                         |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | DOM 元素的選擇器                                             |
+| parentSelector                       | 鏈結元素和文本元素的父元素的選擇器                           |
+| linkNodeSelector                     | 在由 `parentSelector` 指定的元素下的鏈結元素的選擇器         |
+| textNodeSelector                     | 在由 `parentSelector` 指定的元素下的文本元素的選擇器         |
+| updateChildText                      | 是否更新由 `childSelector` 指定的子元素的內部文本的標誌      |
+| childSelector                        | 在由 `selector` 或 `textNodeSelector` 指定的元素下的子 DOM 元素的選擇器 |
+| updateTextWithoutOverwrite           | 更新文本節點而不覆蓋其他節點的標誌                           |
+| updateTextByOverwritecontainProtocol | 通過覆蓋 DOM 元素下的所有內容來更新內容的標誌，是否包含協議（例如：https://）的標誌 |
+| useTopLevelDomain                    | 是否在顯示 URL 時使用頂級域名的標誌                          |
+| urlDisplayMethod                     | 必填，URL 顯示方法<br/>方法 1：麵包屑格式<br/>方法 2：完整 URL<br/>方法 3：不含協議的完整 URL |
+| multiElementsForUrlDisplay           | 顯示的 URL 是否分成多個 DOM 元素的標誌                       |
 
 ### searchEngines
 

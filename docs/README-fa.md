@@ -196,16 +196,19 @@
 
 قوانین [انتخاب‌گر](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) برای به‌روز رسانی عناصر DOM نتایج جستجوی موتورهای جستجو
 
-| متغیر                      | توضیحات                                                      |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | انتخاب‌گر برای عنصر DOM                                       |
-| updateText                 | پرچم برای آیا باید متن یا مقدار href عنصر به‌روز رسانی شود    |
-| childSelector              | انتخاب‌گر برای عنصر فرزند DOM زیر عنصر والد                   |
-| updateChildText            | پرچم برای آیا باید متن داخلی عنصر فرزند به‌روز رسانی شود      |
-| containProtocol            | پرچم برای آیا باید پروتکل (مثلاً https://) در دامنه وجود داشته باشد |
-| useTopLevelDomain          | پرچم برای آیا از دامنه سطح بالا هنگام نمایش آدرس‌های اینترنتی استفاده شود |
-| urlDisplayMethod              | لازم، روش نمایش URL<br/>روش 1: فرمت breadcrumb<br/>روش 2: URL کامل<br/>روش 3: URL کامل بدون پروتکل |
-| multiElementsForUrlDisplay | پرچم برای آیا URL نمایش داده شده به چندین عنصر DOM تقسیم می‌شود |
+| متغیر                                | توضیحات                                                      |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | انتخابگر برای عنصر DOM                                       |
+| parentSelector                       | انتخابگر برای والد عنصر لینک و عنصر متن                      |
+| linkNodeSelector                     | انتخابگر برای عنصر لینک زیر عنصر مشخص شده توسط `parentSelector` |
+| textNodeSelector                     | انتخابگر برای عنصر متن زیر عنصر مشخص شده توسط `parentSelector` |
+| updateChildText                      | پرچم برای آیا بروزرسانی متن داخلی عنصر فرزند مشخص شده توسط `childSelector` |
+| childSelector                        | انتخابگر برای عنصر فرزند DOM زیر عنصر مشخص شده توسط `selector` یا `textNodeSelector` |
+| updateTextWithoutOverwrite           | پرچم برای بروزرسانی textnode بدون بازنویسی سایر گره‌ها زیر عنصر DOM |
+| updateTextByOverwritecontainProtocol | پرچم برای بروزرسانی محتوا با بازنویسی همه چیز زیر عنصر DOMپرچم برای آیا شامل پروتکل (مانند https://) در دامنه |
+| useTopLevelDomain                    | پرچم برای آیا استفاده از دامنه سطح بالا هنگام نمایش URLها    |
+| urlDisplayMethod                     | مورد نیاز، روش نمایش URL<br/>روش 1: فرمت breadcrumb<br/>روش 2: URL کامل<br/>روش 3: URL کامل بدون پروتکل |
+| multiElementsForUrlDisplay           | پرچم برای آیا URL نمایش داده شده به چندین عنصر DOM جدا شده است |
 
 ### searchEngines
 

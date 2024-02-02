@@ -196,16 +196,19 @@ URL の変更正規表現を使用します。
 
 検索エンジンの結果に対する DOM 要素の[セレクタ](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)ルール
 
-| 変数                       | 説明                                                         |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | DOM 要素のセレクタ                                           |
-| updateText                 | 要素のテキストまたは href 値を更新するかどうかのフラグ       |
-| childSelector              | 親要素の下の子 DOM 要素のセレクタ                            |
-| updateChildText            | 子要素の内部テキストを更新するかどうかのフラグ               |
-| containProtocol            | ドメインにプロトコル（例：https://）を含むかどうかのフラグ   |
-| useTopLevelDomain          | URL 表示時にトップレベルドメインを使用するかどうかのフラグ   |
-| urlDisplayMethod              | 必須、URL 表示方法<br/>方法1：パンくずリスト形式<br/>方法2：フル URL<br/>方法3：プロトコルなしのフル URL |
-| multiElementsForUrlDisplay | URL 表示のために複数の DOM 要素に分割されているかのフラグ    |
+| 変数                                 | 説明                                                         |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | DOM 要素のセレクター                                         |
+| parentSelector                       | リンク要素とテキスト要素の親要素のセレクター                 |
+| linkNodeSelector                     | `parentSelector` で指定された要素の下のリンク要素のセレクター |
+| textNodeSelector                     | `parentSelector` で指定された要素の下のテキスト要素のセレクター |
+| updateChildText                      | `childSelector` で指定された子要素の内部テキストを更新するかどうかのフラグ |
+| childSelector                        | `selector` または `textNodeSelector` で指定された要素の下の子 DOM 要素のセレクター |
+| updateTextWithoutOverwrite           | DOM 要素の下の他のノードを上書きせずにテキストノードを更新するフラグ |
+| updateTextByOverwritecontainProtocol | DOM 要素の下のすべてを上書きしてコンテンツを更新するフラグ<br/>ドメインにプロトコル（例：https://）を含むかどうかのフラグ |
+| useTopLevelDomain                    | URL 表示時にトップレベルドメインを使用するかどうかのフラグ   |
+| urlDisplayMethod                     | 必須、URL 表示方法<br/>方法 1: パンくずリスト形式<br/>方法 2: フル URL<br/>方法 3: プロトコルなしのフル URL |
+| multiElementsForUrlDisplay           | 表示される URL が複数の DOM 要素に分割されるかどうかのフラグ |
 
 ### searchEngines
 

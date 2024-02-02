@@ -196,16 +196,19 @@ URL-Modifikationsregeln in [regulären Ausdrücken](https://de.wikipedia.org/wik
 
 [Selektor](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)-Regeln für die DOM-Elemente, die für Suchmaschinenergebnisse aktualisiert werden müssen
 
-| Variable                   | Beschreibung                                                 |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | Selektor für DOM-Element                                     |
-| updateText                 | Flag, ob der Text oder der href-Wert des Elements aktualisiert werden soll |
-| childSelector              | Selektor für Kind-DOM-Element unter übergeordnetem Element   |
-| updateChildText            | Flag, ob der Innentext des Kind-Elements aktualisiert werden soll |
-| containProtocol            | Flag, ob das Protokoll (z. B. https://) in der Domain enthalten sein soll |
-| useTopLevelDomain          | Kennzeichen dafür, ob die Top-Level-Domain beim Anzeigen von URLs verwendet werden soll |
-| urlDisplayMethod              | erforderlich, Anzeigemethode der URL<br/>Methode 1: Breadcrumb-Format<br/>Methode 2: vollständige URL<br/>Methode 3: vollständige URL ohne Protokoll |
-| multiElementsForUrlDisplay | Kennzeichen dafür, ob die angezeigte URL in mehrere DOM-Elemente aufgeteilt ist |
+| Variable                                        | Beschreibung                                                 |
+| ----------------------------------------------- | ------------------------------------------------------------ |
+| Selektor                                        | Selektor für DOM-Element                                     |
+| ElternSelektor                                  | Selektor für das Elternelement des Link-Elements und des Textelements |
+| LinkKnotenSelektor                              | Selektor für das Link-Element unter dem durch `ElternSelektor` spezifizierten Element |
+| TextKnotenSelektor                              | Selektor für das Text-Element unter dem durch `ElternSelektor` spezifizierten Element |
+| aktualisiereKindText                            | Kennzeichen, ob der innere Text des durch `kindSelektor` spezifizierten Kindelements aktualisiert werden soll |
+| kindSelektor                                    | Selektor für das Kindelement unter dem durch `Selektor` oder `TextKnotenSelektor` spezifizierten Element |
+| aktualisiereTextOhneUeberschreiben              | Kennzeichen für die Aktualisierung des Textknotens ohne andere Knoten unter dem DOM-Element zu überschreiben |
+| aktualisiereTextDurchUeberschreibenMitProtokoll | Kennzeichen für die Aktualisierung des Inhalts durch Überschreiben alles unter dem DOM-Element, Kennzeichen, ob das Protokoll (z.B. https://) in der Domain enthalten sein soll |
+| verwendeTopLevelDomain                          | Kennzeichen, ob die Top-Level-Domain bei der Anzeige von URLs verwendet werden soll |
+| urlAnzeigeMethode                               | erforderlich, Methode zur URL-Anzeige<br/>Methode 1: Breadcrumb-Format<br/>Methode 2: vollständige URL<br/>Methode 3: vollständige URL ohne Protokoll |
+| mehrereElementeFuerUrlAnzeige                   | Kennzeichen, ob die angezeigte URL in mehrere DOM-Elemente aufgeteilt ist |
 
 ### searchEngines
 

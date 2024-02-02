@@ -196,16 +196,19 @@ Règles de modification d'URL en [expression régulière](https://fr.wikipedia.o
 
 Règles de [sélecteur](https://developer.mozilla.org/fr/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) pour les éléments DOM nécessitant une mise à jour pour les résultats de recherche des moteurs de recherche
 
-| Variable                   | Description                                                  |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | sélecteur pour l'élément DOM                                 |
-| updateText                 | drapeau pour savoir s'il faut mettre à jour le texte ou la valeur href de l'élément |
-| childSelector              | sélecteur pour l'élément DOM enfant sous l'élément parent    |
-| updateChildText            | drapeau pour savoir s'il faut mettre à jour le texte interne de l'élément enfant |
-| containProtocol            | drapeau pour savoir s'il faut inclure le protocole (par exemple, https://) dans le domaine |
-| useTopLevelDomain          | drapeau pour l'utilisation du domaine de premier niveau lors de l'affichage des URL |
-| urlDisplayMethod              | requis, méthode d'affichage de l'URL<br/>méthode 1 : format fil d'Ariane<br/>méthode 2 : URL complète<br/>méthode 3 : URL complète sans protocole |
-| multiElementsForUrlDisplay | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments du DOM |
+| Variable                             | Description                                                  |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | sélecteur pour l'élément DOM                                 |
+| parentSelector                       | sélecteur pour le parent de l'élément lien et de l'élément texte |
+| linkNodeSelector                     | sélecteur pour l'élément lien sous l'élément spécifié par `parentSelector` |
+| textNodeSelector                     | sélecteur pour l'élément texte sous l'élément spécifié par `parentSelector` |
+| updateChildText                      | indicateur pour savoir s'il faut mettre à jour le texte interne de l'élément enfant spécifié par `childSelector` |
+| childSelector                        | sélecteur pour l'élément DOM enfant sous l'élément spécifié par `selector` ou `textNodeSelector` |
+| updateTextWithoutOverwrite           | indicateur pour la mise à jour du nœud de texte sans écraser les autres nœuds sous l'élément DOM |
+| updateTextByOverwritecontainProtocol | indicateur pour la mise à jour du contenu en écrasant tout sous l'élément DOMindicateur pour savoir s'il faut inclure le protocole (ex. https://) dans le domaine |
+| useTopLevelDomain                    | indicateur pour savoir s'il faut utiliser le domaine de premier niveau lors de l'affichage des URL |
+| urlDisplayMethod                     | requis, méthode d'affichage de l'URL<br/>méthode 1 : format breadcrumb<br/>méthode 2 : URL complète<br/>méthode 3 : URL complète sans protocole |
+| multiElementsForUrlDisplay           | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments DOM |
 
 ### searchEngines
 

@@ -196,16 +196,19 @@ URL-wijzigingsregels in [reguliere expressie](https://nl.wikipedia.org/wiki/Regu
 
 [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) regels voor de DOM-elementen die moeten worden bijgewerkt voor zoekmachine resultaten
 
-| Variabele                  | Beschrijving                                                 |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | selector voor DOM-element                                    |
-| updateText                 | vlag voor het al dan niet updaten van de tekst of href-waarde van het element |
-| childSelector              | selector voor kind DOM-element onder ouder element           |
-| updateChildText            | vlag voor het al dan niet updaten van de binnentekst van het kind element |
-| containProtocol            | vlag voor het al dan niet bevatten van protocol (bijv. https://) in de domein |
-| useTopLevelDomain          | vlag voor het al dan niet gebruiken van het topleveldomein bij het weergeven van URL's |
-| urlDisplayMethod              | vereist, URL-weergavemethode<br/>methode 1: breadcrumb-formaat<br/>methode 2: volledige URL<br/>methode 3: volledige URL zonder protocol |
-| multiElementsForUrlDisplay | vlag voor of de weergegeven URL is opgesplitst in meerdere DOM-elementen |
+| Variabele                            | Beschrijving                                                 |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | selector voor DOM-element                                    |
+| parentSelector                       | selector voor ouder van link-element en tekst-element        |
+| linkNodeSelector                     | selector voor link-element onder het element gespecificeerd door `parentSelector` |
+| textNodeSelector                     | selector voor tekst-element onder het element gespecificeerd door `parentSelector` |
+| updateChildText                      | vlag voor of de binnentekst van het kind-element gespecificeerd door `childSelector` moet worden bijgewerkt |
+| childSelector                        | selector voor kind DOM-element onder het element gespecificeerd door `selector` of `textNodeSelector` |
+| updateTextWithoutOverwrite           | vlag voor het bijwerken van de tekstnode zonder andere nodes onder het DOM-element te overschrijven |
+| updateTextByOverwritecontainProtocol | vlag voor het bijwerken van de inhoud door alles onder het DOM-element te overschrijvenvlag voor of het protocol (bijv. https://) in het domein moet bevatten |
+| useTopLevelDomain                    | vlag voor of het top-level domein moet worden gebruikt bij het weergeven van URL's |
+| urlDisplayMethod                     | vereist, URL weergavemethode<br/>methode 1: breadcrumbformaat<br/>methode 2: volledige URL<br/>methode 3: volledige URL zonder protocol |
+| multiElementsForUrlDisplay           | vlag voor of de weergegeven URL is gescheiden in meerdere DOM-elementen |
 
 ### searchEngines
 

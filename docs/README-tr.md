@@ -196,16 +196,19 @@ Düzenli ifadeyle [URL değiştirme kuralları](https://tr.wikipedia.org/wiki/D�
 
 Arama motoru sonuçları için güncellenmesi gereken DOM öğelerinin [Seçici](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) kuralları
 
-| Değişken                   | Açıklama                                                     |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | DOM öğesinin seçicisi                                        |
-| updateText                 | öğenin metin veya href değerini güncelleme bayrağı           |
-| childSelector              | ana öğenin altında çocuk DOM öğesi için seçici               |
-| updateChildText            | çocuk öğenin iç metnini güncelleme bayrağı                   |
-| containProtocol            | alan adında protokolü (örn. https://) içerme bayrağı         |
-| useTopLevelDomain          | URL'leri gösterirken en üst düzey alan adını kullanıp kullanmama bayrağı |
-| urlDisplayMethod              | gerekli, URL gösterim yöntemi<br/>yöntem 1: breadcrumb formatı<br/>yöntem 2: tam URL<br/>yöntem 3: protokol olmadan tam URL |
-| multiElementsForUrlDisplay | URL'nin birden fazla DOM öğesine ayrılıp ayrılmadığını gösteren bayrak |
+| Değişken                             | Açıklama                                                     |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | DOM elemanı için seçici                                      |
+| parentSelector                       | bağlantı elemanı ve metin elemanının ebeveyni için seçici    |
+| linkNodeSelector                     | `parentSelector` tarafından belirtilen elemanın altındaki bağlantı elemanı için seçici |
+| textNodeSelector                     | `parentSelector` tarafından belirtilen elemanın altındaki metin elemanı için seçici |
+| updateChildText                      | `childSelector` tarafından belirtilen alt elemanın iç metnini güncelleme bayrağı |
+| childSelector                        | `selector` veya `textNodeSelector` tarafından belirtilen elemanın altındaki çocuk DOM elemanı için seçici |
+| updateTextWithoutOverwrite           | DOM elemanının altındaki diğer düğümleri silmeden textnode'u güncelleme bayrağı |
+| updateTextByOverwritecontainProtocol | İçeriği, DOM elemanının altındaki her şeyi silerek güncelleme bayrağı<br/>protokolü (örn. https://) domainde gösterme bayrağı |
+| useTopLevelDomain                    | URL'leri gösterirken üst düzey alan adını kullanma bayrağı   |
+| urlDisplayMethod                     | gerekli, URL gösterim yöntemi<br/>yöntem 1: breadcrumb formatı<br/>yöntem 2: tam URL<br/>yöntem 3: protokolsüz tam URL |
+| multiElementsForUrlDisplay           | gösterilen URL'nin birden çok DOM elemanına ayrılması bayrağı |
 
 ### searchEngines
 

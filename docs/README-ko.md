@@ -196,16 +196,19 @@ URL 수정은 정규 표현식을 사용합니다.
 
 검색 엔진 결과를 위한 DOM 요소 업데이트용 [선택자](https://developer.mozilla.org/ko/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) 규칙
 
-| 변수                       | 설명                                                         |
-| -------------------------- | ------------------------------------------------------------ |
-| selector                   | DOM 요소를 위한 선택자                                       |
-| updateText                 | 요소의 텍스트 또는 href 값 업데이트 여부 플래그              |
-| childSelector              | 부모 요소 아래의 자식 DOM 요소를 위한 선택자                 |
-| updateChildText            | 자식 요소의 내부 텍스트 업데이트 여부 플                     |
-| containProtocol            | 도메인에 프로토콜(예: https://)을 포함할지 여부 플래그       |
-| useTopLevelDomain          | URL 을 표시할 때 최상위 도메인을 사용할지 여부를 결정하는 플래그 |
-| urlDisplayMethod              | 필수, URL 표시 방법<br/>방법 1: 빵 부스러기 형식<br/>방법 2: 전체 URL<br/>방법 3: 프로토콜 없는 전체 URL |
-| multiElementsForUrlDisplay | URL 표시가 여러 DOM 요소로 분리되는지 여부의 플래그          |
+| 변수                                 | 설명                                                         |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | DOM 요소의 선택자                                            |
+| parentSelector                       | 링크 요소와 텍스트 요소의 부모 요소에 대한 선택자            |
+| linkNodeSelector                     | `parentSelector` 에 의해 지정된 요소 아래의 링크 요소에 대한 선택자 |
+| textNodeSelector                     | `parentSelector` 에 의해 지정된 요소 아래의 텍스트 요소에 대한 선택자 |
+| updateChildText                      | `childSelector` 에 의해 지정된 자식 요소의 내부 텍스트를 업데이트할지 여부의 플래그 |
+| childSelector                        | `selector` 또는 `textNodeSelector` 에 의해 지정된 요소 아래의 자식 DOM 요소에 대한 선택자 |
+| updateTextWithoutOverwrite           | DOM 요소 아래의 다른 노드를 덮어쓰지 않고 textnode 를 업데이트할지 여부의 플래그 |
+| updateTextByOverwritecontainProtocol | 도메인을 표시할 때 프로토콜 (예: https://) 을 포함할지 여부의 플래그 |
+| useTopLevelDomain                    | URL 을 표시할 때 최상위 도메인을 사용할지 여부의 플래그      |
+| urlDisplayMethod                     | 필수, URL 표시 방법<br/>방법 1: 빵 부스러기 형식<br/>방법 2: 전체 URL<br/>방법 3: 프로토콜 없는 전체 URL |
+| multiElementsForUrlDisplay           | 표시된 URL 이 여러 DOM 요소로 분리되어 있는지 여부의 플래그  |
 
 ### searchEngines
 
