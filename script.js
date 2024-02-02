@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.3.3
+// @version      2.3.4
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -319,6 +319,8 @@
 // @match        *://metager.de/pl-PL/meta/meta.ger3*
 // @match        *://metager.de/sv-SE/meta/meta.ger3*
 
+// @match        *://ghosterysearch.com/search?*
+
 // @match        *://4get.ca/web?*
 // @match        *://4get.silly.computer/web?*
 // @match        *://4get.plunked.party/web?*
@@ -361,15 +363,26 @@
 // @match        *://www.etools.ch/searchSubmit.do*
 // @match        *://www.etools.ch/mobileSearch.do*
 
-// @match        *://search.lilo.org/?*
-// @match        *://search.entireweb.com/search?*
 // @match        *://www.mojeek.com/search?*
 // @match        *://yep.com/web?*
 // @match        *://www.torry.io/search*
-// @match        *://youcare.world/all?*
-// @match        *://search.seznam.cz/?*
+// @match        *://oceanhero.today/web?*
+// @match        *://search.lilo.org/?*
+// @match        *://search.entireweb.com/search?*
 // @match        *://search.gmx.com/web/result?*
 // @match        *://search.gmx.com/web?*
+// @match        *://spot.ecloud.global/search*
+// @match        *://youcare.world/all?*
+// @match        *://www.nona.de/?*
+// @match        *://www.exalead.com/search/web/results/?*
+// @match        *://search.seznam.cz/?*
+// @match        *://gibiru.com/results.html?*
+// @match        *://www.lukol.com/s.php?*
+// @match        *://search.givewater.com/serp?*
+// @match        *://results.excite.com/serp?*
+// @match        *://www.webcrawler.com/serp?*
+// @match        *://www.metacrawler.com/serp?*
+// @match        *://www.dogpile.com/serp?*
 
 // @grant        none
 // @run-at       document-end
@@ -625,44 +638,14 @@
                 selector: 'div.react-module div section div a'
             }
         ],
-        'qwant': [
+        'ghostery': [
             {
-                selector: 'div._35zId._3A7p7 a.external'
+                selector: 'li.result h2 a'
             },
             {
-                selector: 'div._35zId._3WA-c a.external',
-                childSelector: 'span',
-                updateChildText: true,
-                containProtocol: false,
-                multiElementsForUrlDisplay: 1
-            },
-            {
-                // Selector for sub-results
-                selector: 'div._12BMd div._2-LMx._2E8gc._16lFV.Ks7KS.tCpbb.m_hqb a.external'
-            },
-            {
-                selector: 'div._3McWE.is-sidebar a.external'
-            }
-        ],
-        'ecosia': [
-            {
-                selector: 'div.mainline__result-wrapper div.result__header div.result__info a',
-                childSelector: 'span span',
-                updateChildText: true,
-                containProtocol: true,
-                multiElementsForUrlDisplay: 1
-            },
-            {
-                selector: 'div.mainline__result-wrapper div.result__header div.result__title a'
-            },
-            {
-                selector: 'div.mainline__result-wrapper div ul li a'
-            },
-            {
-                selector: 'aside.sidebar article div.entity-links ul li a'
-            },
-            {
-                selector: 'aside.sidebar article div.entity__content p a'
+                selector: 'li.result div.snippet div.address a.url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
             }
         ],
         'presearch': [
@@ -674,14 +657,6 @@
             },
             {
                 selector: 'div.relative div.inline-block a'
-            }
-        ],
-        'swisscows': [
-            {
-                selector: 'article.item-web a',
-                updateTextWithoutOverwrite: true,
-                containProtocol: false,
-                urlDisplayMethod: 1
             }
         ],
         'metager': [
@@ -793,6 +768,69 @@
                 selector: 'div.searpList ul li a',
             }
         ],
+        'qwant': [
+            {
+                selector: 'div._35zId._3A7p7 a.external'
+            },
+            {
+                selector: 'div._35zId._3WA-c a.external',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                multiElementsForUrlDisplay: 1
+            },
+            {
+                // Selector for sub-results
+                selector: 'div._12BMd div._2-LMx._2E8gc._16lFV.Ks7KS.tCpbb.m_hqb a.external'
+            },
+            {
+                selector: 'div._3McWE.is-sidebar a.external'
+            }
+        ],
+        'ecosia': [
+            {
+                selector: 'div.mainline__result-wrapper div.result__header div.result__info a',
+                childSelector: 'span span',
+                updateChildText: true,
+                containProtocol: true,
+                multiElementsForUrlDisplay: 1
+            },
+            {
+                selector: 'div.mainline__result-wrapper div.result__header div.result__title a'
+            },
+            {
+                selector: 'div.mainline__result-wrapper div ul li a'
+            },
+            {
+                selector: 'aside.sidebar article div.entity-links ul li a'
+            },
+            {
+                selector: 'aside.sidebar article div.entity__content p a'
+            }
+        ],
+        'oceanhero': [
+            {
+                selector: 'div div div a',
+                childSelector: 'span cite',
+                updateChildText: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
+            },
+            {
+                selector: 'section div ul li a'
+            },
+            {
+                selector: 'div div div p a'
+            }
+        ],
+        'swisscows': [
+            {
+                selector: 'article.item-web a',
+                updateTextWithoutOverwrite: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
+            }
+        ],
         'lilo': [
             {
                 selector: 'div.lilo-text-result div p a.has-text-grey-darker',
@@ -811,8 +849,8 @@
         'entireweb': [
             {
                 parentSelector: 'div.web-result',
-                childLinkSelector: 'a.web-result-title',
-                childTextSelector: 'div.web-result-domain',
+                linkNodeSelector: 'a.web-result-title',
+                textNodeSelector: 'div.web-result-domain',
                 updateTextWithoutOverwrite: true,
                 urlDisplayMethod: 3
             },
@@ -821,8 +859,8 @@
             },
             {
                 parentSelector: 'div.gsc-webResult.gsc-result',
-                childLinkSelector: 'a.gs-title',
-                childTextSelector: 'div.gsc-url-top',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top',
                 updateTextByOverwrite: true,
                 containProtocol: false,
                 urlDisplayMethod: 1
@@ -857,6 +895,42 @@
                 selector: "div.search-results-view__side a"
             }
         ],
+        'spot': [
+            {
+                selector: 'div.result h4 a'
+            },
+            {
+                selector: 'div.result a.external-link',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            },
+            {
+                selector: 'div.infobox div.footer div.links a'
+            }
+        ],
+        'nona': [
+            {
+                selector: 'section.result-section article.teaser div.teaser__container a.teaser__topline',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            },
+            {
+                selector: 'section.result-section article.teaser div.teaser__container a.teaser__link'
+            },
+            {
+                selector: 'section.result-section article.entity-teaser div.entity-teaser__wrapper a'
+            }
+        ],
+        'exalead': [
+            {
+                selector: 'li.media div.media-body a.ellipsis',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
+            },
+            {
+                selector: 'li.media div.media-body a'
+            }
+        ],
         'seznam': [
             {
                 selector: 'div.f2c528 h3 a'
@@ -867,6 +941,71 @@
                 urlDisplayMethod: 3
             },
         ],
+        'gibiru': [
+            {
+                parentSelector: 'div.gs-webResult.gs-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-breadcrumb',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                multiElementsForUrlDisplay: 1
+            }
+        ],
+        'lukol': [
+            {
+                parentSelector: 'div.gsc-webResult.gsc-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-bottom div.gs-visibleUrl-long',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
+        'givewater': [
+            {
+                parentSelector: 'div.web-bing__result',
+                linkNodeSelector: 'a.web-bing__title',
+                textNodeSelector: 'span.web-bing__url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
+        'excite': [
+            {
+                parentSelector: 'div.web-bing__result',
+                linkNodeSelector: 'a.web-bing__title',
+                textNodeSelector: 'span.web-bing__url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
+        'webcrawler': [
+            {
+                parentSelector: 'div.web-bing__result',
+                linkNodeSelector: 'a.web-bing__title',
+                textNodeSelector: 'span.web-bing__url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
+        'metacrawler': [
+            {
+                parentSelector: 'div.web-bing__result',
+                linkNodeSelector: 'a.web-bing__title',
+                textNodeSelector: 'span.web-bing__url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
+        'dogpile': [
+            {
+                parentSelector: 'div.web-bing__result',
+                linkNodeSelector: 'a.web-bing__title',
+                textNodeSelector: 'span.web-bing__url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ]
         // Additional search engines can be defined here...
     };
 
@@ -977,24 +1116,13 @@
                 'section[data-testid="sidebar"][data-area="sidebar"]'
             ]
         },
-        'qwant': {
-            hosts: ['qwant.com'],
-            resultContainerSelectors: ['div._35zId']
-        },
-        'ecosia': {
-            hosts: ['ecosia.org'],
-            resultContainerSelectors: [
-                'section.mainline.web__mainline',
-                'aside.sidebar.web__sidebar'
-            ]
+        'ghostery': {
+            hosts: ['ghosterysearch.com'],
+            resultContainerSelectors: ['section.results']
         },
         'presearch': {
             hosts: ['presearch.com'],
             resultContainerSelectors: ['div.w-full']
-        },
-        'swisscows': {
-            hosts: ['swisscows.com'],
-            resultContainerSelectors: ['section.container.page-results']
         },
         'metager': {
             hosts: [
@@ -1078,6 +1206,24 @@
             resultContainerSelectors: ['div.searpListouterappend'],
             attribute: 'data-target'
         },
+        'qwant': {
+            hosts: ['qwant.com'],
+            resultContainerSelectors: ['div._35zId']
+        },
+        'ecosia': {
+            hosts: ['ecosia.org'],
+            resultContainerSelectors: [
+                'section.mainline.web__mainline',
+                'aside.sidebar.web__sidebar'
+            ]
+        },
+        'oceanhero': {
+            hosts: ['oceanhero.today']
+        },
+        'swisscows': {
+            hosts: ['swisscows.com'],
+            resultContainerSelectors: ['section.container.page-results']
+        },
         'lilo': {
             hosts: ['search.lilo.org'],
             resultContainerSelectors: ['div.container#content']
@@ -1092,9 +1238,48 @@
         'youcare': {
             hosts: ['youcare.world']
         },
+        'spot': {
+            hosts: ['spot.ecloud.global'],
+            resultContainerSelectors: ['div.container.contents']
+        },
+        'nona': {
+            hosts: ['nona.de'],
+            resultContainerSelectors: ['main.search-results div.container']
+        },
+        'exalead': {
+            hosts: ['exalead.com'],
+            resultContainerSelectors: ['ul.media-list']
+        },
         'seznam': {
             hosts: ['search.seznam.cz'],
             resultContainerSelectors: ['div.PageWrapper.SearchPage#searchpage-root'],
+        },
+        'gibiru': {
+            hosts: ['gibiru.com'],
+            resultContainerSelectors: ['div.container#web-results'],
+        },
+        'lukol': {
+            hosts: ['lukol.com']
+        },
+        'givewater': {
+            hosts: ['search.givewater.com'],
+            resultContainerSelectors: ['div.mainline-results']
+        },
+        'excite': {
+            hosts: ['results.excite.com'],
+            resultContainerSelectors: ['div.mainline-results']
+        },
+        'webcrawler': {
+            hosts: ['webcrawler.com'],
+            resultContainerSelectors: ['div.web-bing'],
+        },
+        'metacrawler': {
+            hosts: ['metacrawler.com'],
+            resultContainerSelectors: ['div.web-bing'],
+        },
+        'dogpile': {
+            hosts: ['dogpile.com'],
+            resultContainerSelectors: ['div.web-bing'],
         }
         // ... more search engines
     };
@@ -1161,8 +1346,8 @@
         const additionalAttribute = engineInfo.attribute; // Get the additional attribute if specified
         if (elements.length > 0) {
             elements.forEach(element => {
-                const linkElement = element.querySelector(rule.childLinkSelector);
-                const textElement = element.querySelector(rule.childTextSelector);
+                const linkElement = element.querySelector(rule.linkNodeSelector);
+                const textElement = element.querySelector(rule.textNodeSelector);
 
                 for (let i = 0; i < urlModificationRules.length; i++) {
                     try {
