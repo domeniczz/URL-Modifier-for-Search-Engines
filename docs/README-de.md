@@ -148,9 +148,9 @@ Dienstleister:
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-Für eine einfache Nutzung könnten wir [Farside](https://github.com/benbusby/farside) verwenden, das automatisch auf funktionierende Instanzen von datenschutzorientierten alternativen Frontends umleitet, anstatt eigene reguläre Ausdrucksregeln zu schreiben. Diese Methode unterstützt jedoch keine feinkörnige Kontrolle über abgeglichene URLs.
+Es ist erwähnenswert, dass Sie [Farside](https://github.com/benbusby/farside) verwenden können, das automatisch zu funktionierenden Instanzen von datenschutzorientierten alternativen Frontends umleitet, anstatt selbst reguläre Ausdrucksregeln zu schreiben.
 
-> FYI, Wiki für das Einrichten von Farside in [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+Diese Methode unterstützt jedoch keine fein abgestimmte Kontrolle über die abgeglichenen URLs und ist wirklich langsam, da eine Umleitung durch Farside erforderlich ist. Wenn Sie dies dennoch verwenden möchten, können Sie den entsprechenden Teil in `urlModificationRules` auskommentieren.
 
 - Einschlussmuster-Beispiel: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ Für eine einfache Nutzung könnten wir [Farside](https://github.com/benbusby/fa
 - Beispiel-URL: `https://www.youtube.com/watch?v=abc123`
 
 - Ergebnis-URL: `https://farside.link/youtube.com/watch?v=abc123`
+
+> FYI, Wiki für das Einrichten von Farside in [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

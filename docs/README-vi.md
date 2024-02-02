@@ -148,9 +148,9 @@ Nhà cung cấp dịch vụ:
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-Để sử dụng dễ dàng, chúng ta có thể sử dụng [Farside](https://github.com/benbusby/farside) để tự động chuyển hướng đến các phiên bản frontend thay thế tập trung vào quyền riêng tư thay vì tự viết các quy tắc biểu thức chính quy. Tuy nhiên, phương pháp này không hỗ trợ kiểm soát chi tiết hơn đối với các URL được ghép nối.
+Đáng chú ý là bạn có thể sử dụng [Farside](https://github.com/benbusby/farside), tự động chuyển hướng đến các phiên bản hoạt động của các giao diện thay thế hướng đến quyền riêng tư thay vì tự viết các quy tắc biểu thức chính quy.
 
-> Thông tin cho bạn, wiki về cách thiết lập farside trong [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+Tuy nhiên, phương pháp này không hỗ trợ kiểm soát chi tiết đối với các URL khớp và thực sự chậm do cần chuyển hướng qua Farside. Nếu bạn vẫn muốn sử dụng, bạn có thể bỏ chú thích phần tương ứng trong `urlModificationRules`.
 
 - Mẫu bao gồm ví dụ: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ Nhà cung cấp dịch vụ:
 - URL ví dụ: `https://www.youtube.com/watch?v=abc123`
 
 - URL kết quả: `https://farside.link/youtube.com/watch?v=abc123`
+
+> Thông tin cho bạn, wiki về cách thiết lập farside trong [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

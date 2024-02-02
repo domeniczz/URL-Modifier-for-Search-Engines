@@ -148,9 +148,9 @@ Dienstverleners:
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-Voor gemakkelijk gebruik kunnen we [Farside](https://github.com/benbusby/farside) gebruiken, dat automatisch doorverwijst naar werkende instanties van op privacy gerichte alternatieve frontends, in plaats van zelf reguliere expressieregels te schrijven. Deze methode ondersteunt echter geen fijnmazige controle over overeenkomende URL's.
+Het is het vermelden waard dat je [Farside](https://github.com/benbusby/farside) kunt gebruiken, dat automatisch doorverwijst naar werkende instanties van privacygerichte alternatieve front-ends in plaats van zelf reguliere expressieregels te schrijven.
 
-> Ter informatie, wiki voor het instellen van farside in [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+Deze methode ondersteunt echter geen fijnmazige controle over de overeenkomende URL's en is echt traag, aangezien een omleiding via Farside nodig is. Als je dit toch wilt gebruiken, kun je het overeenkomstige deel in `urlModificationRules` uitcommentariëren.
 
 - Inclusief patroonvoorbeeld: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ Voor gemakkelijk gebruik kunnen we [Farside](https://github.com/benbusby/farside
 - Voorbeeld URL: `https://www.youtube.com/watch?v=abc123`
 
 - Resultaat URL: `https://farside.link/youtube.com/watch?v=abc123`
+
+> Ter informatie, wiki voor het instellen van farside in [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

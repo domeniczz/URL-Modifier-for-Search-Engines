@@ -148,9 +148,9 @@ URL 수정은 정규 표현식을 사용합니다.
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-간편한 사용을 위해 우리는 정규 표현식 규칙을 직접 작성하는 대신 개인 정보 보호를 중시하는 대체 프론트엔드로 자동 리디렉션하는 [Farside](https://github.com/benbusby/farside)를 사용할 수 있습니다. 하지만, 이 방법은 일치하는 URL에 대해 더 세밀한 제어를 지원하지 않습니다.
+참고로, 우리가 직접 정규 표현식 규칙을 작성하는 대신, 프라이버시 지향적인 대체 프론트엔드로 자동으로 리디렉션하는 [Farside](https://github.com/benbusby/farside) 를 사용할 수 있습니다.
 
-> FYI, [Redirector](https://github.com/einaregilsson/Redirector)에서 farside 설정을 위한 위키: https://github.com/einaregilsson/Redirector
+그러나 이 방법은 일치하는 URL 에 대한 미세한 제어를 지원하지 않으며, Farside 를 통한 리디렉션이 필요하기 때문에 실제로 매우 느립니다. 이 방법을 사용하고 싶다면, `urlModificationRules` 에서 해당 부분의 주석을 해제할 수 있습니다.
 
 - 포함 패턴 예시: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ URL 수정은 정규 표현식을 사용합니다.
 - 예시 URL: `https://www.youtube.com/watch?v=abc123`
 
 - 결과 URL: `https://farside.link/youtube.com/watch?v=abc123`
+
+> FYI, [Redirector](https://github.com/einaregilsson/Redirector)에서 farside 설정을 위한 위키: https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

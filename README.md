@@ -148,9 +148,9 @@ Service providers:
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-For easy usage, we could use [Farside](https://github.com/benbusby/farside) that automatically redirect to working instances of privacy-oriented alternative frontends instead of writing regular expression rules on our own. However, this method does not support finer-grained control over matched URLs.
+FWIW, you could use [Farside](https://github.com/benbusby/farside) that automatically redirect to working instances of privacy-oriented alternative frontends instead of writing regular expression rules on our own.
 
-> FYI, wiki for setting up farside in [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+However, this method does not support finer-grained control over matched URLs and it is really slow since a redirection by farside is needed. If you want to use this anyway, you can uncomment the corresponding part in `urlModificationRules`.
 
 - Include pattern example: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ For easy usage, we could use [Farside](https://github.com/benbusby/farside) that
 - Example URL: `https://www.youtube.com/watch?v=abc123`
 
 - Result URL: `https://farside.link/youtube.com/watch?v=abc123`
+
+> FYI, wiki for setting up farside in [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

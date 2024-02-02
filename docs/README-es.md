@@ -148,9 +148,9 @@ Proveedores de servicios:
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-Para un uso fácil, podríamos usar [Farside](https://github.com/benbusby/farside) que redirige automáticamente a instancias funcionales de interfaces alternativas orientadas a la privacidad en lugar de escribir nuestras propias reglas de expresiones regulares. Sin embargo, este método no admite un control más detallado sobre las URL coincidentes.
+Cabe mencionar que puedes usar [Farside](https://github.com/benbusby/farside), que automáticamente redirige a instancias en funcionamiento de interfaces alternativas orientadas a la privacidad en lugar de escribir nosotros mismos reglas de expresiones regulares.
 
-> Para tu información, wiki para configurar farside en [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+Sin embargo, este método no soporta un control detallado de las URLs coincidentes y es realmente lento, ya que se necesita una redirección por Farside. Si aún así quieres usarlo, puedes descomentar la parte correspondiente en `urlModificationRules`.
 
 - Ejemplo de patrón incluido: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ Para un uso fácil, podríamos usar [Farside](https://github.com/benbusby/farsid
 - URL de ejemplo: `https://www.youtube.com/watch?v=abc123`
 
 - URL resultante: `https://farside.link/youtube.com/watch?v=abc123`
+
+> Para tu información, wiki para configurar farside en [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

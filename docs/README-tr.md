@@ -148,9 +148,9 @@ Servis sağlayıcıları:
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-Kolay kullanım için, kendi düzenli ifade kurallarımızı yazmak yerine, gizlilik odaklı alternatif ön uçlara otomatik olarak yönlendiren [Farside](https://github.com/benbusby/farside)'ı kullanabiliriz. Ancak bu yöntem, eşleşen URL'ler üzerinde daha ince ayar kontrolü desteklememektedir.
+Önemli bir nokta olarak, kendi düzenli ifade kurallarımızı yazmak yerine, gizlilik odaklı alternatif ön yüzlerin çalışan örneklerine otomatik olarak yönlendiren [Farside](https://github.com/benbusby/farside) kullanabilirsiniz.
 
-> Bilgi için, Farside'ı [Redirector](https://github.com/einaregilsson/Redirector)'da kurma wiki'si: https://github.com/einaregilsson/Redirector
+Ancak, bu yöntem eşleşen URL'ler üzerinde daha ince ayar kontrolü desteklememekte ve Farside üzerinden bir yönlendirme gerektirdiğinden gerçekten yavaştır. Yine de bunu kullanmak istiyorsanız, `urlModificationRules` içindeki ilgili kısmın yorumunu kaldırabilirsiniz.
 
 - Dahil etme deseni örneği: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ Kolay kullanım için, kendi düzenli ifade kurallarımızı yazmak yerine, gizl
 - Örnek URL: `https://www.youtube.com/watch?v=abc123`
 
 - Sonuç URL: `https://farside.link/youtube.com/watch?v=abc123`
+
+> Bilgi için, Farside'ı [Redirector](https://github.com/einaregilsson/Redirector)'da kurma wiki'si: https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

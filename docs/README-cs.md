@@ -148,9 +148,9 @@ Poskytovatelé služeb:
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-Pro snadné použití můžeme použít [Farside](https://github.com/benbusby/farside), který automaticky přesměrovává na fungující instance alternativních frontendů zaměřených na soukromí, namísto vytváření vlastních pravidel regulárních výrazů. Tato metoda však nepodporuje jemnější kontrolu nad odpovídajícími URL.
+Stojí za zmínku, že můžete použít [Farside](https://github.com/benbusby/farside), který automaticky přesměrovává na fungující instance alternativních frontendů orientovaných na soukromí, místo abychom sami psali pravidla regulárních výrazů.
 
-> Pro informaci, wiki pro nastavení farside v [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+Tato metoda však nepodporuje detailní kontrolu nad shodujícími se URL a je skutečně pomalá, protože je nutné přesměrování přes Farside. Pokud to přesto chcete použít, můžete odkomentovat příslušnou část v `urlModificationRules`.
 
 - Vzor pro začlenění: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ Pro snadné použití můžeme použít [Farside](https://github.com/benbusby/fa
 - Příklad URL: `https://www.youtube.com/watch?v=abc123`
 
 - Výsledné URL: `https://farside.link/youtube.com/watch?v=abc123`
+
+> Pro informaci, wiki pro nastavení farside v [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

@@ -148,9 +148,9 @@
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-برای استفاده آسان، ما می‌توانیم از [Farside](https://github.com/benbusby/farside) استفاده کنیم که به طور خودکار به نسخه‌های کاری جایگزین‌های محوریت حریم خصوصی هدایت می‌کند به جای اینکه خودمان قواعد عبارت منظم را بنویسیم. با این حال، این روش از کنترل دقیق‌تر بر URL‌های مطابقت‌یافته پشتیبانی نمی‌کند.
+لازم به ذکر است که شما می‌توانید از [Farside](https://github.com/benbusby/farside) استفاده کنید، که به طور خودکار به نمونه‌های در حال کار از رابط‌های کاربری جایگزین مبتنی بر حریم خصوصی هدایت می‌کند، به جای اینکه خودمان قوانین عبارت منظم را بنویسیم.
 
-> برای اطلاعات بیشتر، ویکی برای راه‌اندازی farside در [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+با این حال، این روش از کنترل دقیق بر روی URL های مطابقت‌یافته پشتیبانی نمی‌کند و واقعاً کند است، زیرا نیاز به انتقال توسط Farside دارد. اگر باز هم می‌خواهید از این استفاده کنید، می‌توانید بخش مربوطه را در `urlModificationRules` رفع توضیح کنید.
 
 - نمونه الگوی ورودی: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@
 - نمونه URL: `https://www.youtube.com/watch?v=abc123`
 
 - نتیجه URL: `https://farside.link/youtube.com/watch?v=abc123`
+
+> برای اطلاعات بیشتر، ویکی برای راه‌اندازی farside در [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

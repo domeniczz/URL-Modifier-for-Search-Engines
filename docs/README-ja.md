@@ -148,9 +148,9 @@ URL の変更正規表現を使用します。
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-簡単な使用のために、私たちは独自に正規表現ルールを書く代わりに、[Farside](https://github.com/benbusby/farside)を使用して、プライバシー指向の代替フロントエンドへの自動リダイレクトを行うことができます。しかし、この方法はマッチしたURLに対して細かい制御をサポートしていません。
+ちなみに、[Farside](https://github.com/benbusby/farside) を使用することができます。これは、自分たちで正規表現ルールを書く代わりに、プライバシー志向の代替フロントエンドへ自動的にリダイレクトするものです。
 
-> FYI, Farsideを[Redirector](https://github.com/einaregilsson/Redirector)で設定するためのwiki: https://github.com/einaregilsson/Redirector
+しかし、この方法ではマッチした URL に対する細かな制御がサポートされておらず、Farside によるリダイレクトが必要なため、実際には非常に遅いです。それでもこれを使用したい場合は、`urlModificationRules` の該当する部分のコメントを解除することができます。
 
 - インクルードパターンの例：`^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ URL の変更正規表現を使用します。
 - 例のURL：`https://www.youtube.com/watch?v=abc123`
 
 - 結果のURL：`https://farside.link/youtube.com/watch?v=abc123`
+
+> FYI, Farsideを[Redirector](https://github.com/einaregilsson/Redirector)で設定するためのwiki: https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

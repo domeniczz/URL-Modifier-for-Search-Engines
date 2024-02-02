@@ -148,9 +148,9 @@ URL 修改使用正则表达式。
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-为了方便使用，我们可以使用 [Farside](https://github.com/benbusby/farside)，它会自动重定向到隐私导向的替代前端工作实例，而不是自己编写正则表达式规则。然而，这种方法不支持对匹配URL的更细粒度控制。
+值得一提的是，您可以使用 [Farside](https://github.com/benbusby/farside)，它可以自动重定向到工作中的隐私导向的替代前端，而不需要我们自己编写正则表达式规则。
 
-> 仅供参考，关于在 [Redirector](https://github.com/einaregilsson/Redirector) 中设置 farside 的 wiki：https://github.com/einaregilsson/Redirector
+然而，这种方法不支持对匹配的 URL 进行更细致的控制，而且由于需要通过 farside 进行重定向，这实际上是相当慢的。如果您还是想使用这个方法，可以在 `urlModificationRules` 中取消注释相应的部分。
 
 - 包含模式示例：`^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ URL 修改使用正则表达式。
 - 示例 URL：`https://www.youtube.com/watch?v=abc123`
 
 - 结果 URL：`https://farside.link/youtube.com/watch?v=abc123`
+
+> 参考信息，关于在 [Redirector](https://github.com/einaregilsson/Redirector) 中设置 farside 的 wiki：https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

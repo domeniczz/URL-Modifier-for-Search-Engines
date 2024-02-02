@@ -148,9 +148,9 @@ Fournisseurs de services:
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-Pour une utilisation facile, nous pourrions utiliser [Farside](https://github.com/benbusby/farside) qui redirige automatiquement vers des instances fonctionnelles de façades alternatives axées sur la confidentialité au lieu d'écrire nos propres règles d'expression régulière. Cependant, cette méthode ne prend pas en charge un contrôle plus précis des URL correspondantes.
+Il convient de mentionner que vous pouvez utiliser [Farside](https://github.com/benbusby/farside), qui redirige automatiquement vers des instances fonctionnelles de frontaux alternatifs axés sur la confidentialité au lieu de rédiger nous-mêmes des règles d'expressions régulières.
 
-> À titre d'information, wiki pour configurer farside dans [Redirector](https://github.com/einaregilsson/Redirector) : https://github.com/einaregilsson/Redirector
+Cependant, cette méthode ne prend pas en charge un contrôle fin des URL correspondantes et est réellement lente, car une redirection par Farside est nécessaire. Si vous souhaitez quand même utiliser cela, vous pouvez décommenter la partie correspondante dans `urlModificationRules`.
 
 - Exemple de motif à inclure : `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@ Pour une utilisation facile, nous pourrions utiliser [Farside](https://github.co
 - Exemple d'URL : `https://www.youtube.com/watch?v=abc123`
 
 - URL résultante : `https://farside.link/youtube.com/watch?v=abc123`
+
+> À titre d'information, wiki pour configurer farside dans [Redirector](https://github.com/einaregilsson/Redirector) : https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 

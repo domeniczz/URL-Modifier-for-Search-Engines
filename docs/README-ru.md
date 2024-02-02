@@ -148,9 +148,9 @@
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-Для удобства использования мы можем использовать [Farside](https://github.com/benbusby/farside), который автоматически перенаправляет на работающие экземпляры альтернативных интерфейсов, ориентированных на конфиденциальность, вместо того, чтобы писать собственные правила регулярных выражений. Однако этот метод не поддерживает более тонкий контроль над соответствующими URL.
+Стоит отметить, что вы можете использовать [Farside](https://github.com/benbusby/farside), который автоматически перенаправляет на работающие инстанции альтернативных фронтендов, ориентированных на конфиденциальность, вместо того, чтобы писать собственные правила регулярных выражений.
 
-> Для справки, вики по настройке farside в [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/einaregilsson/Redirector
+Однако, этот метод не поддерживает детальный контроль над соответствующими URL и действительно медленный, так как требуется перенаправление через Farside. Если вы все же хотите использовать это, вы можете раскомментировать соответствующую часть в `urlModificationRules`.
 
 - Пример шаблона включения: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
@@ -171,6 +171,8 @@
 - Пример URL: `https://www.youtube.com/watch?v=abc123`
 
 - Результат URL: `https://farside.link/youtube.com/watch?v=abc123`
+
+> Для справки, вики по настройке farside в [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Browser-Extension
 
 ---
 
