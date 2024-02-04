@@ -268,21 +268,8 @@
 // @match        *://duckduckgo.com
 // @match        *://duckduckgo.com/?*
 
-// @match        *://www.qwant.com/?*
-// @match        *://www.ecosia.org/search?*
+// @match        *://ghosterysearch.com/search?*
 // @match        *://presearch.com/search?*
-
-// @match        *://swisscows.com/en/web?*
-// @match        *://swisscows.com/de/web?*
-// @match        *://swisscows.com/es/web?*
-// @match        *://swisscows.com/fr/web?*
-// @match        *://swisscows.com/it/web?*
-// @match        *://swisscows.com/lv/web?*
-// @match        *://swisscows.com/hu/web?*
-// @match        *://swisscows.com/nl/web?*
-// @match        *://swisscows.com/pt/web?*
-// @match        *://swisscows.com/ru/web?*
-// @match        *://swisscows.com/uk/web?*
 
 // @match        *://metager.org/meta/meta.ger3*
 // @match        *://metager.org/da-DK/meta/meta.ger3*
@@ -318,8 +305,6 @@
 // @match        *://metager.de/nl-NL/meta/meta.ger3*
 // @match        *://metager.de/pl-PL/meta/meta.ger3*
 // @match        *://metager.de/sv-SE/meta/meta.ger3*
-
-// @match        *://ghosterysearch.com/search?*
 
 // @match        *://4get.ca/web?*
 // @match        *://4get.silly.computer/web?*
@@ -366,13 +351,29 @@
 // @match        *://www.mojeek.com/search?*
 // @match        *://yep.com/web?*
 // @match        *://www.torry.io/search*
+// @match        *://www.qwant.com/?*
+// @match        *://www.ecosia.org/search?*
+// @match        *://www.alltheinternet.com/?*
 // @match        *://oceanhero.today/web?*
+
+// @match        *://swisscows.com/en/web?*
+// @match        *://swisscows.com/de/web?*
+// @match        *://swisscows.com/es/web?*
+// @match        *://swisscows.com/fr/web?*
+// @match        *://swisscows.com/it/web?*
+// @match        *://swisscows.com/lv/web?*
+// @match        *://swisscows.com/hu/web?*
+// @match        *://swisscows.com/nl/web?*
+// @match        *://swisscows.com/pt/web?*
+// @match        *://swisscows.com/ru/web?*
+// @match        *://swisscows.com/uk/web?*
+
 // @match        *://search.lilo.org/?*
 // @match        *://search.entireweb.com/search?*
 // @match        *://search.gmx.com/web/result?*
 // @match        *://search.gmx.com/web?*
-// @match        *://spot.ecloud.global/search*
 // @match        *://youcare.world/all?*
+// @match        *://spot.ecloud.global/search*
 // @match        *://www.nona.de/?*
 // @match        *://www.exalead.com/search/web/results/?*
 // @match        *://search.seznam.cz/?*
@@ -814,6 +815,15 @@
                 selector: 'aside.sidebar article div.entity__content p a'
             }
         ],
+        'alltheinternet': [
+            {
+                parentSelector: 'div.gs-webResult.gs-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-long',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
         'oceanhero': [
             {
                 selector: 'div div div a',
@@ -1222,6 +1232,9 @@
                 'section.mainline.web__mainline',
                 'aside.sidebar.web__sidebar'
             ]
+        },
+        'alltheinternet': {
+            hosts: ['alltheinternet.com']
         },
         'oceanhero': {
             hosts: ['oceanhero.today']
