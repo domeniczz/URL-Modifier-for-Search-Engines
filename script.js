@@ -194,6 +194,8 @@
 // @match        *://www.google.cat/search?*
 
 // @match        *://search.yahoo.com/search*
+// @match        *://search.yahoo.co.jp/search?*
+// @match        *://*.search.yahoo.com/search*
 
 // @match        *://yandex.com/search/?*
 // @match        *://yandex.ru/search/?*
@@ -511,6 +513,10 @@
             matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:\w+\.)?ifunny\.co\/(picture\/.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://uf.vern.cc/$1'
         },
+        {
+            matchRegex: new RegExp(/^(?:.*?\/RU=)https?:\/\/(.*?)(?:$|\/RK=\d.*)/),
+            replaceWith: 'https://$1'
+        },
         // Add more rules here as needed
     ];
 
@@ -542,10 +548,7 @@
                 updateChildText: true,
                 containProtocol: false,
                 multiElementsForUrlDisplay: 2
-            },
-            // {
-            //     selector: 'div#web ol li div div h3.title a'
-            // }
+            }
         ],
         'yandex': [
             {
