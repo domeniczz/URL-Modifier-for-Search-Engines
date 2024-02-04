@@ -193,6 +193,8 @@
 // @match        *://www.google.co.zw/search?*
 // @match        *://www.google.cat/search?*
 
+// @match        *://search.yahoo.com/search*
+
 // @match        *://yandex.com/search/?*
 // @match        *://yandex.ru/search/?*
 
@@ -358,154 +360,155 @@
         //     replaceWith: 'https://farside.link/$1'
         // },
         {
-            matchRegex: new RegExp(/^https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://www.wikiwand.com/$1/$2'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://www.wikiwand.com/zh-hans/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://safereddit.com/$1'
             // replaceWith: 'https://lr.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+$|profile\/.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+|profile\/.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://quetre.iket.me/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(\d+))?.*/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(?:\d+))?(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://nitter.catsarch.com/$1$2'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://ao.vern.cc$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/((?:(?:.*?)?medium|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:[\w\/-]+|[\w@.]+\/[\w-]+))(?:\?source=.*)?/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/((?:(?:[\w.-]+)?medium(?:\.[\w-]+)?|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:.*?|[\w@.]+\/[\w-]+))(?:\?source=.*)?(?:$|\/RK=\d.*)/),
             replaceWith: 'https://freedium.cfd/https://$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://vid.puffyan.us/$1'
+            // replaceWith: 'https://piped.video/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://hyperpipe.surge.sh/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.twitch\.tv\/(\w+)$/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.twitch\.tv\/(\w+)(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://ttv.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:m|www)\.imdb\.com\/(title\/\w+).*/),
-            replaceWith: 'https://ld.vern.cc$1'
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:m|www)\.imdb\.com\/(title\/\w+)(?:.*?)(?:$|\/RK=\d.*)/),
+            replaceWith: 'https://ld.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.goodreads\.com\/((?:(?:[a-z]+\/)?book\/show|work\/quotes|series|author\/show)\/[\w.-]+)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.goodreads\.com\/((?:(?:[a-z]+\/)?book\/show|work\/quotes|series|author\/show)\/[\w.-]+)(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://bl.vern.cc/$1'
         },
         {
             // only support English Fandom sites
-            matchRegex: new RegExp(/^https?:\/\/((?!www|community).*?)\.fandom\.com\/wiki\/(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/((?!www|community).*?)\.fandom\.com\/wiki\/(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://antifandom.com/$1/wiki/$2'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.urbandictionary\.com\/(define\.php\?term=.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.urbandictionary\.com\/(define\.php\?term=.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://rd.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.reuters\.com\/((?=.*\/)(?=.*-).*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.reuters\.com\/((?=.*\/)(?=.*-).*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://nu.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(www\.ft\.com\/content\/[\w-]+)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(www\.ft\.com\/content\/[\w-]+)(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://archive.today/https://$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(www\.bloomberg\.com\/(?:(?:[a-z]+\/)?news|opinion)\/[\w\/-]+).*/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(www\.bloomberg\.com\/(?:(?:[a-z]+\/)?news|opinion)\/.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://archive.today/https://$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/.*/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://text.npr.org/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/news\.ycombinator\.com\/item\?id=(\d+)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/news\.ycombinator\.com\/item\?id=(\d+)(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://www.hckrnws.com/stories/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:[a-z]+)\.slashdot\.org(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:[a-z]+)\.slashdot\.org(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://slashdot.org$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:(?:.*)arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:(?:.*)(?:arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs)))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
             replaceWith: 'https://arxiv.org/abs/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\//),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\/(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/github\.ink(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/github\.ink(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://github.com$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.snopes\.com(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.snopes\.com(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://sd.vern.cc$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.instructables\.com\/(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.instructables\.com\/(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://ds.vern.cc/$1'
             // replaceWith: 'https://structables.private.coffee/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://dm.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(.*?)\.bandcamp\.com\//),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(.*?)\.bandcamp\.com\/(?:$|\/RK=\d.*)/),
             replaceWith: 'https://tn.vern.cc/artist.php?name=$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(.*?)\.bandcamp\.com\/(.*?)\/(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(.*?)\.bandcamp\.com\/(.*?)\/(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://tn.vern.cc/release.php?artist=$1&type=$2&name=$3'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/bandcamp\.com\/search\?q=(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/bandcamp\.com\/search\?q=(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://tn.vern.cc/search.php?query=$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/f4\.bcbits\.com\/img\/(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/f4\.bcbits\.com\/img\/(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://tn.vern.cc/image.php?file=$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/t4\.bcbits\.com\/stream\/(.*?)\/(.*?)\/(.*?)\?token=(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/t4\.bcbits\.com\/stream\/(.*?)\/(.*?)\/(.*?)\?token=(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://tn.vern.cc/audio.php?directory=$1&format=$2&file=$3&token=$4'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://rimgo.totaldarkness.net/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*/),
             replaceWith: 'https://pixivfe.exozy.me/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/knowyourmeme\.com\/(.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/knowyourmeme\.com\/(.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://mm.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/tenor\.com\/((?:view|search)\/.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/tenor\.com\/((?:view|search)\/.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://sp.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^https?:\/\/(?:\w+\.)?ifunny\.co\/(picture\/.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:\w+\.)?ifunny\.co\/(picture\/.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://uf.vern.cc/$1'
         },
         // Add more rules here as needed
@@ -529,6 +532,20 @@
                 // selector for sidebar links
                 selector: 'div.TQc1id#rhs a'
             }
+        ],
+        'yahoo': [
+            {
+                parentSelector: 'div#web ol li div div.compTitle h3.title',
+                linkNodeSelector: 'a',
+                textNodeSelector: 'span.p-abs',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                multiElementsForUrlDisplay: 2
+            },
+            // {
+            //     selector: 'div#web ol li div div h3.title a'
+            // }
         ],
         'yandex': [
             {
@@ -995,6 +1012,10 @@
             // defult value is 'body'
             resultContainerSelectors: ['div.GyAeWb#rcnt']
         },
+        'yahoo': {
+            hosts: ['search.yahoo.com'],
+            resultContainerSelectors: ['div#results div#cols']
+        },
         'yandex': {
             hosts: [
                 'yandex.com',
@@ -1310,7 +1331,7 @@
                             } else if (additionalAttribute) {
                                 element.setAttribute(additionalAttribute, newUrl);
                             }
-                            updateTextContent(element, rule, removeParameters(newUrl));
+                            updateTextContent(element, rule, removeTailingSlash(removeParameters(newUrl)));
                             break;
                         }
                     } catch (error) {
@@ -1345,7 +1366,7 @@
                             } else if (additionalAttribute) {
                                 linkElement.setAttribute(additionalAttribute, newUrl);
                             }
-                            updateTextContent(textElement, rule, removeParameters(newUrl));
+                            updateTextContent(textElement, rule, removeTailingSlash(removeParameters(newUrl)));
                             break;
                         }
                     } catch (error) {
@@ -1358,7 +1379,8 @@
 
     // Function to update text content (displayed URL)
     const updateTextContent = (element, rule, newUrl) => {
-        if (rule.updateTextWithoutOverwrite || rule.updateTextByOverwrite || rule.updateChildText) {
+        if ((rule.updateChildText && rule.childSelector) ||
+            rule.updateTextWithoutOverwrite || rule.updateTextByOverwrite) {
             try {
                 if (rule.multiElementsForUrlDisplay) {
                     updateMultiElementContent(element, rule, newUrl);
@@ -1461,16 +1483,16 @@
         }
         // Split the URL while keeping 'https://' intact; Replace the second occurrence of 'https://' with 'https', if exists
         // Replace the first occurrence of 'https://' with a placeholder
-        url = url.replace('https://', 'https›');
+        url = url.replace('https://', 'https › ');
         // Deal with the second 'https://'
         let secondHttpsIndex = url.indexOf('https://');
         if (secondHttpsIndex !== -1) {
-            url = url.substring(0, secondHttpsIndex) + 'https/' + url.substring(secondHttpsIndex + 8);
+            url = url.substring(0, secondHttpsIndex) + 'https › ' + url.substring(secondHttpsIndex + 8);
         }
         // Split the URL with '/'
         let parts = url.split('/');
         // Restore the first 'https://' in the URL
-        parts[0] = parts[0].replace('https›', 'https://');
+        parts[0] = parts[0].replace('https › ', 'https://');
 
         // Join the URL parts with ' › '
         let joinedUrl = parts.join(' › ');
@@ -1481,14 +1503,41 @@
 
     // Function to update only the text node within an element, leave the child elements, if exist, intact
     const updateTextWithoutOverwriteChildNodes = (element, newContent) => {
-        // Iterate through child nodes
-        for (const node of element.childNodes) {
-            // Identify and update the first text node
-            if (node.nodeType === Node.TEXT_NODE) {
-                node.nodeValue = newContent;
-                break; // Stop after updating the first text node
-            }
+        let currentIndex = 0;
+        const indexObject = { currentIndex };
+        collectNodes(element, node => {
+            if (currentIndex >= newContent.length) return; // Stop if we've used all the new content
+            replaceTextContent(node, oldText => replaceTextBasedOnIndex(oldText, newContent, indexObject));
+        });
+    };
+
+    const collectNodes = (node, callback) => {
+        // View these elements as text node
+        const elementsToIncludeAsText = ['B'];
+        // Do not view these elements as text node
+        const elementsToExcludeAsText = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'DIV', 'P'];
+
+        if (node.nodeType === Node.TEXT_NODE) {
+            callback(node);
+        } else if (node.nodeType === Node.ELEMENT_NODE && elementsToIncludeAsText.includes(node.tagName.toUpperCase())) {
+            callback(node);
+        } else if (node.nodeType === Node.ELEMENT_NODE && !elementsToExcludeAsText.includes(node.tagName.toUpperCase())) {
+            node.childNodes.forEach(child => collectNodes(child, callback));
         }
+    };
+
+    const replaceTextContent = (node, textUpdater) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+            node.nodeValue = textUpdater(node.nodeValue);
+        } else if (node.innerHTML) { // For elements treated as text, like <b>
+            node.innerHTML = textUpdater(node.innerHTML);
+        }
+    };
+
+    const replaceTextBasedOnIndex = (oldText, newContent, indexObject) => {
+        const newText = newContent.slice(indexObject.currentIndex, indexObject.currentIndex + oldText.length);
+        indexObject.currentIndex += oldText.length;
+        return newText;
     };
 
     // Function to update the content by overwriting everything
@@ -1513,6 +1562,12 @@
         return url.split('?')[0];
     };
 
+    // Remove tailing slash '/'
+    const removeTailingSlash = (url) => {
+        // Check if the URL ends with a slash and remove it if present
+        return url.endsWith('/') ? url.slice(0, -1) : url;
+    };
+
     // Function to clear existing content of an element
     const clearElementContent = (element) => {
         element.textContent = '';
@@ -1524,8 +1579,10 @@
             const host = window.location.host;
             for (const engine in searchEngines) {
                 if (searchEngines[engine].hosts.some(instanceHost => host.includes(instanceHost))) {
-                    const selectors = searchEngines[engine].resultContainerSelectors || ['body']; // Default to 'body' if not specified
-                    const attribute = searchEngines[engine].attribute; // Get the attribute if specified
+                    // Default to 'body' if not specified
+                    const selectors = searchEngines[engine].resultContainerSelectors || ['body'];
+                    // Get the attribute if specified
+                    const attribute = searchEngines[engine].attribute;
                     return {
                         engine,
                         selectors: selectors,
