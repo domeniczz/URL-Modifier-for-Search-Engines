@@ -271,40 +271,8 @@
 // @match        *://ghosterysearch.com/search?*
 // @match        *://presearch.com/search?*
 
-// @match        *://metager.org/meta/meta.ger3*
-// @match        *://metager.org/da-DK/meta/meta.ger3*
-// @match        *://metager.org/de-AT/meta/meta.ger3*
-// @match        *://metager.org/de-CH/meta/meta.ger3*
-// @match        *://metager.org/de-DE/meta/meta.ger3*
-// @match        *://metager.org/en-GB/meta/meta.ger3*
-// @match        *://metager.org/en-IE/meta/meta.ger3*
-// @match        *://metager.org/en-MY/meta/meta.ger3*
-// @match        *://metager.org/es-ES/meta/meta.ger3*
-// @match        *://metager.org/es-MX/meta/meta.ger3*
-// @match        *://metager.org/fi-FI/meta/meta.ger3*
-// @match        *://metager.org/fr-CA/meta/meta.ger3*
-// @match        *://metager.org/fr-FR/meta/meta.ger3*
-// @match        *://metager.org/it-IT/meta/meta.ger3*
-// @match        *://metager.org/nl-NL/meta/meta.ger3*
-// @match        *://metager.org/pl-PL/meta/meta.ger3*
-// @match        *://metager.org/sv-SE/meta/meta.ger3*
-// @match        *://metager.de/meta/meta.ger3*
-// @match        *://metager.de/da-DK/meta/meta.ger3*
-// @match        *://metager.de/de-AT/meta/meta.ger3*
-// @match        *://metager.de/de-CH/meta/meta.ger3*
-// @match        *://metager.de/de-DE/meta/meta.ger3*
-// @match        *://metager.de/en-GB/meta/meta.ger3*
-// @match        *://metager.de/en-IE/meta/meta.ger3*
-// @match        *://metager.de/en-MY/meta/meta.ger3*
-// @match        *://metager.de/es-ES/meta/meta.ger3*
-// @match        *://metager.de/es-MX/meta/meta.ger3*
-// @match        *://metager.de/fi-FI/meta/meta.ger3*
-// @match        *://metager.de/fr-CA/meta/meta.ger3*
-// @match        *://metager.de/fr-FR/meta/meta.ger3*
-// @match        *://metager.de/it-IT/meta/meta.ger3*
-// @match        *://metager.de/nl-NL/meta/meta.ger3*
-// @match        *://metager.de/pl-PL/meta/meta.ger3*
-// @match        *://metager.de/sv-SE/meta/meta.ger3*
+// @match        *://metager.org/*meta/meta.ger3*
+// @match        *://metager.de/*meta/meta.ger3*
 
 // @match        *://4get.ca/web?*
 // @match        *://4get.silly.computer/web?*
@@ -356,17 +324,7 @@
 // @match        *://www.alltheinternet.com/?*
 // @match        *://oceanhero.today/web?*
 
-// @match        *://swisscows.com/en/web?*
-// @match        *://swisscows.com/de/web?*
-// @match        *://swisscows.com/es/web?*
-// @match        *://swisscows.com/fr/web?*
-// @match        *://swisscows.com/it/web?*
-// @match        *://swisscows.com/lv/web?*
-// @match        *://swisscows.com/hu/web?*
-// @match        *://swisscows.com/nl/web?*
-// @match        *://swisscows.com/pt/web?*
-// @match        *://swisscows.com/ru/web?*
-// @match        *://swisscows.com/uk/web?*
+// @match        *://swisscows.com/*/web?*
 
 // @match        *://search.lilo.org/?*
 // @match        *://search.entireweb.com/search?*
@@ -601,7 +559,7 @@
         'startpage': [
             {
                 selector: 'a.w-gl__result-url.result-link',
-                updateTextWithoutOverwrite: true,
+                updateTextByOverwrite: true,
                 urlDisplayMethod: 2
             },
             {
@@ -672,7 +630,7 @@
             },
             {
                 selector: 'div.result-subheadline a',
-                updateTextWithoutOverwrite: true,
+                updateTextByOverwrite: true,
                 urlDisplayMethod: 3
             },
             {
@@ -708,12 +666,12 @@
         ],
         'stract': [
             {
-                selector: 'div.grid div div.flex div div div a',
-                updateTextWithoutOverwrite: true,
-                urlDisplayMethod: 2
+                selector: 'div.grid div div.flex div div a.text-link'
             },
             {
-                selector: 'div.grid div div.flex div div a'
+                selector: 'div.grid div div.flex div div div a',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
             },
             {
                 selector: 'div.mb-5.text-xl a'
@@ -765,7 +723,7 @@
         'torry': [
             {
                 selector: 'div.searpList p a.toranclick',
-                updateTextWithoutOverwrite: true,
+                updateTextByOverwrite: true,
                 urlDisplayMethod: 2
             },
             {
@@ -841,10 +799,13 @@
         ],
         'swisscows': [
             {
-                selector: 'article.item-web a',
+                selector: 'article.item-web a.site',
                 updateTextWithoutOverwrite: true,
                 containProtocol: false,
                 urlDisplayMethod: 1
+            },
+            {
+                selector: 'article.item-web a'
             }
         ],
         'lilo': [
@@ -1338,6 +1299,7 @@
                     try {
                         const urlRule = urlModificationRules[i];
                         let urlToModify = additionalAttribute ? element.getAttribute(additionalAttribute) : element.href;
+                        urlToModify = decodeURIComponent(urlToModify);
                         // update attribute
                         if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
                             // Generate redirected URL
@@ -1372,6 +1334,7 @@
                     try {
                         const urlRule = urlModificationRules[i];
                         let urlToModify = additionalAttribute ? element.getAttribute(additionalAttribute) : linkElement.href;
+                        urlToModify = decodeURIComponent(urlToModify);
                         // update attribute
                         if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
                             // Generate redirected URL
@@ -1400,10 +1363,7 @@
                 if (rule.multiElementsForUrlDisplay) {
                     updateMultiElementContent(element, rule, newUrl);
                 } else {
-                    let targetElement = element;
-                    if (rule.childSelector) {
-                        targetElement = element.querySelector(rule.childSelector)
-                    }
+                    const targetElement = rule.childSelector ? element.querySelector(rule.childSelector) : element;
                     updateSingleElementText(targetElement, rule, newUrl);
                 }
             } catch (error) {
@@ -1432,6 +1392,9 @@
             case 2:
                 mixedElements(urlParts, spans, targetElement);
                 break;
+            case 3:
+                mixedElementsWithoutClear(urlParts, spans, targetElement);
+                break;
         }
     };
 
@@ -1455,6 +1418,15 @@
         }
     };
 
+    const mixedElementsWithoutClear = (urlParts, elements, parent) => {
+        if (elements && elements.length >= 1) {
+            updateTextWithoutOverwriteChildNodes(parent, urlParts[0]); // Update the first part
+            elements[0].textContent = ' › ' + urlParts.slice(1).join(' › '); // Update the second part
+        } else {
+            console.error("Script: Expected structure not found for Multi-Element (mixed elements with clear) URL update!");
+        }
+    };
+
     // Function to update text for a single element
     const updateSingleElementText = (targetElement, rule, newUrl) => {
         if (!targetElement) {
@@ -1475,7 +1447,7 @@
         }
         if (rule.updateTextWithoutOverwrite) {
             updateTextWithoutOverwriteChildNodes(targetElement, formattedUrl);
-        } if (rule.updateTextByOverwrite) {
+        } else if (rule.updateTextByOverwrite) {
             updateTextByOverwriteEverything(targetElement, formattedUrl);
         } else {
             targetElement.textContent = formattedUrl;
@@ -1509,13 +1481,11 @@
 
     // Function to update only the text node within an element, leave the child elements, if exist, intact
     const updateTextWithoutOverwriteChildNodes = (element, newContent) => {
-        let foundTextNode = false;
         // Iterate through child nodes
         for (const node of element.childNodes) {
             // Identify and update the first text node
             if (node.nodeType === Node.TEXT_NODE) {
                 node.nodeValue = newContent;
-                foundTextNode = true;
                 break; // Stop after updating the first text node
             }
         }
@@ -1527,15 +1497,15 @@
         element.textContent = newContent;
     };
 
-    // Remove 'https://' from the URL link
-    const removeProtocol = (url) => {
-        return url.replace(/^https?:\/\//, '');
-    };
-
     // Extract the top level domain from URL link
     const extractTopLevelDomain = (url) => {
         const parsedUrl = new URL(url);
         return `${parsedUrl.protocol}//${parsedUrl.hostname}/`;
+    };
+
+    // Remove 'https://' from the URL link
+    const removeProtocol = (url) => {
+        return url.replace(/^https?:\/\//, '');
     };
 
     // Remove parameters (the part behind ?) in the URL link
