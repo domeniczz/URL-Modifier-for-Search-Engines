@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.3.4
+// @version      2.4
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -358,7 +358,7 @@
     // Define URL modification rules with precompiled regex
     const urlModificationRules = [
         // {
-        //     matchRegex: new RegExp(/^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)/),
+        //     matchRegex: new RegExp(/^(?:.*?\/RU=)?(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*?)(?:$|\/RK=\d.*)/),
         //     replaceWith: 'https://farside.link/$1'
         // },
         {
@@ -541,13 +541,47 @@
         ],
         'yahoo': [
             {
-                parentSelector: 'div#web ol li div div.compTitle h3.title',
+                parentSelector: 'div#left div#web ol li div div.compTitle h3.title',
                 linkNodeSelector: 'a',
                 textNodeSelector: 'span.p-abs',
                 childSelector: 'span',
                 updateChildText: true,
                 containProtocol: false,
                 multiElementsForUrlDisplay: 2
+            },
+            {
+                selector: 'div#left div#web ol li div ul.compArticleList a'
+            },
+            {
+                selector: 'div#left div#web ol li div div.compGenericCardList a'
+            },
+            {
+                selector: 'div#right ol.cardReg.searchRightTop a'
+            }
+        ],
+        'yahoojp': [
+            {
+                parentSelector: 'div.sw-CardBase div.sw-Card__title',
+                linkNodeSelector: 'a.sw-Card__titleInner',
+                textNodeSelector: 'div.sw-Card__titleCiteWrapper cite ol',
+                childSelector: 'li',
+                updateChildText: true,
+                containProtocol: true,
+                multiElementsForUrlDisplay: 1
+            },
+            {
+                selector: 'div.sw-CardBase p.Algo__osl a'
+            },
+            {
+                selector: 'div.sw-CardBase div.sw-Card.AnswerKnowledgePanel__title div.sw-Tooltip__balloonInner a',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            },
+            {
+                selector: 'div.sw-CardBase div.sw-Card.AnswerKnowledgePanel__title a'
+            },
+            {
+                selector: 'div.sw-CardBase div.sw-Card.AnswerKnowledgePanel__info a'
             }
         ],
         'yandex': [
@@ -1018,6 +1052,10 @@
         'yahoo': {
             hosts: ['search.yahoo.com'],
             resultContainerSelectors: ['div#results div#cols']
+        },
+        'yahoojp': {
+            hosts: ['search.yahoo.co.jp'],
+            resultContainerSelectors: ['div#contents div#contents__wrap']
         },
         'yandex': {
             hosts: [
