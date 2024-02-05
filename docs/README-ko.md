@@ -67,6 +67,7 @@ URL 수정은 정규 표현식을 사용합니다.
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
 - [All the internet](https://www.alltheinternet.com)
+- [AOL](https://www.aol.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)

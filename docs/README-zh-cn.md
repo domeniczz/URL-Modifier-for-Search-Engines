@@ -67,6 +67,7 @@ URL 修改使用正则表达式。
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
 - [All the internet](https://www.alltheinternet.com)
+- [AOL](https://www.aol.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)

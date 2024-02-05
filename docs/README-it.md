@@ -67,6 +67,7 @@ La modifica dell'URL utilizza Espressioni Regolari.
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
 - [All the internet](https://www.alltheinternet.com)
+- [AOL](https://www.aol.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
