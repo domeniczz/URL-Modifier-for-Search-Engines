@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.4
+// @version      2.4.1
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -325,8 +325,11 @@
 // @match        *://www.torry.io/search*
 // @match        *://www.qwant.com/?*
 // @match        *://www.ecosia.org/search?*
+// @match        *://search.becovi.com/serp.php?*
+// @match        *://good-search.org/*search/?*
 // @match        *://www.alltheinternet.com/?*
-// @match        *://search.aol.com/*/search*
+// @match        *://search.aol.com/*search*
+// @match        *://www.info.com/serp?*
 // @match        *://oceanhero.today/web?*
 
 // @match        *://swisscows.com/*/web?*
@@ -828,6 +831,32 @@
                 selector: 'aside.sidebar article div.entity__content p a'
             }
         ],
+        'oscobo': [
+            {
+                selector: 'div.result a',
+                childSelector: 'span.siteTitleWrap span.favicons',
+                updateTextWithoutOverwrite: true,
+                containProtocol: true,
+                urlDisplayMethod: 1
+            }
+        ],
+        'good': [
+            {
+                selector: 'div.content div.margin-bottom--small.box a.link--search',
+                childSelector: 'p.url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            },
+            {
+                selector: 'div.sx-kp-top a'
+            },
+            {
+                selector: 'div.sx-kp-tab-content-wrap section ul.sx-kp-social-links a'
+            },
+            {
+                selector: 'div.sx-kp-tab-content-wrap section div.sx-kp-attributions a'
+            }
+        ],
         'alltheinternet': [
             {
                 parentSelector: 'div.gs-webResult.gs-result',
@@ -850,6 +879,18 @@
             },
             {
                 selector: 'div#right ol.cardReg.searchRightTop a'
+            }
+        ],
+        'info': [
+            {
+                parentSelector: 'div.web-yahoo__result',
+                linkNodeSelector: 'a.web-yahoo__title',
+                textNodeSelector: 'span.web-yahoo__url',
+                updateTextWithoutOverwrite: true,
+                urlDisplayMethod: 2
+            },
+            {
+                selector: 'div.sidebar-results a'
             }
         ],
         'oceanhero': [
@@ -1272,12 +1313,27 @@
                 'aside.sidebar.web__sidebar'
             ]
         },
+        'oscobo': {
+            hosts: ['search.becovi.com'],
+            resultContainerSelectors: ['div#results.col']
+        },
+        'good': {
+            hosts: ['good-search.org'],
+            resultContainerSelectors: [
+                'div.grid__item.two-thirds',
+                'div.grid__item.one-third'
+            ]
+        },
         'alltheinternet': {
             hosts: ['alltheinternet.com']
         },
         'aol': {
             hosts: ['search.aol.com'],
             resultContainerSelectors: ['div#results div#cols']
+        },
+        'info': {
+            hosts: ['info.com'],
+            resultContainerSelectors: ['div.layout__body']
         },
         'oceanhero': {
             hosts: ['oceanhero.today']
@@ -1440,8 +1496,7 @@
 
     // Function to update text content (displayed URL)
     const updateTextContent = (element, rule, newUrl) => {
-        if ((rule.updateChildText && rule.childSelector) ||
-            rule.updateTextWithoutOverwrite || rule.updateTextByOverwrite) {
+        if (rule.updateChildText || rule.updateTextWithoutOverwrite || rule.updateTextByOverwrite) {
             try {
                 if (rule.multiElementsForUrlDisplay) {
                     updateMultiElementContent(element, rule, newUrl);
