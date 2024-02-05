@@ -47,6 +47,8 @@ La modification d'URL utilise l'Expression Régulière.
 ### Prise en charge des moteurs de recherche
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ La modification d'URL utilise l'Expression Régulière.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ La modification d'URL utilise l'Expression Régulière.
 Vous pouvez ajouter manuellement le sélecteur DOM dans le code pour prendre en charge d'autres moteurs de recherche.
 
 Ne peut pas prendre en charge [Bing](https://www.bing.com), car il fournit uniquement des liens intermédiaires.
+
+Prise en charge complète de la modification d'URL dans la recherche Yahoo et la recherche Yahoo Japon, y compris le soutien pour se débarrasser de l'URL de redirection Yahoo (https://r.search.yahoo.com/...), pour extraire les URL réels. Si vous n'utilisez pas Yahoo, vous pouvez choisir d'utiliser [Règles de modification d'URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) sans compatibilité avec Yahoo.
 
 4get ne changent pas les URL affichées en conséquence lorsque les liens sont modifiés. Ce problème existe car je cherche à rendre mon code aussi généralisé que possible, mais ces moteurs de recherche ont une structure DOM inhabituelle pour l'affichage des URL, ce qui rend fastidieux de soutenir ces moteurs compte tenu de leur base d'utilisateurs relativement petite.
 
@@ -210,7 +215,7 @@ Règles de [sélecteur](https://developer.mozilla.org/fr/docs/Web/API/Document_o
 | updateTextByOverwritecontainProtocol | indicateur pour la mise à jour du contenu en écrasant tout sous l'élément DOMindicateur pour savoir s'il faut inclure le protocole (ex. https://) dans le domaine |
 | useTopLevelDomain                    | indicateur pour savoir s'il faut utiliser le domaine de premier niveau lors de l'affichage des URL |
 | urlDisplayMethod                     | requis, méthode d'affichage de l'URL<br/>méthode 1 : format breadcrumb<br/>méthode 2 : URL complète<br/>méthode 3 : URL complète sans protocole |
-| multiElementsForUrlDisplay           | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments DOM |
+| multiElementsForUrlDisplay           | indicateur pour savoir si l'URL affichée est séparée en plusieurs éléments DOM<br/>méthode 1 : Les parties de l'URL sont dispersées dans des éléments parallèles<br/>méthode 2 : Les parties de l'URL sont dispersées dans des éléments non parallèles<br/>méthode 3 : similaire à la méthode 2, mais met à jour les éléments sans effacer leur contenu original |
 
 ### searchEngines
 

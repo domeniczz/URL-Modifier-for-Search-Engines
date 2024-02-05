@@ -47,6 +47,8 @@ URL 修改使用正則表達式。
 ### 支持的搜索引擎
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ URL 修改使用正則表達式。
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ URL 修改使用正則表達式。
 您可以在代碼中手動添加 DOM 選擇器以支援其他搜索引擎。
 
 無法支援 [Bing](https://www.bing.com)，因為它只提供中間鏈接。
+
+完全支援在 雅虎搜尋 和 雅虎日本搜尋 中修改 URL，包括支援去除雅虎重定向 URL（https://r.search.yahoo.com/...），以提取實際的 URL。如果您不使用雅虎，可以選擇使用不兼容雅虎的 [URL 修改規則](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js)。
 
 4get 在鏈接變更時不會相應地更改顯示的 URL。這個問題的存在是因為我希望我的代碼盡可能地通用化，但這些搜索引擎具有不尋常的顯示 URL 的 DOM 結構，考慮到它們相對較小的用戶基礎，支持這些搜索引擎變得很麻煩。
 
@@ -210,7 +215,7 @@ URL 修改使用正則表達式。
 | updateTextByOverwritecontainProtocol | 通過覆蓋 DOM 元素下的所有內容來更新內容的標誌，是否包含協議（例如：https://）的標誌 |
 | useTopLevelDomain                    | 是否在顯示 URL 時使用頂級域名的標誌                          |
 | urlDisplayMethod                     | 必填，URL 顯示方法<br/>方法 1：麵包屑格式<br/>方法 2：完整 URL<br/>方法 3：不含協議的完整 URL |
-| multiElementsForUrlDisplay           | 顯示的 URL 是否分成多個 DOM 元素的標誌                       |
+| multiElementsForUrlDisplay           | 顯示的 URL 是否分成多個 DOM 元素的標誌<br/>方法 1：URL 部分被分散到平行元素中<br/>方法 2：URL 部分被分散到非平行元素中<br/>方法 3：與方法 2 相同，但更新元素時不清除它們的原始內容 |
 
 ### searchEngines
 

@@ -47,6 +47,8 @@ URL-wijziging gebruikt Regelmatige Expressie.
 ### Ondersteuning voor Zoekmachines
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ URL-wijziging gebruikt Regelmatige Expressie.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ URL-wijziging gebruikt Regelmatige Expressie.
 U kunt handmatig DOM-selector in de code toevoegen om andere zoekmachines te ondersteunen.
 
 Kan geen ondersteuning bieden voor [Bing](https://www.bing.com), omdat het alleen tussenliggende links verstrekt.
+
+Vollständige Unterstützung für die Modifizierung von URLs in der Yahoo-Suche und Yahoo Japan-Suche, einschließlich Unterstützung zum Entfernen von Yahoo-Umleitungs-URLs (https://r.search.yahoo.com/...), um die eigentlichen URLs zu extrahieren. Wenn Sie Yahoo nicht verwenden, können Sie sich dafür entscheiden, [URL-Modifizierungsregeln](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) ohne Yahoo-Kompatibilität zu verwenden.
 
 4get zullen de weergegeven URL's niet overeenkomstig veranderen wanneer links worden gewijzigd. Dit probleem bestaat omdat ik ernaar streef mijn code zo algemeen mogelijk te maken, maar deze zoekmachines hebben een ongebruikelijke DOM-structuur voor het weergeven van URL's wat het omslachtig maakt om deze zoekmachines te ondersteunen gezien hun relatief kleine gebruikersbasis.
 
@@ -210,7 +215,7 @@ URL-wijzigingsregels in [reguliere expressie](https://nl.wikipedia.org/wiki/Regu
 | updateTextByOverwritecontainProtocol | vlag voor het bijwerken van de inhoud door alles onder het DOM-element te overschrijvenvlag voor of het protocol (bijv. https://) in het domein moet bevatten |
 | useTopLevelDomain                    | vlag voor of het top-level domein moet worden gebruikt bij het weergeven van URL's |
 | urlDisplayMethod                     | vereist, URL weergavemethode<br/>methode 1: breadcrumbformaat<br/>methode 2: volledige URL<br/>methode 3: volledige URL zonder protocol |
-| multiElementsForUrlDisplay           | vlag voor of de weergegeven URL is gescheiden in meerdere DOM-elementen |
+| multiElementsForUrlDisplay           | vlag voor of de weergegeven URL is gescheiden in meerdere DOM-elementen<br/>methode 1: URL-onderdelen zijn verspreid over parallelle elementen<br/>methode 2: URL-onderdelen zijn verspreid over niet-parallelle elementen<br/>methode 3: hetzelfde als methode 2, maar update elementen zonder hun oorspronkelijke inhoud te wissen |
 
 ### searchEngines
 

@@ -47,6 +47,8 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 ### Desteklenen Arama Motorları
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyebilirsiniz.
 
 [Bing](https://www.bing.com) desteklenemez, çünkü yalnızca ara bağlantılar sağlar.
+
+Yahoo arama ve Yahoo Japonya aramasında URL değişikliği tam destek, Yahoo yönlendirme URL'si (https://r.search.yahoo.com/...) kaldırma desteği dahil, gerçek URL'leri çıkarmak için. Yahoo kullanmıyorsanız, Yahoo uyumluluğu olmadan [URL değiştirme kuralları](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) kullanmayı tercih edebilirsiniz.
 
 4get linkler değiştirildiğinde görüntülenen URL'leri buna göre değiştirmiyorlar. Bu sorun, kodumu mümkün olduğunca genelleştirilmiş yapmayı amaçlamamdan kaynaklanıyor, ancak bu arama motorlarının URL'leri görüntülemek için alışılmadık bir DOM yapısı var ve bu da onları desteklemeyi, nispeten küçük kullanıcı tabanlarını göz önünde bulundurarak zahmetli hale getiriyor.
 
@@ -210,7 +215,7 @@ Arama motoru sonuçları için güncellenmesi gereken DOM öğelerinin [Seçici]
 | updateTextByOverwritecontainProtocol | İçeriği, DOM elemanının altındaki her şeyi silerek güncelleme bayrağı<br/>protokolü (örn. https://) domainde gösterme bayrağı |
 | useTopLevelDomain                    | URL'leri gösterirken üst düzey alan adını kullanma bayrağı   |
 | urlDisplayMethod                     | gerekli, URL gösterim yöntemi<br/>yöntem 1: breadcrumb formatı<br/>yöntem 2: tam URL<br/>yöntem 3: protokolsüz tam URL |
-| multiElementsForUrlDisplay           | gösterilen URL'nin birden çok DOM elemanına ayrılması bayrağı |
+| multiElementsForUrlDisplay           | gösterilen URL'nin birden çok DOM elemanına ayrılması bayrağı<br/>yöntem 1: URL parçaları paralel öğelere dağıtılmıştır<br/>yöntem 2: URL parçaları paralel olmayan öğelere dağıtılmıştır<br/>yöntem 3: yöntem 2 ile aynı, ancak öğelerin orijinal içeriğini temizlemeden günceller |
 
 ### searchEngines
 

@@ -47,6 +47,8 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 ### Unterstützung für Suchmaschinen
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 Sie können manuell DOM-Selektor im Code hinzufügen, um andere Suchmaschinen zu unterstützen.
 
 Kann [Bing](https://www.bing.com) nicht unterstützen, da es nur Zwischenlinks bereitstellt.
+
+Vollständige Unterstützung für die Modifizierung von URLs in der Yahoo-Suche und Yahoo Japan-Suche, einschließlich Unterstützung zum Entfernen von Yahoo-Umleitungs-URLs (https://r.search.yahoo.com/...), um die eigentlichen URLs zu extrahieren. Wenn Sie Yahoo nicht verwenden, können Sie sich dafür entscheiden, [URL-Modifizierungsregeln](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) ohne Yahoo-Kompatibilität zu verwenden.
 
 4get ändern die angezeigten URLs nicht entsprechend, wenn Links geändert werden. Dieses Problem besteht, weil ich versuche, meinen Code so allgemein wie möglich zu gestalten, aber diese Suchmaschinen haben eine ungewöhnliche DOM-Struktur zur Anzzum Beispiel von URLs, was es mühsam macht, diese Motoren zu unterstützen, angesichts ihrer relativ kleinen Benutzerbasis.
 
@@ -210,7 +215,7 @@ URL-Modifikationsregeln in [regulären Ausdrücken](https://de.wikipedia.org/wik
 | aktualisiereTextDurchUeberschreibenMitProtokoll | Kennzeichen für die Aktualisierung des Inhalts durch Überschreiben alles unter dem DOM-Element, Kennzeichen, ob das Protokoll (z.B. https://) in der Domain enthalten sein soll |
 | verwendeTopLevelDomain                          | Kennzeichen, ob die Top-Level-Domain bei der Anzeige von URLs verwendet werden soll |
 | urlAnzeigeMethode                               | erforderlich, Methode zur URL-Anzeige<br/>Methode 1: Breadcrumb-Format<br/>Methode 2: vollständige URL<br/>Methode 3: vollständige URL ohne Protokoll |
-| mehrereElementeFuerUrlAnzeige                   | Kennzeichen, ob die angezeigte URL in mehrere DOM-Elemente aufgeteilt ist |
+| mehrereElementeFuerUrlAnzeige                   | Kennzeichen, ob die angezeigte URL in mehrere DOM-Elemente aufgeteilt ist<br/>Methode 1: URL-Teile sind auf parallele Elemente verteilt<br/>Methode 2: URL-Teile sind auf nicht-parallele Elemente verteilt<br/>Methode 3: wie Methode 2, aber aktualisiert die Elemente ohne deren ursprünglichen Inhalt zu löschen |
 
 ### searchEngines
 

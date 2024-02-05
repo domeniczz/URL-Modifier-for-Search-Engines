@@ -47,6 +47,8 @@ La modificación de URL utiliza Expresión Regular.
 ### Soporte de Motores de Búsqueda
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ La modificación de URL utiliza Expresión Regular.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ La modificación de URL utiliza Expresión Regular.
 Puedes añadir manualmente un selector DOM en el código para soportar otros motores de búsqueda.
 
 No puede soportar [Bing](https://www.bing.com), porque solo proporciona enlaces intermedios.
+
+Soporte completo para la modificación de URL en la búsqueda de Yahoo y búsqueda de Yahoo Japón, incluyendo el soporte para eliminar la URL de redirección de Yahoo (https://r.search.yahoo.com/...), para extraer las URL reales. Si no usas Yahoo, puedes optar por usar [Reglas de modificación de URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) sin compatibilidad con Yahoo.
 
 4get no cambian las URL mostradas correspondientemente cuando se cambian los enlaces. Este problema existe porque intento hacer mi código lo más generalizado posible, pero estos motores de búsqueda tienen una estructura DOM inusual para mostrar URLs, lo que hace tedioso dar soporte a estos motores considerando su base de usuarios relativamente pequeña.
 
@@ -210,7 +215,7 @@ Reglas de [Selector](https://developer.mozilla.org/es/docs/Web/API/Document_obje
 | updateTextByOverwritecontainProtocol | indicador para actualizar el contenido sobrescribiendo todo bajo el elemento DOM indicador para si contener el protocolo (por ejemplo, https://) en el dominio |
 | useTopLevelDomain                    | indicador para si usar el dominio de nivel superior al mostrar URLs |
 | urlDisplayMethod                     | requerido, método de visualización de URL<br/>método 1: formato de breadcrumb<br/>método 2: URL completa<br/>método 3: URL completa sin protocolo |
-| multiElementsForUrlDisplay           | indicador para si la URL mostrada se separa en múltiples elementos DOM |
+| multiElementsForUrlDisplay           | indicador para si la URL mostrada se separa en múltiples elementos DOM<br/>método 1: Las partes de la URL se distribuyen en elementos paralelos<br/>método 2: Las partes de la URL se distribuyen en elementos no paralelos<br/>método 3: igual que el método 2, pero actualiza los elementos sin borrar su contenido original |
 
 ### searchEngines
 

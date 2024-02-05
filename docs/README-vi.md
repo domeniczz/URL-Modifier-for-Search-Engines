@@ -47,6 +47,8 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 ### Hỗ trợ Công cụ Tìm kiếm
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 Bạn có thể tự thêm bộ chọn DOM vào mã để hỗ trợ thêm công cụ tìm kiếm khác.
 
 Không thể hỗ trợ [Bing](https://www.bing.com), vì nó chỉ cung cấp các liên kết trung gian.
+
+Hỗ trợ đầy đủ cho việc chỉnh sửa URL trong tìm kiếm Yahoo và tìm kiếm Yahoo Nhật Bản, bao gồm hỗ trợ loại bỏ URL chuyển hướng của Yahoo (https://r.search.yahoo.com/...), để trích xuất các URL thực tế. Nếu bạn không sử dụng Yahoo, bạn có thể chọn sử dụng [Quy tắc chỉnh sửa URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) mà không cần tương thích với Yahoo.
 
 4get sẽ không thay đổi URL hiển thị tương ứng khi liên kết được thay đổi. Vấn đề này tồn tại bởi vì tôi muốn mã của mình được tổng quát nhất có thể, nhưng những công cụ tìm kiếm này có cấu trúc DOM không thông thường để hiển thị URL, khiến việc hỗ trợ chúng trở nên phức tạp với lượng người dùng tương đối nhỏ.
 
@@ -210,7 +215,7 @@ Quy tắc [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_o
 | updateTextByOverwritecontainProtocol | cờ cho việc cập nhật nội dung bằng cách ghi đè lên mọi thứ dưới phần tử DOMcờ cho dù có chứa giao thức (ví dụ: https://) trong tên miền |
 | useTopLevelDomain                    | cờ cho dù sử dụng tên miền cấp cao nhất khi hiển thị URL     |
 | urlDisplayMethod                     | yêu cầu, phương thức hiển thị URL<br/>phương thức 1: định dạng breadcrumb<br/>phương thức 2: URL đầy đủ<br/>phương thức 3: URL đầy đủ không kèm giao thức |
-| multiElementsForUrlDisplay           | cờ cho dù URL hiển thị được tách ra thành nhiều phần tử DOM  |
+| multiElementsForUrlDisplay           | cờ cho dù URL hiển thị được tách ra thành nhiều phần tử DOM<br/>phương pháp 1: Các phần của URL được phân tán vào các phần tử song song<br/>phương pháp 2: Các phần của URL được phân tán vào các phần tử không song song<br/>phương pháp 3: giống như phương pháp 2 nhưng cập nhật các phần tử mà không xóa nội dung gốc của chúng  |
 
 ### searchEngines
 

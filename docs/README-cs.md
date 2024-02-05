@@ -47,6 +47,8 @@ Modifikace URL využívá regulární výrazy.
 ### Podpora vyhledávačů
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ Modifikace URL využívá regulární výrazy.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ Modifikace URL využívá regulární výrazy.
 Do kódu můžete manuálně přidat DOM selektor pro podporu dalších vyhledávačů.
 
 Nelze podporovat [Bing](https://www.bing.com), protože poskytuje pouze prostřední odkazy.
+
+Plná podpora úprav URL v Yahoo vyhledávání a vyhledávání Yahoo Japan, včetně podpory pro odstranění přesměrovacích URL Yahoo (https://r.search.yahoo.com/...), pro extrakci skutečných URL. Pokud nepoužíváte Yahoo, můžete se rozhodnout použít [Pravidla úpravy URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) bez kompatibility s Yahoo.
 
 4get nezmění zobrazené URL odpovídajícím způsobem, když jsou odkazy změněny. Tento problém existuje, protože se snažím mít svůj kód co nejuniverzálnější, ale tyto vyhledávače mají neobvyklou strukturu DOM pro zobrazení URL, což je zdlouhavé podporovat tyto vyhledávače s ohledem na jejich relativně malou uživatelskou základnu.
 
@@ -210,7 +215,7 @@ Pravidla pro modifikaci URL v [regulárním výrazu](https://cs.wikipedia.org/wi
 | updateTextByOverwritecontainProtocol | příznak pro aktualizaci obsahu přepisem všeho pod DOM elementem, příznak zda obsahovat protokol (např. https://) v doméně |
 | useTopLevelDomain                    | příznak zda použít top-level doménu při zobrazování URL      |
 | urlDisplayMethod                     | vyžadováno, metoda zobrazení URL<br/>metoda 1: formát drobečkové navigace<br/>metoda 2: plná URL<br/>metoda 3: plná URL bez protokolu |
-| multiElementsForUrlDisplay           | příznak zda je zobrazená URL rozdělena do více DOM elementů  |
+| multiElementsForUrlDisplay           | příznak zda je zobrazená URL rozdělena do více DOM elementů<br/>metoda 1: Části URL jsou rozmístěny do paralelních prvků<br/>metoda 2: Části URL jsou rozmístěny do ne-paralelních prvků<br/>metoda 3: stejně jako metoda 2, ale aktualizuje prvky bez vymazání jejich původního obsahu |
 
 ### searchEngines
 

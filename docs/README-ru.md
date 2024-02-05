@@ -47,6 +47,8 @@
 ### Поддержка поисковых систем
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@
 Вы можете вручную добавить селектор DOM в код, чтобы поддержать другие поисковые системы.
 
 Не может поддерживать [Bing](https://www.bing.com), потому что он предоставляет только промежуточные ссылки.
+
+Полная поддержка модификации URL в поиске Yahoo и Yahoo Japan, включая поддержку удаления URL перенаправления Yahoo (https://r.search.yahoo.com/...), для извлечения фактических URL. Если вы не используете Yahoo, вы можете выбрать использование [Правил модификации URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) без совместимости с Yahoo.
 
 4get не изменяют отображаемые URL-адреса соответственно при изменении ссылок. Эта проблема возникает из-за того, что я стремлюсь сделать свой код максимально универсальным, но у этих поисковых систем необычная структура DOM для отображения URL-адресов, что делает поддержку этих систем утомительной, учитывая их относительно небольшую пользовательскую базу.
 
@@ -210,7 +215,7 @@
 | updateTextByOverwritecontainProtocol | флаг для обновления содержимого путем перезаписи всего под элементом DOMфлаг для указания протокола (напр., https://) в домене |
 | useTopLevelDomain                    | флаг для использования домена верхнего уровня при отображении URL |
 | urlDisplayMethod                     | обязательно, метод отображения URL<br/>метод 1: формат "хлебных крошек"<br/>метод 2: полный URL<br/>метод 3: полный URL без протокола |
-| multiElementsForUrlDisplay           | флаг для отображения URL, разделенного на несколько элементов DOM |
+| multiElementsForUrlDisplay           | флаг для отображения URL, разделенного на несколько элементов DOM<br/>метод 1: Части URL распределяются по параллельным элементам<br/>метод 2: Части URL распределяются по непараллельным элементам<br/>метод 3: такой же, как метод 2, но обновление элементов происходит без очистки их исходного содержимого |
 
 ### searchEngines
 

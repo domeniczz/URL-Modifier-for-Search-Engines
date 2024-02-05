@@ -47,6 +47,8 @@ URL 수정은 정규 표현식을 사용합니다.
 ### 검색 엔진 지원
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ URL 수정은 정규 표현식을 사용합니다.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ URL 수정은 정규 표현식을 사용합니다.
 다른 검색 엔진을 지원하기 위해 코드에 DOM 선택자를 수동으로 추가할 수 있습니다.
 
 [Bing](https://www.bing.com) 은 중간 링크만 제공하기 때문에 지원할 수 없습니다.
+
+Yahoo 검색 및 Yahoo Japan 검색 에서 URL 수정을 완전히 지원합니다, Yahoo 리디렉션 URL (https://r.search.yahoo.com/...)을 제거하는 지원을 포함하여 실제 URL 을 추출할 수 있습니다. Yahoo 를 사용하지 않는 경우, Yahoo 호환성 없이 [URL 수정 규칙](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js)을 사용할 수 있습니다.
 
 4get 은 링크가 변경될 때 표시되는 URL 을 상응하게 변경하지 않습니다. 이 문제는 제 코드를 가능한 한 일반화하려고 하지만, 이 검색 엔진들은 URL 을 표시하기 위한 독특한 DOM 구조를 가지고 있어, 상대적으로 작은 사용자 기반을 고려할 때 이 엔진들을 지원하는 것이 번거롭습니다.
 
@@ -210,7 +215,7 @@ URL 수정은 정규 표현식을 사용합니다.
 | updateTextByOverwritecontainProtocol | 도메인을 표시할 때 프로토콜 (예: https://) 을 포함할지 여부의 플래그 |
 | useTopLevelDomain                    | URL 을 표시할 때 최상위 도메인을 사용할지 여부의 플래그      |
 | urlDisplayMethod                     | 필수, URL 표시 방법<br/>방법 1: 빵 부스러기 형식<br/>방법 2: 전체 URL<br/>방법 3: 프로토콜 없는 전체 URL |
-| multiElementsForUrlDisplay           | 표시된 URL 이 여러 DOM 요소로 분리되어 있는지 여부의 플래그  |
+| multiElementsForUrlDisplay           | 표시된 URL 이 여러 DOM 요소로 분리되어 있는지 여부의 플래그<br/>방법 1: URL 부분이 병렬 요소로 분산됨<br/>방법 2: URL 부분이 비병렬 요소로 분산됨<br/>방법 3: 방법 2 와 동일하지만 원래 내용을 지우지 않고 요소를 업데이트함 |
 
 ### searchEngines
 

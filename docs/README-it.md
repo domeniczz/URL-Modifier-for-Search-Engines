@@ -47,6 +47,8 @@ La modifica dell'URL utilizza Espressioni Regolari.
 ### Supporto ai motori di ricerca
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ La modifica dell'URL utilizza Espressioni Regolari.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ La modifica dell'URL utilizza Espressioni Regolari.
 Puoi aggiungere manualmente il selettore DOM nel codice per supportare altri motori di ricerca.
 
 Non può supportare [Bing](https://www.bing.com), perché fornisce solo collegamenti intermedi.
+
+Supporto completo per la modifica degli URL nella ricerca di Yahoo e nella ricerca di Yahoo Giappone, inclusa la capacità di eliminare gli URL di reindirizzamento di Yahoo (https://r.search.yahoo.com/...), per estrarre gli URL effettivi. Se non utilizzi Yahoo, puoi scegliere di utilizzare [Regole di modifica URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) senza compatibilità con Yahoo.
 
 4get non cambiano gli URL visualizzati di conseguenza quando i link vengono modificati. Questo problema esiste perché il mio obiettivo è rendere il mio codice il più generalizzato possibile, ma questi motori di ricerca hanno una struttura DOM insolita per la visualizzazione degli URL, il che rende tedioso supportare questi motori considerando la loro base di utenti relativamente piccola.
 
@@ -210,7 +215,7 @@ Regole [Selettore](https://developer.mozilla.org/en-US/docs/Web/API/Document_obj
 | updateTextByOverwritecontainProtocol | flag per aggiornare il contenuto sovrascrivendo tutto sotto l'elemento DOMflag per se includere il protocollo (es. https://) nel dominio |
 | useTopLevelDomain                    | flag per se utilizzare il dominio di primo livello quando si visualizzano gli URL |
 | urlDisplayMethod                     | richiesto, metodo di visualizzazione URL<br/>metodo 1: formato breadcrumb<br/>metodo 2: URL completo<br/>metodo 3: URL completo senza protocollo |
-| multiElementsForUrlDisplay           | flag per se l'URL visualizzato è separato in più elementi DOM |
+| multiElementsForUrlDisplay           | flag per se l'URL visualizzato è separato in più elementi DOM<br/>metodo 1: Le parti dell'URL sono distribuite in elementi paralleli<br/>metodo 2: Le parti dell'URL sono distribuite in elementi non paralleli<br/>metodo 3: come il metodo 2, ma aggiorna gli elementi senza cancellare il loro contenuto originale |
 
 ### searchEngines
 

@@ -47,6 +47,8 @@ URL modification uses Regular Expression.
 ### Search Engine Support
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ URL modification uses Regular Expression.
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ URL modification uses Regular Expression.
 You can manually add DOM selector in the code to support other search engines.
 
 Can't support [Bing](https://www.bing.com), because it only provide intermediate links.
+
+Fully support URL modification in Yahoo search and Yahoo Japan search, including support for getting rid of Yahoo redirection URL (https://r.search.yahoo.com/...), to extract the actual URLs. If you do not use Yahoo, you can choose to use [URL modification rules](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) without Yahoo compatibility.
 
 4get won't change displayed URLs correspondingly when links are changed. This issue exists because I aim to make my code as generalized as possible, but these search engines have unusual DOM structure for displaying URLs, which makes it tedious to support these engines considering their relatively small user base.
 
@@ -210,7 +215,7 @@ URL modification rules in [regular expression](https://en.wikipedia.org/wiki/Reg
 | updateTextByOverwritecontainProtocol | flag for update the content by overwriting everything under the DOM elementflag for whether to contain protocol (e.g. https://) in the domain |
 | useTopLevelDomain                    | flag for whether to use the top-level domain when displaying URLs |
 | urlDisplayMethod                     | required, URL display method<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
-| multiElementsForUrlDisplay           | flag for whether the displayed URL is separated into multiple DOM elements |
+| multiElementsForUrlDisplay           | flag for whether the displayed URL is separated into multiple DOM elements<br/>method 1: URL parts are scattered into parallel elements<br/>method 2: URL parts are scattered into non-parallel elements<br/>method 3: same as method 2, but update elements without clearing their original contents |
 
 ### searchEngines
 

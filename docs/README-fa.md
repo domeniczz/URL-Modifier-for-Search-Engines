@@ -47,6 +47,8 @@
 ### پشتیبانی از موتورهای جستجو
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@
 می‌توانید به صورت دستی انتخاب‌گر DOM را در کد اضافه کنید تا از موتورهای جستجوی دیگر پشتیبانی کنید.
 
 نمی‌توان از [Bing](https://www.bing.com) پشتیبانی کرد، زیرا فقط لینک‌های میانی ارائه می‌دهد.
+
+پشتیبانی کامل از تغییر URL در جستجوی Yahoo و جستجوی Yahoo ژاپن، شامل پشتیبانی برای حذف URL هدایت‌کننده Yahoo (https://r.search.yahoo.com/...)، برای استخراج URL‌های واقعی. اگر از Yahoo استفاده نمی‌کنید، می‌توانید انتخاب کنید از [قوانین تغییر URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) بدون سازگاری با Yahoo استفاده کنید.
 
 4get URL‌های نمایش داده شده را متناسب با تغییر لینک‌ها تغییر نمی‌دهند. این مسئله به این دلیل وجود دارد که من هدفم این است که کد خود را تا حد امکان عمومی‌تر کنم، اما این موتورهای جستجو ساختار DOM غیرمعمولی برای نمایش URL‌ها دارند که پشتیبانی از این موتورها را با توجه به پایگاه کاربری نسبتاً کوچک‌شان، خسته‌کننده می‌کند.
 
@@ -210,7 +215,7 @@
 | updateTextByOverwritecontainProtocol | پرچم برای بروزرسانی محتوا با بازنویسی همه چیز زیر عنصر DOMپرچم برای آیا شامل پروتکل (مانند https://) در دامنه |
 | useTopLevelDomain                    | پرچم برای آیا استفاده از دامنه سطح بالا هنگام نمایش URLها    |
 | urlDisplayMethod                     | مورد نیاز، روش نمایش URL<br/>روش 1: فرمت breadcrumb<br/>روش 2: URL کامل<br/>روش 3: URL کامل بدون پروتکل |
-| multiElementsForUrlDisplay           | پرچم برای آیا URL نمایش داده شده به چندین عنصر DOM جدا شده است |
+| multiElementsForUrlDisplay           | پرچم برای آیا URL نمایش داده شده به چندین عنصر DOM جدا شده است<br/>روش 1: اجزای URL در عناصر موازی پراکنده شده‌اند<br/>روش 2: اجزای URL در عناصر غیرموازی پراکنده شده‌اند<br/>روش 3: مانند روش 2، اما عناصر را بدون پاک کردن محتوای اصلی آن‌ها به‌روزرسانی می‌کند |
 
 ### searchEngines
 

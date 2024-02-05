@@ -47,6 +47,8 @@ URL 修改使用正则表达式。
 ### 支持的搜索引擎
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ URL 修改使用正则表达式。
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ URL 修改使用正则表达式。
 您可以手动在代码中添加 DOM 选择器以支持其他搜索引擎。
 
 无法支持 [Bing](https://www.bing.com)，因为它只提供中间链接。
+
+完全支持在 雅虎搜索 和 雅虎日本搜索 中修改 URL，包括支持去除雅虎重定向 URL（https://r.search.yahoo.com/...），以提取实际的 URL。如果您不使用雅虎，可以选择使用不兼容雅虎的 [URL 修改规则](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js)。
 
 4get 在链接变更时不会相应地更改显示的 URL。这个问题的存在是因为我希望我的代码尽可能地通用化，但这些搜索引擎具有不寻常的显示 URL 的 DOM 结构，考虑到它们相对较小的用户基础，支持这些搜索引擎变得很麻烦。
 
@@ -200,7 +205,7 @@ URL 修改使用正则表达式。
 
 | 参数                                 | 描述                                                         |
 | ------------------------------------ | ------------------------------------------------------------ |
-| selector                             | DOM 元素的选择器                                               |
+| selector                             | DOM 元素的选择器                                             |
 | parentSelector                       | 链接元素和文本元素的父元素的选择器                           |
 | linkNodeSelector                     | 在 `parentSelector` 指定的元素下的链接元素的选择器           |
 | textNodeSelector                     | 在 `parentSelector` 指定的元素下的文本元素的选择器           |
@@ -210,7 +215,7 @@ URL 修改使用正则表达式。
 | updateTextByOverwritecontainProtocol | 通过覆盖 DOM 元素下所有内容来更新内容的标志，标志是否包含协议（例如：https://） |
 | useTopLevelDomain                    | 是否在显示 URL 时使用顶级域名的标志                          |
 | urlDisplayMethod                     | 必需，URL 显示方法<br/>方法 1：面包屑格式<br/>方法 2：完整 URL<br/>方法 3：不带协议的完整URL |
-| multiElementsForUrlDisplay           | 显示的 URL 是否分散到多个 DOM 元素中的标志                   |
+| multiElementsForUrlDisplay           | 显示的 URL 是否分散到多个 DOM 元素中的标志<br/>方法 1：URL 部分被分散到并行元素中<br/>方法 2：URL 部分被分散到非并行元素中<br/>方法 3：与方法 2 相同，但更新元素时不清除它们的原始内容 |
 
 ### searchEngines
 

@@ -47,6 +47,8 @@ URL の変更正規表現を使用します。
 ### 対応する検索エンジン
 
 - [Google](https://www.google.com/supported_domains)
+- [Yahoo](https://search.yahoo.com)
+- [Yahoo Japan](https://www.yahoo.co.jp)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -64,6 +66,7 @@ URL の変更正規表現を使用します。
 - [Torry](https://www.torry.io)
 - [Qwant](https://www.qwant.com)
 - [Ecosia](https://www.ecosia.org)
+- [All the internet](https://www.alltheinternet.com)
 - [OceanHero](https://oceanhero.today/search)
 - [Swisscows](https://swisscows.com)
 - [Lilo](https://search.lilo.org)
@@ -85,6 +88,8 @@ URL の変更正規表現を使用します。
 他の検索エンジンに対応するために、コードに DOM セレクタを手動で追加できます。
 
 [Bing](https://www.bing.com) は中間リンクのみを提供しているため、対応できません。
+
+Yahoo 検索 および Yahoo Japan 検索 での URL の完全なサポート変更、Yahoo のリダイレクション URL（https://r.search.yahoo.com/...）を取り除くサポートを含む、実際の URL を抽出します。Yahoo を使用しない場合は、Yahoo の互換性なしで [URL 変更ルール](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js)を使用することを選択できます。
 
 4get は、リンクが変更された場合に表示される URL をそれに応じて変更しません。この問題は、私ができるだけ一般化されたコードを作成しようとしているために存在しますが、これらの検索エンジンは URL を表示するための特異な DOM 構造を持っており、比較的少ないユーザーベースを考慮するとこれらのエンジンをサポートすることは面倒です。
 
@@ -210,7 +215,7 @@ URL の変更正規表現を使用します。
 | updateTextByOverwritecontainProtocol | DOM 要素の下のすべてを上書きしてコンテンツを更新するフラグ<br/>ドメインにプロトコル（例：https://）を含むかどうかのフラグ |
 | useTopLevelDomain                    | URL 表示時にトップレベルドメインを使用するかどうかのフラグ   |
 | urlDisplayMethod                     | 必須、URL 表示方法<br/>方法 1: パンくずリスト形式<br/>方法 2: フル URL<br/>方法 3: プロトコルなしのフル URL |
-| multiElementsForUrlDisplay           | 表示される URL が複数の DOM 要素に分割されるかどうかのフラグ |
+| multiElementsForUrlDisplay           | 表示される URL が複数の DOM 要素に分割されるかどうかのフラグ<br/>方法 1：URL の部分が並行要素に散在<br/>方法 2：URL の部分が非並行要素に散在<br/>方法 3：方法 2 と同じですが、元の内容をクリアせずに要素を更新 |
 
 ### searchEngines
 
