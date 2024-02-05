@@ -49,7 +49,7 @@ https://hyperpipe.surge.sh/$1
 https://ttv.vern.cc/$1
 
 
-^https?:\/\/(?:m|www)\.imdb\.com\/(title\/\w+).*
+^https?:\/\/(?:m|www)\.imdb\.com\/((?:title|name)\/\w+).*
 https://ld.vern.cc/$1
 
 
@@ -213,7 +213,7 @@ https://hyperpipe.surge.sh/$1
 https://ttv.vern.cc/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(?:m|www)\.imdb\.com\/(title\/\w+)(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?\/RU=)?https?:\/\/(?:m|www)\.imdb\.com\/((?:title|name)\/\w+)(?:.*?)(?:$|\/RK=\d.*)
 https://ld.vern.cc/$1
 
 
