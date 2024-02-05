@@ -326,6 +326,7 @@
 // @match        *://www.qwant.com/?*
 // @match        *://www.ecosia.org/search?*
 // @match        *://www.alltheinternet.com/?*
+// @match        *://search.aol.com/*/search*
 // @match        *://oceanhero.today/web?*
 
 // @match        *://swisscows.com/*/web?*
@@ -408,7 +409,7 @@
             replaceWith: 'https://ttv.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:m|www)\.imdb\.com\/(title\/\w+)(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:m|www)\.imdb\.com\/((?:title|name)\/\w+)(?:.*?)(?:$|\/RK=\d.*)/),
             replaceWith: 'https://ld.vern.cc/$1'
         },
         {
@@ -836,6 +837,21 @@
                 urlDisplayMethod: 2
             }
         ],
+        'aol': [
+            {
+                parentSelector: 'div#left div#web ol li div div.compTitle',
+                linkNodeSelector: 'h3.title a',
+                textNodeSelector: 'div span',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
+            },
+            {
+                selector: 'div#left div#web ol li div div.compList a'
+            },
+            {
+                selector: 'div#right ol.cardReg.searchRightTop a'
+            }
+        ],
         'oceanhero': [
             {
                 selector: 'div div div a',
@@ -1258,6 +1274,10 @@
         },
         'alltheinternet': {
             hosts: ['alltheinternet.com']
+        },
+        'aol': {
+            hosts: ['search.aol.com'],
+            resultContainerSelectors: ['div#results div#cols']
         },
         'oceanhero': {
             hosts: ['oceanhero.today']
