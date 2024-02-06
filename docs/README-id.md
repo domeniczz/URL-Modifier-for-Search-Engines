@@ -1,6 +1,7 @@
-# URL-Modifier-for-Search-Engines
+# Pengubah-URL-untuk-Mesin-Pencari
 
 <div align="center">
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md">Indonesia</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
@@ -8,8 +9,8 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a><br/>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
@@ -17,41 +18,40 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md">Indonesia</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
 
-**Catalogue**:
+**Katalog**:
 
-- [Introduction](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#Introduction)
-- [TODO](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#TODO)
-- [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#Wiki)
+- [Pendahuluan](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md#Pendahuluan)
+- [Yang Harus Dilakukan](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md#Yang-Harus-Dilakukan)
+- [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md#Wiki)
 
-## Introduction
+## Pendahuluan
 
-A [Tampermonkey](https://github.com/Tampermonkey/tampermonkey) script, install from Greasy Fork: [URL Modifier for Search Engines](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+Sebuah skrip [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), pasang dari Greasy Fork: [Pengubah URL untuk Mesin Pencari](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
 
-If you do not have Tampermonkey installed in your browser, you can install it from [Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Firefox Web Store](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey).
+Jika Anda belum memasang Tampermonkey di browser Anda, Anda dapat memasangnya dari [Toko Web Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) atau [Toko Web Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey).
 
-- GitHub Repository: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
-- Codeberg Repository: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
+- Repositori GitHub: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
+- Repositori Codeberg: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
 
-<b>Please give me a Star on GitHub or Codeberg if you found my script useful! Thank you! 😘</b>
+<b>Tolong berikan Saya Bintang di GitHub atau Codeberg jika Anda menemukan skrip saya berguna! Terima kasih! 😘</b>
 
-This Tampermonkey script enhances your search engine usage by modifying URLs in the search result of search engines, redirecting to alternative sites, allowing for a more customized and efficient browsing experience. You can also add you custom URL modification rule to the script and are welcomed to commit your rules to this script to make it much more useful.
+Skrip Tampermonkey ini meningkatkan penggunaan mesin pencari Anda dengan mengubah URL dalam hasil pencarian mesin pencari, mengarahkan ke situs alternatif, memungkinkan pengalaman browsing yang lebih disesuaikan dan efisien. Anda juga dapat menambahkan aturan modifikasi URL kustom ke dalam skrip dan dipersilakan untuk mencommit aturan Anda ke skrip ini agar menjadi lebih berguna.
 
-URL modification uses Regular Expression.
+Modifikasi URL menggunakan Ekspresi Reguler.
 
 <div align="center">
-    <span>Search result without URL modification:</span><br/>
-    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-without_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/><br/>
-    <span>Search result after URL modification:</span><br/>
-    <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
+    <span>Hasil pencarian tanpa modifikasi URL:</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/master/docs/assets/searxng_search_result_example-without_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/><br/>
+    <span>Hasil pencarian setelah modifikasi URL:</span><br/>
+    <img src="https://raw.githubusercontent.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Search Engine Support
+### Dukungan Mesin Pencari
 
 - [Google](https://www.google.com/supported_domains)
 - [Yahoo](https://search.yahoo.com)
@@ -99,22 +99,22 @@ URL modification uses Regular Expression.
 - [MetaCrawler](https://www.metacrawler.com)
 - [Dogpile](https://www.dogpile.com)
 
-You can manually add DOM selector in the code to support other search engines.
+Anda dapat menambahkan pemilih DOM secara manual dalam kode untuk mendukung mesin pencari lainnya.
 
-Can't support [Bing](https://www.bing.com), because it only provide intermediate links.
+Tidak dapat mendukung [Bing](https://www.bing.com), karena hanya menyediakan tautan perantara.
 
-For search engines like Yahoo, Lycos, AlohaFind, the script support getting rid of redirection links and extract the real URL. For example, the Yahoo redirection link is "https://r.search.yahoo.com/...". If you do not use these search engines, you can choose to use [URL modification rules](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) without redirection link compatibility. BTW, you can see all built-in RegEx URL modification rules [here](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+Untuk mesin pencari seperti Yahoo, Lycos, AlohaFind, skrip mendukung menghilangkan tautan pengalihan dan mengekstrak URL asli. Misalnya, tautan pengalihan Yahoo adalah "https://r.search.yahoo.com/...". Jika Anda tidak menggunakan mesin pencari ini, Anda dapat memilih menggunakan [aturan modifikasi URL](https://github.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/blob/master/no-redirection-omit-url-rules.js) tanpa kompatibilitas tautan pengalihan. BTW, Anda dapat melihat semua aturan modifikasi URL RegEx bawaan [di sini](https://github.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/blob/master/regexs.txt).
 
-4get won't change displayed URLs correspondingly when links are changed. This issue exists because I aim to make my code as generalized as possible, but these search engines have unusual DOM structure for displaying URLs, which makes it tedious to support these engines considering their relatively small user base.
+4get tidak akan mengubah URL yang ditampilkan secara sesuai ketika tautan diubah. Masalah ini ada karena saya bertujuan untuk membuat kode saya seumum mungkin, tetapi mesin pencari ini memiliki struktur DOM yang tidak biasa untuk menampilkan URL, yang membuatnya merepotkan untuk mendukung mesin pencari ini mengingat basis pengguna mereka yang relatif kecil.
 
-> Just a side note, [Kagi](https://kagi.com) is a search engine with built-in URL redirection functionality, worth trying out. I am a user of Kagi, and I am very satisfied with this product, so I'm giving them a shout-out here.
+> Hanya catatan samping, [Kagi](https://kagi.com) adalah mesin pencari dengan fungsi pengalihan URL bawaan, layak untuk dicoba. Saya pengguna Kagi, dan saya sangat puas dengan produk ini, jadi saya memberikan teriakan di sini.
 
-Find more search engines:
+Temukan lebih banyak mesin pencari:
 
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Built-in Redirection
+### Pengalihan Bawaan
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (e.g. [safereddit.com](https://safereddit.com))
@@ -147,16 +147,16 @@ Find more search engines:
 - [ArXiv](https://arxiv.org) PDF (arxiv.org/pdf/\*.pdf) -> [ArXiv](https://arxiv.org) Abstract (arxiv.org/abs/\*)
 - ...
 
-You can add custom redirection rules into the script yourself.
+Anda dapat menambahkan aturan pengalihan kustom ke dalam skrip sendiri.
 
-Other alternatives privacy friendly frontends, see:
+Alternatif frontend ramah privasi lainnya, lihat:
 
 - [LibRedirect](https://libredirect.github.io/index.html)
 - [Alternative Frontends](https://github.com/digitalblossom/alternative-frontends)
 - [Alternative Front Ends](https://awesomeopensource.com/project/mendel5/alternative-front-ends)
 - [farside.link](https://farside.link)
 
-Service providers:
+Penyedia layanan:
 
 - [vern.cc](https://vern.cc)
 - [lunar.icu](https://service.lunar.icu)
@@ -167,15 +167,17 @@ Service providers:
 - [tiekoetter.com](https://www.tiekoetter.com/en/services)
 - ...
 
-FWIW, you could use [Farside](https://github.com/benbusby/farside) that automatically redirect to working instances of privacy-oriented alternative frontends instead of writing regular expression rules on our own.
+BTW, Anda bisa menggunakan [Farside](https://github.com/benbusby/farside) yang secara otomatis mengarahkan ke instansi yang berfungsi dari frontend alternatif yang berorientasi privasi daripada menulis aturan ekspresi reguler sendiri.
 
-However, this method does not support finer-grained control over matched URLs and it is really slow since a redirection by farside is needed. If you want to use this anyway, you can uncomment the corresponding part in `urlModificationRules`.
+Namun, metode ini tidak mendukung kontrol yang lebih terperinci atas URL yang cocok dan sangat lambat karena pengalihan oleh fars
 
-- Include pattern example: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
+ide diperlukan. Jika Anda ingin menggunakan ini, Anda dapat mengaktifkan bagian yang sesuai dalam `urlModificationRules`.
 
-- Redirect to: `https://farside.link/$1`
+- Contoh pola termasuk: `^(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*)`
 
-- Add to script:
+- Dialihkan ke: `https://farside.link/$1`
+
+- Tambahkan ke skrip:
   
   ```js
   const urlModificationRules = [
@@ -187,18 +189,18 @@ However, this method does not support finer-grained control over matched URLs an
   ];
   ```
 
-- Example URL: `https://www.youtube.com/watch?v=abc123`
+- URL Contoh: `https://www.youtube.com/watch?v=abc123`
 
-- Result URL: `https://farside.link/youtube.com/watch?v=abc123`
+- URL Hasil: `https://farside.link/youtube.com/watch?v=abc123`
 
-> FYI, wiki for setting up farside in [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Browser-Extension
+> FYI, wiki untuk mengatur farside di [Redirector](https://github.com/einaregilsson/Redirector): https://github.com/benbusby/farside/wiki/Extension-Browser
 
 ---
 
-## TODO
+## Yang Harus Dilakukan
 
-1. Add supports for more search engines.
-2. Refactor the code to make it easier to read and modify.
+1. Menambahkan dukungan untuk lebih banyak mesin pencari.
+2. Merombak kode agar lebih mudah dibaca dan dimodifikasi.
 
 ---
 
@@ -206,37 +208,37 @@ However, this method does not support finer-grained control over matched URLs an
 
 ### urlModificationRules
 
-URL modification rules in [regular expression](https://en.wikipedia.org/wiki/Regular_expression)
+Aturan modifikasi URL dalam [ekspresi reguler](https://id.wikipedia.org/wiki/Ekspresi_reguler)
 
-| Variable    | Description                                   |
-| ----------- | --------------------------------------------- |
-| matchRegex  | regular expression for matching original URLs |
-| replaceWith | regular expression for replacement            |
+| Variabel    | Deskripsi                                       |
+| ----------- | ----------------------------------------------- |
+| matchRegex  | ekspresi reguler untuk mencocokkan URL asli     |
+| replaceWith | ekspresi reguler untuk penggantian              |
 
 ### selectorRules
 
-[Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) rules for the DOM elements needs updating for search engine results
+[Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) aturan untuk elemen DOM yang perlu diperbarui untuk hasil mesin pencari
 
-| Variable                             | Description                                                  |
-| ------------------------------------ | ------------------------------------------------------------ |
-| selector                             | selector for DOM element                                     |
-| parentSelector                       | selector for parent of link element and text element         |
-| linkNodeSelector                     | selector for link element under the the element specified by `parentSelector` |
-| textNodeSelector                     | selector for text element under the the element specified by `parentSelector` |
-| updateChildText                      | flag for whether to update the inner text of the child element specified by `childSelector` |
-| childSelector                        | selector for child DOM element under the element specified by `selector` or `textNodeSelector` |
-| updateTextWithoutOverwrite           | flag for update the textnode without overwriting other nodes under the DOM element |
-| updateTextByOverwritecontainProtocol | flag for update the content by overwriting everything under the DOM elementflag for whether to contain protocol (e.g. https://) in the domain |
-| useTopLevelDomain                    | flag for whether to use the top-level domain when displaying URLs |
-| urlDisplayMethod                     | required, URL display method<br/>method 1: breadcrumb format<br/>method 2: full URL<br/>method 3: full URL without protocol |
-| multiElementsForUrlDisplay           | flag for whether the displayed URL is separated into multiple DOM elements<br/>method 1: URL parts are scattered into parallel elements<br/>method 2: URL parts are scattered into non-parallel elements<br/>method 3: same as method 2, but update elements without clearing their original contents |
+| Variabel                             | Deskripsi                                                     |
+| ------------------------------------ | ------------------------------------------------------------- |
+| selector                             | pemilih untuk elemen DOM                                      |
+| parentSelector                       | pemilih untuk induk elemen tautan dan elemen teks             |
+| linkNodeSelector                     | pemilih untuk elemen tautan di bawah elemen yang ditentukan oleh `parentSelector` |
+| textNodeSelector                     | pemilih untuk elemen teks di bawah elemen yang ditentukan oleh `parentSelector` |
+| updateChildText                      | bendera untuk apakah memperbarui teks dalam dari elemen anak yang ditentukan oleh `childSelector` |
+| childSelector                        | pemilih untuk elemen anak DOM di bawah elemen yang ditentukan oleh `selector` atau `textNodeSelector` |
+| updateTextWithoutOverwrite           | bendera untuk memperbarui textnode tanpa menimpa node lain di bawah elemen DOM |
+| updateTextByOverwritecontainProtocol | bendera untuk memperbarui konten dengan menimpa segala sesuatu di bawah elemen DOMflag untuk apakah mengandung protokol (mis. https://) dalam domain |
+| useTopLevelDomain                    | bendera untuk apakah menggunakan domain tingkat atas saat menampilkan URL |
+| urlDisplayMethod                     | diperlukan, metode tampilan URL<br/>metode 1: format breadcrumb<br/>metode 2: URL lengkap<br/>metode 3: URL lengkap tanpa protokol |
+| multiElementsForUrlDisplay           | bendera untuk apakah URL yang ditampilkan dipisahkan menjadi beberapa elemen DOM<br/>metode 1: bagian URL tersebar ke elemen paralel<br/>metode 2: bagian URL tersebar ke elemen non-paralel<br/>metode 3: sama seperti metode 2, tapi perbarui elemen tanpa menghapus konten asli mereka |
 
 ### searchEngines
 
-User-defined list of search engine domains
+Daftar domain mesin pencari yang ditentukan pengguna
 
-| Variable                 | Description                                                  |
+| Variabel                 | Deskripsi                                                    |
 | ------------------------ | ------------------------------------------------------------ |
-| hosts                    | search engine's domain                                       |
-| resultContainerSelectors | optional, set search result container DOM, to narrow down the range of dynamic observation |
-| attribute                | specify additional URL link attribute in &lt;a&gt; other than 'href' (e.g. 'data-target')<br/>no need to specify this if all the link attributes are 'href' |
+| hosts                    | domain mesin pencari                                         |
+| resultContainerSelectors | opsional, atur kontainer hasil pencarian DOM, untuk mempersempit jangkauan pengamatan dinamis |
+| attribute                | tentukan atribut tautan URL tambahan di &lt;a&gt; selain 'href' (mis. 'data-target')<br/>tidak perlu menentukan ini jika semua atribut tautan adalah 'href' |

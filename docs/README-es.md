@@ -8,13 +8,16 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md">Indonesia</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
@@ -30,10 +33,14 @@
 
 Un script de [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), instálalo desde Greasy Fork: [Modificador de URL para Motores de Búsqueda](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
 
+Si no tienes Tampermonkey instalado en tu navegador, puedes instalarlo desde la [Tienda Web de Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) o la [Tienda Web de Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey).
+
 - GitHub Repositorio: https://github.com/domeniczz/URL-Modifier-for-Search-Engines
 - Codeberg Repositorio: https://codeberg.org/Domenic/URL-Modifier-for-Search-Engine-Results
 
-Este script de Tampermonkey mejora tu uso de motores de búsqueda modificando URLs en los resultados de búsqueda de motores de búsqueda, redirigiendo a sitios alternativos. Permite una experiencia de navegación más personalizada y eficiente.
+<b>¡Si encontraste útil mi script, por favor dale una estrella en GitHub o Codeberg! ¡Gracias! 😘</b>
+
+Este script de Tampermonkey mejora tu uso del motor de búsqueda modificando las URLs en los resultados de búsqueda de los motores de búsqueda, redirigiendo a sitios alternativos, lo que permite una experiencia de navegación más personalizada y eficiente. También puedes añadir tu regla de modificación de URL personalizada al script y se te invita a comprometer tus reglas con este script para hacerlo aún más útil.
 
 La modificación de URL utiliza Expresión Regular.
 
