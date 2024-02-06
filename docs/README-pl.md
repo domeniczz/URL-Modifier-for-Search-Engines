@@ -8,17 +8,25 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-sv.md">Svenska</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md">Suomi</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md">Indonesia</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hi.md">हिंदी</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
@@ -212,18 +220,18 @@ Jednak ta metoda nie obsługuje bardziej szczegółowej kontroli nad dopasowanym
 
 Reguły modyfikacji URL w [wyrażeniach regularnych](https://pl.wikipedia.org/wiki/Wyrażenie_regularne)
 
-| Zmienna     | Opis                                          |
-| ----------- | --------------------------------------------- |
+| Zmienna     | Opis                                                  |
+| ----------- | ----------------------------------------------------- |
 | matchRegex  | wyrażenie regularne do dopasowania oryginalnych URL-i |
-| replaceWith | wyrażenie regularne do zamiany                |
+| replaceWith | wyrażenie regularne do zamiany                        |
 
 ### selectorRules
 
 [Selektory](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) reguły dla elementów DOM, które wymagają aktualizacji dla wyników wyszukiwarek
 
-| Zmienna                             | Opis                                                  |
-| ------------------------------------ | ----------------------------------------------------- |
-| selector                             | selektor dla elementu DOM                             |
+| Zmienna                              | Opis                                                         |
+| ------------------------------------ | ------------------------------------------------------------ |
+| selector                             | selektor dla elementu DOM                                    |
 | parentSelector                       | selektor dla rodzica elementu linkowego i elementu tekstowego |
 | linkNodeSelector                     | selektor dla elementu linkowego pod elementem określonym przez `parentSelector` |
 | textNodeSelector                     | selektor dla elementu tekstowego pod elementem określonym przez `parentSelector` |
@@ -239,8 +247,8 @@ Reguły modyfikacji URL w [wyrażeniach regularnych](https://pl.wikipedia.org/wi
 
 Lista wyszukiwarek zdefiniowanych przez użytkownika
 
-| Zmienna                 | Opis                                                  |
-| ----------------------- | ----------------------------------------------------- |
-| hosts                    | domena wyszukiwarki                                   |
+| Zmienna                  | Opis                                                         |
+| ------------------------ | ------------------------------------------------------------ |
+| hosts                    | domena wyszukiwarki                                          |
 | resultContainerSelectors | opcjonalnie, ustaw kontener wyników wyszukiwania DOM, aby zawęzić zakres dynamicznej obserwacji |
 | attribute                | określ dodatkowy atrybut linku URL w &lt;a&gt; inny niż 'href' (np. 'data-target')<br/>nie trzeba tego określać, jeśli wszystkie atrybuty linków to 'href' |

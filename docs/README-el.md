@@ -8,17 +8,25 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-sv.md">Svenska</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md">Suomi</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md">Indonesia</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-vi.md">Việt</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hi.md">हिंदी</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md">فارسی</a>
 </div>
 <br/>
@@ -117,33 +125,33 @@
 ### Ενσωματωμένη Ανακατεύθυνση
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
-- [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (e.g. [safereddit.com](https://safereddit.com))
-- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (e.g. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (e.g. [nitter.catsarch.com](https://nitter.catsarch.com))
-- [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (e.g. [code.whatever.social](https://code.whatever.social))
+- [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (π.χ. [safereddit.com](https://safereddit.com))
+- [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (π.χ. [quetre.iket.me](https://quetre.iket.me))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (π.χ. [nitter.catsarch.com](https://nitter.catsarch.com))
+- [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (π.χ. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
-- [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (e.g. [yewtu.be](https://yewtu.be))
-- [Youtube Music](https://music.youtube.com) -> [Hyperpipe](https://hyperpipe.codeberg.page) (e.g. [hyperpipe.surge.sh](https://hyperpipe.surge.sh))
-- [Twitch](https://www.twitch.tv) -> [SafeTwitch](https://codeberg.org/SafeTwitch/safetwitch#instances) (e.g. [ttv.vern.cc](https://ttv.vern.cc))
-- [IMDB](https://www.imdb.com) -> [LibreMDB](https://github.com/zyachel/libremdb#instances) (e.g. [ld.vern.cc](https://ld.vern.cc))
-- [Goodreads](https://www.goodreads.com) -> [BiblioReads](https://github.com/nesaku/BiblioReads#instances) (e.g. [bl.vern.cc](https://bl.vern.cc))
-- [Urban Dictionary](https://www.urbandictionary.com) -> [Rural Dictionary](https://codeberg.org/zortazert/rural-dictionary#headline-2) (e.g. [rd.vern.cc](https://rd.vern.cc))
+- [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (π.χ. [yewtu.be](https://yewtu.be))
+- [Youtube Music](https://music.youtube.com) -> [Hyperpipe](https://hyperpipe.codeberg.page) (π.χ. [hyperpipe.surge.sh](https://hyperpipe.surge.sh))
+- [Twitch](https://www.twitch.tv) -> [SafeTwitch](https://codeberg.org/SafeTwitch/safetwitch#instances) (π.χ. [ttv.vern.cc](https://ttv.vern.cc))
+- [IMDB](https://www.imdb.com) -> [LibreMDB](https://github.com/zyachel/libremdb#instances) (π.χ. [ld.vern.cc](https://ld.vern.cc))
+- [Goodreads](https://www.goodreads.com) -> [BiblioReads](https://github.com/nesaku/BiblioReads#instances) (π.χ. [bl.vern.cc](https://bl.vern.cc))
+- [Urban Dictionary](https://www.urbandictionary.com) -> [Rural Dictionary](https://codeberg.org/zortazert/rural-dictionary#headline-2) (π.χ. [rd.vern.cc](https://rd.vern.cc))
 - [GitHub.ink](https://github.ink) -> [GitHub](https://github.com)
-- [Hacker news](https://news.ycombinator.com) -> [hckrnws](https://github.com/rajatkulkarni95/hckrnws) (e.g. [hckrnws.com](https://hckrnws.com))
-- [Fandom](https://www.fandom.com) -> [BreezeWiki](https://docs.breezewiki.com/Links.html) (e.g. [antifandom.com](https://antifandom.com/))
-- [Reuters](https://www.reuters.com) -> [Neuters](https://github.com/HookedBehemoth/neuters) (e.g. [nu.vern.cc](https://nu.vern.cc))
+- [Hacker news](https://news.ycombinator.com) -> [hckrnws](https://github.com/rajatkulkarni95/hckrnws) (π.χ. [hckrnws.com](https://hckrnws.com))
+- [Fandom](https://www.fandom.com) -> [BreezeWiki](https://docs.breezewiki.com/Links.html) (π.χ. [antifandom.com](https://antifandom.com/))
+- [Reuters](https://www.reuters.com) -> [Neuters](https://github.com/HookedBehemoth/neuters) (π.χ. [nu.vern.cc](https://nu.vern.cc))
 - [Financial Times](https://www.ft.com) -> [Webpage Archive](https://archive.today)
 - [Bloomberg](https://www.bloomberg.com) -> [Webpage Archive](https://archive.today)
 - [NPR](https://www.npr.org) -> [NPR Text](https://text.npr.org)
-- [Snopes](https://www.snopes.com) -> [Suds](https://git.vern.cc/cobra/Suds/src/branch/main/instances.json) (e.g. [sd.vern.cc](https://sd.vern.cc))
-- [Instructables](https://www.instructables.com) -> [Destructables](https://git.vern.cc/cobra/Destructables/src/branch/main/instances.json) (e.g. [ds.vern.cc](https://ds.vern.cc))
-- [Genius](https://genius.com) -> [Dumb](https://github.com/rramiachraf/dumb#public-instances) (e.g. [dm.vern.cc](https://dm.vern.cc))
-- [Bandcamp](https://bandcamp.com) -> [Tent](https://forgejo.sny.sh/sun/Tent#instances) (e.g. [tn.vern.cc](https://tn.vern.cc))
-- [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page) (e.g. [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
-- [Pixiv](https://www.pixiv.net) -> [PixivFE](https://codeberg.org/VnPower/pixivfe#instances) (e.g. [pixivfe.exozy.me](https://pixivfe.exozy.me))
-- [Know Your Meme](https://knowyourmeme.com) -> [MeMe](https://git.vern.cc/cobra/MeMe/src/branch/main/instances.json) (e.g. [mm.vern.cc](https://mm.vern.cc))
-- [Tenor](https://tenor.com) -> [Soprano](https://git.vern.cc/cobra/Soprano/src/branch/main/instances.json) (e.g. [sp.vern.cc](https://sp.vern.cc))
-- [iFunny](https://ifunny.co) -> [UNfunny](https://git.vern.cc/cobra/UNfunny/src/branch/main/instances.json) (e.g. [uf.vern.cc](https://uf.vern.cc))
+- [Snopes](https://www.snopes.com) -> [Suds](https://git.vern.cc/cobra/Suds/src/branch/main/instances.json) (π.χ. [sd.vern.cc](https://sd.vern.cc))
+- [Instructables](https://www.instructables.com) -> [Destructables](https://git.vern.cc/cobra/Destructables/src/branch/main/instances.json) (π.χ. [ds.vern.cc](https://ds.vern.cc))
+- [Genius](https://genius.com) -> [Dumb](https://github.com/rramiachraf/dumb#public-instances) (π.χ. [dm.vern.cc](https://dm.vern.cc))
+- [Bandcamp](https://bandcamp.com) -> [Tent](https://forgejo.sny.sh/sun/Tent#instances) (π.χ. [tn.vern.cc](https://tn.vern.cc))
+- [Imgur](https://imgur.com) -> [Rimgo](https://rimgo.codeberg.page) (π.χ. [rimgo.totaldarkness.net](https://rimgo.totaldarkness.net))
+- [Pixiv](https://www.pixiv.net) -> [PixivFE](https://codeberg.org/VnPower/pixivfe#instances) (π.χ. [pixivfe.exozy.me](https://pixivfe.exozy.me))
+- [Know Your Meme](https://knowyourmeme.com) -> [MeMe](https://git.vern.cc/cobra/MeMe/src/branch/main/instances.json) (π.χ. [mm.vern.cc](https://mm.vern.cc))
+- [Tenor](https://tenor.com) -> [Soprano](https://git.vern.cc/cobra/Soprano/src/branch/main/instances.json) (π.χ. [sp.vern.cc](https://sp.vern.cc))
+- [iFunny](https://ifunny.co) -> [UNfunny](https://git.vern.cc/cobra/UNfunny/src/branch/main/instances.json) (π.χ. [uf.vern.cc](https://uf.vern.cc))
 - [ArXiv](https://arxiv.org) PDF (arxiv.org/pdf/\*.pdf) -> [ArXiv](https://arxiv.org) Abstract (arxiv.org/abs/\*)
 - ...
 
@@ -208,8 +216,8 @@
 
 Κανόνες τροποποίησης URL σε [κανονικές εκφράσεις](https://en.wikipedia.org/wiki/Regular_expression)
 
-| Μεταβλητή    | Περιγραφή                                   |
-| ----------- | --------------------------------------------- |
+| Μεταβλητή   | Περιγραφή                                         |
+| ----------- | ------------------------------------------------- |
 | matchRegex  | κανονική έκφραση για την αντιστοίχιση αρχικών URL |
 | replaceWith | κανονική έκφραση για την αντικατάσταση            |
 
@@ -217,10 +225,10 @@
 
 Κανόνες [Selector](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors) για τα DOM στοιχεία που χρειάζεται ενημέρωση για τα αποτελέσματα αναζήτησης
 
-| Μεταβλητή                             | Περιγραφή                                                  |
+| Μεταβλητή                            | Περιγραφή                                                    |
 | ------------------------------------ | ------------------------------------------------------------ |
-| selector                             | selector για το στοιχείο DOM                                     |
-| parentSelector                       | selector για τον γονέα του στοιχείου συνδέσμου και του στοιχείου κειμένου         |
+| selector                             | selector για το στοιχείο DOM                                 |
+| parentSelector                       | selector για τον γονέα του στοιχείου συνδέσμου και του στοιχείου κειμένου |
 | linkNodeSelector                     | selector για το στοιχείο συνδέσμου κάτω από το στοιχείο που καθορίζεται από το `parentSelector` |
 | textNodeSelector                     | selector για το στοιχείο κειμένου κάτω από το στοιχείο που καθορίζεται από το `parentSelector` |
 | updateChildText                      | σημαία για το αν θα ενημερωθεί το εσωτερικό κείμενο του παιδικού στοιχείου που καθορίζεται από το `childSelector` |
@@ -235,8 +243,8 @@
 
 Λίστα μηχανών αναζήτησης που ορίζεται από τον χρήστη
 
-| Μεταβλητή                 | Περιγραφή                                                  |
+| Μεταβλητή                | Περιγραφή                                                    |
 | ------------------------ | ------------------------------------------------------------ |
-| hosts                    | domain της μηχανής αναζήτησης                                       |
+| hosts                    | domain της μηχανής αναζήτησης                                |
 | resultContainerSelectors | προαιρετικό, ορίζει το DOM container των αποτελεσμάτων αναζήτησης, για να περιορίσει την εμβέλεια της δυναμικής παρατήρησης |
 | attribute                | καθορίζει επιπλέον χαρακτηριστικό συνδέσμου URL στο &lt;a&gt; πέρα από το 'href' (π.χ. 'data-target')<br/>δεν χρειάζεται να καθοριστεί αν όλα τα χαρακτηριστικά συνδέσμου είναι 'href' |
