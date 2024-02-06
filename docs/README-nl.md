@@ -95,7 +95,7 @@ U kunt handmatig DOM-selector in de code toevoegen om andere zoekmachines te ond
 
 Kan geen ondersteuning bieden voor [Bing](https://www.bing.com), omdat het alleen tussenliggende links verstrekt.
 
-Vollständige Unterstützung für die Modifizierung von URLs in der Yahoo-Suche und Yahoo Japan-Suche, einschließlich Unterstützung zum Entfernen von Yahoo-Umleitungs-URLs (https://r.search.yahoo.com/...), um die eigentlichen URLs zu extrahieren. Wenn Sie Yahoo nicht verwenden, können Sie sich dafür entscheiden, [URL-Modifizierungsregeln](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) ohne Yahoo-Kompatibilität zu verwenden.
+Voor zoekmachines zoals Yahoo, Lycos, AlohaFind, ondersteunt het script het verwijderen van doorverwijzingslinks en het extraheren van de werkelijke URL. Bijvoorbeeld, de doorverwijzingslink van Yahoo is "https://r.search.yahoo.com/...". Als u deze zoekmachines niet gebruikt, kunt u ervoor kiezen om [URL wijzigingsregels](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) te gebruiken zonder compatibiliteit met doorverwijzingslinks. Overigens, u kunt hier alle ingebouwde RegEx URL wijzigingsregels [zien](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
 4get zullen de weergegeven URL's niet overeenkomstig veranderen wanneer links worden gewijzigd. Dit probleem bestaat omdat ik ernaar streef mijn code zo algemeen mogelijk te maken, maar deze zoekmachines hebben een ongebruikelijke DOM-structuur voor het weergeven van URL's wat het omslachtig maakt om deze zoekmachines te ondersteunen gezien hun relatief kleine gebruikersbasis.
 

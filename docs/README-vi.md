@@ -95,7 +95,7 @@ Bạn có thể tự thêm bộ chọn DOM vào mã để hỗ trợ thêm công
 
 Không thể hỗ trợ [Bing](https://www.bing.com), vì nó chỉ cung cấp các liên kết trung gian.
 
-Hỗ trợ đầy đủ cho việc chỉnh sửa URL trong tìm kiếm Yahoo và tìm kiếm Yahoo Nhật Bản, bao gồm hỗ trợ loại bỏ URL chuyển hướng của Yahoo (https://r.search.yahoo.com/...), để trích xuất các URL thực tế. Nếu bạn không sử dụng Yahoo, bạn có thể chọn sử dụng [Quy tắc chỉnh sửa URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) mà không cần tương thích với Yahoo.
+Đối với các công cụ tìm kiếm như Yahoo, Lycos, AlohaFind, script hỗ trợ loại bỏ liên kết chuyển hướng và trích xuất URL thực. Ví dụ, liên kết chuyển hướng của Yahoo là "https://r.search.yahoo.com/...". Nếu bạn không sử dụng các công cụ tìm kiếm này, bạn có thể chọn sử dụng [Quy tắc chỉnh sửa URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) không tương thích với liên kết chuyển hướng. Tiện thể, bạn có thể xem tất cả các quy tắc chỉnh sửa URL RegEx tích hợp [tại đây](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
 4get sẽ không thay đổi URL hiển thị tương ứng khi liên kết được thay đổi. Vấn đề này tồn tại bởi vì tôi muốn mã của mình được tổng quát nhất có thể, nhưng những công cụ tìm kiếm này có cấu trúc DOM không thông thường để hiển thị URL, khiến việc hỗ trợ chúng trở nên phức tạp với lượng người dùng tương đối nhỏ.
 

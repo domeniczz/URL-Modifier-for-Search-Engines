@@ -95,7 +95,7 @@ URL 修改使用正则表达式。
 
 无法支持 [Bing](https://www.bing.com)，因为它只提供中间链接。
 
-完全支持在 雅虎搜索 和 雅虎日本搜索 中修改 URL，包括支持去除雅虎重定向 URL（https://r.search.yahoo.com/...），以提取实际的 URL。如果您不使用雅虎，可以选择使用不兼容雅虎的 [URL 修改规则](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js)。
+对于像 Yahoo、Lycos、AlohaFind 这样的搜索引擎，该脚本支持去除重定向链接并提取真实 URL。例如，Yahoo 的重定向链接是 “https://r.search.yahoo.com/...”。如果您不使用这些搜索引擎，您可以选择使用 [URL 修改规则](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js)来避免重定向链接兼容性问题。顺便说一下，您可以在[这里](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)查看所有内置的 RegEx URL 修改规则。
 
 4get 在链接变更时不会相应地更改显示的 URL。这个问题的存在是因为我希望我的代码尽可能地通用化，但这些搜索引擎具有不寻常的显示 URL 的 DOM 结构，考虑到它们相对较小的用户基础，支持这些搜索引擎变得很麻烦。
 

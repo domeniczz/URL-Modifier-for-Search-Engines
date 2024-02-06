@@ -95,7 +95,7 @@ URL の変更正規表現を使用します。
 
 [Bing](https://www.bing.com) は中間リンクのみを提供しているため、対応できません。
 
-Yahoo 検索 および Yahoo Japan 検索 での URL の完全なサポート変更、Yahoo のリダイレクション URL（https://r.search.yahoo.com/...）を取り除くサポートを含む、実際の URL を抽出します。Yahoo を使用しない場合は、Yahoo の互換性なしで [URL 変更ルール](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js)を使用することを選択できます。
+Yahoo、Lycos、AlohaFind のような検索エンジンにおいて、このスクリプトはリダイレクトリンクを取り除き、実際の URL を抽出するサポートを提供します。例えば、Yahoo のリダイレクトリンクは「https://r.search.yahoo.com/...」です。これらの検索エンジンを使用していない場合、リダイレクトリンクの互換性なしに [URL 修正ルール](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js)を使用することを選択できます。ちなみに、すべての組み込み RegEx URL 修正ルールは[こちら](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)で確認できます。
 
 4get は、リンクが変更された場合に表示される URL をそれに応じて変更しません。この問題は、私ができるだけ一般化されたコードを作成しようとしているために存在しますが、これらの検索エンジンは URL を表示するための特異な DOM 構造を持っており、比較的少ないユーザーベースを考慮するとこれらのエンジンをサポートすることは面倒です。
 

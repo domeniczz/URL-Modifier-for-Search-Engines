@@ -95,7 +95,7 @@ Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyeb
 
 [Bing](https://www.bing.com) desteklenemez, çünkü yalnızca ara bağlantılar sağlar.
 
-Yahoo arama ve Yahoo Japonya aramasında URL değişikliği tam destek, Yahoo yönlendirme URL'si (https://r.search.yahoo.com/...) kaldırma desteği dahil, gerçek URL'leri çıkarmak için. Yahoo kullanmıyorsanız, Yahoo uyumluluğu olmadan [URL değiştirme kuralları](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) kullanmayı tercih edebilirsiniz.
+Yahoo, Lycos, AlohaFind gibi arama motorları için, bu script yönlendirme bağlantılarını kaldırma ve gerçek URL'yi çıkarma desteği sağlar. Örneğin, Yahoo'nun yönlendirme bağlantısı "https://r.search.yahoo.com/..."'dir. Bu arama motorlarını kullanmıyorsanız, yönlendirme bağlantıları ile uyumluluk olmadan [URL değiştirme kuralları](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) kullanmayı tercih edebilirsiniz. Bu arada, tüm yerleşik RegEx URL değiştirme kurallarını [burada](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt) görebilirsiniz.
 
 4get linkler değiştirildiğinde görüntülenen URL'leri buna göre değiştirmiyorlar. Bu sorun, kodumu mümkün olduğunca genelleştirilmiş yapmayı amaçlamamdan kaynaklanıyor, ancak bu arama motorlarının URL'leri görüntülemek için alışılmadık bir DOM yapısı var ve bu da onları desteklemeyi, nispeten küçük kullanıcı tabanlarını göz önünde bulundurarak zahmetli hale getiriyor.
 

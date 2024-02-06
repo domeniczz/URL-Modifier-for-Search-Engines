@@ -95,7 +95,7 @@ Puedes añadir manualmente un selector DOM en el código para soportar otros mot
 
 No puede soportar [Bing](https://www.bing.com), porque solo proporciona enlaces intermedios.
 
-Soporte completo para la modificación de URL en la búsqueda de Yahoo y búsqueda de Yahoo Japón, incluyendo el soporte para eliminar la URL de redirección de Yahoo (https://r.search.yahoo.com/...), para extraer las URL reales. Si no usas Yahoo, puedes optar por usar [Reglas de modificación de URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) sin compatibilidad con Yahoo.
+Para motores de búsqueda como Yahoo, Lycos, AlohaFind, el script admite eliminar enlaces de redirección y extraer la URL real. Por ejemplo, el enlace de redirección de Yahoo es "https://r.search.yahoo.com/...". Si no usas estos motores de búsqueda, puedes optar por usar [Reglas de modificación de URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) sin compatibilidad con enlaces de redirección. Por cierto, puedes ver todas las reglas de modificación de URL RegEx incorporadas [aquí](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
 4get no cambian las URL mostradas correspondientemente cuando se cambian los enlaces. Este problema existe porque intento hacer mi código lo más generalizado posible, pero estos motores de búsqueda tienen una estructura DOM inusual para mostrar URLs, lo que hace tedioso dar soporte a estos motores considerando su base de usuarios relativamente pequeña.
 

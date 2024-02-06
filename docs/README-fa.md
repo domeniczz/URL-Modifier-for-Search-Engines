@@ -95,7 +95,7 @@
 
 نمی‌توان از [Bing](https://www.bing.com) پشتیبانی کرد، زیرا فقط لینک‌های میانی ارائه می‌دهد.
 
-پشتیبانی کامل از تغییر URL در جستجوی Yahoo و جستجوی Yahoo ژاپن، شامل پشتیبانی برای حذف URL هدایت‌کننده Yahoo (https://r.search.yahoo.com/...)، برای استخراج URL‌های واقعی. اگر از Yahoo استفاده نمی‌کنید، می‌توانید انتخاب کنید از [قوانین تغییر URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) بدون سازگاری با Yahoo استفاده کنید.
+برای موتورهای جستجو مانند Yahoo، Lycos، AlohaFind، این اسکریپت پشتیبانی از حذف لینک‌های انتقالی و استخراج URL واقعی را ارائه می‌دهد. به عنوان مثال، لینک انتقالی Yahoo "https://r.search.yahoo.com/..." است. اگر از این موتورهای جستجو استفاده نمی‌کنید، می‌توانید از [قوانین تغییر URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) بدون سازگاری با لینک‌های انتقالی استفاده کنید. راستی، می‌توانید تمام قوانین تغییر URL RegEx داخلی را [اینجا](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt) ببینید.
 
 4get URL‌های نمایش داده شده را متناسب با تغییر لینک‌ها تغییر نمی‌دهند. این مسئله به این دلیل وجود دارد که من هدفم این است که کد خود را تا حد امکان عمومی‌تر کنم، اما این موتورهای جستجو ساختار DOM غیرمعمولی برای نمایش URL‌ها دارند که پشتیبانی از این موتورها را با توجه به پایگاه کاربری نسبتاً کوچک‌شان، خسته‌کننده می‌کند.
 

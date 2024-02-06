@@ -95,7 +95,7 @@ Sie können manuell DOM-Selektor im Code hinzufügen, um andere Suchmaschinen zu
 
 Kann [Bing](https://www.bing.com) nicht unterstützen, da es nur Zwischenlinks bereitstellt.
 
-Vollständige Unterstützung für die Modifizierung von URLs in der Yahoo-Suche und Yahoo Japan-Suche, einschließlich Unterstützung zum Entfernen von Yahoo-Umleitungs-URLs (https://r.search.yahoo.com/...), um die eigentlichen URLs zu extrahieren. Wenn Sie Yahoo nicht verwenden, können Sie sich dafür entscheiden, [URL-Modifizierungsregeln](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/non-yahoo-urlModificationRules.js) ohne Yahoo-Kompatibilität zu verwenden.
+Für Suchmaschinen wie Yahoo, Lycos, AlohaFind unterstützt das Skript das Entfernen von Weiterleitungslinks und das Extrahieren der echten URL. Zum Beispiel ist der Weiterleitungslink von Yahoo "https://r.search.yahoo.com/...". Wenn Sie diese Suchmaschinen nicht verwenden, können Sie sich dafür entscheiden, [URL-Änderungsregeln](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) ohne Kompatibilität für Weiterleitungslinks zu verwenden. Übrigens können Sie hier alle eingebauten RegEx URL-Änderungsregeln [sehen](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
 4get ändern die angezeigten URLs nicht entsprechend, wenn Links geändert werden. Dieses Problem besteht, weil ich versuche, meinen Code so allgemein wie möglich zu gestalten, aber diese Suchmaschinen haben eine ungewöhnliche DOM-Struktur zur Anzzum Beispiel von URLs, was es mühsam macht, diese Motoren zu unterstützen, angesichts ihrer relativ kleinen Benutzerbasis.
 
