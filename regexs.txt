@@ -157,162 +157,164 @@ https://uf.vern.cc/$1'
 
 
 ------------------------------------------------------------------------------------
------------ Regular Expression For Normal URLs & Yahoo Type Redirect URLs ----------
+--------- Regular Expression For Normal URLs & Yahoo Type Redirection URLs ---------
 ------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------
 ------ Yahoo Type URL Example: https://r.search.yahoo.com/.../RU=<URL>/RK=... ------
 ------------------------------------------------------------------------------------
-------------------- Regular Expression For All Yahoo Type URLs: --------------------
--------------- ^(?:.*?\/RU=)(.*?)(?:$|\/RK=\d.*) ; $1 is the real URL --------------
+--------- AlohaFind, Lycos also provide redirection URLs in Search Results ---------
+------------------------------------------------------------------------------------
+------------------- Regular Expression For Extract Real URLs: ----------------------
+----- ^(?:.*?(?:\/RU=|&q=|&as=))(.*?)(?:$|\/RK=.*|&sa=.*) ; $1 is the real URL -----
 ------------------------------------------------------------------------------------
 
 
-^(?:.*?\/RU=)?https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=.*|&sa=.*)
 https://www.wikiwand.com/$1/$2
 
 
-^(?:.*?\/RU=)?https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*?)(?:$|\/RK=.*|&sa=.*)
 https://www.wikiwand.com/zh-hans/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=.*|&sa=.*)
 https://www.wikiwand.com/en/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*?)(?:$|\/RK=.*|&sa=.*)
 https://safereddit.com/$1
 https://lr.vern.cc/$1
 
-^(?:.*?\/RU=)?https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+|profile\/.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+|profile\/.*?)(?:$|\/RK=.*|&sa=.*)
 https://quetre.iket.me/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(?:\d+))?(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(?:\d+))?(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://nitter.catsarch.com/$1$2
 
 
-^(?:.*?\/RU=)?https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://ao.vern.cc$1
 
 
-^(?:.*?\/RU=)?https?:\/\/((?:(?:[\w.-]+)?medium(?:\.[\w-]+)?|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:.*?|[\w@.]+\/[\w-]+))(?:\?source=.*)?(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/((?:(?:[\w.-]+)?medium(?:\.[\w-]+)?|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:.*?|[\w@.]+\/[\w-]+))(?:\?source=.*)?(?:$|\/RK=.*|&sa=.*)
 https://freedium.cfd/https://$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=.*|&sa=.*)
 https://vid.puffyan.us/$1
 https://piped.video/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*?)(?:$|\/RK=.*|&sa=.*)
 https://hyperpipe.surge.sh/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/www\.twitch\.tv\/(\w+)(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.twitch\.tv\/(\w+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://ttv.vern.cc/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(?:m|www)\.imdb\.com\/((?:title|name)\/\w+)(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:m|www)\.imdb\.com\/((?:title|name)\/\w+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://ld.vern.cc/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/www\.goodreads\.com\/((?:(?:[a-z]+\/)?book\/show|work\/quotes|series|author\/show)\/[\w.-]+)(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.goodreads\.com\/((?:(?:[a-z]+\/)?book\/show|work\/quotes|series|author\/show)\/[\w.-]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://bl.vern.cc/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/((?!www|community).*?)\.fandom\.com\/wiki\/(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/((?!www|community).*?)\.fandom\.com\/wiki\/(.*?)(?:$|\/RK=.*|&sa=.*)
 https://antifandom.com/$1/wiki/$2
 
 
-^(?:.*?\/RU=)?https?:\/\/www\.urbandictionary\.com\/(define\.php\?term=.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.urbandictionary\.com\/(define\.php\?term=.*?)(?:$|\/RK=.*|&sa=.*)
 https://rd.vern.cc/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/www\.reuters\.com\/((?=.*\/)(?=.*-).*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.reuters\.com\/((?=.*\/)(?=.*-).*?)(?:$|\/RK=.*|&sa=.*)
 https://nu.vern.cc/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(www\.ft\.com\/content\/[\w-]+)(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(www\.ft\.com\/content\/[\w-]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://archive.today/https://$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(www\.bloomberg\.com\/(?:(?:[a-z]+\/)?news|opinion)\/.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(www\.bloomberg\.com\/(?:(?:[a-z]+\/)?news|opinion)\/.*?)(?:$|\/RK=.*|&sa=.*)
 https://archive.today/https://$1
 
 
-^(?:.*?\/RU=)?https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://text.npr.org/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/news\.ycombinator\.com\/item\?id=(\d+)(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/news\.ycombinator\.com\/item\?id=(\d+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://www.hckrnws.com/stories/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(?:[a-z]+)\.slashdot\.org(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:[a-z]+)\.slashdot\.org(.*?)(?:$|\/RK=.*|&sa=.*)
 https://slashdot.org$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(?:(?:.*)(?:arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs)))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:(?:.*)(?:arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs)))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)
 https://arxiv.org/abs/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\/(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\/(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://$1
 
 
-^(?:.*?\/RU=)?https?:\/\/github\.ink(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/github\.ink(.*?)(?:$|\/RK=.*|&sa=.*)
 https://github.com$1
 
 
-^(?:.*?\/RU=)?https?:\/\/www\.snopes\.com(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.snopes\.com(.*?)(?:$|\/RK=.*|&sa=.*)
 https://sd.vern.cc$1
 
 
-^(?:.*?\/RU=)?https?:\/\/www\.instructables\.com\/(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.instructables\.com\/(.*?)(?:$|\/RK=.*|&sa=.*)
 https://ds.vern.cc/$1
 https://structables.private.coffee/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*?)(?:$|\/RK=.*|&sa=.*)
 https://dm.vern.cc/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(.*?)\.bandcamp\.com\/(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(.*?)\.bandcamp\.com\/(?:$|\/RK=.*|&sa=.*)
 https://tn.vern.cc/artist.php?name=$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(.*?)\.bandcamp\.com\/(.*?)\/(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(.*?)\.bandcamp\.com\/(.*?)\/(.*?)(?:$|\/RK=.*|&sa=.*)
 https://tn.vern.cc/release.php?artist=$1&type=$2&name=$3
 
 
-^(?:.*?\/RU=)?https?:\/\/bandcamp\.com\/search\?q=(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/bandcamp\.com\/search\?q=(.*?)(?:$|\/RK=.*|&sa=.*)
 https://tn.vern.cc/search.php?query=$1
 
 
-^(?:.*?\/RU=)?https?:\/\/f4\.bcbits\.com\/img\/(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/f4\.bcbits\.com\/img\/(.*?)(?:$|\/RK=.*|&sa=.*)
 https://tn.vern.cc/image.php?file=$1
 
 
-^(?:.*?\/RU=)?https?:\/\/t4\.bcbits\.com\/stream\/(.*?)\/(.*?)\/(.*?)\?token=(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/t4\.bcbits\.com\/stream\/(.*?)\/(.*?)\/(.*?)\?token=(.*?)(?:$|\/RK=.*|&sa=.*)
 https://tn.vern.cc/audio.php?directory=$1&format=$2&file=$3&token=$4
 
 
-^(?:.*?\/RU=)?https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)(?:.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://rimgo.totaldarkness.net/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*
 https://pixivfe.exozy.me/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/knowyourmeme\.com\/(.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/knowyourmeme\.com\/(.*?)(?:$|\/RK=.*|&sa=.*)
 https://mm.vern.cc/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/tenor\.com\/((?:view|search)\/.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/tenor\.com\/((?:view|search)\/.*?)(?:$|\/RK=.*|&sa=.*)
 https://sp.vern.cc/$1
 
 
-^(?:.*?\/RU=)?https?:\/\/(?:\w+\.)?ifunny\.co\/(picture\/.*?)(?:$|\/RK=\d.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:\w+\.)?ifunny\.co\/(picture\/.*?)(?:$|\/RK=.*|&sa=.*)
 https://uf.vern.cc/$1
