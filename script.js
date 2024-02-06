@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.4.1
+// @version      2.4.2
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -329,6 +329,7 @@
 // @match        *://good-search.org/*search/?*
 // @match        *://www.alltheinternet.com/?*
 // @match        *://search.aol.com/*search*
+// @match        *://www.onesearch.com/*search*
 // @match        *://www.info.com/serp?*
 // @match        *://oceanhero.today/web?*
 
@@ -339,6 +340,8 @@
 // @match        *://search.gmx.com/web/result?*
 // @match        *://search.gmx.com/web?*
 // @match        *://youcare.world/all?*
+// @match        *://search.lycos.com/web/?*
+// @match        *://alohafind.com/search/?*
 // @match        *://spot.ecloud.global/search*
 // @match        *://www.nona.de/?*
 // @match        *://www.exalead.com/search/web/results/?*
@@ -362,163 +365,163 @@
     // Define URL modification rules with precompiled regex
     const urlModificationRules = [
         // {
-        //     matchRegex: new RegExp(/^(?:.*?\/RU=)?(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*?)(?:$|\/RK=\d.*)/),
+        //     matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?(?:https?:\/\/)(?:[\w-]+\.|)((?:imdb|imgur|instagram|medium|odysee|quora|reddit|tiktok|twitter|wikipedia|youtube)\.(?:[a-z]+).*?)(?:$|\/RK=.*|&sa=.*)/),
         //     replaceWith: 'https://farside.link/$1'
         // },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/((?!test)[a-z]+)\.?m?\.wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://www.wikiwand.com/$1/$2'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/zh\.?m?\.wikipedia\.org\/(?:zh-hans|wiki)\/(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://www.wikiwand.com/zh-hans/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/wikipedia\.org\/(?:[a-z]+|wiki)\/(?!Special:Search)(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://www.wikiwand.com/en/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://safereddit.com/$1'
             // replaceWith: 'https://lr.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+|profile\/.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+|profile\/.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://quetre.iket.me/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(?:\d+))?(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(?:\d+))?(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://nitter.catsarch.com/$1$2'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://ao.vern.cc$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/((?:(?:[\w.-]+)?medium(?:\.[\w-]+)?|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:.*?|[\w@.]+\/[\w-]+))(?:\?source=.*)?(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/((?:(?:[\w.-]+)?medium(?:\.[\w-]+)?|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:.*?|[\w@.]+\/[\w-]+))(?:\?source=.*)?(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://freedium.cfd/https://$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://vid.puffyan.us/$1'
             // replaceWith: 'https://piped.video/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://hyperpipe.surge.sh/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.twitch\.tv\/(\w+)(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.twitch\.tv\/(\w+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://ttv.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:m|www)\.imdb\.com\/((?:title|name)\/\w+)(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:m|www)\.imdb\.com\/((?:title|name)\/\w+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://ld.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.goodreads\.com\/((?:(?:[a-z]+\/)?book\/show|work\/quotes|series|author\/show)\/[\w.-]+)(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.goodreads\.com\/((?:(?:[a-z]+\/)?book\/show|work\/quotes|series|author\/show)\/[\w.-]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://bl.vern.cc/$1'
         },
         {
             // only support English Fandom sites
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/((?!www|community).*?)\.fandom\.com\/wiki\/(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/((?!www|community).*?)\.fandom\.com\/wiki\/(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://antifandom.com/$1/wiki/$2'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.urbandictionary\.com\/(define\.php\?term=.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.urbandictionary\.com\/(define\.php\?term=.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://rd.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.reuters\.com\/((?=.*\/)(?=.*-).*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.reuters\.com\/((?=.*\/)(?=.*-).*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://nu.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(www\.ft\.com\/content\/[\w-]+)(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(www\.ft\.com\/content\/[\w-]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://archive.today/https://$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(www\.bloomberg\.com\/(?:(?:[a-z]+\/)?news|opinion)\/.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(www\.bloomberg\.com\/(?:(?:[a-z]+\/)?news|opinion)\/.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://archive.today/https://$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.npr\.org\/(?:\d{4}\/\d{2}\/\d{2}|sections)\/(?:[A-Za-z-]+\/\d{4}\/\d{2}\/\d{2}\/)?(\d+)\/(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://text.npr.org/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/news\.ycombinator\.com\/item\?id=(\d+)(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/news\.ycombinator\.com\/item\?id=(\d+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://www.hckrnws.com/stories/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:[a-z]+)\.slashdot\.org(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:[a-z]+)\.slashdot\.org(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://slashdot.org$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:(?:.*)(?:arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs)))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:(?:.*)(?:arxiv\.org\/pdf|arxiv-export-lb\.library\.cornell\.edu\/(?:pdf|abs)))\/(\d{4}\.\d{4,5}(v\d)?)(?:.*)/),
             replaceWith: 'https://arxiv.org/abs/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\/(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(ieeexplore\.ieee\.org\/document\/\d+)\/(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/github\.ink(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/github\.ink(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://github.com$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.snopes\.com(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.snopes\.com(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://sd.vern.cc$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.instructables\.com\/(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.instructables\.com\/(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://ds.vern.cc/$1'
             // replaceWith: 'https://structables.private.coffee/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/genius\.com\/((?=[\w-]+lyrics|search\?q=).*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://dm.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(.*?)\.bandcamp\.com\/(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(.*?)\.bandcamp\.com\/(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://tn.vern.cc/artist.php?name=$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(.*?)\.bandcamp\.com\/(.*?)\/(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(.*?)\.bandcamp\.com\/(.*?)\/(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://tn.vern.cc/release.php?artist=$1&type=$2&name=$3'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/bandcamp\.com\/search\?q=(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/bandcamp\.com\/search\?q=(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://tn.vern.cc/search.php?query=$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/f4\.bcbits\.com\/img\/(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/f4\.bcbits\.com\/img\/(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://tn.vern.cc/image.php?file=$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/t4\.bcbits\.com\/stream\/(.*?)\/(.*?)\/(.*?)\?token=(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/t4\.bcbits\.com\/stream\/(.*?)\/(.*?)\/(.*?)\?token=(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://tn.vern.cc/audio.php?directory=$1&format=$2&file=$3&token=$4'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)(?:.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://rimgo.totaldarkness.net/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.pixiv\.net\/(?:[a-z]+\/)?(artworks\/\d+|tags\/\w+|users\/\d+).*/),
             replaceWith: 'https://pixivfe.exozy.me/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/knowyourmeme\.com\/(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/knowyourmeme\.com\/(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://mm.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/tenor\.com\/((?:view|search)\/.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/tenor\.com\/((?:view|search)\/.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://sp.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)?https?:\/\/(?:\w+\.)?ifunny\.co\/(picture\/.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:\w+\.)?ifunny\.co\/(picture\/.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://uf.vern.cc/$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?\/RU=)https?:\/\/(.*?)(?:$|\/RK=\d.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))https?:\/\/(.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://$1'
         },
         // Add more rules here as needed
@@ -881,6 +884,21 @@
                 selector: 'div#right ol.cardReg.searchRightTop a'
             }
         ],
+        'onesearch': [
+            {
+                parentSelector: 'div#left div#web ol li div div.compTitle',
+                linkNodeSelector: 'h3.title a',
+                textNodeSelector: 'div span',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
+            },
+            {
+                selector: 'div#left div#web ol li div div.compList a'
+            },
+            {
+                selector: 'div#right ol.cardReg.searchRightTop a'
+            }
+        ],
         'info': [
             {
                 parentSelector: 'div.web-yahoo__result',
@@ -981,6 +999,27 @@
             },
             {
                 selector: "div.search-results-view__side a"
+            }
+        ],
+        'lycos': [
+            {
+                parentSelector: 'div.results li.result-item',
+                linkNodeSelector: 'a.result-link',
+                textNodeSelector: 'span.result-url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
+            },
+            {
+                selector: 'div.col-aside a'
+            }
+        ],
+        'alohafind': [
+            {
+                parentSelector: 'div.gsc-webResult.gsc-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gs-visibleUrl-short',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
             }
         ],
         'spot': [
@@ -1331,6 +1370,10 @@
             hosts: ['search.aol.com'],
             resultContainerSelectors: ['div#results div#cols']
         },
+        'onesearch': {
+            hosts: ['onesearch.com'],
+            resultContainerSelectors: ['div#results div#cols']
+        },
         'info': {
             hosts: ['info.com'],
             resultContainerSelectors: ['div.layout__body']
@@ -1355,6 +1398,14 @@
         },
         'youcare': {
             hosts: ['youcare.world']
+        },
+        'lycos': {
+            hosts: ['search.lycos.com'],
+            resultContainerSelectors: ['div.content.con-search']
+        },
+        'alohafind': {
+            hosts: ['alohafind.com'],
+            resultContainerSelectors: ['section.layout']
         },
         'spot': {
             hosts: ['spot.ecloud.global'],
