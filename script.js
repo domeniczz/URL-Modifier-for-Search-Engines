@@ -1601,6 +1601,7 @@
         }
     };
 
+    // Case where URL parts are scattered into parallel elements
     const parallelElements = (urlParts, elements) => {
         if (elements && elements.length >= 2) {
             elements.forEach(clearElementContent);
@@ -1611,6 +1612,7 @@
         }
     };
 
+    // Case where URL parts are scattered into non-parallel elements
     const mixedElements = (urlParts, elements, parent) => {
         if (elements && elements.length >= 1) {
             elements.forEach(clearElementContent);
@@ -1621,6 +1623,7 @@
         }
     };
 
+    // Same as case 2, but update elements without clearing their original contents
     const mixedElementsWithoutClear = (urlParts, elements, parent) => {
         if (elements && elements.length >= 1) {
             updateTextWithoutOverwriteChildNodes(parent, urlParts[0]); // Update the first part
@@ -1630,6 +1633,7 @@
         }
     };
 
+    // Case where search engine is 4get
     const fourGetSearchElements = (newUrl, elements, parent) => {
         // Convert NodeList to Array if necessary
         const elementsArray = Array.isArray(elements) ? elements : Array.from(elements);
@@ -1669,6 +1673,8 @@
         }
     };
 
+    // 4get specific fucntion
+    // Ensure the elements array length matches the number of URL parts, if not, add new < a > elements
     const matchElementNumWithPartsFor4Get = (urlParts, elements, parent) => {
         while (elements.length < urlParts.length) {
             const newElement = createPartElementFor4Get(parent);
@@ -1677,6 +1683,8 @@
         }
     };
 
+    // 4get specific fucntion
+    // Create a new <a> element that represents a URL component
     const createPartElementFor4Get = () => {
         const element = document.createElement('a');
         element.className = 'part';
@@ -1685,6 +1693,8 @@
         return element;
     };
 
+    // 4get specific fucntion
+    // Create a new <span> element that represents a URL separator '/'
     const createSeparatorElementFor4Get = () => {
         const separator = document.createElement('span');
         separator.className = 'separator';
@@ -1743,6 +1753,7 @@
         });
     };
 
+    // Function to collect all text nodes within an element
     const collectNodes = (node, callback) => {
         // View these elements as text node
         const elementsToIncludeAsText = ['B'];
@@ -1758,6 +1769,7 @@
         }
     };
 
+    // Function to replace the text content of a node
     const replaceTextContent = (node, textUpdater) => {
         if (node.nodeType === Node.TEXT_NODE) {
             node.nodeValue = textUpdater(node.nodeValue);
@@ -1766,6 +1778,7 @@
         }
     };
 
+    // Function to replace text based on index
     const replaceTextBasedOnIndex = (oldText, newContent, indexObject) => {
         const newText = newContent.slice(indexObject.currentIndex, indexObject.currentIndex + oldText.length);
         indexObject.currentIndex += oldText.length;
@@ -1850,6 +1863,7 @@
         }
     };
 
+    // Function to observe and execute the URL modifier script
     const observeToExecute = (engine, selector, engineInfo) => {
         const resultContainers = document.querySelectorAll(selector);
         if (resultContainers) {
