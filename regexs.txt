@@ -134,7 +134,7 @@ https://tn.vern.cc/image.php?file=$1
 https://tn.vern.cc/audio.php?directory=$1&format=$2&file=$3&token=$4
 
 
-^https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)
+^https?:\/\/(?:[\w.]+)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)
 https://rimgo.totaldarkness.net/$1
 
 
@@ -300,7 +300,7 @@ https://tn.vern.cc/image.php?file=$1
 https://tn.vern.cc/audio.php?directory=$1&format=$2&file=$3&token=$4
 
 
-^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:[\w.]+)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
 https://rimgo.totaldarkness.net/$1
 
 

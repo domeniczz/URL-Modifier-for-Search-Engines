@@ -501,7 +501,7 @@
             replaceWith: 'https://tn.vern.cc/audio.php?directory=$1&format=$2&file=$3&token=$4'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:\w+\.)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:[\w.]+)?imgur.com\/((?:a\/)?(?!gallery)[\w.]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://rimgo.totaldarkness.net/$1'
         },
         {
