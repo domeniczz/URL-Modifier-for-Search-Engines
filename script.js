@@ -398,7 +398,7 @@
             replaceWith: 'https://ao.vern.cc$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/((?:(?:[\w.-]+)?medium(?:\.[\w-]+)?|towardsdatascience|betterprogramming|.*?plainenglish|.*?gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?=.*-)(?:.*?|[\w@.]+\/[\w-]+))(?:\?source=.*)?(?:$|\/RK=.*|&sa=.*)/),
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(.*?(?:medium.*?|towardsdatascience|betterprogramming|plainenglish|gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?!tag)(?=.*-)(?:.*?|[\w@.]+\/[\w-]+))(?:\?source=.*)?(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://freedium.cfd/https://$1'
         },
         {
