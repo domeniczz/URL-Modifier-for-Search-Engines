@@ -359,7 +359,7 @@
 // @license      GPL-2.0-only
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
     // Define URL modification rules with precompiled regex
@@ -403,8 +403,8 @@
         },
         {
             matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=.*|&sa=.*)/),
-            replaceWith: 'https://vid.puffyan.us/$1'
-            // replaceWith: 'https://piped.video/$1'
+            // replaceWith: 'https://vid.puffyan.us/$1'
+            replaceWith: 'https://piped.video/$1'
         },
         {
             matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*?)(?:$|\/RK=.*|&sa=.*)/),
@@ -703,13 +703,25 @@
         ],
         '4get': [
             {
-                selector: 'div.text-result a.hover'
+                parentSelector: 'div.text-result',
+                linkNodeSelector: 'a.hover',
+                textNodeSelector: 'div.url',
+                childSelector: 'a.part',
+                updateChildText: true,
+                containProtocol: true,
+                multiElementsForUrlDisplay: 4
             },
             {
                 selector: 'div.text-result div.sublinks a'
             },
             {
-                selector: 'div.right-wrapper div.answer-wrapper div.answer div.answer-title a.answer-title'
+                parentSelector: 'div.right-wrapper div.answer',
+                linkNodeSelector: 'a.answer-title',
+                textNodeSelector: 'div.url',
+                childSelector: 'a.part',
+                updateChildText: true,
+                containProtocol: true,
+                multiElementsForUrlDisplay: 4
             }
         ],
         'librey': [
@@ -1584,6 +1596,8 @@
             case 3:
                 mixedElementsWithoutClear(urlParts, spans, targetElement);
                 break;
+            case 4:
+                fourGetSearchElements(newUrl, spans, targetElement);
         }
     };
 
@@ -1614,6 +1628,67 @@
         } else {
             console.error("Script: Expected structure not found for Multi-Element (mixed elements with clear) URL update!");
         }
+    };
+
+    const fourGetSearchElements = (newUrl, elements, parent) => {
+        // Convert NodeList to Array if necessary
+        const elementsArray = Array.isArray(elements) ? elements : Array.from(elements);
+
+        // Split the new URL into parts
+        const urlParts = splitUrlIntoParts(newUrl);
+
+        // Ensure the elements array length matches the number of URL parts
+        matchElementNumWithPartsFor4Get(urlParts, elementsArray, parent);
+
+        let prevCombinedLink = '';
+        // Update or add new elements based on the urlParts
+        urlParts.forEach((part, index) => {
+            let element = elementsArray[index];
+            if (!element) {
+                element = createPartElementFor4Get(parent);
+                elementsArray.push(element);
+            }
+            prevCombinedLink += part + '/';
+            element.href = prevCombinedLink;
+            element.textContent = part;
+            // Handle separators
+            if (index < urlParts.length - 1 && (!element.nextSibling || element.nextSibling.className !== 'separator')) {
+                let separator = createSeparatorElementFor4Get();
+                parent.insertBefore(separator, element.nextSibling);
+            }
+        });
+
+        // Remove any extra elements if the new URL has fewer parts than existing elements
+        while (elementsArray.length > urlParts.length) {
+            const elementToRemove = elementsArray.pop();
+            const separator = elementToRemove.nextSibling;
+            if (separator && separator.className === 'separator') {
+                separator.remove();
+            }
+            elementToRemove.remove();
+        }
+    };
+
+    const matchElementNumWithPartsFor4Get = (urlParts, elements, parent) => {
+        while (elements.length < urlParts.length) {
+            const newElement = createPartElementFor4Get(parent);
+            parent.appendChild(newElement);
+            elements.push(newElement);
+        }
+    };
+
+    const createPartElementFor4Get = () => {
+        const element = document.createElement('a');
+        element.className = 'part';
+        element.setAttribute('rel', 'noreferrer nofollow');
+        element.setAttribute('tabindex', '-1');
+        return element;
+    };
+
+    const createSeparatorElementFor4Get = () => {
+        const separator = document.createElement('span');
+        separator.className = 'separator';
+        return separator;
     };
 
     // Function to update text for a single element
