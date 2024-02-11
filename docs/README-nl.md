@@ -112,8 +112,6 @@ Kan geen ondersteuning bieden voor [Bing](https://www.bing.com), omdat het allee
 
 Voor zoekmachines zoals Yahoo, Lycos, AlohaFind, ondersteunt het script het verwijderen van doorverwijzingslinks en het extraheren van de werkelijke URL. Bijvoorbeeld, de doorverwijzingslink van Yahoo is "https://r.search.yahoo.com/...". Als u deze zoekmachines niet gebruikt, kunt u ervoor kiezen om [URL wijzigingsregels](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) te gebruiken zonder compatibiliteit met doorverwijzingslinks. Overigens, u kunt hier alle ingebouwde RegEx URL wijzigingsregels [zien](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-4get zullen de weergegeven URL's niet overeenkomstig veranderen wanneer links worden gewijzigd. Dit probleem bestaat omdat ik ernaar streef mijn code zo algemeen mogelijk te maken, maar deze zoekmachines hebben een ongebruikelijke DOM-structuur voor het weergeven van URL's wat het omslachtig maakt om deze zoekmachines te ondersteunen gezien hun relatief kleine gebruikersbasis.
-
 > Slechts een zijopmerking, [Kagi](https://kagi.com) is een zoekmachine met ingebouwde URL-omleidingsfunctionaliteit, het proberen waard. Ik ben een gebruiker van Kagi en ben zeer tevreden met dit product, dus ik geef ze hier een shout-out.
 
 Vind meer zoekmachines:

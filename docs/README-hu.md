@@ -113,8 +113,6 @@ Nem támogatható a [Bing](https://www.bing.com), mert csak köztes linkeket biz
 
 Olyan keresőmotorok esetében, mint a Yahoo, Lycos, AlohaFind, a szkript támogatja az átirányítási linkek megszüntetését és a valódi URL kinyerését. Például a Yahoo átirányítási linkje "https://r.search.yahoo.com/...". Ha nem használod ezeket a keresőmotorokat, választhatod az [URL módosítási szabályokat](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) átirányítási link kompatibilitás nélkül. Egyébként, itt találhatod meg az összes beépített RegEx URL módosítási szabályt [itt](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-A 4get nem változtatja meg a megjelenített URL-eket megfelelően, amikor a linkek megváltoznak. Ez a probléma azért áll fenn, mert célom, hogy a kódomat a lehető legáltalánosabban tegyem meg, de ezeknek a keresőmotoroknak szokatlan DOM szerkezete van a URL-ek megjelenítésére, ami nehézzé teszi ezeknek a motoroknak a támogatását tekintettel viszonylag kis felhasználói bázisukra.
-
 > Csak mellékesen, a [Kagi](https://kagi.com) egy beépített URL átirányítási funkcióval rendelkező keresőmotor, érdemes kipróbálni. Kagi felhasználója vagyok, és nagyon elégedett vagyok ezzel a termékkel, ezért itt kiáltok fel nekik.
 
 További keresőmotorok:

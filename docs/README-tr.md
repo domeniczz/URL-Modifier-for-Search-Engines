@@ -112,8 +112,6 @@ Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyeb
 
 Yahoo, Lycos, AlohaFind gibi arama motorları için, bu script yönlendirme bağlantılarını kaldırma ve gerçek URL'yi çıkarma desteği sağlar. Örneğin, Yahoo'nun yönlendirme bağlantısı "https://r.search.yahoo.com/..."'dir. Bu arama motorlarını kullanmıyorsanız, yönlendirme bağlantıları ile uyumluluk olmadan [URL değiştirme kuralları](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) kullanmayı tercih edebilirsiniz. Bu arada, tüm yerleşik RegEx URL değiştirme kurallarını [burada](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt) görebilirsiniz.
 
-4get linkler değiştirildiğinde görüntülenen URL'leri buna göre değiştirmiyorlar. Bu sorun, kodumu mümkün olduğunca genelleştirilmiş yapmayı amaçlamamdan kaynaklanıyor, ancak bu arama motorlarının URL'leri görüntülemek için alışılmadık bir DOM yapısı var ve bu da onları desteklemeyi, nispeten küçük kullanıcı tabanlarını göz önünde bulundurarak zahmetli hale getiriyor.
-
 > Sadece bir yan not olarak, [Kagi](https://kagi.com), yerleşik URL yönlendirme işlevine sahip bir arama motoru, denemeye değer bir ürün. Ben Kagi kullanıcısıyım ve bu üründen çok memnunum, bu yüzden burada onlara bir övgü veriyorum.
 
 Daha fazla arama motoru bulun:

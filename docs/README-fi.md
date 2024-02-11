@@ -69,8 +69,6 @@ Ei voi tukea [Bing](https://www.bing.com), koska se tarjoaa vain väliaikaisia l
 
 Hakukoneille kuten Yahoo, Lycos, AlohaFind, skripti tukee uudelleenohjauslinkkien poistamista ja oikean URL-osoitteen poimimista. Esimerkiksi Yahoon uudelleenohjauslinkki on "https://r.search.yahoo.com/...". Jos et käytä näitä hakukoneita, voit valita käyttää [URL-muokkaussääntöjä](https://github.com/domeniczz/URL-Muokkain-Hakukoneille/blob/master/no-redirection-omit-url-rules.js) ilman uudelleenohjauslinkkien yhteensopivuutta. Muuten, voit nähdä kaikki sisäänrakennetut säännölliset lausekelausekkeet URL-muokkaussäännöt [täältä](https://github.com/domeniczz/URL-Muokkain-Hakukoneille/blob/master/regexs.txt).
 
-4get ei muuta näytettyjä URL-osoitteita vastaavasti, kun linkit muutetaan. Tämä ongelma johtuu siitä, että pyrin tekemään koodistani mahdollisimman yleispätevän, mutta näillä hakukoneilla on epätavallinen DOM-rakenne URL-osoitteiden näyttämiseksi, mikä tekee näiden moottoreiden tukemisesta työlästä ottaen huomioon niiden suhteellisen pienen käyttäjäkunnan.
-
 > Muuten, [Kagi](https://kagi.com) on hakukone, jossa on sisäänrakennettu URL-uudelleenohjaustoiminto, kokeilemisen arvoinen. Olen Kagin käyttäjä, ja olen erittäin tyytyväinen tähän tuotteeseen, joten annan heille tässä huudon.
 
 Löydä lisää hakukoneita:

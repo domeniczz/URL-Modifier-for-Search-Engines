@@ -113,8 +113,6 @@ Kan ikke støtte [Bing](https://www.bing.com), fordi den kun gir mellomliggende 
 
 For søkemotorer som Yahoo, Lycos, AlohaFind, støtter skriptet å bli kvitt omdirigeringslenker og trekke ut den virkelige URL-en. For eksempel, Yahoo omdirigeringslenken er "https://r.search.yahoo.com/...". Hvis du ikke bruker disse søkemotorene, kan du velge å bruke [URL-modifikasjonsregler](https://github.com/domeniczz/URL-Modifier-for-Søkemotorer/blob/master/no-redirection-omit-url-rules.js) uten kompatibilitet for omdirigeringslenke. For øvrig kan du se alle innebygde RegEx URL-modifikasjonsregler [her](https://github.com/domeniczz/URL-Modifier-for-Søkemotorer/blob/master/regexs.txt).
 
-4get vil ikke endre viste URL-er tilsvarende når lenker er endret. Dette problemet eksisterer fordi jeg sikter mot å gjøre koden min så generalisert som mulig, men disse søkemotorene har uvanlige DOM-strukturer for å vise URL-er, noe som gjør det kjedelig å støtte disse motorene med tanke på deres relativt små brukerbase.
-
 > Bare en sidebemerkning, [Kagi](https://kagi.com) er en søkemotor med innebygd URL-omdirigeringsfunksjonalitet, verdt å prøve ut. Jeg er en bruker av Kagi, og jeg er veldig fornøyd med dette produktet, så jeg gir dem en rop ut her.
 
 Finn flere søkemotorer:

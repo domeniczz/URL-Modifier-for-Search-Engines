@@ -112,8 +112,6 @@ URL の変更正規表現を使用します。
 
 Yahoo、Lycos、AlohaFind のような検索エンジンにおいて、このスクリプトはリダイレクトリンクを取り除き、実際の URL を抽出するサポートを提供します。例えば、Yahoo のリダイレクトリンクは「https://r.search.yahoo.com/...」です。これらの検索エンジンを使用していない場合、リダイレクトリンクの互換性なしに [URL 修正ルール](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js)を使用することを選択できます。ちなみに、すべての組み込み RegEx URL 修正ルールは[こちら](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)で確認できます。
 
-4get は、リンクが変更された場合に表示される URL をそれに応じて変更しません。この問題は、私ができるだけ一般化されたコードを作成しようとしているために存在しますが、これらの検索エンジンは URL を表示するための特異な DOM 構造を持っており、比較的少ないユーザーベースを考慮するとこれらのエンジンをサポートすることは面倒です。
-
 > ちなみに、[Kagi](https://kagi.com) は組み込みの URL リダイレクト機能を備えた検索エンジンです。試してみる価値があります。私は Kagi のユーザーで、この製品に非常に満足していますので、ここで彼らにシャウトアウトしています。
 
 検索エンジンをもっと見つける：

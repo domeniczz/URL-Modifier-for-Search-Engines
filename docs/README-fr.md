@@ -112,8 +112,6 @@ Ne peut pas prendre en charge [Bing](https://www.bing.com), car il fournit uniqu
 
 Pour des moteurs de recherche tels que Yahoo, Lycos, AlohaFind, le script permet de supprimer les liens de redirection et d'extraire l'URL réelle. Par exemple, le lien de redirection de Yahoo est "https://r.search.yahoo.com/...". Si vous n'utilisez pas ces moteurs de recherche, vous pouvez choisir d'utiliser [Règles de modification d'URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) sans compatibilité avec les liens de redirection. Au fait, vous pouvez voir toutes les règles de modification d'URL RegEx intégrées [ici](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-4get ne changent pas les URL affichées en conséquence lorsque les liens sont modifiés. Ce problème existe car je cherche à rendre mon code aussi généralisé que possible, mais ces moteurs de recherche ont une structure DOM inhabituelle pour l'affichage des URL, ce qui rend fastidieux de soutenir ces moteurs compte tenu de leur base d'utilisateurs relativement petite.
-
 > Juste une petite note, [Kagi](https://kagi.com) est un moteur de recherche avec une fonctionnalité de redirection d'URL intégrée, cela vaut la peine d'essayer. Je suis un utilisateur de Kagi, et je suis très satisfait de ce produit, alors je leur fais un coup de chapeau ici.
 
 Trouver plus de moteurs de recherche:

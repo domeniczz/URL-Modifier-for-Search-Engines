@@ -113,8 +113,6 @@ Can't support [Bing](https://www.bing.com), because it only provide intermediate
 
 For search engines like Yahoo, Lycos, AlohaFind, the script support getting rid of redirection links and extract the real URL. For example, the Yahoo redirection link is "https://r.search.yahoo.com/...". If you do not use these search engines, you can choose to use [URL modification rules](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) without redirection link compatibility. BTW, you can see all built-in RegEx URL modification rules [here](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-4get won't change displayed URLs correspondingly when links are changed. This issue exists because I aim to make my code as generalized as possible, but these search engines have unusual DOM structure for displaying URLs, which makes it tedious to support these engines considering their relatively small user base.
-
 > Just a side note, [Kagi](https://kagi.com) is a search engine with built-in URL redirection functionality, worth trying out. I am a user of Kagi, and I am very satisfied with this product, so I'm giving them a shout-out here.
 
 Find more search engines:

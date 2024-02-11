@@ -113,8 +113,6 @@ Nu poate sprijini [Bing](https://www.bing.com), deoarece oferă doar linkuri int
 
 Pentru motoare de căutare precum Yahoo, Lycos, AlohaFind, scriptul suportă eliminarea linkurilor de redirecționare și extragerea URL-ului real. De exemplu, linkul de redirecționare Yahoo este "https://r.search.yahoo.com/...". Dacă nu utilizați aceste motoare de căutare, puteți alege să utilizați [regulile de modificare a URL-ului](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) fără compatibilitate cu linkul de redirecționare. Apropo, puteți vedea toate regulile de modificare a URL-ului RegEx integrate [aici](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-4get nu va schimba URL-urile afișate corespunzător când linkurile sunt schimbate. Această problemă există deoarece scopul meu este de a face codul meu cât mai generalizat posibil, dar aceste motoare de căutare au o structură DOM neobișnuită pentru afișarea URL-urilor, ceea ce face dificilă sprijinirea acestor motoare având în vedere baza lor de utilizatori relativ mică.
-
 > Doar o notă laterală, [Kagi](https://kagi.com) este un motor de căutare cu funcționalitate încorporată de redirecționare URL, merită încercat. Sunt un utilizator al Kagi și sunt foarte mulțumit de acest produs, așa că le fac aici o mențiune.
 
 Găsiți mai multe motoare de căutare:

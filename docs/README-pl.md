@@ -115,8 +115,6 @@ Dla wyszukiwarek takich jak Yahoo, Lycos, AlohaFind, skrypt umożliwia pozbycie 
 
 cymi. A propos, wszystkie wbudowane reguły modyfikacji URL za pomocą Wyrażeń Regularnych można zobaczyć [tutaj](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-4get nie zmienia wyświetlanych URL-i odpowiednio, gdy linki są zmieniane. Problem ten wynika z faktu, że staram się uczynić mój kod jak najbardziej uogólnionym, ale te wyszukiwarki mają nietypową strukturę DOM dla wyświetlania URL-i, co sprawia, że wsparcie tych silników jest uciążliwe, biorąc pod uwagę ich stosunkowo małą bazę użytkowników.
-
 > Tylko mała uwaga, [Kagi](https://kagi.com) to wyszukiwarka z wbudowaną funkcjonalnością przekierowywania URL, warto wypróbować. Jestem użytkownikiem Kagi i jestem bardzo zadowolony z tego produktu, więc tutaj im się przyglądam.
 
 Znajdź więcej wyszukiwarek:

@@ -113,8 +113,6 @@ Tidak dapat mendukung [Bing](https://www.bing.com), karena hanya menyediakan tau
 
 Untuk mesin pencari seperti Yahoo, Lycos, AlohaFind, skrip mendukung menghilangkan tautan pengalihan dan mengekstrak URL asli. Misalnya, tautan pengalihan Yahoo adalah "https://r.search.yahoo.com/...". Jika Anda tidak menggunakan mesin pencari ini, Anda dapat memilih menggunakan [aturan modifikasi URL](https://github.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/blob/master/no-redirection-omit-url-rules.js) tanpa kompatibilitas tautan pengalihan. BTW, Anda dapat melihat semua aturan modifikasi URL RegEx bawaan [di sini](https://github.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/blob/master/regexs.txt).
 
-4get tidak akan mengubah URL yang ditampilkan secara sesuai ketika tautan diubah. Masalah ini ada karena saya bertujuan untuk membuat kode saya seumum mungkin, tetapi mesin pencari ini memiliki struktur DOM yang tidak biasa untuk menampilkan URL, yang membuatnya merepotkan untuk mendukung mesin pencari ini mengingat basis pengguna mereka yang relatif kecil.
-
 > Hanya catatan samping, [Kagi](https://kagi.com) adalah mesin pencari dengan fungsi pengalihan URL bawaan, layak untuk dicoba. Saya pengguna Kagi, dan saya sangat puas dengan produk ini, jadi saya memberikan teriakan di sini.
 
 Temukan lebih banyak mesin pencari:

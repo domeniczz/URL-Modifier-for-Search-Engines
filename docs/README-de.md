@@ -112,8 +112,6 @@ Kann [Bing](https://www.bing.com) nicht unterstützen, da es nur Zwischenlinks b
 
 Für Suchmaschinen wie Yahoo, Lycos, AlohaFind unterstützt das Skript das Entfernen von Weiterleitungslinks und das Extrahieren der echten URL. Zum Beispiel ist der Weiterleitungslink von Yahoo "https://r.search.yahoo.com/...". Wenn Sie diese Suchmaschinen nicht verwenden, können Sie sich dafür entscheiden, [URL-Änderungsregeln](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) ohne Kompatibilität für Weiterleitungslinks zu verwenden. Übrigens können Sie hier alle eingebauten RegEx URL-Änderungsregeln [sehen](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-4get ändern die angezeigten URLs nicht entsprechend, wenn Links geändert werden. Dieses Problem besteht, weil ich versuche, meinen Code so allgemein wie möglich zu gestalten, aber diese Suchmaschinen haben eine ungewöhnliche DOM-Struktur zur Anzzum Beispiel von URLs, was es mühsam macht, diese Motoren zu unterstützen, angesichts ihrer relativ kleinen Benutzerbasis.
-
 > Kurze Anmerkung: [Kagi](https://kagi.com) ist eine Suchmaschine mit integrierter URL-Umleitungsfunktion, die es sich lohnt, auszuprobieren. Ich bin ein Nutzer von Kagi und bin sehr zufrieden mit diesem Produkt, deshalb gebe ich ihnen hier einen Hinweis.
 
 Finde mehr Suchmaschinen:

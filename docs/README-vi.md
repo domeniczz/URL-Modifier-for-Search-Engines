@@ -112,8 +112,6 @@ Không thể hỗ trợ [Bing](https://www.bing.com), vì nó chỉ cung cấp c
 
 Đối với các công cụ tìm kiếm như Yahoo, Lycos, AlohaFind, script hỗ trợ loại bỏ liên kết chuyển hướng và trích xuất URL thực. Ví dụ, liên kết chuyển hướng của Yahoo là "https://r.search.yahoo.com/...". Nếu bạn không sử dụng các công cụ tìm kiếm này, bạn có thể chọn sử dụng [Quy tắc chỉnh sửa URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) không tương thích với liên kết chuyển hướng. Tiện thể, bạn có thể xem tất cả các quy tắc chỉnh sửa URL RegEx tích hợp [tại đây](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-4get sẽ không thay đổi URL hiển thị tương ứng khi liên kết được thay đổi. Vấn đề này tồn tại bởi vì tôi muốn mã của mình được tổng quát nhất có thể, nhưng những công cụ tìm kiếm này có cấu trúc DOM không thông thường để hiển thị URL, khiến việc hỗ trợ chúng trở nên phức tạp với lượng người dùng tương đối nhỏ.
-
 > Chỉ là một lưu ý nhỏ, [Kagi](https://kagi.com) là một công cụ tìm kiếm với chức năng chuyển hướng URL tích hợp, đáng để thử. Tôi là một người dùng của Kagi, và tôi rất hài lòng với sản phẩm này, nên tôi muốn giới thiệu họ ở đây.
 
 Tìm thêm công cụ tìm kiếm:

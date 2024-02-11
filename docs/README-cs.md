@@ -112,8 +112,6 @@ Nelze podporovat [Bing](https://www.bing.com), protože poskytuje pouze prostře
 
 Pro vyhledávače jako Yahoo, Lycos, AlohaFind, skript podporuje odstranění přesměrovacích odkazů a extrakci skutečné URL. Například přesměrovací odkaz Yahoo je "https://r.search.yahoo.com/...". Pokud tyto vyhledávače nepoužíváte, můžete se rozhodnout použít [Pravidla úpravy URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) bez kompatibility s přesměrovacími odkazy. Mimochodem, všechna vestavěná pravidla úpravy URL RegEx můžete vidět [zde](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-4get nezmění zobrazené URL odpovídajícím způsobem, když jsou odkazy změněny. Tento problém existuje, protože se snažím mít svůj kód co nejuniverzálnější, ale tyto vyhledávače mají neobvyklou strukturu DOM pro zobrazení URL, což je zdlouhavé podporovat tyto vyhledávače s ohledem na jejich relativně malou uživatelskou základnu.
-
 > Jen tak mimochodem, [Kagi](https://kagi.com) je vyhledávač s vestavěnou funkcí přesměrování URL, který stojí za vyzkoušení. Jsem uživatelem Kagi a s tímto produktem jsem velmi spokojen, takže jim tady dávám výzvu.
 
 Najděte více vyhledávačů:
