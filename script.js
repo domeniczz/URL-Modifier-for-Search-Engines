@@ -1643,26 +1643,16 @@
         }
     };
 
-    // Function for Method 1 (Breadcrumb style URLs), leaving 'https://' intact
+    // Format URLs into Breadcrumb style, while leaving 'https://' intact
     const breadCumbFormat = (url, containProtocol) => {
         if (!containProtocol) {
             url = removeProtocol(url);
         }
-        // Split the URL while keeping 'https://' intact; Replace the second occurrence of 'https://' with 'https', if exists
-        // Replace the first occurrence of 'https://' with a placeholder
-        url = url.replace('https://', 'https › ');
-        // Deal with the second 'https://'
-        let secondHttpsIndex = url.indexOf('https://');
-        if (secondHttpsIndex !== -1) {
-            url = url.substring(0, secondHttpsIndex) + 'https › ' + url.substring(secondHttpsIndex + 8);
-        }
-        // Split the URL with '/'
-        let parts = url.split('/');
-        // Restore the first 'https://' in the URL
-        parts[0] = parts[0].replace('https › ', 'https://');
+
+        const urlParts = splitUrlIntoParts(url);
 
         // Join the URL parts with ' › '
-        let joinedUrl = parts.join(' › ');
+        const joinedUrl = urlParts.join(' › ');
 
         // Decode the URL to convert encoded characters to their original form
         return decodeURIComponent(joinedUrl);
@@ -1711,6 +1701,29 @@
     const updateTextByOverwriteEverything = (element, newContent) => {
         clearElementContent(element);
         element.textContent = newContent;
+    };
+
+    // Split URL into components, while preserving 'https://' in all occurrences
+    const splitUrlIntoParts = (url) => {
+        // Temporary replace 'https://' with a placeholder that is unlikely to be part of any URL
+        const placeholder = "HTTPS_PLACEHOLDER";
+        let tempUrl = url.replace(/https:\/\//g, placeholder);
+
+        // Split the URL by '/'
+        let parts = tempUrl.split('/');
+
+        // Replace the placeholder back with 'https://'
+        parts = parts.map(part => part.replace(new RegExp(placeholder, 'g'), 'https://'));
+
+        // Filter out any empty strings that may have resulted from the split
+        parts = parts.filter(part => part !== '');
+
+        // Ensure the first part always starts with 'https://', adjusting if necessary
+        if (parts.length > 0 && !parts[0].startsWith('https://')) {
+            parts[0] = 'https://' + parts[0];
+        }
+
+        return parts;
     };
 
     // Extract the top level domain from URL link
