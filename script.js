@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.5.2
+// @version      2.5.2.1
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -1734,7 +1734,7 @@
             url = removeProtocol(url);
         }
 
-        const urlParts = splitUrlIntoParts(url);
+        const urlParts = splitUrlIntoParts(url, containProtocol);
 
         // Join the URL parts with ' › '
         const joinedUrl = urlParts.join(' › ');
@@ -1792,7 +1792,7 @@
     };
 
     // Split URL into components, while preserving 'https://' in all occurrences
-    const splitUrlIntoParts = (url) => {
+    const splitUrlIntoParts = (url, containProtocol) => {
         // Temporary replace 'https://' with a placeholder that is unlikely to be part of any URL
         const placeholder = "HTTPS_PLACEHOLDER";
         let tempUrl = url.replace(/https:\/\//g, placeholder);
@@ -1807,7 +1807,7 @@
         parts = parts.filter(part => part !== '');
 
         // Ensure the first part always starts with 'https://', adjusting if necessary
-        if (parts.length > 0 && !parts[0].startsWith('https://')) {
+        if (containProtocol && parts.length > 0 && !parts[0].startsWith('https://')) {
             parts[0] = 'https://' + parts[0];
         }
 
