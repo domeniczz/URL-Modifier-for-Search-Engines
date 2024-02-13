@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.5.3
+// @version      2.5.4
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -328,6 +328,7 @@
 // @match        *://search.becovi.com/serp.php?*
 // @match        *://good-search.org/*search/?*
 // @match        *://www.alltheinternet.com/?*
+// @match        *://www.searchalot.com/?*
 // @match        *://search.aol.com/*search*
 // @match        *://www.onesearch.com/*search*
 // @match        *://www.info.com/serp?*
@@ -337,6 +338,7 @@
 
 // @match        *://search.lilo.org/?*
 // @match        *://search.entireweb.com/search?*
+// @match        *://www.tadadoo.com/search?*
 // @match        *://search.gmx.com/web/result?*
 // @match        *://search.gmx.com/web?*
 // @match        *://youcare.world/all?*
@@ -344,18 +346,40 @@
 // @match        *://alohafind.com/search/?*
 // @match        *://spot.ecloud.global/search*
 // @match        *://qmamu.com/search?*
+// @match        *://search.carrot2.org/*
 // @match        *://www.nona.de/?*
 // @match        *://www.sapo.pt/pesquisa/web/tudo?*
 // @match        *://www.exalead.com/search/web/results/?*
 // @match        *://search.seznam.cz/?*
+// @match        *://www.startsiden.no/sok/?*
 // @match        *://search.naver.com/search.naver?*
 // @match        *://gibiru.com/results.html?*
 // @match        *://www.lukol.com/s.php?*
+// @match        *://www.draze.com/web/search?*
+
+// @match        *://www.yelliot.com/search/?*
+// @match        *://fr.yelliot.com/search/?*
+// @match        *://ar.yelliot.com/search/?*
+// @match        *://es.yelliot.com/search/?*
+// @match        *://de.yelliot.com/search/?*
+// @match        *://it.yelliot.com/search/?*
+// @match        *://ru.yelliot.com/search/?*
+// @match        *://cn.yelliot.com/search/?*
+// @match        *://in.yelliot.com/search/?*
+// @match        *://pt.yelliot.com/search/?*
+
+// @match        *://efind.com/search*
+// @match        *://fireball.de/de/search?*
+// @match        *://freespoke.com/search/web?*
+// @match        *://gogoprivate.com/search*
+// @match        *://resulthunter.com/search?*
 // @match        *://search.givewater.com/serp?*
 // @match        *://results.excite.com/serp?*
 // @match        *://www.webcrawler.com/serp?*
 // @match        *://www.metacrawler.com/serp?*
 // @match        *://www.dogpile.com/serp?*
+// @match        *://www.infospace.com/serp?*
+// @match        *://www.refseek.com/search?*
 // @match        *://www.zapmeta.com/search?*
 // @match        *://www.ask.com/web?*
 // @match        *://www.pronto.com/web?*
@@ -888,6 +912,15 @@
                 urlDisplayMethod: 2
             }
         ],
+        'searchalot': [
+            {
+                parentSelector: 'div.gs-webResult.gs-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-long',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
         'aol': [
             {
                 parentSelector: 'div#left div#web ol li div div.compTitle',
@@ -959,10 +992,12 @@
         'lilo': [
             {
                 selector: 'div.lilo-text-result div p a.has-text-grey-darker',
-                childSelector: 'span',
-                updateChildText: true,
-                containProtocol: true,
-                multiElementsForUrlDisplay: 2
+                // Displayed URL modification not working correctly in Lilo
+                // Reason is unknown, the displayed URL will return to the original URL after modification
+                // childSelector: 'span',
+                // updateChildText: true,
+                // containProtocol: true,
+                // multiElementsForUrlDisplay: 2
             },
             {
                 selector: 'div.lilo-text-result div a.has-text-primary'
@@ -989,6 +1024,18 @@
                 updateTextByOverwrite: true,
                 containProtocol: false,
                 urlDisplayMethod: 1
+            }
+        ],
+        'tadadoo': [
+            {
+                parentSelector: 'div.web-result',
+                linkNodeSelector: 'a.web-result-title',
+                textNodeSelector: 'div.web-result-domain',
+                updateTextWithoutOverwrite: true,
+                urlDisplayMethod: 3
+            },
+            {
+                selector: 'div#infobox-list.card div.card-body a'
             }
         ],
         'gmx': [
@@ -1066,6 +1113,21 @@
                 urlDisplayMethod: 1
             }
         ],
+        'carrot2': [
+            {
+                selector: 'div.ResultList a.Result',
+                childSelector: 'span.url span',
+                updateChildText: true,
+                urlDisplayMethod: 2
+            },
+            {
+                selector: 'div.sc-meawca-31.liCyKS a',
+                childSelector: 'span.sc-meawca-10.czAks',
+                updateChildText: true,
+                containProtocol: true,
+                urlDisplayMethod: 1
+            }
+        ],
         'nona': [
             {
                 selector: 'section.result-section article.teaser div.teaser__container a.teaser__topline',
@@ -1087,7 +1149,7 @@
                 childSelector: 'span',
                 updateChildText: true,
                 containProtocol: false,
-                urlDisplayMethod: 1
+                multiElementsForUrlDisplay: 1
             }
         ],
         'exalead': [
@@ -1103,6 +1165,20 @@
         'seznam': [
             {
                 selector: 'div.f2c528 h3 a'
+            },
+            {
+                selector: 'div.f2c528 a.d5e75c',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
+            },
+        ],
+        'startsiden': [
+            {
+                selector: 'li.result a.result__link-wrapper',
+                childSelector: 'div.result__url',
+                updateChildText: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
             },
             {
                 selector: 'div.f2c528 a.d5e75c',
@@ -1153,6 +1229,111 @@
                 urlDisplayMethod: 2
             }
         ],
+        'draze': [
+            {
+                parentSelector: 'div.gsc-webResult.gsc-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-breadcrumb',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                multiElementsForUrlDisplay: 1
+            }
+        ],
+        'yelliot': [
+            {
+                parentSelector: 'div.gsc-webResult.gsc-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-breadcrumb',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                multiElementsForUrlDisplay: 1
+            }
+        ],
+        'efind': [
+            {
+                parentSelector: 'article.result',
+                linkNodeSelector: 'h3 a',
+                textNodeSelector: 'div.external-link div',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                multiElementsForUrlDisplay: 2
+            },
+            {
+                selector: 'aside.infobox a'
+            }
+        ],
+        'fireball': [
+            {
+                selector: 'div.search-result a.search-result-title'
+            },
+            {
+                selector: 'div.search-result a.search-result-url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            },
+            {
+                selector: 'div.search-result a.search-result-check'
+            }
+        ],
+        'freespoke': [
+            {
+                selector: 'div.result-block a.title-source-link',
+                childSelector: 'span.breadcrumb-container',
+                updateTextByOverwrite: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
+            },
+            {
+                selector: 'div.ant-col.component-col div.WebSearchResult div.main-container a'
+            },
+            {
+                selector: 'div.ant-col.sidebar div.se-widget a'
+            },
+            {
+                selector: 'div.ant-col.sidebar div.KnowledgePanelResults div.ExpandableContainer a'
+            },
+            {
+                selector: 'div.ant-col.test.ant-col-xs-24 div.se-widget a'
+            },
+            {
+                selector: 'div.ant-col.ant-col-xs-24 div.KnowledgePanelResults div.ExpandableContainer a'
+            }
+        ],
+        'gogoprivate': [
+            {
+                parentSelector: 'div.gsc-webResult.gsc-result',
+                linkNodeSelector: 'div.gs-title a[target="_PARENT"]',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-breadcrumb',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                multiElementsForUrlDisplay: 1
+            },
+            {
+                selector: 'div.vidbox#imgbox a'
+            }
+        ],
+        'resulthunter': [
+            {
+                parentSelector: 'div.gsc-webResult.gsc-result',
+                linkNodeSelector: 'a.web-result-title',
+                textNodeSelector: 'div.web-result-domain',
+                updateTextWithoutOverwrite: true,
+                urlDisplayMethod: 3
+            },
+            {
+                parentSelector: 'div.gsc-webResult.gsc-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-breadcrumb',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                multiElementsForUrlDisplay: 1
+            }
+        ],
         'givewater': [
             {
                 parentSelector: 'div.web-bing__result',
@@ -1196,6 +1377,27 @@
                 textNodeSelector: 'span.web-bing__url',
                 updateTextByOverwrite: true,
                 urlDisplayMethod: 2
+            }
+        ],
+        'infospace': [
+            {
+                parentSelector: 'div.web-bing div.result',
+                linkNodeSelector: 'a.title',
+                textNodeSelector: 'span.url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
+        'refseek': [
+            {
+                selector: 'div.sticky a'
+            },
+            {
+                parentSelector: 'div.gsc-webResult.gsc-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-short',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
             }
         ],
         'zapmeta': [
@@ -1473,6 +1675,9 @@
         'alltheinternet': {
             hosts: ['alltheinternet.com']
         },
+        'searchalot': {
+            hosts: ['searchalot.com']
+        },
         'aol': {
             hosts: ['search.aol.com'],
             resultContainerSelectors: ['div#results div#cols']
@@ -1500,6 +1705,9 @@
             hosts: ['search.entireweb.com'],
             resultContainerSelectors: ['div.container.search-container']
         },
+        'tadadoo': {
+            hosts: ['tadadoo.com']
+        },
         'gmx': {
             hosts: ['search.gmx.com']
         },
@@ -1522,6 +1730,10 @@
             hosts: ['qmamu.com'],
             resultContainerSelectors: ['div.sc-7aqnu-1.ffCHAv']
         },
+        'carrot2': {
+            hosts: ['search.carrot2.org'],
+            resultContainerSelectors: ['div.Views']
+        },
         'nona': {
             hosts: ['nona.de'],
             resultContainerSelectors: ['main.search-results div.container']
@@ -1538,6 +1750,10 @@
             hosts: ['search.seznam.cz'],
             resultContainerSelectors: ['div.PageWrapper.SearchPage#searchpage-root'],
         },
+        'startsiden': {
+            hosts: ['startsiden.no'],
+            resultContainerSelectors: ['div.results ul.results__list'],
+        },
         'naver': {
             hosts: ['search.naver.com'],
             resultContainerSelectors: ['div#main_pack.main_pack'],
@@ -1548,6 +1764,33 @@
         },
         'lukol': {
             hosts: ['lukol.com']
+        },
+        'draze': {
+            hosts: ['draze.com'],
+            resultContainerSelectors: ['div.container div#content'],
+        },
+        'yelliot': {
+            hosts: ['yelliot.com']
+        },
+        'efind': {
+            hosts: ['efind.com'],
+            resultContainerSelectors: ['main#main_results'],
+        },
+        'fireball': {
+            hosts: ['fireball.de'],
+            resultContainerSelectors: ['div.search-results'],
+        },
+        'freespoke': {
+            hosts: ['freespoke.com'],
+            resultContainerSelectors: ['div.WebSearch div.wrapper'],
+        },
+        'gogoprivate': {
+            hosts: ['gogoprivate.com'],
+            resultContainerSelectors: ['div#cse-body'],
+        },
+        'resulthunter': {
+            hosts: ['resulthunter.com'],
+            resultContainerSelectors: ['main.main-content#content'],
         },
         'givewater': {
             hosts: ['search.givewater.com'],
@@ -1568,6 +1811,14 @@
         'dogpile': {
             hosts: ['dogpile.com'],
             resultContainerSelectors: ['div.web-bing'],
+        },
+        'infospace': {
+            hosts: ['infospace.com'],
+            resultContainerSelectors: ['div.layout div.layout__body'],
+        },
+        'refseek': {
+            hosts: ['refseek.com'],
+            resultContainerSelectors: ['div.main__container div.main__content'],
         },
         'zapmeta': {
             hosts: ['zapmeta.com'],
@@ -1881,7 +2132,7 @@
         // View these elements as text node
         const elementsToIncludeAsText = ['B'];
         // Do not view these elements as text node
-        const elementsToExcludeAsText = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'DIV', 'P'];
+        const elementsToExcludeAsText = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'P'];
 
         if (node.nodeType === Node.TEXT_NODE) {
             callback(node);
