@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.5.2.1
+// @version      2.5.3
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -343,9 +343,12 @@
 // @match        *://search.lycos.com/web/?*
 // @match        *://alohafind.com/search/?*
 // @match        *://spot.ecloud.global/search*
+// @match        *://qmamu.com/search?*
 // @match        *://www.nona.de/?*
+// @match        *://www.sapo.pt/pesquisa/web/tudo?*
 // @match        *://www.exalead.com/search/web/results/?*
 // @match        *://search.seznam.cz/?*
+// @match        *://search.naver.com/search.naver?*
 // @match        *://gibiru.com/results.html?*
 // @match        *://www.lukol.com/s.php?*
 // @match        *://search.givewater.com/serp?*
@@ -353,6 +356,10 @@
 // @match        *://www.webcrawler.com/serp?*
 // @match        *://www.metacrawler.com/serp?*
 // @match        *://www.dogpile.com/serp?*
+// @match        *://www.zapmeta.com/search?*
+// @match        *://www.ask.com/web?*
+// @match        *://www.pronto.com/web?*
+// @match        *://anoox.com/find.php?*
 
 // @grant        none
 // @run-at       document-end
@@ -1047,6 +1054,18 @@
                 selector: 'div.infobox div.footer div.links a'
             }
         ],
+        'qmamu': [
+            {
+                selector: 'div.sc-1i4c0yr-4.cxFATD a'
+            },
+            {
+                selector: 'div.sc-meawca-31.liCyKS a',
+                childSelector: 'span.sc-meawca-10.czAks',
+                updateChildText: true,
+                containProtocol: true,
+                urlDisplayMethod: 1
+            }
+        ],
         'nona': [
             {
                 selector: 'section.result-section article.teaser div.teaser__container a.teaser__topline',
@@ -1058,6 +1077,17 @@
             },
             {
                 selector: 'section.result-section article.entity-teaser div.entity-teaser__wrapper a'
+            }
+        ],
+        'sapo': [
+            {
+                parentSelector: 'div.gs-webResult.gs-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-breadcrumb',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
             }
         ],
         'exalead': [
@@ -1079,6 +1109,29 @@
                 updateTextByOverwrite: true,
                 urlDisplayMethod: 3
             },
+        ],
+        'naver': [
+            {
+                selector: 'li.bx div.total_wrap div.source_box a.thumb'
+            },
+            {
+                selector: 'li.bx div.total_wrap div.source_box a.txt',
+                updateTextByOverwrite: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
+            },
+            {
+                selector: 'li.bx div.total_wrap a.link_tit'
+            },
+            {
+                selector: 'li.bx div.snippet_rel_wrap a.link_item'
+            },
+            {
+                selector: 'li.bx div.source_cluster_wrap a'
+            },
+            {
+                selector: 'section.sc_new a'
+            }
         ],
         'gibiru': [
             {
@@ -1141,6 +1194,48 @@
                 parentSelector: 'div.web-bing__result',
                 linkNodeSelector: 'a.web-bing__title',
                 textNodeSelector: 'span.web-bing__url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
+        'zapmeta': [
+            {
+                parentSelector: 'ol.organic-results__list li',
+                linkNodeSelector: 'div.organic-results__title a',
+                textNodeSelector: 'div.organic-results__display-url',
+                updateTextByOverwrite: true,
+                useTopLevelDomain: true,
+                urlDisplayMethod: 3
+            }
+        ],
+        'ask': [
+            {
+                selector: 'div.result-title a'
+            },
+            {
+                selector: 'div.result-url-section a',
+                childSelector: 'span.result-url',
+                updateChildText: true,
+                urlDisplayMethod: 3
+            }
+        ],
+        'pronto': [
+            {
+                selector: 'div.result-title a'
+            },
+            {
+                selector: 'div.result-url-section a',
+                childSelector: 'span.result-url',
+                updateChildText: true,
+                urlDisplayMethod: 3
+            }
+        ],
+        'anoox': [
+            {
+                selector: 'div.search_item div.ad_brief_desc a'
+            },
+            {
+                selector: 'div.search_item div.adv_url_con a',
                 updateTextByOverwrite: true,
                 urlDisplayMethod: 2
             }
@@ -1423,9 +1518,17 @@
             hosts: ['spot.ecloud.global'],
             resultContainerSelectors: ['div.container.contents']
         },
+        'qmamu': {
+            hosts: ['qmamu.com'],
+            resultContainerSelectors: ['div.sc-7aqnu-1.ffCHAv']
+        },
         'nona': {
             hosts: ['nona.de'],
             resultContainerSelectors: ['main.search-results div.container']
+        },
+        'sapo': {
+            hosts: ['sapo.pt'],
+            resultContainerSelectors: ['div.content div.ink-tabs.top']
         },
         'exalead': {
             hosts: ['exalead.com'],
@@ -1434,6 +1537,10 @@
         'seznam': {
             hosts: ['search.seznam.cz'],
             resultContainerSelectors: ['div.PageWrapper.SearchPage#searchpage-root'],
+        },
+        'naver': {
+            hosts: ['search.naver.com'],
+            resultContainerSelectors: ['div#main_pack.main_pack'],
         },
         'gibiru': {
             hosts: ['gibiru.com'],
@@ -1461,6 +1568,22 @@
         'dogpile': {
             hosts: ['dogpile.com'],
             resultContainerSelectors: ['div.web-bing'],
+        },
+        'zapmeta': {
+            hosts: ['zapmeta.com'],
+            resultContainerSelectors: ['div.component-container__main'],
+        },
+        'ask': {
+            hosts: ['ask.com'],
+            resultContainerSelectors: ['div.search-results div.results'],
+        },
+        'pronto': {
+            hosts: ['pronto.com'],
+            resultContainerSelectors: ['div.search-results div.results'],
+        },
+        'anoox': {
+            hosts: ['anoox.com'],
+            resultContainerSelectors: ['div#main_srch_window div#se_holder_center'],
         }
         // ... more search engines
     };
