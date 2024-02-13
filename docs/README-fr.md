@@ -95,9 +95,12 @@ La modification d'URL utilise l'Expression Régulière.
 - [Lycos](https://search.lycos.com)
 - [AlohaFind](https://alohafind.com)
 - [Murena Spot](https://spot.ecloud.global)
+- [Qmamu](https://qmamu.com)
 - [Nona](https://www.nona.de)
+- [SAPO](https://www.sapo.pt)
 - [Exalead](https://www.exalead.com/search/web/)
 - [Seznam](https://www.seznam.cz)
+- [Naver](https://www.naver.com)
 - [Gibiru](https://gibiru.com)
 - [Lukol](https://www.lukol.com)
 - [GiveWater](https://www.givewater.com)
@@ -105,6 +108,10 @@ La modification d'URL utilise l'Expression Régulière.
 - [WebCrawler](https://www.webcrawler.com)
 - [MetaCrawler](https://www.metacrawler.com)
 - [Dogpile](https://www.dogpile.com)
+- [ZapMeta](https://www.zapmeta.com)
+- [Ask](https://www.ask.com)
+- [Proton](https://www.pronto.com)
+- [Anoox](https://anoox.com)
 
 Vous pouvez ajouter manuellement le sélecteur DOM dans le code pour prendre en charge d'autres moteurs de recherche.
 
