@@ -425,8 +425,8 @@
             replaceWith: 'https://nitter.catsarch.com/$1$2'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
-            replaceWith: 'https://ao.vern.cc$1'
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.)?stackoverflow\.com\/(questions\/\d+(?:\/[\w-]+)?)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
+            replaceWith: 'https://ao.vern.cc/$1'
         },
         {
             matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(.*?(?:medium.*?|towardsdatascience|betterprogramming|plainenglish|gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?!tag)(?=.*-)(?:[\w\/-]+|[\w@.]+\/[\w-]+))(?:\?source=.*)?(?:$|\/RK=.*|&sa=.*)/),

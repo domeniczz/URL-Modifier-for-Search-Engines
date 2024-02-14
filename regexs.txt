@@ -28,7 +28,7 @@ https://quetre.iket.me/$1
 https://nitter.catsarch.com/$1$2
 
 
-^https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)
+^https?:\/\/(?:www\.)?stackoverflow\.com\/(questions\/\d+(?:\/[\w-]+)?).*
 https://ao.vern.cc$1
 
 
@@ -194,8 +194,8 @@ https://quetre.iket.me/$1
 https://nitter.catsarch.com/$1$2
 
 
-^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/stackoverflow\.com(\/questions\/\d+\/[\w-]+)(?:.*?)(?:$|\/RK=.*|&sa=.*)
-https://ao.vern.cc$1
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.)?stackoverflow\.com\/(questions\/\d+(?:\/[\w-]+)?)(?:.*?)(?:$|\/RK=.*|&sa=.*)
+https://ao.vern.cc/$1
 
 
 ^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(.*?(?:medium.*?|towardsdatascience|betterprogramming|plainenglish|gitconnected|aninjusticemag|betterhumans|uxdesign|uxplanet)\.\w+\/(?!tag)(?=.*-)(?:[\w\/-]+|[\w@.]+\/[\w-]+))(?:\?source=.*)?(?:$|\/RK=.*|&sa=.*)
