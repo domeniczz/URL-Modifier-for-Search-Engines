@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.5.6
+// @version      2.5.7
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -317,10 +317,37 @@
 
 // @match        *://stract.com/search?*
 
+// @match        *://search.albony.xyz/search?*
+// @match        *://search.garudalinux.org/search?*
+// @match        *://search.dr460nf1r3.org/search?*
+// @match        *://search.nezumi.party/search?*
+// @match        *://s.tokhmi.xyz/search?*
+// @match        *://search.sethforprivacy.com/search?*
+// @match        *://whoogle.dcs0.hu/search?*
+// @match        *://whoogle.lunar.icu/search?*
+// @match        *://gowogle.voring.me/search?*
+// @match        *://whoogle.privacydev.net/search?*
+// @match        *://whoogle.hostux.net/search?*
+// @match        *://wg.vern.cc/search?*
+// @match        *://whoogle.hxvy0.gq/search?*
+// @match        *://whoogle.ungovernable.men/search?*
+// @match        *://whoogle2.ungovernable.men/search?*
+// @match        *://whoogle3.ungovernable.men/search?*
+// @match        *://wgl.frail.duckdns.org/search?*
+// @match        *://whoogle.no-logs.com/search?*
+// @match        *://whoogle.ftw.lol/search?*
+// @match        *://whoogle-search--replitcomreside.repl.co/search?*
+// @match        *://search.notrustverify.ch/search?*
+// @match        *://whoogle.datura.network/search?*
+// @match        *://whoogle.yepserver.xyz/search?*
+
 // @match        *://www.etools.ch/searchSubmit.do*
 // @match        *://www.etools.ch/mobileSearch.do*
 
 // @match        *://www.mojeek.com/search?*
+// @match        *://www.mojeek.co.uk/search?*
+
+// @match        *://wiby.me/?*
 // @match        *://yep.com/web?*
 // @match        *://www.torry.io/search*
 // @match        *://www.qwant.com/?*
@@ -352,6 +379,8 @@
 // @match        *://www.exalead.com/search/web/results/?*
 // @match        *://cgi.search.biglobe.ne.jp/cgi-bin/search2-b?*
 // @match        *://search.goo.ne.jp/web.jsp?*
+// @match        *://search.walla.co.il/?*
+// @match        *://coccoc.com/search?*
 // @match        *://search.seznam.cz/?*
 // @match        *://www.startsiden.no/sok/?*
 // @match        *://search.marginalia.nu/search?*
@@ -788,6 +817,22 @@
                 selector: 'div.text-sm a.text-link'
             }
         ],
+        'whoogle': [
+            {
+                selector: 'div#main div.ZINbbc.has-favicon div.egMi0 a',
+                childSelector: 'div.sCuL3 div.BNeawe',
+                updateTextByOverwrite: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
+            },
+            {
+                selector: 'div#main div.ZINbbc div.yStFkb div.ZINbbc.has-favicon a',
+                childSelector: 'div.BNeawe.UPmit.AP7Wnd',
+                updateTextByOverwrite: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
+            },
+        ],
         'etools': [
             {
                 // searchSubmit.do
@@ -817,6 +862,15 @@
             },
             {
                 selector: 'div.right-col div.results ul li a'
+            }
+        ],
+        'wiby': [
+            {
+                parentSelector: 'body blockquote',
+                linkNodeSelector: 'a.tlink',
+                textNodeSelector: 'p.url',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
             }
         ],
         'yep': [
@@ -1187,6 +1241,38 @@
             {
                 selector: 'div.aside div.talentTxt a'
             },
+        ],
+        'walla': [
+            {
+                parentSelector: 'div.gs-webResult.gs-result',
+                linkNodeSelector: 'a.gs-title',
+                textNodeSelector: 'div.gsc-url-top div.gs-visibleUrl-breadcrumb',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: false,
+                multiElementsForUrlDisplay: 1
+            }
+        ],
+        'coccoc': [
+            {
+                selector: 'div.searchResultsMain-HyzAT a.url-AQP5U',
+                childSelector: 'span',
+                updateChildText: true,
+                containProtocol: true,
+                multiElementsForUrlDisplay: 1
+            },
+            {
+                selector: 'div.searchResultsMain-HyzAT h3.title-qgBH2 a'
+            },
+            {
+                selector: 'div.searchResultsMain-HyzAT div.shortButtonSitelinks-BENQp ul li a'
+            },
+            {
+                selector: 'div.searchResultsRight-IDPLb div.newRightWiki-DoD9w a'
+            },
+            {
+                selector: 'div.searchResultsRight-IDPLb div.newRightWiki-6sbvE a'
+            }
         ],
         'seznam': [
             {
@@ -1683,13 +1769,47 @@
                 'div.row-start-2'
             ]
         },
+        'whoogle': {
+            hosts: [
+                'search.albony.xyz',
+                'search.garudalinux.org',
+                'search.dr460nf1r3.org',
+                'search.nezumi.party',
+                's.tokhmi.xyz',
+                'search.sethforprivacy.com',
+                'whoogle.dcs0.hu',
+                'whoogle.lunar.icu',
+                'gowogle.voring.me',
+                'whoogle.privacydev.net',
+                'whoogle.hostux.net',
+                'wg.vern.cc',
+                'whoogle.hxvy0.gq',
+                'whoogle.ungovernable.men',
+                'whoogle2.ungovernable.men',
+                'whoogle3.ungovernable.men',
+                'wgl.frail.duckdns.org',
+                'whoogle.no-logs.com',
+                'whoogle.ftw.lol',
+                'whoogle-search--replitcomreside.repl.co',
+                'search.notrustverify.ch',
+                'whoogle.datura.network',
+                'whoogle.yepserver.xyz'
+            ],
+            resultContainerSelectors: ['div#main']
+        },
         'etools': {
             hosts: ['etools.ch'],
             // resultContainerSelectors: ['table.result']
         },
         'mojeek': {
-            hosts: ['mojeek.com'],
+            hosts: [
+                'mojeek.com',
+                'mojeek.co.uk'
+            ],
             resultContainerSelectors: ['div.container.serp-results']
+        },
+        'wiby': {
+            hosts: ['wiby.me']
         },
         'yep': {
             hosts: ['yep.com']
@@ -1805,6 +1925,14 @@
                 'section[role="main"] div.section#main',
                 'section[role="main"] aside[role="complementary"]'
             ],
+        },
+        'walla': {
+            hosts: ['search.walla.co.il'],
+            resultContainerSelectors: ['section.walla-core-container'],
+        },
+        'coccoc': {
+            hosts: ['coccoc.com'],
+            resultContainerSelectors: ['div#root'],
         },
         'seznam': {
             hosts: ['search.seznam.cz'],
