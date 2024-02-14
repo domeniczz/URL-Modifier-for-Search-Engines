@@ -8,8 +8,8 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md">Español</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a><br/>
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-sv.md">Svenska</a> | 
@@ -17,8 +17,9 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a><br/>
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
@@ -103,6 +104,7 @@ Modifikasi URL menggunakan Ekspresi Reguler.
 - [Nona](https://www.nona.de)
 - [SAPO](https://www.sapo.pt)
 - [Exalead](https://www.exalead.com/search/web/)
+- [Biglobe](https://www.biglobe.ne.jp)
 - [Goo](https://search.goo.ne.jp)
 - [Seznam](https://www.seznam.cz)
 - [StartSiden](https://www.startsiden.no/sok)
@@ -132,7 +134,7 @@ Modifikasi URL menggunakan Ekspresi Reguler.
 
 Anda dapat menambahkan pemilih DOM secara manual dalam kode untuk mendukung mesin pencari lainnya.
 
-Tidak dapat mendukung [Bing](https://www.bing.com), karena hanya menyediakan tautan perantara.
+Tidak dapat mendukung [Bing](https://www.bing.com) dan [Baidu](https://www.baidu.com) karena hanya menyediakan tautan perantara yang tidak secara eksplisit menunjukkan URL tujuan.
 
 Untuk mesin pencari seperti Yahoo, Lycos, AlohaFind, skrip mendukung menghilangkan tautan pengalihan dan mengekstrak URL asli. Misalnya, tautan pengalihan Yahoo adalah "https://r.search.yahoo.com/...". Jika Anda tidak menggunakan mesin pencari ini, Anda dapat memilih menggunakan [aturan modifikasi URL](https://github.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/blob/master/no-redirection-omit-url-rules.js) tanpa kompatibilitas tautan pengalihan. BTW, Anda dapat melihat semua aturan modifikasi URL RegEx bawaan [di sini](https://github.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/blob/master/regexs.txt).
 

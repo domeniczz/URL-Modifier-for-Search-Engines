@@ -8,8 +8,8 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pt.md">Português</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md">Pусский</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md">日本語</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a><br/>
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fr.md">Français</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md">Deutsch</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md">Nederlands</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-sv.md">Svenska</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md">Suomi</a> | 
@@ -17,7 +17,8 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
@@ -103,6 +104,7 @@ URL 修改使用正则表达式。
 - [Nona](https://www.nona.de)
 - [SAPO](https://www.sapo.pt)
 - [Exalead](https://www.exalead.com/search/web/)
+- [Biglobe](https://www.biglobe.ne.jp)
 - [Goo](https://search.goo.ne.jp)
 - [Seznam](https://www.seznam.cz)
 - [StartSiden](https://www.startsiden.no/sok)
@@ -132,7 +134,7 @@ URL 修改使用正则表达式。
 
 您可以手动在代码中添加 DOM 选择器以支持其他搜索引擎。
 
-无法支持 [Bing](https://www.bing.com)，因为它只提供中间链接。
+无法支持[Bing](https://www.bing.com)和[Baidu](https://www.baidu.com)，因为它们只提供重定向链接，这些链接并没有明确显示目标 URL。
 
 对于像 Yahoo、Lycos、AlohaFind 这样的搜索引擎，该脚本支持去除重定向链接并提取真实 URL。例如，Yahoo 的重定向链接是 “https://r.search.yahoo.com/...”。如果您不使用这些搜索引擎，您可以选择使用 [URL 修改规则](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js)来避免重定向链接兼容性问题。顺便说一下，您可以在[这里](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)查看所有内置的 RegEx URL 修改规则。
 
