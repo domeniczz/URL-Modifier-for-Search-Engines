@@ -350,8 +350,10 @@
 // @match        *://www.nona.de/?*
 // @match        *://www.sapo.pt/pesquisa/web/tudo?*
 // @match        *://www.exalead.com/search/web/results/?*
+// @match        *://search.goo.ne.jp/web.jsp?*
 // @match        *://search.seznam.cz/?*
 // @match        *://www.startsiden.no/sok/?*
+// @match        *://search.marginalia.nu/search?*
 // @match        *://search.naver.com/search.naver?*
 // @match        *://gibiru.com/results.html?*
 // @match        *://www.lukol.com/s.php?*
@@ -381,6 +383,7 @@
 // @match        *://www.infospace.com/serp?*
 // @match        *://www.refseek.com/search?*
 // @match        *://www.zapmeta.com/search?*
+// @match        *://www.izito.com/search?*
 // @match        *://www.ask.com/web?*
 // @match        *://www.pronto.com/web?*
 // @match        *://anoox.com/find.php?*
@@ -1162,6 +1165,18 @@
                 selector: 'li.media div.media-body a'
             }
         ],
+        'goo': [
+            {
+                parentSelector: 'div.result',
+                linkNodeSelector: 'p.title a',
+                textNodeSelector: 'p.url span.cM',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
+            },
+            {
+                selector: 'div.aside div.talentTxt a'
+            },
+        ],
         'seznam': [
             {
                 selector: 'div.f2c528 h3 a'
@@ -1185,6 +1200,19 @@
                 updateTextByOverwrite: true,
                 urlDisplayMethod: 3
             },
+        ],
+        'marginalia': [
+            {
+                selector: 'section.card.search-result div.url a',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            },
+            {
+                selector: 'section.card.search-result h2 a.title'
+            },
+            {
+                selector: 'section.card.search-result div.additional-results li a'
+            }
         ],
         'naver': [
             {
@@ -1401,6 +1429,16 @@
             }
         ],
         'zapmeta': [
+            {
+                parentSelector: 'ol.organic-results__list li',
+                linkNodeSelector: 'div.organic-results__title a',
+                textNodeSelector: 'div.organic-results__display-url',
+                updateTextByOverwrite: true,
+                useTopLevelDomain: true,
+                urlDisplayMethod: 3
+            }
+        ],
+        'izito': [
             {
                 parentSelector: 'ol.organic-results__list li',
                 linkNodeSelector: 'div.organic-results__title a',
@@ -1746,6 +1784,13 @@
             hosts: ['exalead.com'],
             resultContainerSelectors: ['ul.media-list']
         },
+        'goo': {
+            hosts: ['search.goo.ne.jp'],
+            resultContainerSelectors: [
+                'section[role="main"] div.section#main',
+                'section[role="main"] aside[role="complementary"]'
+            ],
+        },
         'seznam': {
             hosts: ['search.seznam.cz'],
             resultContainerSelectors: ['div.PageWrapper.SearchPage#searchpage-root'],
@@ -1753,6 +1798,10 @@
         'startsiden': {
             hosts: ['startsiden.no'],
             resultContainerSelectors: ['div.results ul.results__list'],
+        },
+        'marginalia': {
+            hosts: ['search.marginalia.nu'],
+            resultContainerSelectors: ['section.sidebar-narrow section#results'],
         },
         'naver': {
             hosts: ['search.naver.com'],
@@ -1822,7 +1871,11 @@
         },
         'zapmeta': {
             hosts: ['zapmeta.com'],
-            resultContainerSelectors: ['div.component-container__main'],
+            resultContainerSelectors: ['div.component-container__main ol.organic-results__list'],
+        },
+        'izito': {
+            hosts: ['izito.com'],
+            resultContainerSelectors: ['div.component-container__main ol.organic-results__list'],
         },
         'ask': {
             hosts: ['ask.com'],
