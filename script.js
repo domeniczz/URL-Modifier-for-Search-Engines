@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.5.5
+// @version      2.5.6
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -350,6 +350,7 @@
 // @match        *://www.nona.de/?*
 // @match        *://www.sapo.pt/pesquisa/web/tudo?*
 // @match        *://www.exalead.com/search/web/results/?*
+// @match        *://cgi.search.biglobe.ne.jp/cgi-bin/search2-b?*
 // @match        *://search.goo.ne.jp/web.jsp?*
 // @match        *://search.seznam.cz/?*
 // @match        *://www.startsiden.no/sok/?*
@@ -1165,6 +1166,16 @@
                 selector: 'li.media div.media-body a'
             }
         ],
+        'biglobe': [
+            {
+                selector: 'div#searchResult ol li h3 a'
+            },
+            {
+                selector: 'div#searchResult ol li span.url a',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            }
+        ],
         'goo': [
             {
                 parentSelector: 'div.result',
@@ -1783,6 +1794,10 @@
         'exalead': {
             hosts: ['exalead.com'],
             resultContainerSelectors: ['ul.media-list']
+        },
+        'biglobe': {
+            hosts: ['search.biglobe.ne.jp'],
+            resultContainerSelectors: ['div#contents div#searchResult'],
         },
         'goo': {
             hosts: ['search.goo.ne.jp'],
