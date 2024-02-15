@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.5.7
+// @version      2.5.7.1
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -2048,19 +2048,20 @@
     };
 
     // Function to modify URLs and optionally text
-    const modifyUrls = (engine, observer, resultContainer, engineInfo) => {
+    const modifyUrls = (observer, resultContainer, engineInfo) => {
         try {
-            const selectors = selectorRules[engine];
+            const selectors = selectorRules[engineInfo.engine];
             if (selectors) {
                 // Disconnect the observer to prevent recursive triggering
                 observer.disconnect();
 
-                // Modify results
+                // Modify search results
                 selectors.forEach(rule => {
+                    // URL modification based on custom RegEx rules
                     if (rule.selector) {
-                        processElements(rule.selector, rule, engineInfo);
+                        processElements(rule.selector, rule, engineInfo.attribute);
                     } else if (rule.parentSelector) {
-                        processParentElements(rule.parentSelector, rule, engineInfo);
+                        processElements(rule.parentSelector, rule, engineInfo.attribute, true);
                     }
                 });
 
@@ -2072,51 +2073,24 @@
         }
     };
 
-    // Function to process elements specified by `selector`
-    const processElements = (selector, rule, engineInfo) => {
+    // Function to process elements specified by `selector` or `parentSelector`
+    const processElements = (selector, rule, additionalAttribute, isParentSelector) => {
         const elements = document.querySelectorAll(selector);
-        const additionalAttribute = engineInfo.attribute; // Get the additional attribute if specified
         if (elements.length > 0) {
             elements.forEach(element => {
-                for (let i = 0; i < urlModificationRules.length; i++) {
-                    try {
-                        const urlRule = urlModificationRules[i];
-                        let urlToModify = additionalAttribute ? element.getAttribute(additionalAttribute) : element.href;
-                        urlToModify = decodeURIComponent(urlToModify);
-                        // update attribute
-                        if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
-                            // Generate redirected URL
-                            let newUrl = urlToModify.replace(urlRule.matchRegex, urlRule.replaceWith);
-                            if (element.href) {
-                                element.href = newUrl;
-                            } else if (additionalAttribute) {
-                                element.setAttribute(additionalAttribute, newUrl);
-                            }
-                            newUrl = rule.useTopLevelDomain ? extractTopLevelDomain(newUrl) : newUrl;
-                            updateTextContent(element, rule, removeTailingSlash(removeParameters(newUrl)));
-                            break;
-                        }
-                    } catch (error) {
-                        console.error("Update Link/Text Error: ", error);
-                    }
+                let linkElement = element;
+                let textElement = element;
+
+                // If parentSelector is used, get the link and text elements
+                if (isParentSelector) {
+                    linkElement = element.querySelector(rule.linkNodeSelector);
+                    textElement = element.querySelector(rule.textNodeSelector);
                 }
-            });
-        }
-    };
-
-    // Function to process elements specified by `parentSelector`
-    const processParentElements = (selector, rule, engineInfo) => {
-        const elements = document.querySelectorAll(selector);
-        const additionalAttribute = engineInfo.attribute; // Get the additional attribute if specified
-        if (elements.length > 0) {
-            elements.forEach(element => {
-                const linkElement = element.querySelector(rule.linkNodeSelector);
-                const textElement = element.querySelector(rule.textNodeSelector);
 
                 for (let i = 0; i < urlModificationRules.length; i++) {
                     try {
                         const urlRule = urlModificationRules[i];
-                        let urlToModify = additionalAttribute ? element.getAttribute(additionalAttribute) : linkElement.href;
+                        let urlToModify = additionalAttribute ? linkElement.getAttribute(additionalAttribute) : linkElement.href;
                         urlToModify = decodeURIComponent(urlToModify);
                         // update attribute
                         if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
@@ -2446,14 +2420,14 @@
     };
 
     // Function to observe and execute the URL modifier script
-    const observeToExecute = (engine, selector, engineInfo) => {
+    const observeToExecute = (selector, engineInfo) => {
         const resultContainers = document.querySelectorAll(selector);
         if (resultContainers) {
             resultContainers.forEach(resultContainer => {
                 // Observe changes in each result container
-                const observer = new MutationObserver(() => modifyUrls(engine, observer, resultContainer, engineInfo));
+                const observer = new MutationObserver(() => modifyUrls(observer, resultContainer, engineInfo));
                 observer.observe(resultContainer, { childList: true, subtree: true });
-                modifyUrls(engine, observer, resultContainer, engineInfo);
+                modifyUrls(observer, resultContainer, engineInfo);
             });
         }
     };
@@ -2463,7 +2437,7 @@
         const engineInfo = getSearchEngineInfo();
         if (engineInfo) {
             engineInfo.selectors.forEach(containerSelector => {
-                observeToExecute(engineInfo.engine, containerSelector, engineInfo);
+                observeToExecute(containerSelector, engineInfo);
             });
         }
     } catch (error) {
