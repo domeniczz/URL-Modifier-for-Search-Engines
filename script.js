@@ -1,9 +1,63 @@
 // ==UserScript==
-// @name         URL Modifier for Search Engines
-// @namespace    http://tampermonkey.net/
 // @version      2.5.8
-// @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
+// @name         URL Modifier for Search Engines
+// @name:zh-CN   搜索引擎结果 URL 修改器
+// @name:zh-TW   搜索引擎結果 URL 修改器
+// @name:es      Modificador de URL para Motores de Búsqueda
+// @name:pt      Modificador de URL para Motores de Busca
+// @name:ru      Изменитель URL для Поисковых Систем
+// @name:ja      検索エンジン用 URL 修正
+// @name:fr      Modificateur d'URL pour les moteurs de recherche
+// @name:de      URL Modifier für Suchmaschinen
+// @name:nl      URL Wijzigingsmodule voor Zoekmachines
+// @name:sv      URL Modifierare för Sökmotorer
+// @name:fi      URL Muokkain Hakukoneille
+// @name:da      URL Modifier til Søgemaskiner
+// @name:ko      검색 엔진용 URL 수정기
+// @name:it      Modificatore di URL per Motori di Ricerca
+// @name:cs      Modifikátor URL pro vyhledávače
+// @name:el      Μετατροπέας URL για Μηχανές Αναζήτησης
+// @name:he      מתקן URL למנועי חיפוש
+// @name:pl      Modyfikator URL dla Wyszukiwarek
+// @name:tr      Arama Motorları için URL Değiştirici
+// @name:ro      Modificator de URL pentru Motoare de Căutare
+// @name:hu      URL Módosító a Keresőmotorokhoz
+// @name:no      URL Modifier for Søkemotorer
+// @name:uk      Модифікатор URL для Пошукових Систем
+// @name:id      Pengubah URL untuk Mesin Pencari
+// @name:vi      Bộ Chỉnh Sửa URL cho Các Công Cụ Tìm Kiếm
+// @name:hi      सर्च इंजनों के लिए URL संशोधक
+// @name:fa      تغییردهنده URL برای موتورهای جستجو
+// @namespace    http://tampermonkey.net/
+// @description  This Tampermonkey script enhances your search engine usage by modifying (redirecting) URLs in the search result of search engines, redirecting to alternative sites, allowing for a more customized and efficient browsing experience. You can also add you custom URL modification rule to the script and are welcomed to commit your rules to this script to make it much more useful.
+// @description:zh-cn  这个 Tampermonkey 脚本通过修改搜索引擎结果中的 URL，重定向到替代网站，从而增强了您的搜索引擎使用体验，允许更自定义和高效的浏览体验。您还可以添加自定义的 URL 修改规则到脚本中，并欢迎将您的规则提交给这个脚本，使其变得更加有用。
+// @description:zh-tw  這個 Tampermonkey 腳本通過修改搜索引擎結果中的 URL，重定向到替代網站，從而增強了您的搜索引擎使用體驗，允許更自定義和高效的瀏覽體驗。您還可以添加自定義的 URL 修改規則到腳本中，並歡迎將您的規則提交給這個腳本，使其變得更加有用。
+// @description:es     Este script de Tampermonkey mejora tu uso del motor de búsqueda modificando las URLs en los resultados de búsqueda de los motores de búsqueda, redirigiendo a sitios alternativos, lo que permite una experiencia de navegación más personalizada y eficiente. También puedes añadir tu regla de modificación de URL personalizada al script y se te invita a comprometer tus reglas con este script para hacerlo aún más útil.
+// @description:pt     Este script do Tampermonkey aprimora seu uso do mecanismo de busca modificando URLs nos resultados de pesquisa dos motores de busca, redirecionando para sites alternativos, permitindo uma experiência de navegação mais personalizada e eficiente. Você também pode adicionar sua própria regra de modificação de URL ao script e é bem-vindo para comprometer suas regras com este script para torná-lo ainda mais útil.
+// @description:ru     Этот скрипт Tampermonkey улучшает использование поисковой системы за счет модификации URL-адресов в результатах поиска, перенаправляя на альтернативные сайты, что позволяет более настраиваемый и эффективный опыт просмотра. Вы также можете добавить свое собственное правило модификации URL в скрипт и приветствуется ваш вклад в этот скрипт своими правилами, чтобы сделать его еще более полезным.
+// @description:ja     この Tampermonkey スクリプトは、検索エンジンの検索結果の URL を変更して代替サイトにリダイレクトすることで、検索エンジンの使用体験を向上させ、よりカスタマイズされ効率的なブラウジング体験を可能にします。また、カスタム URL 変更ルールをスクリプトに追加することができ、このスクリプトをさらに便利にするためにあなたのルールをコミットすることを歓迎します。
+// @description:fr     Ce script Tampermonkey améliore votre utilisation du moteur de recherche en modifiant les URL dans les résultats de recherche des moteurs de recherche, redirigeant vers des sites alternatifs, permettant une expérience de navigation plus personnalisée et efficace. Vous pouvez également ajouter votre propre règle de modification d'URL au script et êtes invité à engager vos règles avec ce script pour le rendre encore plus utile.
+// @description:de     Dieses Tampermonkey-Skript verbessert Ihre Nutzung der Suchmaschine, indem es URLs in den Suchergebnissen von Suchmaschinen modifiziert, auf alternative Seiten umleitet und so ein individuelleres und effizienteres Browsing-Erlebnis ermöglicht. Sie können auch Ihre eigene URL-Modifikationsregel zum Skript hinzufügen und sind eingeladen, Ihre Regeln zu diesem Skript beizutragen, um es noch nützlicher zu machen.
+// @description:nl     Dit Tampermonkey-script verbetert uw zoekmachinegebruik door URL's in de zoekresultaten van zoekmachines te wijzigen, om te leiden naar alternatieve sites, wat een meer aangepaste en efficiënte browse-ervaring mogelijk maakt. U kunt ook uw eigen URL-wijzigingsregel aan het script toevoegen en u wordt uitgenodigd om uw regels aan dit script te committeren om het nog nuttiger te maken.
+// @description:sv     Detta Tampermonkey-skript förbättrar din användning av sökmotorer genom att modifiera URL:er i sökresultaten från sökmotorer, omdirigera till alternativa webbplatser, vilket möjliggör en mer anpassad och effektiv surfupplevelse. Du kan också lägga till din egen anpassade URL-modifieringsregel till skriptet och är välkommen att bidra med dina regler till detta skript för att göra det ännu mer användbart.
+// @description:fi     Tämä Tampermonkey-skripti tehostaa hakukoneiden käyttöäsi muokkaamalla hakutulosten URL-osoitteita hakukoneissa, ohjaten vaihtoehtoisille sivustoille, mahdollistaen mukautetumman ja tehokkaamman selailukokemuksen. Voit myös lisätä omia URL-muokkaussääntöjäsi skriptiin ja olet tervetullut lähettämään sääntöjäsi tähän skriptiin, jotta se olisi vieläkin hyödyllisempi.
+// @description:da     Dette Tampermonkey script forbedrer din brug af søgemaskiner ved at ændre URL'er i søgemaskinens søgeresultater, omdirigere til alternative sider, hvilket tillader en mere tilpasset og effektiv browsing oplevelse. Du kan også tilføje din egen tilpassede URL-ændringsregel til scriptet og er velkommen til at bidrage med dine regler til dette script for at gøre det endnu mere nyttigt.
+// @description:ko     이 Tampermonkey 스크립트는 검색 엔진의 검색 결과에서 URL 을 수정하여 대체 사이트로 리디렉션함으로써 검색 엔진 사용을 개선하고 더 맞춤화되고 효율적인 브라우징 경험을 가능하게 합니다. 또한 사용자만의 URL 수정 규칙을 스크립트에 추가할 수 있으며, 이 스크립트를 더 유용하게 만들기 위해 규칙을 커밋하는 것을 환영합니다.
+// @description:it     Questo script di Tampermonkey migliora l'uso del motore di ricerca modificando gli URL nei risultati di ricerca dei motori di ricerca, reindirizzando a siti alternativi, consentendo un'esperienza di navigazione più personalizzata ed efficiente. Puoi anche aggiungere la tua regola di modifica dell'URL allo script e sei invitato a impegnare le tue regole con questo script per renderlo ancora più utile.
+// @description:cs     Tento skript Tampermonkey vylepšuje vaše používání vyhledávače úpravou URL výsledků vyhledávání na vyhledávačích, přesměrováním na alternativní stránky, což umožňuje více přizpůsobený a efektivnější prohlížecí zážitek. Můžete také přidat své vlastní pravidlo úpravy URL do skriptu a jste vítáni, abyste svá pravidla s tímto skriptem zavázali, aby byl ještě užitečnější.
+// @description:el     Αυτό το σενάριο Tampermonkey ενισχύει τη χρήση της μηχανής αναζήτησης σας με την τροποποίηση των URL στα αποτελέσματα αναζήτησης των μηχανών αναζήτησης, ανακατευθύνοντας σε εναλλακτικούς ιστότοπους, επιτρέποντας μια πιο προσαρμοσμένη και αποδοτική εμπειρία περιήγησης. Μπορείτε επίσης να προσθέσετε τον δικό σας κανόνα τροποποίησης URL στο σενάριο και είστε ευπρόσδεκτοι να δεσμεύσετε τους κανόνες σας σε αυτό το σενάριο για να το κάνετε ακόμα πιο χρήσιμο.
+// @description:he     סקריפט Tampermonkey זה משפר את השימוש במנועי חיפוש שלך על ידי שינוי URL-ים בתוצאות החיפוש של מנועי חיפוש, הפניה לאתרים חלופיים, מה שמאפשר חוויית גלישה מותאמת אישית ויעילה יותר. תוכל גם להוסיף כלל שינוי URL מותאם אישית לסקריפט ולהתחייב בכללים שלך לסקריפט זה כדי להפוך אותו לשימושי יותר.
+// @description:pl     Ten skrypt Tampermonkey ulepsza korzystanie z wyszukiwarek internetowych poprzez modyfikację URL-i w wynikach wyszukiwania, przekierowując do alternatywnych stron, co pozwala na bardziej spersonalizowane i efektywne przeglądanie sieci. Możesz również dodać własne reguły modyfikacji URL do skryptu i jesteś mile widziany, aby dodać swoje reguły do tego skryptu, aby uczynić go jeszcze bardziej użytecznym.
+// @description:tr     Bu Tampermonkey betiği, arama motoru sonuçlarındaki URL'leri değiştirerek alternatif sitelere yönlendirme yaparak arama motoru kullanımınızı geliştirir, daha özelleştirilmiş ve verimli bir tarama deneyimi sağlar. Ayrıca özel URL değiştirme kuralınızı betiğe ekleyebilir ve bu betiği daha faydalı hale getirmek için kuralınızı bu betikle taahhüt etmeye davet edilirsiniz.
+// @description:ro     Acest script Tampermonkey îmbunătățește utilizarea motorului de căutare prin modificarea URL-urilor în rezultatele căutării motoarelor de căutare, redirecționând către site-uri alternative, permițând o experiență de navigare mai personalizată și eficientă. Puteți adăuga, de asemenea, regula de modificare a URL-ului personalizat la script și sunteți bineveniți să vă angajați regulile la acest script pentru a-l face mult mai util.
+// @description:no     Dette Tampermonkey-skriptet forbedrer din bruk av søkemotorer ved å endre URL-er i søkeresultatet fra søkemotorer, omdirigere til alternative nettsteder, noe som tillater en mer tilpasset og effektiv nettleseropplevelse. Du kan også legge til din egen tilpassede URL-modifikasjonsregel i skriptet og er velkommen til å forplikte dine regler til dette skriptet for å gjøre det mye mer nyttig.
+// @description:hu     Ez a Tampermonkey szkript fokozza a keresőmotorok használatát a keresési eredmények URL-jeinek módosításával, alternatív oldalakra való átirányítással, lehetővé téve egy személyre szabottabb és hatékonyabb böngészési élményt. Hozzáadhatsz saját URL módosítási szabályokat a szkripthez, és szívesen látjuk, ha hozzájárulsz a szabályaidat ehhez a szkripthez, hogy még hasznosabbá tegyük.
+// @description:uk     Цей скрипт для Tampermonkey покращує ваше використання пошукових систем шляхом модифікації URL-адрес у результатах пошуку пошукових систем, перенаправляючи на альтернативні сайти, що дозволяє отримати більш налаштований і ефективний досвід перегляду. Ви також можете додати власне правило модифікації URL до скрипта та вітаєтеся додати свої правила до цього скрипта, щоб зробити його набагато кориснішим.
+// @description:id     Skrip Tampermonkey ini meningkatkan penggunaan mesin pencari Anda dengan mengubah URL dalam hasil pencarian mesin pencari, mengarahkan ke situs alternatif, memungkinkan pengalaman browsing yang lebih disesuaikan dan efisien. Anda juga dapat menambahkan aturan modifikasi URL kustom ke dalam skrip dan dipersilakan untuk mencommit aturan Anda ke skrip ini agar menjadi lebih berguna.
+// @description:vi     Script Tampermonkey này cải thiện việc sử dụng công cụ tìm kiếm của bạn bằng cách chỉnh sửa URL trong kết quả tìm kiếm của các công cụ tìm kiếm, chuyển hướng đến các trang thay thế, cho phép trải nghiệm duyệt web tùy chỉnh và hiệu quả hơn. Bạn cũng có thể thêm quy tắc chỉnh sửa URL tùy chỉnh của mình vào script và được chào đón để cam kết các quy tắc của mình với script này để làm cho nó hữu ích hơn.
+// @description:hi     यह Tampermonkey स्क्रिप्ट आपके सर्च इंजन उपयोग को बेहतर बनाती है जिससे सर्च इंजन के परिणामों में URLs को संशोधित करके वैकल्पिक साइटों पर पुनर्निर्देशित किया जा सकता है, जिससे अधिक कस्टमाइज़्ड और कुशल ब्राउज़िंग अनुभव प्रदान किया जा सकता है। आप इस स्क्रिप्ट में अपना कस्टम URL संशोधन नियम जोड़ सकते हैं और इसे अधिक उपयोगी बनाने के लिए अपने नियमों को इस स्क्रिप्ट में कमिट करने का स्वागत है।
+// @description:fa     این اسکریپت Tampermonkey با تغییر URL‌ها در نتایج جستجوی موتورهای جستجو و هدایت به سایت‌های جایگزین، استفاده شما از موتور جستجو را بهبود می‌بخشد و امکان تجربه‌ای شخصی‌سازی شده و کارآمدتر در مرور وب را فراهم می‌آورد. شما همچنین می‌توانید قانون تغییر URL سفارشی خود را به اسکریپت اضافه کنید و برای کردن این اسکریپت به ابزاری مفیدتر، دعوت به ارسال قوانین خود به این اسکریپت می‌شوید.
 
 // @match        *://www.google.com/search?*
 // @match        *://www.google.ad/search?*
