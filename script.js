@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         URL Modifier for Search Engines
 // @namespace    http://tampermonkey.net/
-// @version      2.5.7.1
+// @version      2.5.8
 // @description  Modify (Redirect) URL links in search engines results to alternative frontends or for other purposes
 // @author       Domenic
 
@@ -196,6 +196,8 @@
 // @match        *://search.yahoo.com/search*
 // @match        *://search.yahoo.co.jp/search?*
 // @match        *://*.search.yahoo.com/search*
+
+// @match        *://www.baidu.com/s?*
 
 // @match        *://yandex.com/search/?*
 // @match        *://yandex.ru/search/?*
@@ -665,6 +667,22 @@
             },
             {
                 selector: 'div.sw-CardBase div.sw-Card.AnswerKnowledgePanel__info a'
+            }
+        ],
+        'baidu': [
+            {
+                originalUrlSelector: 'div#content_left div.c-container',
+                originalUrlAttribute: 'mu',
+                linkNodeSelector: ['h3.c-title a', 'h3.t.kg-title_7kFVp a', 'div.c-row a.siteLink_9TPP3', 'div.c-showurl a.cu-line-clamp-1', 'ul.subLink_answer li a', 'span.detail-btn_2Ar6f a']
+            },
+            {
+                selector: 'div#content_left div.c-container h3.c-title a'
+            },
+            {
+                selector: 'div#content_left div.c-container a.siteLink_9TPP3'
+            },
+            {
+                selector: 'div#content_left div.c-container ul.subLink_answer li a'
             }
         ],
         'yandex': [
@@ -1609,6 +1627,10 @@
             hosts: ['search.yahoo.co.jp'],
             resultContainerSelectors: ['div#contents div#contents__wrap']
         },
+        'baidu': {
+            hosts: ['baidu.com'],
+            resultContainerSelectors: ['div#wrapper_wrapper div#container']
+        },
         'yandex': {
             hosts: [
                 'yandex.com',
@@ -2057,6 +2079,12 @@
 
                 // Modify search results
                 selectors.forEach(rule => {
+                    // Get original URL from 'Baidu' search results to avoid unnecessary redirection
+                    if (engineInfo.engine === 'baidu' && rule.originalUrlSelector) {
+                        processBaiduElements(rule.linkNodeSelector, rule.originalUrlSelector, rule.originalUrlAttribute);
+                        return; // Skip to the next iteration of the forEach loop
+                    }
+
                     // URL modification based on custom RegEx rules
                     if (rule.selector) {
                         processElements(rule.selector, rule, engineInfo.attribute);
@@ -2070,6 +2098,24 @@
             }
         } catch (error) {
             console.error("URL Modification Error: ", error);
+        }
+    };
+
+    // Get original URL from 'Baidu' search results and update the link elements to get rid of unnecessary redirection links
+    const processBaiduElements = (linkNodeSelector, selector, attribute) => {
+        const elements = document.querySelectorAll(selector);
+        if (elements.length > 0) {
+            elements.forEach(element => {
+                const originalUrl = element.getAttribute(attribute);
+                if (originalUrl && !originalUrl.includes('lightapp.baidu.com')) {
+                    for (let i = 0; i < linkNodeSelector.length; i++) {
+                        const linkElement = element.querySelector(linkNodeSelector[i]);
+                        if (linkElement) {
+                            linkElement.href = decodeURIComponent(originalUrl);
+                        }
+                    }
+                }
+            });
         }
     };
 
