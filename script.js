@@ -608,6 +608,18 @@
             {
                 // selector for sidebar links
                 selector: 'div.TQc1id#rhs a'
+            },
+            {
+                // selector for 'discussions and forums' widget
+                selector: 'div.MjjYud div.LJ7wUe a.v4kUNc',
+                childSelector: 'div.VZGVuc div.bgBiT.wHYlTd',
+                updateTextByOverwrite: true,
+                useTopLevelDomain: true,
+                urlDisplayMethod: 3
+            },
+            {
+                // selector for 'videos' widget
+                selector: 'div.e4xoPb div.RzdJxc a.xMqpbd'
             }
         ],
         'yahoo': [
@@ -2075,12 +2087,12 @@
                         if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
                             // Generate redirected URL
                             let newUrl = urlToModify.replace(urlRule.matchRegex, urlRule.replaceWith);
-                            newUrl = rule.useTopLevelDomain ? extractTopLevelDomain(newUrl) : newUrl;
                             if (element.href) {
                                 element.href = newUrl;
                             } else if (additionalAttribute) {
                                 element.setAttribute(additionalAttribute, newUrl);
                             }
+                            newUrl = rule.useTopLevelDomain ? extractTopLevelDomain(newUrl) : newUrl;
                             updateTextContent(element, rule, removeTailingSlash(removeParameters(newUrl)));
                             break;
                         }
@@ -2110,12 +2122,12 @@
                         if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
                             // Generate redirected URL
                             let newUrl = urlToModify.replace(urlRule.matchRegex, urlRule.replaceWith);
-                            newUrl = rule.useTopLevelDomain ? extractTopLevelDomain(newUrl) : newUrl;
                             if (linkElement.href) {
                                 linkElement.href = newUrl;
                             } else if (additionalAttribute) {
                                 linkElement.setAttribute(additionalAttribute, newUrl);
                             }
+                            newUrl = rule.useTopLevelDomain ? extractTopLevelDomain(newUrl) : newUrl;
                             updateTextContent(textElement, rule, removeTailingSlash(removeParameters(newUrl)));
                             break;
                         }
