@@ -16,12 +16,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md">Suomi</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## Introduzione
 
-Uno script [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), installa da Greasy Fork: [Modificatore di URL per Motori di Ricerca](https://greasyfork.org/en/scripts/483597-modificatore-di-url-per-motori-di-ricerca).
+Uno script [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), installa da Greasy Fork: [Modificatore di URL per Motori di Ricerca](https://greasyfork.org/it/scripts/483597-modificatore-di-url-per-motori-di-ricerca).
 
 Se non hai Tampermonkey installato nel tuo browser, puoi installarlo dal [Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) o dal [Firefox Web Store](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey).
 
@@ -65,6 +65,7 @@ La modifica dell'URL utilizza Espressioni Regolari.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ La modifica dell'URL utilizza Espressioni Regolari.
 
 Puoi aggiungere manualmente il selettore DOM nel codice per supportare altri motori di ricerca.
 
-Non è possibile supportare [Bing](https://www.bing.com) e [Baidu](https://www.baidu.com) poiché forniscono solo link intermedi che non mostrano esplicitamente l'URL di destinazione.
+Non possiamo supportare [Bing](https://www.bing.com), poiché fornisce solo collegamenti intermedi che non mostrano esplicitamente l'URL di destinazione.
 
 Per motori di ricerca come Yahoo, Lycos, AlohaFind, lo script supporta la rimozione dei link di reindirizzamento e l'estrazione dell'URL reale. Ad esempio, il link di reindirizzamento di Yahoo è "https://r.search.yahoo.com/...". Se non utilizzi questi motori di ricerca, puoi scegliere di utilizzare [Regole di modifica dell'URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) senza compatibilità con i link di reindirizzamento. A proposito, puoi vedere tutte le regole di modifica dell'URL RegEx incorporate [qui](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+
+Per Baidu, lo script può rimuovere i link di reindirizzamento dai risultati di ricerca testuali, ma non funzionerà per i risultati di immagini e video. Questo perché il principio è estrarre il link URL originale mostrato esplicitamente negli elementi DOM dei risultati di ricerca. Baidu non fornisce esplicitamente il link originale per alcuni risultati, quindi lo script non funzionerà per quei tipi di risultati. Per tua informazione, lo script Tampermonkey [AC-baidu_RedirectRemove](https://greasyfork.org/it/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) può rimuovere tutti i reindirizzamenti non necessari per Baidu.
 
 > Just a side note, [Kagi](https://kagi.com) è un motore di ricerca con funzionalità di reindirizzamento URL integrate, vale la pena provarlo. Sono un utente di Kagi, e sono molto soddisfatto di questo prodotto, quindi voglio fare loro una menzione qui.
 

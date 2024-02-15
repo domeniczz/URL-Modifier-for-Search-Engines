@@ -17,12 +17,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -65,6 +65,7 @@
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@
 
 می‌توانید به صورت دستی انتخاب‌گر DOM را در کد اضافه کنید تا از موتورهای جستجوی دیگر پشتیبانی کنید.
 
-پشتیبانی از [Bing](https://www.bing.com) و [Baidu](https://www.baidu.com) امکان‌پذیر نیست، زیرا آن‌ها تنها لینک‌های میانی را فراهم می‌کنند که URL هدف را به صراحت نشان نمی‌دهند.
+ما نمی‌توانیم [Bing](https://www.bing.com) را پشتیبانی کنیم، زیرا فقط لینک‌های میانی را ارائه می‌دهد که به صراحت آدرس URL هدف را نشان نمی‌دهند.
 
 برای موتورهای جستجو مانند Yahoo، Lycos، AlohaFind، این اسکریپت پشتیبانی از حذف لینک‌های انتقالی و استخراج URL واقعی را ارائه می‌دهد. به عنوان مثال، لینک انتقالی Yahoo "https://r.search.yahoo.com/..." است. اگر از این موتورهای جستجو استفاده نمی‌کنید، می‌توانید از [قوانین تغییر URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) بدون سازگاری با لینک‌های انتقالی استفاده کنید. راستی، می‌توانید تمام قوانین تغییر URL RegEx داخلی را [اینجا](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt) ببینید.
+
+برای بایدو، این اسکریپت می‌تواند لینک‌های تغییر مسیر از نتایج جستجوی متنی را حذف کند، اما برای نتایج تصویر و ویدئو کار نخواهد کرد. این به این دلیل است که اصل کار بر استخراج لینک URL اصلی است که به صراحت در عناصر DOM نتایج جستجو نمایش داده می‌شود. بایدو برای برخی از نتایج لینک اصلی را به صراحت ارائه نمی‌دهد، بنابراین این اسکریپت برای این نوع نتایج کار نخواهد کرد. برای اطلاع شما، اسکریپت Tampermonkey [AC-baidu_RedirectRemove](https://greasyfork.org/en/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) می‌تواند تمامی انتقال‌های غیر ضروری برای بایدو را حذف کند.
 
 > فقط یک یادداشت کناری، [Kagi](https://kagi.com) یک موتور جستجو با قابلیت تغییر مسیر URL داخلی است، ارزش امتحان کردن دارد. من یک کاربر Kagi هستم و از این محصول بسیار راضی هستم، بنابراین اینجا به آنها تبلیغ می‌کنم.
 

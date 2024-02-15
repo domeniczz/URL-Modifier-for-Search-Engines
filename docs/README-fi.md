@@ -16,12 +16,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## Johdanto
 
-[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) -skripti, asenna Greasy Forkista: [URL-Muokkain Hakukoneille](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) -skripti, asenna Greasy Forkista: [URL-Muokkain Hakukoneille](https://greasyfork.org/fi/scripts/483597-url-modifier-for-search-engines).
 
 Jos sinulla ei ole Tampermonkeytä asennettuna selaimeesi, voit asentaa sen [Chrome Web Storesta](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) tai [Firefox Web Storesta](https://addons.mozilla.org/fi/firefox/addon/tampermonkey/).
 
@@ -65,6 +65,7 @@ URL-muokkaus käyttää säännöllisiä lausekkeita.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ URL-muokkaus käyttää säännöllisiä lausekkeita.
 
 Voit manuaalisesti lisätä DOM-selektori koodiin tukeaksesi muita hakukoneita.
 
-Ei voida tukea [Bing](https://www.bing.com) ja [Baidu](https://www.baidu.com), koska ne tarjoavat vain välilinkkejä, jotka eivät näytä kohde-URL:ää selkeästi.
+Emme voi tukea [Bing](https://www.bing.com), koska se tarjoaa vain välilinkkejä, jotka eivät näytä kohde-URL:ää suoraan.
 
 Hakukoneille kuten Yahoo, Lycos, AlohaFind, skripti tukee uudelleenohjauslinkkien poistamista ja oikean URL-osoitteen poimimista. Esimerkiksi Yahoon uudelleenohjauslinkki on "https://r.search.yahoo.com/...". Jos et käytä näitä hakukoneita, voit valita käyttää [URL-muokkaussääntöjä](https://github.com/domeniczz/URL-Muokkain-Hakukoneille/blob/master/no-redirection-omit-url-rules.js) ilman uudelleenohjauslinkkien yhteensopivuutta. Muuten, voit nähdä kaikki sisäänrakennetut säännölliset lausekelausekkeet URL-muokkaussäännöt [täältä](https://github.com/domeniczz/URL-Muokkain-Hakukoneille/blob/master/regexs.txt).
+
+Baidulle skripti voi poistaa tekstihakutulosten uudelleenohjauslinkit, mutta se ei toimi kuvien ja videoiden tuloksissa. Tämä johtuu siitä, että periaate on poimia alkuperäinen URL-linkki, joka näytetään eksplisiittisesti hakutulosten DOM-elementeissä. Baidu ei tarjoa alkuperäistä linkkiä eksplisiittisesti joillekin tuloksille, joten skripti ei toimi näille tulostyypeille. Huomioiksi, Tampermonkey-skripti [AC-baidu_RedirectRemove](https://greasyfork.org/fi/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) voi poistaa kaikki tarpeettomat uudelleenohjaukset Baidulle.
 
 > Muuten, [Kagi](https://kagi.com) on hakukone, jossa on sisäänrakennettu URL-uudelleenohjaustoiminto, kokeilemisen arvoinen. Olen Kagin käyttäjä, ja olen erittäin tyytyväinen tähän tuotteeseen, joten annan heille tässä huudon.
 

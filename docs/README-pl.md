@@ -17,11 +17,11 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## Wprowadzenie
 
-Skrypt dla [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), zainstaluj z Greasy Fork: [Modyfikator URL dla Wyszukiwarek](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+Skrypt dla [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), zainstaluj z Greasy Fork: [Modyfikator URL dla Wyszukiwarek](https://greasyfork.org/pl/scripts/483597-url-modifier-for-search-engines).
 
 Jeśli nie masz zainstalowanego Tampermonkey w swojej przeglądarce, możesz zainstalować go z [Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) lub [Firefox Web Store](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey).
 
@@ -65,6 +65,7 @@ Modyfikacja URL korzysta z Wyrażeń Regularnych.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,11 +138,11 @@ Modyfikacja URL korzysta z Wyrażeń Regularnych.
 
 Możesz ręcznie dodać selektor DOM w kodzie, aby obsługiwać inne wyszukiwarki.
 
-Nie można obsługiwać [Bing](https://www.bing.com) i [Baidu](https://www.baidu.com), ponieważ dostarczają one tylko pośrednie linki, które nie pokazują wyraźnie docelowego URL.
+Nie możemy wspierać [Bing](https://www.bing.com), ponieważ dostarcza on tylko pośrednie linki, które nie pokazują wprost docelowego URL.
 
-Dla wyszukiwarek takich jak Yahoo, Lycos, AlohaFind, skrypt umożliwia pozbycie się linków przekierowujących i ekstrakcję prawdziwego URL. Na przykład link przekierowujący Yahoo to "https://r.search.yahoo.com/...". Jeśli nie używasz tych wyszukiwarek, możesz zdecydować się na użycie [reguł modyfikacji URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) bez kompatybilności z linkami przekierowują
+Dla wyszukiwarek takich jak Yahoo, Lycos, AlohaFind, skrypt umożliwia pozbycie się linków przekierowujących i ekstrakcję prawdziwego URL. Na przykład link przekierowujący Yahoo to "https://r.search.yahoo.com/...". Jeśli nie używasz tych wyszukiwarek, możesz zdecydować się na użycie [reguł modyfikacji URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) bez kompatybilności z linkami przekierowującymi. A propos, wszystkie wbudowane reguły modyfikacji URL za pomocą Wyrażeń Regularnych można zobaczyć [tutaj](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
-cymi. A propos, wszystkie wbudowane reguły modyfikacji URL za pomocą Wyrażeń Regularnych można zobaczyć [tutaj](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+Dla Baidu, skrypt może usuwać linki przekierowujące z wyników wyszukiwania tekstu, ale nie zadziała dla wyników wyszukiwania obrazów i wideo. Jest to spowodowane tym, że zasada działania polega na wydobywaniu oryginalnego linku URL, który jest wyraźnie pokazany w elementach DOM wyników wyszukiwania. Baidu nie dostarcza wyraźnie oryginalnego linku dla niektórych wyników, dlatego skrypt nie będzie działał dla tych typów wyników. Dla informacji, skrypt Tampermonkey [AC-baidu_RedirectRemove](https://greasyfork.org/pl/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) może usunąć wszystkie niepotrzebne przekierowania dla Baidu.
 
 > Tylko mała uwaga, [Kagi](https://kagi.com) to wyszukiwarka z wbudowaną funkcjonalnością przekierowywania URL, warto wypróbować. Jestem użytkownikiem Kagi i jestem bardzo zadowolony z tego produktu, więc tutaj im się przyglądam.
 

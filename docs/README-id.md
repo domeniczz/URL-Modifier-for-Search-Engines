@@ -17,12 +17,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -65,6 +65,7 @@ Modifikasi URL menggunakan Ekspresi Reguler.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ Modifikasi URL menggunakan Ekspresi Reguler.
 
 Anda dapat menambahkan pemilih DOM secara manual dalam kode untuk mendukung mesin pencari lainnya.
 
-Tidak dapat mendukung [Bing](https://www.bing.com) dan [Baidu](https://www.baidu.com) karena hanya menyediakan tautan perantara yang tidak secara eksplisit menunjukkan URL tujuan.
+Kami tidak dapat mendukung [Bing](https://www.bing.com) karena hanya menyediakan tautan perantara yang tidak secara eksplisit menunjukkan URL tujuan.
 
 Untuk mesin pencari seperti Yahoo, Lycos, AlohaFind, skrip mendukung menghilangkan tautan pengalihan dan mengekstrak URL asli. Misalnya, tautan pengalihan Yahoo adalah "https://r.search.yahoo.com/...". Jika Anda tidak menggunakan mesin pencari ini, Anda dapat memilih menggunakan [aturan modifikasi URL](https://github.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/blob/master/no-redirection-omit-url-rules.js) tanpa kompatibilitas tautan pengalihan. BTW, Anda dapat melihat semua aturan modifikasi URL RegEx bawaan [di sini](https://github.com/domeniczz/Pengubah-URL-untuk-Mesin-Pencari/blob/master/regexs.txt).
+
+Untuk Baidu, skrip ini dapat menghilangkan tautan pengalihan dari hasil pencarian teks, tetapi tidak akan berfungsi untuk hasil gambar dan video. Hal ini karena prinsipnya adalah mengekstrak tautan URL asli yang secara eksplisit ditampilkan dalam elemen DOM hasil pencarian. Baidu tidak menyediakan tautan asli secara eksplisit untuk beberapa hasil, sehingga skrip ini tidak akan berfungsi untuk jenis hasil tersebut. Untuk informasi Anda, skrip Tampermonkey [AC-baidu_RedirectRemove](https://greasyfork.org/en/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) dapat menghilangkan semua pengalihan yang tidak perlu untuk Baidu.
 
 > Hanya catatan samping, [Kagi](https://kagi.com) adalah mesin pencari dengan fungsi pengalihan URL bawaan, layak untuk dicoba. Saya pengguna Kagi, dan saya sangat puas dengan produk ini, jadi saya memberikan teriakan di sini.
 

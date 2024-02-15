@@ -17,12 +17,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## Giới thiệu
 
-Một script cho [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), cài đặt từ Greasy Fork: [URL Modifier for Search Engines](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+Một script cho [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), cài đặt từ Greasy Fork: [URL Modifier for Search Engines](https://greasyfork.org/vi/scripts/483597-url-modifier-for-search-engines).
 
 Nếu bạn không có Tampermonkey được cài đặt trong trình duyệt, bạn có thể cài đặt nó từ [Cửa hàng Web Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) hoặc [Cửa hàng Web Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey).
 
@@ -65,6 +65,7 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 
 Bạn có thể tự thêm bộ chọn DOM vào mã để hỗ trợ thêm công cụ tìm kiếm khác.
 
-Không thể hỗ trợ [Bing](https://www.bing.com) và [Baidu](https://www.baidu.com) vì chúng chỉ cung cấp các liên kết trung gian không hiển thị rõ ràng URL mục tiêu.
+Chúng tôi không thể hỗ trợ [Bing](https://www.bing.com) vì nó chỉ cung cấp các liên kết trung gian không hiển thị rõ ràng URL mục tiêu.
 
 Đối với các công cụ tìm kiếm như Yahoo, Lycos, AlohaFind, script hỗ trợ loại bỏ liên kết chuyển hướng và trích xuất URL thực. Ví dụ, liên kết chuyển hướng của Yahoo là "https://r.search.yahoo.com/...". Nếu bạn không sử dụng các công cụ tìm kiếm này, bạn có thể chọn sử dụng [Quy tắc chỉnh sửa URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) không tương thích với liên kết chuyển hướng. Tiện thể, bạn có thể xem tất cả các quy tắc chỉnh sửa URL RegEx tích hợp [tại đây](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+
+Đối với Baidu, script này có thể loại bỏ các liên kết chuyển hướng từ kết quả tìm kiếm văn bản, nhưng sẽ không hoạt động đối với kết quả hình ảnh và video. Điều này là bởi vì nguyên tắc là trích xuất liên kết URL gốc được hiển thị rõ ràng trong các phần tử DOM của kết quả tìm kiếm. Baidu không cung cấp liên kết gốc một cách rõ ràng cho một số kết quả, do đó, script sẽ không hoạt động cho những loại kết quả đó. Để thông tin của bạn, script Tampermonkey [AC-baidu_RedirectRemove](https://greasyfork.org/vi/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) có thể loại bỏ tất cả các chuyển hướng không cần thiết cho Baidu.
 
 > Chỉ là một lưu ý nhỏ, [Kagi](https://kagi.com) là một công cụ tìm kiếm với chức năng chuyển hướng URL tích hợp, đáng để thử. Tôi là một người dùng của Kagi, và tôi rất hài lòng với sản phẩm này, nên tôi muốn giới thiệu họ ở đây.
 

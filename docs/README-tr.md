@@ -17,11 +17,11 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## Giriş
 
-[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) script'i, Greasy Fork'tan yükleyin: [Arama Motorları için URL Değiştirici](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) script'i, Greasy Fork'tan yükleyin: [Arama Motorları için URL Değiştirici](https://greasyfork.org/tr/scripts/483597-url-modifier-for-search-engines).
 
 Tarayıcınızda Tampermonkey yüklü değilse, [Chrome Web Mağazası](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) veya [Firefox Web Mağazası](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey) üzerinden yükleyebilirsiniz.
 
@@ -65,6 +65,7 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 
 Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyebilirsiniz.
 
-[Bing](https://www.bing.com) ve [Baidu](https://www.baidu.com) desteklenemiyor, çünkü yalnızca hedef URL'yi açıkça göstermeyen ara bağlantılar sağlıyorlar.
+[Bing](https://www.bing.com) destekleyemiyoruz, çünkü sadece hedef URL'yi açıkça göstermeyen ara bağlantılar sağlar.
 
 Yahoo, Lycos, AlohaFind gibi arama motorları için, bu script yönlendirme bağlantılarını kaldırma ve gerçek URL'yi çıkarma desteği sağlar. Örneğin, Yahoo'nun yönlendirme bağlantısı "https://r.search.yahoo.com/..."'dir. Bu arama motorlarını kullanmıyorsanız, yönlendirme bağlantıları ile uyumluluk olmadan [URL değiştirme kuralları](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) kullanmayı tercih edebilirsiniz. Bu arada, tüm yerleşik RegEx URL değiştirme kurallarını [burada](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt) görebilirsiniz.
+
+Baidu için, bu script metin arama sonuçlarından yönlendirme linklerini kaldırabilir, ancak görüntü ve video sonuçları için çalışmaz. Bunun nedeni, arama sonuçlarının DOM elemanlarında açıkça gösterilen orijinal URL linkini çıkarma prensibidir. Baidu, bazı sonuçlar için orijinal linki açıkça sağlamaz, bu yüzden script bu tür sonuçlar için çalışmaz. Bilginize, Tampermonkey scripti [AC-baidu_RedirectRemove](https://greasyfork.org/tr/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) Baidu için tüm gereksiz yönlendirmeleri kaldırabilir.
 
 > Sadece bir yan not olarak, [Kagi](https://kagi.com), yerleşik URL yönlendirme işlevine sahip bir arama motoru, denemeye değer bir ürün. Ben Kagi kullanıcısıyım ve bu üründen çok memnunum, bu yüzden burada onlara bir övgü veriyorum.
 

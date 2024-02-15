@@ -17,11 +17,11 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## Εισαγωγή
 
-Ένα σενάριο για το [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), εγκαταστήστε από το Greasy Fork: [Μετατροπέας URL για Μηχανές Αναζήτησης](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+Ένα σενάριο για το [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), εγκαταστήστε από το Greasy Fork: [Μετατροπέας URL για Μηχανές Αναζήτησης](https://greasyfork.org/el/scripts/483597-url-modifier-for-search-engines).
 
 Εάν δεν έχετε εγκαταστήσει το Tampermonkey στον περιηγητή σας, μπορείτε να το εγκαταστήσετε από το [Chrome Ηλεκτρονικό Κατάστημα](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) ή το [Firefox Ηλεκτρονικό Κατάστημα](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey).
 
@@ -65,6 +65,7 @@
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@
 
 Μπορείτε να προσθέσετε χειροκίνητα τον DOM selector στον κώδικα για να υποστηρίξετε άλλες μηχανές αναζήτησης.
 
-Δεν είναι δυνατή η υποστήριξη του [Bing](https://www.bing.com) και του [Baidu](https://www.baidu.com), καθώς παρέχουν μόνο ενδιάμεσους συνδέσμους που δεν εμφανίζουν ρητά την στοχευμένη διεύθυνση URL.
+Δεν μπορούμε να υποστηρίξουμε το [Bing](https://www.bing.com), επειδή παρέχει μόνο ενδιάμεσους συνδέσμους που δεν εμφανίζουν ρητά την στοχευμένη URL.
 
 Για μηχανές αναζήτησης όπως Yahoo, Lycos, AlohaFind, το σενάριο υποστηρίζει την απαλλαγή από συνδέσμους ανακατεύθυνσης και την εξαγωγή του πραγματικού URL. Για παράδειγμα, ο σύνδεσμος ανακατεύθυνσης του Yahoo είναι "https://r.search.yahoo.com/...". Εάν δεν χρησιμοποιείτε αυτές τις μηχανές αναζήτησης, μπορείτε να επιλέξετε να χρησιμοποιήσετε [κανόνες τροποποίησης URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) χωρίς συμβατότητα με σύνδεσμο ανακατεύθυνσης. Επίσης, μπορείτε να δείτε όλους τους ενσωματωμένους κανόνες τροποποίησης URL RegEx [εδώ](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+
+Για το Baidu, το σκριπτ μπορεί να αφαιρέσει τους συνδέσμους ανακατεύθυνσης από τα αποτελέσματα αναζήτησης κειμένου, αλλά δεν θα λειτουργήσει για τα αποτελέσματα εικόνων και βίντεο. Αυτό οφείλεται στην αρχή της εξαγωγής του αρχικού URL συνδέσμου που εμφανίζεται ρητά στα DOM στοιχεία των αποτελεσμάτων αναζήτησης. Η Baidu δεν παρέχει ρητά τον αρχικό σύνδεσμο για κάποια αποτελέσματα, επομένως, το script δεν θα λειτουργήσει για αυτούς τους τύπους αποτελεσμάτων. Για την πληροφόρησή σας, το Tampermonkey script [AC-baidu_RedirectRemove](https://greasyfork.org/el/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) μπορεί να αφαιρέσει όλες τις ανεπιθύμητες ανακατευθύνσεις για το Baidu.
 
 > Απλώς μια παρατήρηση, το [Kagi](https://kagi.com) είναι μια μηχανή αναζήτησης με ενσωματωμένη λειτουργικότητα ανακατεύθυνσης URL, αξίζει να το δοκιμάσετε. Είμαι χρήστης του Kagi και είμαι πολύ ικανοποιημένος με αυτό το προϊόν, οπότε τους κάνω μια διαφήμιση εδώ.
 

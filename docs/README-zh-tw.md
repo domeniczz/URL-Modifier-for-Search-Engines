@@ -16,12 +16,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## 介紹
 
-[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 腳本，從 Greasy Fork 安裝：[搜索引擎結果 URL 修改器](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines)。
+[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 腳本，從 Greasy Fork 安裝：[搜索引擎結果 URL 修改器](https://greasyfork.org/zh-TW/scripts/483597-url-modifier-for-search-engines)。
 
 如果您的瀏覽器中沒有安裝 Tampermonkey，您可以從 [Chrome 網上應用店](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)或 [Firefox 網上應用店](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey)進行安裝。
 
@@ -65,6 +65,7 @@ URL 修改使用正則表達式。
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ URL 修改使用正則表達式。
 
 您可以在代碼中手動添加 DOM 選擇器以支援其他搜索引擎。
 
-無法支援 [Bing](https://www.bing.com)和[Baidu](https://www.baidu.com)，因為它們只提供重定向鏈接，這些鏈接並沒有明確顯示目標 URL。
+無法支援 [Bing](https://www.bing.com)，因為它只提供重定向鏈接，這些鏈接並沒有明確顯示目標 URL。
 
 對於像 Yahoo、Lycos、AlohaFind 這樣的搜索引擎，該腳本支持去除重定向鏈接並提取真實 URL。例如，Yahoo 的重定向鏈接是 “https://r.search.yahoo.com/...”。如果您不使用這些搜索引擎，您可以選擇使用 [URL 修改規則](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js)來避免重定向鏈接兼容性問題。順便說一下，您可以在[這裡](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)查看所有內置的 RegEx URL 修改規則。
+
+對於百度，腳本可以去除文本搜索結果的重定向鏈接，但對於圖片和視頻結果則不行。因為其原理是提取搜索結果 DOM 元素中明確顯示的原始URL鏈接。對於某些結果，百度並不明確提供原始鏈接，因此，該腳本對這類結果無效。僅供參考，Tampermonkey 腳本 [AC-baidu_RedirectRemove](https://greasyfork.org/zh-TW/scripts/14178-ac-baidu-重定向優化百度搜狗谷歌必應搜索-favicon-雙列) 可以去除百度所有不必要的重定向。
 
 > 順便一提，[Kagi](https://kagi.com) 是一個內建 URL 重定向功能的搜尋引擎，值得一試。我是 Kagi 的用戶，我對這個產品很滿意，因此在這裡為他們做個廣告。
 

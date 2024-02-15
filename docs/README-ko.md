@@ -16,12 +16,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md">Suomi</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## 소개
 
-[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 스크립트, Greasy Fork 에서 설치: [검색 엔진용 URL 수정기](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+[Tampermonkey](https://github.com/Tampermonkey/tampermonkey) 스크립트, Greasy Fork 에서 설치: [검색 엔진용 URL 수정기](https://greasyfork.org/ko/scripts/483597-url-modifier-for-search-engines).
 
 브라우저에 Tampermonkey 가 설치되어 있지 않다면, [Chrome 웹 스토어](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) 또는 [Firefox 웹 스토어](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey)에서 설치할 수 있습니다.
 
@@ -65,6 +65,7 @@ URL 수정은 정규 표현식을 사용합니다.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ URL 수정은 정규 표현식을 사용합니다.
 
 다른 검색 엔진을 지원하기 위해 코드에 DOM 선택자를 수동으로 추가할 수 있습니다.
 
-[Bing](https://www.bing.com) 과 [Baidu](https://www.baidu.com)를 지원할 수 없습니다. 왜냐하면 그들은 목표 URL 을 명시적으로 보여주지 않는 중간 링크만을 제공하기 때문입니다.
+[Bing](https://www.bing.com) 을 지원할 수 없습니다. 왜냐하면, 그것은 목표 URL 을 명시적으로 보여주지 않는 중간 링크만을 제공하기 때문입니다.
 
 Yahoo, Lycos, AlohaFind 와 같은 검색 엔진의 경우, 이 스크립트는 리디렉션 링크를 제거하고 실제 URL을 추출하는 기능을 지원합니다. 예를 들어, Yahoo 의 리디렉션 링크는 "https://r.search.yahoo.com/..." 입니다. 이 검색 엔진들을 사용하지 않는 경우, 리디렉션 링크 호환성 없이 [URL 수정 규칙](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js)을 사용할 수 있습니다. 참고로, 모든 내장 RegEx URL 수정 규칙은 [여기](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)에서 볼 수 있습니다.
+
+바이두의 경우, 스크립트는 텍스트 검색 결과의 리디렉션 링크를 제거할 수 있지만 이미지 및 비디오 결과에는 작동하지 않습니다. 이는 검색 결과의 DOM 요소에 명시적으로 표시된 원본 URL 링크를 추출하는 원리 때문입니다. 바이두는 일부 결과에 대해 원본 링크를 명시적으로 제공하지 않으므로, 그러한 종류의 결과에 대해서는 스크립트가 작동하지 않습니다. 참고로, Tampermonkey 스크립트 [AC-baidu_RedirectRemove](https://greasyfork.org/ko/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列)는 바이두의 모든 불필요한 리디렉션을 제거할 수 있습니다.
 
 > 한 가지 부가 정보로, [Kagi](https://kagi.com) 는 내장된 URL 리다이렉션 기능이 있는 검색 엔진으로, 시도해보기 가치가 있습니다. 저는 Kagi 의 사용자이며 이 제품에 매우 만족하고 있으므로 여기에서 그들에게 소개합니다.
 

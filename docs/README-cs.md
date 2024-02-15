@@ -1,7 +1,7 @@
 # Modifikátor-URL-pro-vyhledávače
 
 <div align="center">
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/README.md">English</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-cn.md">简体中文</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-zh-tw.md">繁體中文</a> | 
@@ -21,7 +21,7 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## Úvod
 
-Skript pro [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), instalujte z Greasy Fork: [Modifikátor URL pro vyhledávače](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+Skript pro [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), instalujte z Greasy Fork: [Modifikátor URL pro vyhledávače](https://greasyfork.org/cs/scripts/483597-url-modifier-for-search-engines).
 
 Pokud nemáte v prohlížeči nainstalovaný Tampermonkey, můžete si ho nainstalovat z [Obchodu Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) nebo [Obchodu Firefox Web Store](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey).
 
@@ -65,6 +65,7 @@ Modifikace URL využívá regulární výrazy.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ Modifikace URL využívá regulární výrazy.
 
 Do kódu můžete manuálně přidat DOM selektor pro podporu dalších vyhledávačů.
 
-Nelze podporovat [Bing](https://www.bing.com) a [Baidu](https://www.baidu.com), protože poskytují pouze mezilehlé odkazy, které explicitně nezobrazují cílovou URL.
+Nemůžeme podporovat [Bing](https://www.bing.com), protože poskytuje pouze prostřední odkazy, které explicitně nezobrazují cílovou URL.
 
 Pro vyhledávače jako Yahoo, Lycos, AlohaFind, skript podporuje odstranění přesměrovacích odkazů a extrakci skutečné URL. Například přesměrovací odkaz Yahoo je "https://r.search.yahoo.com/...". Pokud tyto vyhledávače nepoužíváte, můžete se rozhodnout použít [Pravidla úpravy URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) bez kompatibility s přesměrovacími odkazy. Mimochodem, všechna vestavěná pravidla úpravy URL RegEx můžete vidět [zde](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+
+Pro Baidu může skript odstranit přesměrovací odkazy z výsledků textového vyhledávání, ale nebude fungovat pro výsledky obrázků a videí. To je způsobeno tím, že princip spočívá ve výtažku původního URL odkazu, který je explicitně zobrazen v DOM prvcích výsledků vyhledávání. Baidu explicitně neposkytuje původní odkaz pro některé výsledky, a tak skript pro tyto typy výsledků nebude fungovat. Pro vaši informaci, Tampermonkey skript [AC-baidu_RedirectRemove](https://greasyfork.org/cs/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) může odstranit všechny nepotřebné přesměrování pro Baidu.
 
 > Jen tak mimochodem, [Kagi](https://kagi.com) je vyhledávač s vestavěnou funkcí přesměrování URL, který stojí za vyzkoušení. Jsem uživatelem Kagi a s tímto produktem jsem velmi spokojen, takže jim tady dávám výzvu.
 

@@ -17,12 +17,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md">Indonesia</a> | 
@@ -40,7 +40,7 @@
 
 ## Bevezetés
 
-Egy [Tampermonkey](https://github.com/Tampermonkey/tampermonkey) szkript, telepíthető a Greasy Forkról: [URL Módosító a Keresőmotorokhoz](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+Egy [Tampermonkey](https://github.com/Tampermonkey/tampermonkey) szkript, telepíthető a Greasy Forkról: [URL Módosító a Keresőmotorokhoz](https://greasyfork.org/hu/scripts/483597-url-modifier-for-search-engines).
 
 Ha nincs Tampermonkey telepítve a böngésződben, telepítheted a [Chrome Web Áruházból](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) vagy a [Firefox Web Áruházból](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/).
 
@@ -65,6 +65,7 @@ Az URL módosítás reguláris kifejezéseket használ.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ Az URL módosítás reguláris kifejezéseket használ.
 
 Manuálisan hozzáadhatsz DOM szelektort a kódhoz, hogy támogass más keresőmotorokat.
 
-Nem támogatható a [Bing](https://www.bing.com) és a [Baidu](https://www.baidu.com), mert csak köztes linkeket biztosítanak, amelyek nem mutatják ki egyértelműen a cél URL-t.
+Nem támogathatjuk a [Bing](https://www.bing.com)-et, mivel csak köztes linkeket biztosít, amelyek nem mutatják egyértelműen a cél URL-t.
 
 Olyan keresőmotorok esetében, mint a Yahoo, Lycos, AlohaFind, a szkript támogatja az átirányítási linkek megszüntetését és a valódi URL kinyerését. Például a Yahoo átirányítási linkje "https://r.search.yahoo.com/...". Ha nem használod ezeket a keresőmotorokat, választhatod az [URL módosítási szabályokat](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) átirányítási link kompatibilitás nélkül. Egyébként, itt találhatod meg az összes beépített RegEx URL módosítási szabályt [itt](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+
+A Baidu esetében a szkript eltávolíthatja a szöveges keresési eredmények átirányítási linkjeit, de nem működik kép- és videóeredmények esetén. Ennek oka, hogy az elv az eredeti URL-link kinyerése, amely egyértelműen megjelenik a keresési eredmények DOM elemeiben. A Baidu nem biztosítja egyértelműen az eredeti linket egyes eredmények esetében, így a szkript ezekre a típusú eredményekre nem fog működni. Tájékoztatásul, a Tampermonkey szkript [AC-baidu_RedirectRemove](https://greasyfork.org/hu/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) képes eltávolítani az összes szükségtelen átirányítást a Baidu számára.
 
 > Csak mellékesen, a [Kagi](https://kagi.com) egy beépített URL átirányítási funkcióval rendelkező keresőmotor, érdemes kipróbálni. Kagi felhasználója vagyok, és nagyon elégedett vagyok ezzel a termékkel, ezért itt kiáltok fel nekik.
 

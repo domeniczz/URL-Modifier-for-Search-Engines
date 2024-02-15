@@ -17,11 +17,11 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -40,7 +40,7 @@
 
 ## הקדמה
 
-סקריפט [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), התקנה מ-Greasy Fork: [מתקן URL למנועי חיפוש](https://greasyfork.org/en/scripts/483597-url-modifier-for-search-engines).
+סקריפט [Tampermonkey](https://github.com/Tampermonkey/tampermonkey), התקנה מ-Greasy Fork: [מתקן URL למנועי חיפוש](https://greasyfork.org/he/scripts/483597-url-modifier-for-search-engines).
 
 אם אין לך Tampermonkey מותקן בדפדפן שלך, תוכל להתקין אותו מ-[Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) או מ-[Firefox Web Store](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey).
 
@@ -65,6 +65,7 @@
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@
 
 ניתן להוסיף ידנית בורר DOM בקוד כדי לתמוך במנועי חיפוש נוספים.
 
-לא ניתן לתמוך ב-[Bing](https://www.bing.com) ו-[Baidu](https://www.baidu.com), מכיוון שהם מספקים רק קישורים ביניים שאינם מציגים במפורש את ה-URL היעד.
+איננו יכולים לתמוך ב[Bing](https://www.bing.com), מכיוון שהוא מספק רק קישורים ביניים שלא מציגים במפורש את כתובת ה-URL המטרה.
 
 עבור מנועי חיפוש כמו Yahoo, Lycos, AlohaFind, הסקריפט תומך בהסרת קישורי הפניה ובחילוץ ה-URL האמיתי. לדוגמה, קישור ההפניה של Yahoo הוא "https://r.search.yahoo.com/...". אם אינך משתמש במנועי חיפוש אלו, תוכל לבחור להשתמש ב[כללי שינוי URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) ללא תאימות לקישורי הפניה. אגב, תוכל לראות את כל כללי שינוי ה-URL של RegEx המובנים [כאן](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+
+עבור Baidu, הסקריפט יכול להסיר קישורי הפניה מתוצאות חיפוש טקסט, אך לא יעבוד עבור תוצאות תמונה ווידאו. זה מכיוון שהעיקרון הוא לחלץ את הקישור המקורי שמוצג במפורש באלמנטים של DOM של תוצאות החיפוש. Baidu לא מספקת במפורש את הקישור המקורי עבור חלק מהתוצאות, לכן, הסקריפט לא יעבוד עבור סוגי תוצאות אלה. לידיעתך, הסקריפט של Tampermonkey [AC-baidu_RedirectRemove](https://greasyfork.org/he/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) יכול להסיר את כל ההפניות הלא נחוצות עבור Baidu.
 
 > רק הערה בצד, [Kagi](https://kagi.com) הוא מנוע חיפוש עם פונקציונליות הפניה מובנית ב-URL, שווה לנסות. אני משתמש ב-Kagi, ואני מרוצה מאוד מהמוצר הזה, אז אני נותן להם קריאת תיגבור כאן.
 

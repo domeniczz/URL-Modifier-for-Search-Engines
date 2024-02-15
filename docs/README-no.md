@@ -17,12 +17,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md">Indonesia</a> | 
@@ -65,6 +65,7 @@ URL-modifikasjon bruker regulære uttrykk.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ URL-modifikasjon bruker regulære uttrykk.
 
 Du kan manuelt legge til DOM-selektor i koden for å støtte andre søkemotorer.
 
-Kan ikke støtte [Bing](https://www.bing.com) og [Baidu](https://www.baidu.com) fordi de bare tilbyr mellomliggende lenker som ikke eksplisitt viser mål-URLen.
+Vi kan ikke støtte [Bing](https://www.bing.com) fordi den bare tilbyr mellomliggende lenker som ikke eksplisitt viser mål-URL-en.
 
 For søkemotorer som Yahoo, Lycos, AlohaFind, støtter skriptet å bli kvitt omdirigeringslenker og trekke ut den virkelige URL-en. For eksempel, Yahoo omdirigeringslenken er "https://r.search.yahoo.com/...". Hvis du ikke bruker disse søkemotorene, kan du velge å bruke [URL-modifikasjonsregler](https://github.com/domeniczz/URL-Modifier-for-Søkemotorer/blob/master/no-redirection-omit-url-rules.js) uten kompatibilitet for omdirigeringslenke. For øvrig kan du se alle innebygde RegEx URL-modifikasjonsregler [her](https://github.com/domeniczz/URL-Modifier-for-Søkemotorer/blob/master/regexs.txt).
+
+For Baidu kan scriptet fjerne omadresseringslenker fra tekstbaserte søkresultater, men det vil ikke fungere for bilder og videoresultater. Dette skyldes at prinsippet er å trekke ut den opprinnelige URL-lenken som eksplisitt vises i DOM-elementene til søkeresultatene. Baidu gir ikke eksplisitt den opprinnelige lenken for noen resultater, derfor vil scriptet ikke fungere for disse typene resultater. For din informasjon, Tampermonkey-scriptet [AC-baidu_RedirectRemove](https://greasyfork.org/en/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) kan fjerne alle unødvendige omadresseringer for Baidu.
 
 > Bare en sidebemerkning, [Kagi](https://kagi.com) er en søkemotor med innebygd URL-omdirigeringsfunksjonalitet, verdt å prøve ut. Jeg er en bruker av Kagi, og jeg er veldig fornøyd med dette produktet, så jeg gir dem en rop ut her.
 

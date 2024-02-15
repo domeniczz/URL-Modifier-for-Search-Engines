@@ -16,12 +16,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -65,6 +65,7 @@ La modification d'URL utilise l'Expression Régulière.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ La modification d'URL utilise l'Expression Régulière.
 
 Vous pouvez ajouter manuellement le sélecteur DOM dans le code pour prendre en charge d'autres moteurs de recherche.
 
-Impossible de prendre en charge [Bing](https://www.bing.com) et [Baidu](https://www.baidu.com), car ils ne fournissent que des liens intermédiaires qui n'affichent pas explicitement l'URL cible.
+Nous ne pouvons pas prendre en charge [Bing](https://www.bing.com), car il fournit uniquement des liens intermédiaires qui ne montrent pas explicitement l'URL cible.
 
 Pour des moteurs de recherche tels que Yahoo, Lycos, AlohaFind, le script permet de supprimer les liens de redirection et d'extraire l'URL réelle. Par exemple, le lien de redirection de Yahoo est "https://r.search.yahoo.com/...". Si vous n'utilisez pas ces moteurs de recherche, vous pouvez choisir d'utiliser [Règles de modification d'URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) sans compatibilité avec les liens de redirection. Au fait, vous pouvez voir toutes les règles de modification d'URL RegEx intégrées [ici](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+
+Pour Baidu, le script peut supprimer le lien de redirection des résultats de recherche de texte, mais ne fonctionnera pas pour les résultats d'images et de vidéos. Cela parce que le principe est d'extraire le lien URL original explicitement affiché dans les éléments DOM des résultats de recherche. Baidu ne fournit pas de lien original explicitement pour certains résultats, donc, le script ne fonctionnera pas pour ces types de résultats. Pour votre information, le script Tampermonkey [AC-baidu_RedirectRemove](https://greasyfork.org/fr/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) peut supprimer toutes les redirections inutiles pour Baidu.
 
 > Juste une petite note, [Kagi](https://kagi.com) est un moteur de recherche avec une fonctionnalité de redirection d'URL intégrée, cela vaut la peine d'essayer. Je suis un utilisateur de Kagi, et je suis très satisfait de ce produit, alors je leur fais un coup de chapeau ici.
 

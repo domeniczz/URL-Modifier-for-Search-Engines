@@ -16,12 +16,12 @@
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md">Dansk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md">한국어</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-it.md">Italiano</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Český</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-cs.md">Českina</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md">Ελληνικά</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-he.md">עִבְרִית</a><br/>
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md">Polski</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md">Türkçe</a> | 
-    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Român</a> | 
+    <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ro.md">Română</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md">Magyar</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md">Norsk</a> | 
     <a href="https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md">Українська</a> | 
@@ -65,6 +65,7 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
+- [Baidu](https://www.baidu.com)
 - [Yandex](https://yandex.com)
 - [SearXNG](https://searx.space)
 - [StartPage](https://www.startpage.com)
@@ -137,9 +138,11 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 
 Sie können manuell DOM-Selektor im Code hinzufügen, um andere Suchmaschinen zu unterstützen.
 
-Unterstützung für [Bing](https://www.bing.com) und [Baidu](https://www.baidu.com) ist nicht möglich, da sie nur Zwischenlinks bereitstellen, die die Ziel-URL nicht explizit anzeigen.
+Wir können [Bing](https://www.bing.com) nicht unterstützen, da es nur Zwischenlinks bereitstellt, die die Ziel-URL nicht explizit anzeigen.
 
 Für Suchmaschinen wie Yahoo, Lycos, AlohaFind unterstützt das Skript das Entfernen von Weiterleitungslinks und das Extrahieren der echten URL. Zum Beispiel ist der Weiterleitungslink von Yahoo "https://r.search.yahoo.com/...". Wenn Sie diese Suchmaschinen nicht verwenden, können Sie sich dafür entscheiden, [URL-Änderungsregeln](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) ohne Kompatibilität für Weiterleitungslinks zu verwenden. Übrigens können Sie hier alle eingebauten RegEx URL-Änderungsregeln [sehen](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
+
+Für Baidu kann das Skript Weiterleitungslinks aus Textsuchergebnissen entfernen, aber es funktioniert nicht für Bild- und Videoergebnisse. Dies liegt daran, dass das Prinzip das Extrahieren des ursprünglichen URL-Links ist, der explizit in den DOM-Elementen der Suchergebnisse angezeigt wird. Baidu stellt für einige Ergebnisse den ursprünglichen Link nicht explizit zur Verfügung, daher funktioniert das Skript für diese Arten von Ergebnissen nicht. Zur Information, das Tampermonkey-Skript [AC-baidu_RedirectRemove](https://greasyfork.org/de/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列) kann alle unnötigen Weiterleitungen für Baidu entfernen.
 
 > Kurze Anmerkung: [Kagi](https://kagi.com) ist eine Suchmaschine mit integrierter URL-Umleitungsfunktion, die es sich lohnt, auszuprobieren. Ich bin ein Nutzer von Kagi und bin sehr zufrieden mit diesem Produkt, deshalb gebe ich ihnen hier einen Hinweis.
 
