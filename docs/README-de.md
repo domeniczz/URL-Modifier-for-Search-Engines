@@ -35,6 +35,8 @@
 **Katalog**:
 
 - [Einführung](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md#Einführung)
+- [Unterstützung für Suchmaschinen](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md#Unterstützung-für-Suchmaschinen)
+- [Eingebaute Weiterleitung](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md#Eingebaute-Weiterleitung)
 - [Aufgabenliste](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md#Aufgabenliste)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-de.md#Wiki)
 
@@ -60,7 +62,7 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Unterstützung für Suchmaschinen
+## Unterstützung für Suchmaschinen
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Finde mehr Suchmaschinen:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Eingebaute Weiterleitung
+## Eingebaute Weiterleitung
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (zum Beispiel [safereddit.com](https://safereddit.com))

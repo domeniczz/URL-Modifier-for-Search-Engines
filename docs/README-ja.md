@@ -35,6 +35,8 @@
 **カタログ**:
 
 - [イントロダクション](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md#イントロダクション)
+- [対応する検索エンジン](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md#対応する検索エンジン)
+- [組み込みのリダイレクト](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md#組み込みのリダイレクト)
 - [やるべきこと](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md#やるべきこと)
 - [ウィキ](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ja.md#ウィキ)
 
@@ -60,7 +62,7 @@ URL の変更正規表現を使用します。
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### 対応する検索エンジン
+## 対応する検索エンジン
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Baidu において、このスクリプトはテキスト検索結果のリダ�
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### 組み込みのリダイレクト
+## 組み込みのリダイレクト
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (例えば [safereddit.com](https://safereddit.com))

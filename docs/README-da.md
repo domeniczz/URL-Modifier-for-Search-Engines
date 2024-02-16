@@ -35,6 +35,8 @@
 **Katalog**:
 
 - [Introduktion](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md#Introduktion)
+- [Søgemaskine Support](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md#Søgemaskine-Support)
+- [Indbygget Omdirigering](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md#Indbygget-Omdirigering)
 - [TODO](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md#TODO)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-da.md#Wiki)
 
@@ -60,7 +62,7 @@ URL-ændring bruger Regulære Udtryk.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Søgemaskine Support
+## Søgemaskine Support
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Find flere søgemaskiner:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Indbygget Omdirigering
+## Indbygget Omdirigering
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (f.eks. [safereddit.com](https://safereddit.com))

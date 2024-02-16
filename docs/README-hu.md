@@ -35,6 +35,8 @@
 **Tartalomjegyzék**:
 
 - [Bevezetés](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md#Bevezetés)
+- [Keresőmotor Támogatás](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md#Keresőmotor-Támogatás)
+- [Beépített Átirányítás](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md#Beépített-Átirányítás)
 - [TODO](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md#TODO)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hu.md#Wiki)
 
@@ -60,7 +62,7 @@ Az URL módosítás reguláris kifejezéseket használ.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Keresőmotor Támogatás
+## Keresőmotor Támogatás
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ További keresőmotorok:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Beépített Átirányítás
+## Beépített Átirányítás
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (pl. [safereddit.com](https://safereddit.com))

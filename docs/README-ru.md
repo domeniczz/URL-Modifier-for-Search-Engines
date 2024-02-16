@@ -35,6 +35,8 @@
 **Каталог**:
 
 - [Введение](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md#Introduction)
+- [Поддержка поисковых систем](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md#Поддержка-поисковых-систем)
+- [Встроенные переадресации](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md#Встроенные-переадресации)
 - [Список задач](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md#Список-задач)
 - [Вики](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ru.md#Вики)
 
@@ -60,7 +62,7 @@
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Поддержка поисковых систем
+## Поддержка поисковых систем
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Встроенные переадресации
+## Встроенные переадресации
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (например [safereddit.com](https://safereddit.com))

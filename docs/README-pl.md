@@ -35,6 +35,8 @@
 **Spis treści**:
 
 - [Wprowadzenie](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md#Wprowadzenie)
+- [Obsługiwane Wyszukiwarki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md#Obsługiwane-Wyszukiwarki)
+- [Wbudowane Przekierowania](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md#Wbudowane-Przekierowania)
 - [Do zrobienia](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md#Do-zrobienia)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-pl.md#Wiki)
 
@@ -60,7 +62,7 @@ Modyfikacja URL korzysta z Wyrażeń Regularnych.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Obsługiwane Wyszukiwarki
+## Obsługiwane Wyszukiwarki
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Znajdź więcej wyszukiwarek:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Wbudowane Przekierowania
+## Wbudowane Przekierowania
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (np. [safereddit.com](https://safereddit.com))

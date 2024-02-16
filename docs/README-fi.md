@@ -35,6 +35,8 @@
 **Luettelo**:
 
 - [Johdanto](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md#Johdanto)
+- [Hakukoneiden Tuki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md#Hakukoneiden-Tuki)
+- [Sisäänrakennettu Uudelleenohjaus](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md#Sisäänrakennettu-Uudelleenohjaus)
 - [Tehtävät](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md#Tehtävät)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fi.md#Wiki)
 
@@ -60,7 +62,7 @@ URL-muokkaus käyttää säännöllisiä lausekkeita.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Hakukoneiden Tuki
+## Hakukoneiden Tuki
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Löydä lisää hakukoneita:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Sisäänrakennettu Uudelleenohjaus
+## Sisäänrakennettu Uudelleenohjaus
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (esim. [safereddit.com](https://safereddit.com))

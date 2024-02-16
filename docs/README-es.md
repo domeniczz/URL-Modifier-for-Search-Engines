@@ -35,6 +35,8 @@
 **Catálogo**:
 
 - [Introducción](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md#Introducción)
+- [Soporte de Motores de Búsqueda](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md#Soporte-de-Motores-de-Búsqueda)
+- [Redirecciones integradas](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md#Redirecciones-integradas)
 - [Pendientes](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md#Pendientes)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-es.md#Wiki)
 
@@ -60,7 +62,7 @@ La modificación de URL utiliza Expresión Regular.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Soporte de Motores de Búsqueda
+## Soporte de Motores de Búsqueda
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Encuentra más motores de búsqueda:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Redirecciones integradas
+## Redirecciones integradas
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (por ejemplo [safereddit.com](https://safereddit.com))

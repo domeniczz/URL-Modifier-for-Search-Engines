@@ -35,6 +35,8 @@
 **Katalog**:
 
 - [Pendahuluan](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md#Pendahuluan)
+- [Dukungan Mesin Pencari](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md#Dukungan-Mesin-Pencari)
+- [Pengalihan Bawaan](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md#Pengalihan-Bawaan)
 - [Yang Harus Dilakukan](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md#Yang-Harus-Dilakukan)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-id.md#Wiki)
 
@@ -60,7 +62,7 @@ Modifikasi URL menggunakan Ekspresi Reguler.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Dukungan Mesin Pencari
+## Dukungan Mesin Pencari
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Temukan lebih banyak mesin pencari:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Pengalihan Bawaan
+## Pengalihan Bawaan
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (misalnya [safereddit.com](https://safereddit.com))

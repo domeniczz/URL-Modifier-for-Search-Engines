@@ -35,6 +35,8 @@
 **Catalogus**:
 
 - [Introductie](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md#Introductie)
+- [Ondersteuning voor Zoekmachines](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md#Ondersteuning-voor-Zoekmachines)
+- [Ingebouwde Omleidingen](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md#Ingebouwde-Omleidingen)
 - [Te doen](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md#Te-doen)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-nl.md#Wiki)
 
@@ -60,7 +62,7 @@ URL-wijziging gebruikt Regelmatige Expressie.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Ondersteuning voor Zoekmachines
+## Ondersteuning voor Zoekmachines
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Vind meer zoekmachines:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Ingebouwde Omleidingen
+## Ingebouwde Omleidingen
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (bijv. [safereddit.com](https://safereddit.com))

@@ -35,6 +35,8 @@
 **فهرست**:
 
 - [مقدمه](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md#مقدمه)
+- [پشتیبانی از موتورهای جستجو](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md#پشتیبانی-از-موتورهای-جستجو)
+- [تغییر مسیر داخلی](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md#تغییر-مسیر-داخلی)
 - [کارهای-باقی‌مانده](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md#کارهای-باقیمانده)
 - [ویکی](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-fa.md#ویکی)
 
@@ -60,7 +62,7 @@
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### پشتیبانی از موتورهای جستجو
+## پشتیبانی از موتورهای جستجو
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### تغییر مسیر داخلی
+## تغییر مسیر داخلی
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (مثلاً [safereddit.com](https://safereddit.com))

@@ -35,6 +35,8 @@
 **Katalog**:
 
 - [Giriş](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md#Giriş)
+- [Desteklenen Arama Motorları](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md#Desteklenen-Arama-Motorları)
+- [Yerleşik yönlendirmeler](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md#Yerleşik-yönlendirmeler)
 - [Yapılacaklar](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md#Yapılacaklar)
 - [Viki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-tr.md#Viki)
 
@@ -60,7 +62,7 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Desteklenen Arama Motorları
+## Desteklenen Arama Motorları
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Daha fazla arama motoru bulun:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Yerleşik yönlendirmeler
+## Yerleşik yönlendirmeler
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (örneğin [safereddit.com](https://safereddit.com))

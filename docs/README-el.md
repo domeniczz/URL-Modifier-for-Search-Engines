@@ -35,6 +35,8 @@
 **Κατάλογος**:
 
 - [Εισαγωγή](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md#Εισαγωγή)
+- [Υποστήριξη Μηχανών Αναζήτησης](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md#Υποστήριξη-Μηχανών-Αναζήτησης)
+- [Ενσωματωμένη Ανακατεύθυνση](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md#Ενσωματωμένη-Ανακατεύθυνση)
 - [Προς Διεκπεραίωση](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md#Προς-Διεκπεραίωση)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-el.md#Wiki)
 
@@ -60,7 +62,7 @@
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Υποστήριξη Μηχανών Αναζήτησης
+## Υποστήριξη Μηχανών Αναζήτησης
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Ενσωματωμένη Ανακατεύθυνση
+## Ενσωματωμένη Ανακατεύθυνση
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (π.χ. [safereddit.com](https://safereddit.com))

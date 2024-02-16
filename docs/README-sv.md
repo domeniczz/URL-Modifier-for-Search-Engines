@@ -35,6 +35,8 @@
 **Katalog**:
 
 - [Introduktion](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-sv.md#Introduktion)
+- [Stöd för Sökmotorer](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-sv.md#Stöd-för-Sökmotorer)
+- [Inbyggd Omdirigering](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-sv.md#Inbyggd-Omdirigering)
 - [Att göra](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-sv.md#Att-göra)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-sv.md#Wiki)
 
@@ -60,7 +62,7 @@ URL-modifiering använder reguljära uttryck.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Stöd för Sökmotorer
+## Stöd för Sökmotorer
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Hitta fler sökmotorer:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Inbyggd Omdirigering
+## Inbyggd Omdirigering
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (t.ex. [safereddit.com](https://safereddit.com))

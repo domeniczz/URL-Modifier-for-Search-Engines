@@ -35,6 +35,8 @@
 **सूचीपत्र**:
 
 - [परिचय](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hi.md#परिचय)
+- [सर्च इंजन समर्थन](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hi.md#सर्च-इंजन-समर्थन)
+- [निर्मित पुनर्निर्देशन](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hi.md#निर्मित-पुनर्निर्देशन)
 - [कार्य-सूची](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hi.md#कार्य-सूची)
 - [विकी](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-hi.md#विकी)
 
@@ -60,7 +62,7 @@ URL संशोधन नियमित अभिव्यक्ति (Regula
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### सर्च इंजन समर्थन
+## सर्च इंजन समर्थन
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Yahoo, Lycos, AlohaFind जैसे सर्च इंजनों के ल�
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### निर्मित पुनर्निर्देशन
+## निर्मित पुनर्निर्देशन
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (जैसे [safereddit.com](https://safereddit.com))

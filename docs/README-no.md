@@ -35,6 +35,8 @@
 **Katalog**:
 
 - [Introduksjon](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md#Introduksjon)
+- [Støtte for Søkemotorer](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md#Støtte-for-Søkemotorer)
+- [Innebygd Omdirigering](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md#Innebygd-Omdirigering)
 - [Gjøremål](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md#Gjøremål)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-no.md#Wiki)
 
@@ -60,7 +62,7 @@ URL-modifikasjon bruker regulære uttrykk.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Støtte for Søkemotorer
+## Støtte for Søkemotorer
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Finn flere søkemotorer:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Innebygd Omdirigering
+## Innebygd Omdirigering
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (f.eks. [safereddit.com](https://safereddit.com))

@@ -35,7 +35,9 @@
 **Catalogue**:
 
 - [Introduction](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#Introduction)
-- [TODO](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#TODO)
+- [Search Engine Support](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#Search-Engine-Support)
+- [Built-in Redirection](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#Built-in-Redirection)
+- [Todo](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#Todo)
 - [Wiki](https://github.com/domeniczz/URL-Modifier-for-Search-Engines#Wiki)
 
 ## Introduction
@@ -60,7 +62,7 @@ URL modification uses Regular Expression.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Search Engine Support
+## Search Engine Support
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Find more search engines:
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### Built-in Redirection
+## Built-in Redirection
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (e.g. [safereddit.com](https://safereddit.com))
@@ -232,7 +234,7 @@ However, this method does not support finer-grained control over matched URLs an
 
 ---
 
-## TODO
+## Todo
 
 1. Add supports for more search engines.
 2. Refactor the code to make it easier to read and modify.

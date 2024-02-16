@@ -35,6 +35,8 @@
 **Каталог**:
 
 - [Вступ](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md#Вступ)
+- [Підтримка Пошукових Систем](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md#Підтримка-Пошукових-Систем)
+- [Вбудоване Перенаправлення](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md#Вбудоване-Перенаправлення)
 - [Завдання](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md#Завдання)
 - [Вікі](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-uk.md#Вікі)
 
@@ -60,7 +62,7 @@
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### Підтримка Пошукових Систем
+## Підтримка Пошукових Систем
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@
 - [Карта Пошукових Систем](https://www.searchenginemap.com)
 - [Вечірка Пошукових Систем](https://searchengine.party)
 
-### Вбудоване Перенаправлення
+## Вбудоване Перенаправлення
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (напр., [safereddit.com](https://safereddit.com))

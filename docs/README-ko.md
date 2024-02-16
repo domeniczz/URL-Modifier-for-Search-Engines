@@ -35,6 +35,8 @@
 **목록**:
 
 - [소개](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md#소개)
+- [검색 엔진 지원](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md#검색-엔진-지원)
+- [내장 리디렉션](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md#내장-리디렉션)
 - [할 일](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md#할-일)
 - [위키](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/docs/README-ko.md#위키)
 
@@ -60,7 +62,7 @@ URL 수정은 정규 표현식을 사용합니다.
     <img src="https://raw.githubusercontent.com/domeniczz/URL-Modifier-for-Search-Engines/master/docs/assets/searxng_search_result_example-with_modification.png" width="650rem" style="border-radius:.4rem" float="left" alt="img:searxng_search_result_example-with_modification"/>
 </div>
 
-### 검색 엔진 지원
+## 검색 엔진 지원
 
 - [Google](https://www.google.com)
 - [Yahoo](https://search.yahoo.com)
@@ -151,7 +153,7 @@ Yahoo, Lycos, AlohaFind 와 같은 검색 엔진의 경우, 이 스크립트는 
 - [Search Engine Map](https://www.searchenginemap.com)
 - [Search Engine Party](https://searchengine.party)
 
-### 내장 리디렉션
+## 내장 리디렉션
 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (예를 들어 [safereddit.com](https://safereddit.com))
