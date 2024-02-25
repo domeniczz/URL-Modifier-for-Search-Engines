@@ -115,6 +115,7 @@ URL 수정은 정규 표현식을 사용합니다.
 - [Seznam](https://www.seznam.cz)
 - [StartSiden SØK](https://www.startsiden.no/sok)
 - [Marginalia](https://search.marginalia.nu)
+- [Mwmbl](https://mwmbl.org)
 - [Naver 네이버](https://www.naver.com)
 - [Gibiru](https://gibiru.com)
 - [Lukol](https://www.lukol.com)

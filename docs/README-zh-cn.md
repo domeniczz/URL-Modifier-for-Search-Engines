@@ -115,6 +115,7 @@ URL 修改使用正则表达式。
 - [Seznam](https://www.seznam.cz)
 - [StartSiden SØK](https://www.startsiden.no/sok)
 - [Marginalia](https://search.marginalia.nu)
+- [Mwmbl](https://mwmbl.org)
 - [Naver 네이버](https://www.naver.com)
 - [Gibiru](https://gibiru.com)
 - [Lukol](https://www.lukol.com)
