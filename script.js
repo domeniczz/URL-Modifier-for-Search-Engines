@@ -1,6 +1,4 @@
 // ==UserScript==
-// @version      2.5.8
-// @author       Domenic
 // @name         URL Modifier for Search Engines
 // @name:zh-CN   搜索引擎结果 URL 修改器
 // @name:zh-TW   搜索引擎結果 URL 修改器
@@ -29,7 +27,11 @@
 // @name:vi      Bộ Chỉnh Sửa URL cho Các Công Cụ Tìm Kiếm
 // @name:hi      सर्च इंजनों के लिए URL संशोधक
 // @name:fa      تغییردهنده URL برای موتورهای جستجو
+
+// @version      2.5.9
+// @author       Domenic
 // @namespace    http://tampermonkey.net/
+
 // @description  This Tampermonkey script enhances your search engine usage by modifying (redirecting) URLs in the search result of search engines, redirecting to alternative sites, allowing for a more customized and efficient browsing experience. You can also add you custom URL modification rule to the script and are welcomed to commit your rules to this script to make it much more useful.
 // @description:zh-cn  这个 Tampermonkey 脚本通过修改搜索引擎结果中的 URL，重定向到替代网站，从而增强了您的搜索引擎使用体验，允许更自定义和高效的浏览体验。您还可以添加自定义的 URL 修改规则到脚本中，并欢迎将您的规则提交给这个脚本，使其变得更加有用。
 // @description:zh-tw  這個 Tampermonkey 腳本通過修改搜索引擎結果中的 URL，重定向到替代網站，從而增強了您的搜索引擎使用體驗，允許更自定義和高效的瀏覽體驗。您還可以添加自定義的 URL 修改規則到腳本中，並歡迎將您的規則提交給這個腳本，使其變得更加有用。
@@ -440,6 +442,7 @@
 // @match        *://search.seznam.cz/?*
 // @match        *://www.startsiden.no/sok/?*
 // @match        *://search.marginalia.nu/search?*
+// @match        *://mwmbl.org/?*
 // @match        *://search.naver.com/search.naver?*
 // @match        *://gibiru.com/results.html?*
 // @match        *://www.lukol.com/s.php?*
@@ -1395,6 +1398,14 @@
                 selector: 'section.card.search-result div.additional-results li a'
             }
         ],
+        'mwmbl': [
+            {
+                selector: 'ul.results li.result div.result-link a',
+                childSelector: 'span.link',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            },
+        ],
         'naver': [
             {
                 selector: 'li.bx div.total_wrap div.source_box a.thumb'
@@ -2033,6 +2044,10 @@
         'marginalia': {
             hosts: ['search.marginalia.nu'],
             resultContainerSelectors: ['section.sidebar-narrow section#results'],
+        },
+        'mwmbl': {
+            hosts: ['mwmbl.org'],
+            resultContainerSelectors: ['div.main ul.results'],
         },
         'naver': {
             hosts: ['search.naver.com'],
