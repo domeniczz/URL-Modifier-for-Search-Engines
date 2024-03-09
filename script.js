@@ -28,7 +28,7 @@
 // @name:hi      सर्च इंजनों के लिए URL संशोधक
 // @name:fa      تغییردهنده URL برای موتورهای جستجو
 
-// @version      2.5.9
+// @version      2.6
 // @author       Domenic
 // @namespace    http://tampermonkey.net/
 
@@ -2217,7 +2217,7 @@
                                 linkElement.setAttribute(additionalAttribute, newUrl);
                             }
                             newUrl = rule.useTopLevelDomain ? extractTopLevelDomain(newUrl) : newUrl;
-                            updateTextContent(textElement, rule, removeTailingSlash(removeParameters(newUrl)));
+                            updateTextContent(textElement, rule, removeUnnecessaryTailing(newUrl));
                             break;
                         }
                     } catch (error) {
@@ -2496,15 +2496,17 @@
         return url.replace(/^https?:\/\//, '');
     };
 
-    // Remove parameters (the part behind ?) in the URL link
-    const removeParameters = (url) => {
-        return url.split('?')[0];
-    };
-
-    // Remove tailing slash '/'
-    const removeTailingSlash = (url) => {
+    // Remove unnecessary tailing in the URL link
+    const removeUnnecessaryTailing = (url) => {
+        // Remove tailing slash '/'
         // Check if the URL ends with a slash and remove it if present
-        return url.endsWith('/') ? url.slice(0, -1) : url;
+        url = url.endsWith('/') ? url.slice(0, -1) : url;
+
+        // Remove parameters (the part behind ?)
+        url = url.split('?')[0];
+
+        // Remove article section indicator (the part behind #)
+        return url.split('#')[0];
     };
 
     // Function to clear existing content of an element
