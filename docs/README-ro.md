@@ -136,7 +136,7 @@ Modificarea URL-ului utilizează Expresia Regulată.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Puteți adăuga manual selectorul DOM în cod pentru a sprijini alte motoare de căutare.

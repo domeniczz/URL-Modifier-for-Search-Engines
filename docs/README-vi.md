@@ -136,7 +136,7 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Bạn có thể tự thêm bộ chọn DOM vào mã để hỗ trợ thêm công cụ tìm kiếm khác.

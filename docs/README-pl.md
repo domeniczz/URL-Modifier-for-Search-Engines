@@ -136,7 +136,7 @@ Modyfikacja URL korzysta z Wyrażeń Regularnych.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Możesz ręcznie dodać selektor DOM w kodzie, aby obsługiwać inne wyszukiwarki.

@@ -136,7 +136,7 @@ Modifikasi URL menggunakan Ekspresi Reguler.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Anda dapat menambahkan pemilih DOM secara manual dalam kode untuk mendukung mesin pencari lainnya.

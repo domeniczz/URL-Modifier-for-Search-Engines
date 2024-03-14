@@ -136,7 +136,7 @@ Modifikace URL využívá regulární výrazy.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Do kódu můžete manuálně přidat DOM selektor pro podporu dalších vyhledávačů.

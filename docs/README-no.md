@@ -136,7 +136,7 @@ URL-modifikasjon bruker regulære uttrykk.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Du kan manuelt legge til DOM-selektor i koden for å støtte andre søkemotorer.

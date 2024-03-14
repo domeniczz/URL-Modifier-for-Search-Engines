@@ -136,7 +136,7 @@ URL-muokkaus käyttää säännöllisiä lausekkeita.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Voit manuaalisesti lisätä DOM-selektori koodiin tukeaksesi muita hakukoneita.

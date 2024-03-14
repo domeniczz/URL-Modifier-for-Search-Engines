@@ -136,7 +136,7 @@ URL संशोधन नियमित अभिव्यक्ति (Regula
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 आप कोड में मैन्युअल रूप से DOM सेलेक्टर जोड़कर अन्य सर्च इंजनों का समर्थन कर सकते हैं।

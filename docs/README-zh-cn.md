@@ -136,7 +136,7 @@ URL 修改使用正则表达式。
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 您可以手动在代码中添加 DOM 选择器以支持其他搜索引擎。

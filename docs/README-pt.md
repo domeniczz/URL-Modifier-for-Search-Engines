@@ -136,7 +136,7 @@ A modificação de URL usa Expressão Regular.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Você pode adicionar manualmente o seletor DOM no código para suportar outros motores de busca.

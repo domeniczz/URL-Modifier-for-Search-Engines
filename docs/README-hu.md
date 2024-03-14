@@ -136,7 +136,7 @@ Az URL módosítás reguláris kifejezéseket használ.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Manuálisan hozzáadhatsz DOM szelektort a kódhoz, hogy támogass más keresőmotorokat.

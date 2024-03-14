@@ -136,7 +136,7 @@ La modificación de URL utiliza Expresión Regular.
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Puedes añadir manualmente un selector DOM en el código para soportar otros motores de búsqueda.

@@ -136,7 +136,7 @@
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 Μπορείτε να προσθέσετε χειροκίνητα τον DOM selector στον κώδικα για να υποστηρίξετε άλλες μηχανές αναζήτησης.

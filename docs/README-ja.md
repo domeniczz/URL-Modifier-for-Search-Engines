@@ -136,7 +136,7 @@ URL の変更正規表現を使用します。
 - [ZapMeta](https://www.zapmeta.com)
 - [iZito](https://www.izito.com)
 - [Ask](https://www.ask.com)
-- [Proton](https://www.pronto.com)
+- [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
 
 他の検索エンジンに対応するために、コードに DOM セレクタを手動で追加できます。
