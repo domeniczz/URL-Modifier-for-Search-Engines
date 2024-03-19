@@ -28,7 +28,7 @@
 // @name:hi      सर्च इंजनों के लिए URL संशोधक
 // @name:fa      تغییردهنده URL برای موتورهای جستجو
 
-// @version      2.6
+// @version      2.6.1
 // @author       Domenic
 // @namespace    http://tampermonkey.net/
 
@@ -505,17 +505,19 @@
         },
         {
             matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*?)(?:$|\/RK=.*|&sa=.*)/),
-            replaceWith: 'https://safereddit.com/$1'
+            replaceWith: 'https://old.reddit.com/$1'
+            // replaceWith: 'https://safereddit.com/$1'
             // replaceWith: 'https://lr.vern.cc/$1'
         },
         {
             matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/www\.quora\.com\/((?=.*-)[\w-]+|profile\/.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://quetre.iket.me/$1'
         },
-        {
-            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(?:\d+))?(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
-            replaceWith: 'https://nitter.catsarch.com/$1$2'
-        },
+        // Unfortunately, nitter has been discontinued.
+        // {
+        //     matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/twitter\.com\/([A-Za-z_][\w]+)(\/status\/(?:\d+))?(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
+        //     replaceWith: 'https://nitter.catsarch.com/$1$2'
+        // },
         {
             matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.)?stackoverflow\.com\/(questions\/\d+(?:\/[\w-]+)?)(?:.*?)(?:$|\/RK=.*|&sa=.*)/),
             replaceWith: 'https://ao.vern.cc/$1'
@@ -525,9 +527,14 @@
             replaceWith: 'https://freedium.cfd/https://$1'
         },
         {
-            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=.*|&sa=.*)/),
-            // replaceWith: 'https://vid.puffyan.us/$1'
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.|m\.)?youtube\.com\/(watch(?:\/?\?v=|\/)[\w-]{11})[\s\S]*/),
             replaceWith: 'https://piped.video/$1'
+            // replaceWith: 'https://vid.puffyan.us/$1'
+        },
+        {
+            matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=.*|&sa=.*)/),
+            replaceWith: 'https://piped.video/$1'
+            // replaceWith: 'https://vid.puffyan.us/$1'
         },
         {
             matchRegex: new RegExp(/^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*?)(?:$|\/RK=.*|&sa=.*)/),
@@ -654,15 +661,15 @@
     const selectorRules = {
         'google': [
             {
-                selector: 'div.MjjYud div.yuRUbf div span a',
-                childSelector: 'div.byrV5b cite',
+                selector: 'div.MjjYud div div div span a',
+                childSelector: 'div cite',
                 updateChildText: true,
                 containProtocol: true,
                 urlDisplayMethod: 1
             },
             {
                 // selector for sub-results
-                selector: 'div.MjjYud div.HiHjCd a'
+                selector: 'div.MjjYud div div a'
             },
             {
                 // selector for sidebar links
@@ -679,6 +686,13 @@
             {
                 // selector for 'videos' widget
                 selector: 'div.e4xoPb div.RzdJxc a.xMqpbd'
+            },
+            {
+                selector: 'div.EyBRub div.eA0Zlc div a'
+            },
+            {
+                // selector for results in google image search tab
+                selector: 'div.islrc div.isv-r a'
             }
         ],
         'yahoo': [
@@ -1682,7 +1696,10 @@
             // search results container
             // you can ignore this parameter if you don't want to set it, just delete it
             // defult value is 'body'
-            resultContainerSelectors: ['div.GyAeWb#rcnt']
+            resultContainerSelectors: [
+                'div.GyAeWb#rcnt',
+                'div.mJxzWe'
+            ]
         },
         'yahoo': {
             hosts: ['search.yahoo.com'],
@@ -2193,21 +2210,15 @@
         const elements = document.querySelectorAll(selector);
         if (elements.length > 0) {
             elements.forEach(element => {
-                let linkElement = element;
-                let textElement = element;
-
-                // If parentSelector is used, get the link and text elements
-                if (isParentSelector) {
-                    linkElement = element.querySelector(rule.linkNodeSelector);
-                    textElement = element.querySelector(rule.textNodeSelector);
-                }
+                let linkElement = isParentSelector ? element.querySelector(rule.linkNodeSelector) : element;
+                let textElement = isParentSelector ? element.querySelector(rule.textNodeSelector) : element;
 
                 for (let i = 0; i < urlModificationRules.length; i++) {
                     try {
                         const urlRule = urlModificationRules[i];
                         let urlToModify = additionalAttribute ? linkElement.getAttribute(additionalAttribute) : linkElement.href;
                         urlToModify = decodeURIComponent(urlToModify);
-                        // update attribute
+                        // Update attribute
                         if (urlToModify && urlRule.matchRegex.test(urlToModify)) {
                             // Generate redirected URL
                             let newUrl = urlToModify.replace(urlRule.matchRegex, urlRule.replaceWith);
