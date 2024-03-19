@@ -28,7 +28,7 @@
 // @name:hi      सर्च इंजनों के लिए URL संशोधक
 // @name:fa      تغییردهنده URL برای موتورهای جستجو
 
-// @version      2.6.1
+// @version      2.6.2
 // @author       Domenic
 // @namespace    http://tampermonkey.net/
 
@@ -248,6 +248,8 @@
 // @match        *://www.google.co.zm/search?*
 // @match        *://www.google.co.zw/search?*
 // @match        *://www.google.cat/search?*
+
+// @match        *://www.bing.com/search?*
 
 // @match        *://search.yahoo.com/search*
 // @match        *://search.yahoo.co.jp/search?*
@@ -693,6 +695,26 @@
             {
                 // selector for results in google image search tab
                 selector: 'div.islrc div.isv-r a'
+            }
+        ],
+        'bing': [
+            {
+                selector: 'ol#b_results li.b_algo h2 a'
+            },
+            {
+                selector: 'ol#b_results li.b_algo a.tilk',
+                childSelector: 'cite',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 2
+            },
+            {
+                selector: 'ol#b_results li.b_algo li a'
+            },
+            {
+                selector: 'ol#b_results li.b_algo div.pageRecoContainer a'
+            },
+            {
+                selector: 'div#b_content div.lite-entcard-blk a'
             }
         ],
         'yahoo': [
@@ -1700,6 +1722,10 @@
                 'div.GyAeWb#rcnt',
                 'div.mJxzWe'
             ]
+        },
+        'bing': {
+            hosts: ['bing.com'],
+            resultContainerSelectors: ['div#b_content']
         },
         'yahoo': {
             hosts: ['search.yahoo.com'],
