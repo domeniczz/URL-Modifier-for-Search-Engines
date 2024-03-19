@@ -16,6 +16,7 @@ https://www.wikiwand.com/en/$1
 
 
 ^https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*)
+htpps://old.reddit.com/$1
 https://safereddit.com/$1
 https://lr.vern.cc/$1
 
@@ -36,9 +37,14 @@ https://ao.vern.cc$1
 https://freedium.cfd/https://$1
 
 
-^https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*)
-https://vid.puffyan.us/$1
+^https?:\/\/(?:www\.|m\.)?youtube\.com\/(watch(?:\/?\?v=|\/)[\w-]{11})[\s\S]*
 https://piped.video/$1
+https://vid.puffyan.us/$1
+
+
+^https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|playlist\?|channel\/|user\/|shorts\/).*)
+https://piped.video/$1
+https://vid.puffyan.us/$1
 
 
 ^https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*)
@@ -183,6 +189,7 @@ https://www.wikiwand.com/en/$1
 
 
 ^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*?)(?:$|\/RK=.*|&sa=.*)
+https://old.reddit.com/$1
 https://safereddit.com/$1
 https://lr.vern.cc/$1
 
@@ -202,9 +209,14 @@ https://ao.vern.cc/$1
 https://freedium.cfd/https://$1
 
 
-^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=.*|&sa=.*)
-https://vid.puffyan.us/$1
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.|m\.)?youtube\.com\/(watch(?:\/?\?v=|\/)[\w-]{11})[\s\S]*
 https://piped.video/$1
+https://vid.puffyan.us/$1
+
+
+^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|playlist\?|channel\/|user\/|shorts\/).*?)(?:$|\/RK=.*|&sa=.*)
+https://piped.video/$1
+https://vid.puffyan.us/$1
 
 
 ^(?:.*?(?:\/RU=|&q=|&as=))?https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*?)(?:$|\/RK=.*|&sa=.*)

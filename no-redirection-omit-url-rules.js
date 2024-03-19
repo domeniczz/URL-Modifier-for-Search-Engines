@@ -21,7 +21,8 @@ const urlModificationRules = [
     },
     {
         matchRegex: new RegExp(/^https?:\/\/(?:old|www)\.reddit\.com\/((?:r|u)\/.*)/),
-        replaceWith: 'https://safereddit.com/$1'
+        replaceWith: 'https://old.reddit.com/$1'
+        //replaceWith: 'https://safereddit.com/$1'
         // replaceWith: 'https://lr.vern.cc/$1'
     },
     {
@@ -41,8 +42,14 @@ const urlModificationRules = [
         replaceWith: 'https://freedium.cfd/https://$1'
     },
     {
-        matchRegex: new RegExp(/^https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|watch\?|playlist\?|channel\/|user\/|shorts\/).*)/),
-        replaceWith: 'https://vid.puffyan.us/$1'
+        matchRegex: new RegExp(/^https?:\/\/(?:www\.|m\.)?youtube\.com\/(watch(?:\/?\?v=|\/)[\w-]{11})[\s\S]*/),
+        replaceWith: 'https://piped.video/$1'
+        // replaceWith: 'https://vid.puffyan.us/$1'
+    },
+    {
+        matchRegex: new RegExp(/^https?:\/\/(?:www\.|m\.)?youtube\.com\/((?:@|playlist\?|channel\/|user\/|shorts\/).*)/),
+        replaceWith: 'https://piped.video/$1'
+        // replaceWith: 'https://vid.puffyan.us/$1'
     },
     {
         matchRegex: new RegExp(/^https?:\/\/music\.youtube\.com\/((?:playlist\?|watch\?|channel\/|browse\/).*)/),
