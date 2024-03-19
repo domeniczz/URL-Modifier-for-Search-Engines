@@ -65,6 +65,7 @@ Modificarea URL-ului utilizează Expresia Regulată.
 ## Suport pentru Motoare de Căutare
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ Modificarea URL-ului utilizează Expresia Regulată.
 
 Puteți adăuga manual selectorul DOM în cod pentru a sprijini alte motoare de căutare.
 
-Nu putem sprijini [Bing](https://www.bing.com), deoarece oferă doar linkuri intermediare care nu afișează în mod explicit URL-ul țintă.
+Pentru motorul de căutare Bing, dacă primiți un link de redirecționare "https://www.bing.com/ck/a..." în rezultatele căutării, dezactivarea opțiunii "Deschide linkurile într-o nouă filă sau fereastră" din setările Bing poate să îl elimine.
 
 Pentru motoare de căutare precum Yahoo, Lycos, AlohaFind, scriptul suportă eliminarea linkurilor de redirecționare și extragerea URL-ului real. De exemplu, linkul de redirecționare Yahoo este "https://r.search.yahoo.com/...". Dacă nu utilizați aceste motoare de căutare, puteți alege să utilizați [regulile de modificare a URL-ului](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) fără compatibilitate cu linkul de redirecționare. Apropo, puteți vedea toate regulile de modificare a URL-ului RegEx integrate [aici](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ Găsiți mai multe motoare de căutare:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (de exemplu, [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (de exemplu, [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (de exemplu, [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([A fost întrerupt](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (de exemplu, [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (de exemplu, [yewtu.be](https://yewtu.be))

@@ -65,6 +65,7 @@ URL 修改使用正則表達式。
 ## 支持的搜索引擎
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL 修改使用正則表達式。
 
 您可以在代碼中手動添加 DOM 選擇器以支援其他搜索引擎。
 
-無法支援 [Bing](https://www.bing.com)，因為它只提供重定向鏈接，這些鏈接並沒有明確顯示目標 URL。
+對於搜索引擎 Bing，如果您在搜索結果中獲得重定向鏈接 "https://www.bing.com/ck/a..."，在Bing設置中禁用“在新標籤頁或窗口中打開鏈接”可以去除它。
 
 對於像 Yahoo、Lycos、AlohaFind 這樣的搜索引擎，該腳本支持去除重定向鏈接並提取真實 URL。例如，Yahoo 的重定向鏈接是 “https://r.search.yahoo.com/...”。如果您不使用這些搜索引擎，您可以選擇使用 [URL 修改規則](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js)來避免重定向鏈接兼容性問題。順便說一下，您可以在[這裡](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)查看所有內置的 RegEx URL 修改規則。
 
@@ -159,7 +160,7 @@ URL 修改使用正則表達式。
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (例：[safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (例：[quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (例：[nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances)（[已經停止維護](https://github.com/zedeus/nitter/issues/1175)）
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (例：[code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (例：[yewtu.be](https://yewtu.be))

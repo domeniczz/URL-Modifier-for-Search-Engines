@@ -65,6 +65,7 @@ URL संशोधन नियमित अभिव्यक्ति (Regula
 ## सर्च इंजन समर्थन
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL संशोधन नियमित अभिव्यक्ति (Regula
 
 आप कोड में मैन्युअल रूप से DOM सेलेक्टर जोड़कर अन्य सर्च इंजनों का समर्थन कर सकते हैं।
 
-हम [Bing](https://www.bing.com) का समर्थन नहीं कर सकते, क्योंकि यह केवल बीच के लिंक प्रदान करता है जो स्पष्ट रूप से लक्ष्य URL दिखाते नहीं हैं।
+खोज इंजन Bing के लिए, यदि आपको खोज परिणामों में "https://www.bing.com/ck/a..." पुनर्निर्देशन लिंक मिलता है, तो Bing सेटिंग्स में "लिंक्स को नए टैब या विंडो में खोलें" को निष्क्रिय करने से इसे हटाया जा सकता है।
 
 Yahoo, Lycos, AlohaFind जैसे सर्च इंजनों के लिए, स्क्रिप्ट पुनर्निर्देशन लिंक्स को हटाने और वास्तविक URL निकालने का समर्थन करती है। उदाहरण के लिए, Yahoo पुनर्निर्देशन लिंक "https://r.search.yahoo.com/..." है। यदि आप इन सर्च इंजनों का उपयोग नहीं करते हैं, तो आप पुनर्निर्देशन लिंक संगतता के बिना [URL संशोधन नियमों](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) का उपयोग कर सकते हैं। वैसे, आप यहाँ सभी निर्मित RegEx URL संशोधन नियम देख सकते हैं [यहाँ](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)।
 
@@ -159,7 +160,7 @@ Yahoo, Lycos, AlohaFind जैसे सर्च इंजनों के ल�
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (जैसे [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (जैसे [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (जैसे [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([बंद कर दिया गया है](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (जैसे [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (जैसे [yewtu.be](https://yewtu.be))

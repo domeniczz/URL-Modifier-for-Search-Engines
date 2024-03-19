@@ -65,6 +65,7 @@ URL 수정은 정규 표현식을 사용합니다.
 ## 검색 엔진 지원
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL 수정은 정규 표현식을 사용합니다.
 
 다른 검색 엔진을 지원하기 위해 코드에 DOM 선택자를 수동으로 추가할 수 있습니다.
 
-[Bing](https://www.bing.com) 을 지원할 수 없습니다. 왜냐하면, 그것은 목표 URL 을 명시적으로 보여주지 않는 중간 링크만을 제공하기 때문입니다.
+검색 엔진 Bing 에서 검색 결과에 "https://www.bing.com/ck/a..." 리디렉션 링크가 나타난 경우, Bing 설정에서 "새 탭이나 창에서 링크 열기"를 비활성화하면 이를 제거할 수 있습니다.
 
 Yahoo, Lycos, AlohaFind 와 같은 검색 엔진의 경우, 이 스크립트는 리디렉션 링크를 제거하고 실제 URL을 추출하는 기능을 지원합니다. 예를 들어, Yahoo 의 리디렉션 링크는 "https://r.search.yahoo.com/..." 입니다. 이 검색 엔진들을 사용하지 않는 경우, 리디렉션 링크 호환성 없이 [URL 수정 규칙](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js)을 사용할 수 있습니다. 참고로, 모든 내장 RegEx URL 수정 규칙은 [여기](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)에서 볼 수 있습니다.
 
@@ -159,7 +160,7 @@ Yahoo, Lycos, AlohaFind 와 같은 검색 엔진의 경우, 이 스크립트는 
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (예를 들어 [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (예를 들어 [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (예를 들어 [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([중단되었습니다](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (예를 들어 [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (예를 들어 [yewtu.be](https://yewtu.be))

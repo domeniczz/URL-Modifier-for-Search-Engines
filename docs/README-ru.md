@@ -65,6 +65,7 @@
 ## Поддержка поисковых систем
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@
 
 Вы можете вручную добавить селектор DOM в код, чтобы поддержать другие поисковые системы.
 
-Не можем поддерживать [Bing](https://www.bing.com), поскольку он предоставляет только промежуточные ссылки, которые не показывают целевой URL явно.
+Для поисковой системы Bing, если вы получаете перенаправляющую ссылку "https://www.bing.com/ck/a..." в результатах поиска, отключение опции "Открывать ссылки в новой вкладке или окне" в настройках Bing может убрать это.
 
 Для поисковых систем вроде Yahoo, Lycos, AlohaFind, этот скрипт поддерживает удаление перенаправляющих ссылок и извлечение реального URL. Например, перенаправляющая ссылка Yahoo - это "https://r.search.yahoo.com/...". Если вы не используете эти поисковые системы, вы можете выбрать использование [Правил модификации URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) без совместимости с перенаправляющими ссылками. Кстати, все встроенные правила модификации URL RegEx вы можете найти [здесь](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (например [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (например [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (например [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Проект прекращен](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (например [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (например [yewtu.be](https://yewtu.be))

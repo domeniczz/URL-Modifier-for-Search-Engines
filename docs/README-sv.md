@@ -65,6 +65,7 @@ URL-modifiering använder reguljära uttryck.
 ## Stöd för Sökmotorer
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL-modifiering använder reguljära uttryck.
 
 Du kan manuellt lägga till DOM-väljare i koden för att stödja andra sökmotorer.
 
-Vi kan inte stödja [Bing](https://www.bing.com) eftersom den endast tillhandahåller mellanliggande länkar som inte explicit visar mål-URL:en.
+För sökmotorn Bing, om du får en omdirigeringslänk "https://www.bing.com/ck/a..." i sökresultaten, kan du bli av med den genom att inaktivera "Öppna länkar i en ny flik eller fönster" i Bing-inställningarna.
 
 För sökmotorer som Yahoo, Lycos, AlohaFind, stöder skriptet att bli av med omdirigeringslänkar och extrahera den verkliga URL:en. Till exempel är Yahoo-omdirigeringslänken "https://r.search.yahoo.com/...". Om du inte använder dessa sökmotorer kan du välja att använda [URL-modifieringsregler](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) utan kompatibilitet för omdirigeringslänkar. För övrigt kan du se alla inbyggda RegEx URL-modifieringsregler [här](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ Hitta fler sökmotorer:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (t.ex. [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (t.ex. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (t.ex. [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Har upphört](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (t.ex. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (t.ex. [yewtu.be](https://yewtu.be))

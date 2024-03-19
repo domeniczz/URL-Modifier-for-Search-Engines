@@ -65,6 +65,7 @@ URL の変更正規表現を使用します。
 ## 対応する検索エンジン
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL の変更正規表現を使用します。
 
 他の検索エンジンに対応するために、コードに DOM セレクタを手動で追加できます。
 
-[Bing](https://www.bing.com) をサポートできません。なぜなら、それは目標とする URL を明示的に示さない中間リンクのみを提供するからです。
+検索エンジン Bing において、検索結果で "https://www.bing.com/ck/a..." のリダイレクトリンクが得られた場合、Bingの設定で「新しいタブまたはウィンドウでリンクを開く」を無効にするとそれを取り除くことができます。
 
 Yahoo、Lycos、AlohaFind のような検索エンジンにおいて、このスクリプトはリダイレクトリンクを取り除き、実際の URL を抽出するサポートを提供します。例えば、Yahoo のリダイレクトリンクは「https://r.search.yahoo.com/...」です。これらの検索エンジンを使用していない場合、リダイレクトリンクの互換性なしに [URL 修正ルール](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js)を使用することを選択できます。ちなみに、すべての組み込み RegEx URL 修正ルールは[こちら](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt)で確認できます。
 
@@ -159,7 +160,7 @@ Baidu において、このスクリプトはテキスト検索結果のリダ�
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (例えば [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (例えば [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (例えば [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([開発が中止されました](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (例えば [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (例えば [yewtu.be](https://yewtu.be))

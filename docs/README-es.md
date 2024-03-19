@@ -65,6 +65,7 @@ La modificación de URL utiliza Expresión Regular.
 ## Soporte de Motores de Búsqueda
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ La modificación de URL utiliza Expresión Regular.
 
 Puedes añadir manualmente un selector DOM en el código para soportar otros motores de búsqueda.
 
-No podemos apoyar [Bing](https://www.bing.com), ya que solo proporciona enlaces intermedios que no muestran explícitamente la URL objetivo.
+Para el motor de búsqueda Bing, si obtienes un enlace de redirección "https://www.bing.com/ck/a..." en los resultados de búsqueda, deshabilitar "Abrir enlaces en una nueva pestaña o ventana" en la configuración de Bing puede eliminarlo.
 
 Para motores de búsqueda como Yahoo, Lycos, AlohaFind, el script admite eliminar enlaces de redirección y extraer la URL real. Por ejemplo, el enlace de redirección de Yahoo es "https://r.search.yahoo.com/...". Si no usas estos motores de búsqueda, puedes optar por usar [Reglas de modificación de URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) sin compatibilidad con enlaces de redirección. Por cierto, puedes ver todas las reglas de modificación de URL RegEx incorporadas [aquí](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ Encuentra más motores de búsqueda:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (por ejemplo [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (por ejemplo [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (por ejemplo [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Ha sido descontinuado](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (por ejemplo [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (por ejemplo [yewtu.be](https://yewtu.be))

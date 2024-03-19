@@ -65,6 +65,7 @@ URL-ændring bruger Regulære Udtryk.
 ## Søgemaskine Support
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL-ændring bruger Regulære Udtryk.
 
 Du kan manuelt tilføje DOM-vælger i koden for at understøtte andre søgemaskiner.
 
-Vi kan ikke understøtte [Bing](https://www.bing.com), da det kun tilbyder mellemliggende links, der ikke eksplicit viser mål-URL'en.
+For søgemaskinen Bing, hvis du får et omdirigeringslink "https://www.bing.com/ck/a..." i søgeresultaterne, kan deaktivering af "Åbn links i et nyt faneblad eller vindue" i Bing-indstillingerne fjerne det.
 
 For søgemaskiner som Yahoo, Lycos, AlohaFind, understøtter scriptet at slippe af med omdirigeringslinks og udtrække den rigtige URL. For eksempel er Yahoo's omdirigeringslink "https://r.search.yahoo.com/...". Hvis du ikke bruger disse søgemaskiner, kan du vælge at bruge [URL-ændringsregler](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) uden kompatibilitet med omdirigeringslink. I øvrigt kan du se alle indbyggede RegEx URL-ændringsregler [her](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ Find flere søgemaskiner:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (f.eks. [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (f.eks. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (f.eks. [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Er blevet indstillet](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (f.eks. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (f.eks. [yewtu.be](https://yewtu.be))

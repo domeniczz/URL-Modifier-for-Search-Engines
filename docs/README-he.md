@@ -65,6 +65,7 @@
 ## תמיכה במנועי חיפוש
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@
 
 ניתן להוסיף ידנית בורר DOM בקוד כדי לתמוך במנועי חיפוש נוספים.
 
-איננו יכולים לתמוך ב[Bing](https://www.bing.com), מכיוון שהוא מספק רק קישורים ביניים שלא מציגים במפורש את כתובת ה-URL המטרה.
+עבור מנוע החיפוש Bing אם אתה מקבל קישור להפנייה "https://www.bing.com/ck/a..." בתוצאות החיפוש, ביטול האפשרות "לפתוח קישורים בכרטיסייה או חלון חדש" בהגדרות של Bing יכול להסיר אותו.
 
 עבור מנועי חיפוש כמו Yahoo, Lycos, AlohaFind, הסקריפט תומך בהסרת קישורי הפניה ובחילוץ ה-URL האמיתי. לדוגמה, קישור ההפניה של Yahoo הוא "https://r.search.yahoo.com/...". אם אינך משתמש במנועי חיפוש אלו, תוכל לבחור להשתמש ב[כללי שינוי URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) ללא תאימות לקישורי הפניה. אגב, תוכל לראות את כל כללי שינוי ה-URL של RegEx המובנים [כאן](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (למשל [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (למשל [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (למשל [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([הפסקת הפעלה](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (למשל [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (למשל [yewtu.be](https://yewtu.be))

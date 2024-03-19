@@ -65,6 +65,7 @@ URL-muokkaus käyttää säännöllisiä lausekkeita.
 ## Hakukoneiden Tuki
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL-muokkaus käyttää säännöllisiä lausekkeita.
 
 Voit manuaalisesti lisätä DOM-selektori koodiin tukeaksesi muita hakukoneita.
 
-Emme voi tukea [Bing](https://www.bing.com), koska se tarjoaa vain välilinkkejä, jotka eivät näytä kohde-URL:ää suoraan.
+Hakukoneelle Bing, jos saat uudelleenohjauslinkin "https://www.bing.com/ck/a..." hakutuloksissa, "Avaa linkit uudessa välilehdessä tai ikkunassa" -asetuksen poistaminen käytöstä Bing-asetuksissa voi poistaa sen.
 
 Hakukoneille kuten Yahoo, Lycos, AlohaFind, skripti tukee uudelleenohjauslinkkien poistamista ja oikean URL-osoitteen poimimista. Esimerkiksi Yahoon uudelleenohjauslinkki on "https://r.search.yahoo.com/...". Jos et käytä näitä hakukoneita, voit valita käyttää [URL-muokkaussääntöjä](https://github.com/domeniczz/URL-Muokkain-Hakukoneille/blob/master/no-redirection-omit-url-rules.js) ilman uudelleenohjauslinkkien yhteensopivuutta. Muuten, voit nähdä kaikki sisäänrakennetut säännölliset lausekelausekkeet URL-muokkaussäännöt [täältä](https://github.com/domeniczz/URL-Muokkain-Hakukoneille/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ Löydä lisää hakukoneita:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (esim. [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (esim. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (esim. [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([On lopetettu](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (esim. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (esim. [yewtu.be](https://yewtu.be))

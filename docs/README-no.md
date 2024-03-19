@@ -65,6 +65,7 @@ URL-modifikasjon bruker regulære uttrykk.
 ## Støtte for Søkemotorer
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL-modifikasjon bruker regulære uttrykk.
 
 Du kan manuelt legge til DOM-selektor i koden for å støtte andre søkemotorer.
 
-Vi kan ikke støtte [Bing](https://www.bing.com) fordi den bare tilbyr mellomliggende lenker som ikke eksplisitt viser mål-URL-en.
+For søkemotoren Bing, hvis du får en omdirigeringslenke "https://www.bing.com/ck/a..." i søkeresultatene, kan deaktivere "Åpne lenker i en ny fane eller vindu" i Bing-innstillingene fjerne det.
 
 For søkemotorer som Yahoo, Lycos, AlohaFind, støtter skriptet å bli kvitt omdirigeringslenker og trekke ut den virkelige URL-en. For eksempel, Yahoo omdirigeringslenken er "https://r.search.yahoo.com/...". Hvis du ikke bruker disse søkemotorene, kan du velge å bruke [URL-modifikasjonsregler](https://github.com/domeniczz/URL-Modifier-for-Søkemotorer/blob/master/no-redirection-omit-url-rules.js) uten kompatibilitet for omdirigeringslenke. For øvrig kan du se alle innebygde RegEx URL-modifikasjonsregler [her](https://github.com/domeniczz/URL-Modifier-for-Søkemotorer/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ Finn flere søkemotorer:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (f.eks. [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (f.eks. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (f.eks. [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Har blitt avviklet](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (f.eks. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (f.eks. [yewtu.be](https://yewtu.be))

@@ -65,6 +65,7 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 ## Hỗ trợ Công cụ Tìm kiếm
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 
 Bạn có thể tự thêm bộ chọn DOM vào mã để hỗ trợ thêm công cụ tìm kiếm khác.
 
-Chúng tôi không thể hỗ trợ [Bing](https://www.bing.com) vì nó chỉ cung cấp các liên kết trung gian không hiển thị rõ ràng URL mục tiêu.
+Đối với công cụ tìm kiếm Bing, nếu bạn nhận được liên kết chuyển hướng "https://www.bing.com/ck/a..." trong kết quả tìm kiếm, vô hiệu hóa "Mở liên kết trong tab mới hoặc cửa sổ mới" trong cài đặt Bing có thể loại bỏ nó.
 
 Đối với các công cụ tìm kiếm như Yahoo, Lycos, AlohaFind, script hỗ trợ loại bỏ liên kết chuyển hướng và trích xuất URL thực. Ví dụ, liên kết chuyển hướng của Yahoo là "https://r.search.yahoo.com/...". Nếu bạn không sử dụng các công cụ tìm kiếm này, bạn có thể chọn sử dụng [Quy tắc chỉnh sửa URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) không tương thích với liên kết chuyển hướng. Tiện thể, bạn có thể xem tất cả các quy tắc chỉnh sửa URL RegEx tích hợp [tại đây](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ Tìm thêm công cụ tìm kiếm:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (ví dụ: [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (ví dụ: [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (ví dụ: [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Đã bị ngừng phát triển](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (ví dụ: [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (ví dụ: [yewtu.be](https://yewtu.be))

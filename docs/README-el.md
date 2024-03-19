@@ -65,6 +65,7 @@
 ## Υποστήριξη Μηχανών Αναζήτησης
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@
 
 Μπορείτε να προσθέσετε χειροκίνητα τον DOM selector στον κώδικα για να υποστηρίξετε άλλες μηχανές αναζήτησης.
 
-Δεν μπορούμε να υποστηρίξουμε το [Bing](https://www.bing.com), επειδή παρέχει μόνο ενδιάμεσους συνδέσμους που δεν εμφανίζουν ρητά την στοχευμένη URL.
+Για την μηχανή αναζήτησης Bing, αν λάβετε έναν σύνδεσμο ανακατεύθυνσης "https://www.bing.com/ck/a..." στα αποτελέσματα αναζήτησης, η απενεργοποίηση της επιλογής "Άνοιγμα συνδέσμων σε νέα καρτέλα ή παράθυρGPTο" στις ρυθμίσεις του Bing μπορεί να το απαλλάξει.
 
 Για μηχανές αναζήτησης όπως Yahoo, Lycos, AlohaFind, το σενάριο υποστηρίζει την απαλλαγή από συνδέσμους ανακατεύθυνσης και την εξαγωγή του πραγματικού URL. Για παράδειγμα, ο σύνδεσμος ανακατεύθυνσης του Yahoo είναι "https://r.search.yahoo.com/...". Εάν δεν χρησιμοποιείτε αυτές τις μηχανές αναζήτησης, μπορείτε να επιλέξετε να χρησιμοποιήσετε [κανόνες τροποποίησης URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) χωρίς συμβατότητα με σύνδεσμο ανακατεύθυνσης. Επίσης, μπορείτε να δείτε όλους τους ενσωματωμένους κανόνες τροποποίησης URL RegEx [εδώ](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (π.χ. [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (π.χ. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (π.χ. [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Έχει διακοπεί](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (π.χ. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (π.χ. [yewtu.be](https://yewtu.be))

@@ -65,6 +65,7 @@ Az URL módosítás reguláris kifejezéseket használ.
 ## Keresőmotor Támogatás
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ Az URL módosítás reguláris kifejezéseket használ.
 
 Manuálisan hozzáadhatsz DOM szelektort a kódhoz, hogy támogass más keresőmotorokat.
 
-Nem támogathatjuk a [Bing](https://www.bing.com)-et, mivel csak köztes linkeket biztosít, amelyek nem mutatják egyértelműen a cél URL-t.
+A Bing keresőmotor esetében, ha átirányítási linket "https://www.bing.com/ck/a..." kap a keresési eredményekben, a "Linkek megnyitása új lapban vagy ablakban" beállítás kikapcsolása a Bing beállításaiban megszüntetheti azt.
 
 Olyan keresőmotorok esetében, mint a Yahoo, Lycos, AlohaFind, a szkript támogatja az átirányítási linkek megszüntetését és a valódi URL kinyerését. Például a Yahoo átirányítási linkje "https://r.search.yahoo.com/...". Ha nem használod ezeket a keresőmotorokat, választhatod az [URL módosítási szabályokat](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) átirányítási link kompatibilitás nélkül. Egyébként, itt találhatod meg az összes beépített RegEx URL módosítási szabályt [itt](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ További keresőmotorok:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (pl. [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (pl. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (pl. [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Megszűnt](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (pl. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (pl. [yewtu.be](https://yewtu.be))

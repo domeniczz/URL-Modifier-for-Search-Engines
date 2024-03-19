@@ -65,6 +65,7 @@ A modificação de URL usa Expressão Regular.
 ## Suporte a Motores de Busca
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ A modificação de URL usa Expressão Regular.
 
 Você pode adicionar manualmente o seletor DOM no código para suportar outros motores de busca.
 
-Não podemos oferecer suporte a [Bing](https://www.bing.com), pois ele apenas fornece links intermediários que não mostram explicitamente a URL de destino.
+Para o motor de busca Bing, se você receber um link de redirecionamento "https://www.bing.com/ck/a..." nos resultados da pesquisa, desativar "Abrir links em uma nova aba ou janela" nas configurações do Bing pode se livrar disso.
 
 Para motores de busca como Yahoo, Lycos, AlohaFind, o script suporta a remoção de links de redirecionamento e a extração do URL real. Por exemplo, o link de redirecionamento do Yahoo é "https://r.search.yahoo.com/...". Se você não usa esses motores de busca, pode optar por usar [Regras de modificação de URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) sem compatibilidade com links de redirecionamento. A propósito, você pode ver todas as regras de modificação de URL RegEx incorporadas [aqui](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ Encontre mais motores de busca:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (exemplo [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (exemplo [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (exemplo [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Foi descontinuado](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (exemplo [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (exemplo [yewtu.be](https://yewtu.be))

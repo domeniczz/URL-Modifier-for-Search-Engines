@@ -65,6 +65,7 @@ URL-wijziging gebruikt Regelmatige Expressie.
 ## Ondersteuning voor Zoekmachines
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL-wijziging gebruikt Regelmatige Expressie.
 
 U kunt handmatig DOM-selector in de code toevoegen om andere zoekmachines te ondersteunen.
 
-We kunnen [Bing](https://www.bing.com) niet ondersteunen, omdat het alleen tussenliggende links biedt die de doel-URL niet expliciet weergeven.
+Voor de zoekmachine Bing, als je een doorverwijzingslink "https://www.bing.com/ck/a..." krijgt in de zoekresultaten, kan het uitschakelen van "Links in een nieuw tabblad of venster openen" in de Bing-instellingen dit verwijderen.
 
 Voor zoekmachines zoals Yahoo, Lycos, AlohaFind, ondersteunt het script het verwijderen van doorverwijzingslinks en het extraheren van de werkelijke URL. Bijvoorbeeld, de doorverwijzingslink van Yahoo is "https://r.search.yahoo.com/...". Als u deze zoekmachines niet gebruikt, kunt u ervoor kiezen om [URL wijzigingsregels](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) te gebruiken zonder compatibiliteit met doorverwijzingslinks. Overigens, u kunt hier alle ingebouwde RegEx URL wijzigingsregels [zien](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt).
 
@@ -159,7 +160,7 @@ Vind meer zoekmachines:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (bijv. [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (bijv. [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (bijv. [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Is stopgezet](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (bijv. [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (bijv. [yewtu.be](https://yewtu.be))

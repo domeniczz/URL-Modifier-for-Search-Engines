@@ -65,6 +65,7 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 ## Desteklenen Arama Motorları
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 
 Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyebilirsiniz.
 
-[Bing](https://www.bing.com) destekleyemiyoruz, çünkü sadece hedef URL'yi açıkça göstermeyen ara bağlantılar sağlar.
+Bing arama motoru için, arama sonuçlarında "https://www.bing.com/ck/a..." yönlendirme bağlantısı alırsanız, Bing ayarlarında "Bağlantıları yeni sekme veya pencerede aç" özelliğini devre dışı bırakmak bunu ortadan kaldırabilir.
 
 Yahoo, Lycos, AlohaFind gibi arama motorları için, bu script yönlendirme bağlantılarını kaldırma ve gerçek URL'yi çıkarma desteği sağlar. Örneğin, Yahoo'nun yönlendirme bağlantısı "https://r.search.yahoo.com/..."'dir. Bu arama motorlarını kullanmıyorsanız, yönlendirme bağlantıları ile uyumluluk olmadan [URL değiştirme kuralları](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) kullanmayı tercih edebilirsiniz. Bu arada, tüm yerleşik RegEx URL değiştirme kurallarını [burada](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt) görebilirsiniz.
 
@@ -159,7 +160,7 @@ Daha fazla arama motoru bulun:
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (örneğin [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (örneğin [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (örneğin [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([Durduruldu](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (örneğin [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (örneğin [yewtu.be](https://yewtu.be))

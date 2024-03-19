@@ -65,6 +65,7 @@
 ## پشتیبانی از موتورهای جستجو
 
 - [Google](https://www.google.com)
+- [Bing](https://www.bing.com)
 - [Yahoo](https://search.yahoo.com)
 - [Yahoo Japan ヤフー](https://www.yahoo.co.jp)
 - [Baidu](https://www.baidu.com)
@@ -141,7 +142,7 @@
 
 می‌توانید به صورت دستی انتخاب‌گر DOM را در کد اضافه کنید تا از موتورهای جستجوی دیگر پشتیبانی کنید.
 
-ما نمی‌توانیم [Bing](https://www.bing.com) را پشتیبانی کنیم، زیرا فقط لینک‌های میانی را ارائه می‌دهد که به صراحت آدرس URL هدف را نشان نمی‌دهند.
+برای موتور جستجو Bing، اگر لینک ارجاع "https://www.bing.com/ck/a..." را در نتایج جستجو دریافت کردید، غیرفعال سازی "باز کردن لینک‌ها در یک تب یا پنجره جدید" در تنظیمات بینگ می‌تواند آن را حذف کند.
 
 برای موتورهای جستجو مانند Yahoo، Lycos، AlohaFind، این اسکریپت پشتیبانی از حذف لینک‌های انتقالی و استخراج URL واقعی را ارائه می‌دهد. به عنوان مثال، لینک انتقالی Yahoo "https://r.search.yahoo.com/..." است. اگر از این موتورهای جستجو استفاده نمی‌کنید، می‌توانید از [قوانین تغییر URL](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/no-redirection-omit-url-rules.js) بدون سازگاری با لینک‌های انتقالی استفاده کنید. راستی، می‌توانید تمام قوانین تغییر URL RegEx داخلی را [اینجا](https://github.com/domeniczz/URL-Modifier-for-Search-Engines/blob/master/regexs.txt) ببینید.
 
@@ -159,7 +160,7 @@
 - [Wikipedia](https://www.wikipedia.org) -> [Wikiwand](https://www.wikiwand.com)
 - [Reddit](https://www.reddit.com) -> [Libreddit](https://github.com/libreddit/libreddit-instances/blob/master/instances.md) (مثلاً [safereddit.com](https://safereddit.com))
 - [Quora](https://www.quora.com) -> [Quetre](https://github.com/zyachel/quetre#instances) (مثلاً [quetre.iket.me](https://quetre.iket.me))
-- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) (مثلاً [nitter.catsarch.com](https://nitter.catsarch.com))
+- [X (Twitter)](https://twitter.com) -> [Nitter](https://github.com/zedeus/nitter/wiki/Instances) ([متوقف شده است](https://github.com/zedeus/nitter/issues/1175))
 - [Stack Overflow](https://stackoverflow.com) -> [Anonymous Overflow](https://github.com/httpjamesm/AnonymousOverflow#clearnet-instances) (مثلاً [code.whatever.social](https://code.whatever.social))
 - [Medium](https://medium.com) -> [Freedium](https://freedium.cfd)
 - [Youtube](https://www.youtube.com) -> [Invidious](https://docs.invidious.io/instances) (مثلاً [yewtu.be](https://yewtu.be))
