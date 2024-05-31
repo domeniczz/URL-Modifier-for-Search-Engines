@@ -61,199 +61,199 @@
 // @description:hi     यह Tampermonkey स्क्रिप्ट आपके सर्च इंजन उपयोग को बेहतर बनाती है जिससे सर्च इंजन के परिणामों में URLs को संशोधित करके वैकल्पिक साइटों पर पुनर्निर्देशित किया जा सकता है, जिससे अधिक कस्टमाइज़्ड और कुशल ब्राउज़िंग अनुभव प्रदान किया जा सकता है। आप इस स्क्रिप्ट में अपना कस्टम URL संशोधन नियम जोड़ सकते हैं और इसे अधिक उपयोगी बनाने के लिए अपने नियमों को इस स्क्रिप्ट में कमिट करने का स्वागत है।
 // @description:fa     این اسکریپت Tampermonkey با تغییر URL‌ها در نتایج جستجوی موتورهای جستجو و هدایت به سایت‌های جایگزین، استفاده شما از موتور جستجو را بهبود می‌بخشد و امکان تجربه‌ای شخصی‌سازی شده و کارآمدتر در مرور وب را فراهم می‌آورد. شما همچنین می‌توانید قانون تغییر URL سفارشی خود را به اسکریپت اضافه کنید و برای کردن این اسکریپت به ابزاری مفیدتر، دعوت به ارسال قوانین خود به این اسکریپت می‌شوید.
 
-// @match        *://www.google.com/search?*
-// @match        *://www.google.ad/search?*
-// @match        *://www.google.ae/search?*
-// @match        *://www.google.com.af/search?*
-// @match        *://www.google.com.ag/search?*
-// @match        *://www.google.al/search?*
-// @match        *://www.google.am/search?*
-// @match        *://www.google.co.ao/search?*
-// @match        *://www.google.com.ar/search?*
-// @match        *://www.google.as/search?*
-// @match        *://www.google.at/search?*
-// @match        *://www.google.com.au/search?*
-// @match        *://www.google.az/search?*
-// @match        *://www.google.ba/search?*
-// @match        *://www.google.com.bd/search?*
-// @match        *://www.google.be/search?*
-// @match        *://www.google.bf/search?*
-// @match        *://www.google.bg/search?*
-// @match        *://www.google.com.bh/search?*
-// @match        *://www.google.bi/search?*
-// @match        *://www.google.bj/search?*
-// @match        *://www.google.com.bn/search?*
-// @match        *://www.google.com.bo/search?*
-// @match        *://www.google.com.br/search?*
-// @match        *://www.google.bs/search?*
-// @match        *://www.google.bt/search?*
-// @match        *://www.google.co.bw/search?*
-// @match        *://www.google.by/search?*
-// @match        *://www.google.com.bz/search?*
-// @match        *://www.google.ca/search?*
-// @match        *://www.google.cd/search?*
-// @match        *://www.google.cf/search?*
-// @match        *://www.google.cg/search?*
-// @match        *://www.google.ch/search?*
-// @match        *://www.google.ci/search?*
-// @match        *://www.google.co.ck/search?*
-// @match        *://www.google.cl/search?*
-// @match        *://www.google.cm/search?*
-// @match        *://www.google.cn/search?*
-// @match        *://www.google.com.co/search?*
-// @match        *://www.google.co.cr/search?*
-// @match        *://www.google.com.cu/search?*
-// @match        *://www.google.cv/search?*
-// @match        *://www.google.com.cy/search?*
-// @match        *://www.google.cz/search?*
-// @match        *://www.google.de/search?*
-// @match        *://www.google.dj/search?*
-// @match        *://www.google.dk/search?*
-// @match        *://www.google.dm/search?*
-// @match        *://www.google.com.do/search?*
-// @match        *://www.google.dz/search?*
-// @match        *://www.google.com.ec/search?*
-// @match        *://www.google.ee/search?*
-// @match        *://www.google.com.eg/search?*
-// @match        *://www.google.es/search?*
-// @match        *://www.google.com.et/search?*
-// @match        *://www.google.fi/search?*
-// @match        *://www.google.com.fj/search?*
-// @match        *://www.google.fm/search?*
-// @match        *://www.google.fr/search?*
-// @match        *://www.google.ga/search?*
-// @match        *://www.google.ge/search?*
-// @match        *://www.google.gg/search?*
-// @match        *://www.google.com.gh/search?*
-// @match        *://www.google.com.gi/search?*
-// @match        *://www.google.gl/search?*
-// @match        *://www.google.gm/search?*
-// @match        *://www.google.gr/search?*
-// @match        *://www.google.com.gt/search?*
-// @match        *://www.google.gy/search?*
-// @match        *://www.google.com.hk/search?*
-// @match        *://www.google.hn/search?*
-// @match        *://www.google.hr/search?*
-// @match        *://www.google.ht/search?*
-// @match        *://www.google.hu/search?*
-// @match        *://www.google.co.id/search?*
-// @match        *://www.google.ie/search?*
-// @match        *://www.google.co.il/search?*
-// @match        *://www.google.im/search?*
-// @match        *://www.google.co.in/search?*
-// @match        *://www.google.iq/search?*
-// @match        *://www.google.is/search?*
-// @match        *://www.google.it/search?*
-// @match        *://www.google.je/search?*
-// @match        *://www.google.com.jm/search?*
-// @match        *://www.google.jo/search?*
-// @match        *://www.google.co.jp/search?*
-// @match        *://www.google.co.ke/search?*
-// @match        *://www.google.com.kh/search?*
-// @match        *://www.google.ki/search?*
-// @match        *://www.google.kg/search?*
-// @match        *://www.google.co.kr/search?*
-// @match        *://www.google.com.kw/search?*
-// @match        *://www.google.kz/search?*
-// @match        *://www.google.la/search?*
-// @match        *://www.google.com.lb/search?*
-// @match        *://www.google.li/search?*
-// @match        *://www.google.lk/search?*
-// @match        *://www.google.co.ls/search?*
-// @match        *://www.google.lt/search?*
-// @match        *://www.google.lu/search?*
-// @match        *://www.google.lv/search?*
-// @match        *://www.google.com.ly/search?*
-// @match        *://www.google.co.ma/search?*
-// @match        *://www.google.md/search?*
-// @match        *://www.google.me/search?*
-// @match        *://www.google.mg/search?*
-// @match        *://www.google.mk/search?*
-// @match        *://www.google.ml/search?*
-// @match        *://www.google.com.mm/search?*
-// @match        *://www.google.mn/search?*
-// @match        *://www.google.com.mt/search?*
-// @match        *://www.google.mu/search?*
-// @match        *://www.google.mv/search?*
-// @match        *://www.google.mw/search?*
-// @match        *://www.google.com.mx/search?*
-// @match        *://www.google.com.my/search?*
-// @match        *://www.google.co.mz/search?*
-// @match        *://www.google.com.na/search?*
-// @match        *://www.google.com.ng/search?*
-// @match        *://www.google.com.ni/search?*
-// @match        *://www.google.ne/search?*
-// @match        *://www.google.nl/search?*
-// @match        *://www.google.no/search?*
-// @match        *://www.google.com.np/search?*
-// @match        *://www.google.nr/search?*
-// @match        *://www.google.nu/search?*
-// @match        *://www.google.co.nz/search?*
-// @match        *://www.google.com.om/search?*
-// @match        *://www.google.com.pa/search?*
-// @match        *://www.google.com.pe/search?*
-// @match        *://www.google.com.pg/search?*
-// @match        *://www.google.com.ph/search?*
-// @match        *://www.google.com.pk/search?*
-// @match        *://www.google.pl/search?*
-// @match        *://www.google.pn/search?*
-// @match        *://www.google.com.pr/search?*
-// @match        *://www.google.ps/search?*
-// @match        *://www.google.pt/search?*
-// @match        *://www.google.com.py/search?*
-// @match        *://www.google.com.qa/search?*
-// @match        *://www.google.ro/search?*
-// @match        *://www.google.ru/search?*
-// @match        *://www.google.rw/search?*
-// @match        *://www.google.com.sa/search?*
-// @match        *://www.google.com.sb/search?*
-// @match        *://www.google.sc/search?*
-// @match        *://www.google.se/search?*
-// @match        *://www.google.com.sg/search?*
-// @match        *://www.google.sh/search?*
-// @match        *://www.google.si/search?*
-// @match        *://www.google.sk/search?*
-// @match        *://www.google.com.sl/search?*
-// @match        *://www.google.sn/search?*
-// @match        *://www.google.so/search?*
-// @match        *://www.google.sm/search?*
-// @match        *://www.google.sr/search?*
-// @match        *://www.google.st/search?*
-// @match        *://www.google.com.sv/search?*
-// @match        *://www.google.td/search?*
-// @match        *://www.google.tg/search?*
-// @match        *://www.google.co.th/search?*
-// @match        *://www.google.com.tj/search?*
-// @match        *://www.google.tl/search?*
-// @match        *://www.google.tm/search?*
-// @match        *://www.google.tn/search?*
-// @match        *://www.google.to/search?*
-// @match        *://www.google.com.tr/search?*
-// @match        *://www.google.tt/search?*
-// @match        *://www.google.com.tw/search?*
-// @match        *://www.google.co.tz/search?*
-// @match        *://www.google.com.ua/search?*
-// @match        *://www.google.co.ug/search?*
-// @match        *://www.google.co.uk/search?*
-// @match        *://www.google.com.uy/search?*
-// @match        *://www.google.co.uz/search?*
-// @match        *://www.google.com.vc/search?*
-// @match        *://www.google.co.ve/search?*
-// @match        *://www.google.co.vi/search?*
-// @match        *://www.google.com.vn/search?*
-// @match        *://www.google.vu/search?*
-// @match        *://www.google.ws/search?*
-// @match        *://www.google.rs/search?*
-// @match        *://www.google.co.za/search?*
-// @match        *://www.google.co.zm/search?*
-// @match        *://www.google.co.zw/search?*
-// @match        *://www.google.cat/search?*
+// @match        *://www.google.com/*?*
+// @match        *://www.google.ad/*?*
+// @match        *://www.google.ae/*?*
+// @match        *://www.google.com.af/*?*
+// @match        *://www.google.com.ag/*?*
+// @match        *://www.google.al/*?*
+// @match        *://www.google.am/*?*
+// @match        *://www.google.co.ao/*?*
+// @match        *://www.google.com.ar/*?*
+// @match        *://www.google.as/*?*
+// @match        *://www.google.at/*?*
+// @match        *://www.google.com.au/*?*
+// @match        *://www.google.az/*?*
+// @match        *://www.google.ba/*?*
+// @match        *://www.google.com.bd/*?*
+// @match        *://www.google.be/*?*
+// @match        *://www.google.bf/*?*
+// @match        *://www.google.bg/*?*
+// @match        *://www.google.com.bh/*?*
+// @match        *://www.google.bi/*?*
+// @match        *://www.google.bj/*?*
+// @match        *://www.google.com.bn/*?*
+// @match        *://www.google.com.bo/*?*
+// @match        *://www.google.com.br/*?*
+// @match        *://www.google.bs/*?*
+// @match        *://www.google.bt/*?*
+// @match        *://www.google.co.bw/*?*
+// @match        *://www.google.by/*?*
+// @match        *://www.google.com.bz/*?*
+// @match        *://www.google.ca/*?*
+// @match        *://www.google.cd/*?*
+// @match        *://www.google.cf/*?*
+// @match        *://www.google.cg/*?*
+// @match        *://www.google.ch/*?*
+// @match        *://www.google.ci/*?*
+// @match        *://www.google.co.ck/*?*
+// @match        *://www.google.cl/*?*
+// @match        *://www.google.cm/*?*
+// @match        *://www.google.cn/*?*
+// @match        *://www.google.com.co/*?*
+// @match        *://www.google.co.cr/*?*
+// @match        *://www.google.com.cu/*?*
+// @match        *://www.google.cv/*?*
+// @match        *://www.google.com.cy/*?*
+// @match        *://www.google.cz/*?*
+// @match        *://www.google.de/*?*
+// @match        *://www.google.dj/*?*
+// @match        *://www.google.dk/*?*
+// @match        *://www.google.dm/*?*
+// @match        *://www.google.com.do/*?*
+// @match        *://www.google.dz/*?*
+// @match        *://www.google.com.ec/*?*
+// @match        *://www.google.ee/*?*
+// @match        *://www.google.com.eg/*?*
+// @match        *://www.google.es/*?*
+// @match        *://www.google.com.et/*?*
+// @match        *://www.google.fi/*?*
+// @match        *://www.google.com.fj/*?*
+// @match        *://www.google.fm/*?*
+// @match        *://www.google.fr/*?*
+// @match        *://www.google.ga/*?*
+// @match        *://www.google.ge/*?*
+// @match        *://www.google.gg/*?*
+// @match        *://www.google.com.gh/*?*
+// @match        *://www.google.com.gi/*?*
+// @match        *://www.google.gl/*?*
+// @match        *://www.google.gm/*?*
+// @match        *://www.google.gr/*?*
+// @match        *://www.google.com.gt/*?*
+// @match        *://www.google.gy/*?*
+// @match        *://www.google.com.hk/*?*
+// @match        *://www.google.hn/*?*
+// @match        *://www.google.hr/*?*
+// @match        *://www.google.ht/*?*
+// @match        *://www.google.hu/*?*
+// @match        *://www.google.co.id/*?*
+// @match        *://www.google.ie/*?*
+// @match        *://www.google.co.il/*?*
+// @match        *://www.google.im/*?*
+// @match        *://www.google.co.in/*?*
+// @match        *://www.google.iq/*?*
+// @match        *://www.google.is/*?*
+// @match        *://www.google.it/*?*
+// @match        *://www.google.je/*?*
+// @match        *://www.google.com.jm/*?*
+// @match        *://www.google.jo/*?*
+// @match        *://www.google.co.jp/*?*
+// @match        *://www.google.co.ke/*?*
+// @match        *://www.google.com.kh/*?*
+// @match        *://www.google.ki/*?*
+// @match        *://www.google.kg/*?*
+// @match        *://www.google.co.kr/*?*
+// @match        *://www.google.com.kw/*?*
+// @match        *://www.google.kz/*?*
+// @match        *://www.google.la/*?*
+// @match        *://www.google.com.lb/*?*
+// @match        *://www.google.li/*?*
+// @match        *://www.google.lk/*?*
+// @match        *://www.google.co.ls/*?*
+// @match        *://www.google.lt/*?*
+// @match        *://www.google.lu/*?*
+// @match        *://www.google.lv/*?*
+// @match        *://www.google.com.ly/*?*
+// @match        *://www.google.co.ma/*?*
+// @match        *://www.google.md/*?*
+// @match        *://www.google.me/*?*
+// @match        *://www.google.mg/*?*
+// @match        *://www.google.mk/*?*
+// @match        *://www.google.ml/*?*
+// @match        *://www.google.com.mm/*?*
+// @match        *://www.google.mn/*?*
+// @match        *://www.google.com.mt/*?*
+// @match        *://www.google.mu/*?*
+// @match        *://www.google.mv/*?*
+// @match        *://www.google.mw/*?*
+// @match        *://www.google.com.mx/*?*
+// @match        *://www.google.com.my/*?*
+// @match        *://www.google.co.mz/*?*
+// @match        *://www.google.com.na/*?*
+// @match        *://www.google.com.ng/*?*
+// @match        *://www.google.com.ni/*?*
+// @match        *://www.google.ne/*?*
+// @match        *://www.google.nl/*?*
+// @match        *://www.google.no/*?*
+// @match        *://www.google.com.np/*?*
+// @match        *://www.google.nr/*?*
+// @match        *://www.google.nu/*?*
+// @match        *://www.google.co.nz/*?*
+// @match        *://www.google.com.om/*?*
+// @match        *://www.google.com.pa/*?*
+// @match        *://www.google.com.pe/*?*
+// @match        *://www.google.com.pg/*?*
+// @match        *://www.google.com.ph/*?*
+// @match        *://www.google.com.pk/*?*
+// @match        *://www.google.pl/*?*
+// @match        *://www.google.pn/*?*
+// @match        *://www.google.com.pr/*?*
+// @match        *://www.google.ps/*?*
+// @match        *://www.google.pt/*?*
+// @match        *://www.google.com.py/*?*
+// @match        *://www.google.com.qa/*?*
+// @match        *://www.google.ro/*?*
+// @match        *://www.google.ru/*?*
+// @match        *://www.google.rw/*?*
+// @match        *://www.google.com.sa/*?*
+// @match        *://www.google.com.sb/*?*
+// @match        *://www.google.sc/*?*
+// @match        *://www.google.se/*?*
+// @match        *://www.google.com.sg/*?*
+// @match        *://www.google.sh/*?*
+// @match        *://www.google.si/*?*
+// @match        *://www.google.sk/*?*
+// @match        *://www.google.com.sl/*?*
+// @match        *://www.google.sn/*?*
+// @match        *://www.google.so/*?*
+// @match        *://www.google.sm/*?*
+// @match        *://www.google.sr/*?*
+// @match        *://www.google.st/*?*
+// @match        *://www.google.com.sv/*?*
+// @match        *://www.google.td/*?*
+// @match        *://www.google.tg/*?*
+// @match        *://www.google.co.th/*?*
+// @match        *://www.google.com.tj/*?*
+// @match        *://www.google.tl/*?*
+// @match        *://www.google.tm/*?*
+// @match        *://www.google.tn/*?*
+// @match        *://www.google.to/*?*
+// @match        *://www.google.com.tr/*?*
+// @match        *://www.google.tt/*?*
+// @match        *://www.google.com.tw/*?*
+// @match        *://www.google.co.tz/*?*
+// @match        *://www.google.com.ua/*?*
+// @match        *://www.google.co.ug/*?*
+// @match        *://www.google.co.uk/*?*
+// @match        *://www.google.com.uy/*?*
+// @match        *://www.google.co.uz/*?*
+// @match        *://www.google.com.vc/*?*
+// @match        *://www.google.co.ve/*?*
+// @match        *://www.google.co.vi/*?*
+// @match        *://www.google.com.vn/*?*
+// @match        *://www.google.vu/*?*
+// @match        *://www.google.ws/*?*
+// @match        *://www.google.rs/*?*
+// @match        *://www.google.co.za/*?*
+// @match        *://www.google.co.zm/*?*
+// @match        *://www.google.co.zw/*?*
+// @match        *://www.google.cat/*?*
 
-// @match        *://www.bing.com/search?*
+// @match        *://www.bing.com/*?*
 
 // @match        *://search.yahoo.com/search*
-// @match        *://search.yahoo.co.jp/search?*
 // @match        *://*.search.yahoo.com/search*
+// @match        *://search.yahoo.co.jp/*?*
 
 // @match        *://www.baidu.com/s?*
 
@@ -327,31 +327,32 @@
 // @match        *://www.startpage.com/search*
 // @match        *://www.startpage.com/sp/search*
 
-// @match        *://search.brave.com/search*
+// @match        *://search.brave.com/*?*
 
 // @match        *://duckduckgo.com
 // @match        *://duckduckgo.com/?*
 
-// @match        *://ghosterysearch.com/search?*
-// @match        *://presearch.com/search?*
+// @match        *://ghosterysearch.com/*?*
+
+// @match        *://presearch.com/*?*
 
 // @match        *://metager.org/*meta/meta.ger3*
 // @match        *://metager.de/*meta/meta.ger3*
 
-// @match        *://4get.ca/web?*
-// @match        *://4get.silly.computer/web?*
-// @match        *://4get.plunked.party/web?*
-// @match        *://4get.konakona.moe/web?*
-// @match        *://4get.sijh.net/web?*
-// @match        *://4get.hbubli.cc/web?*
-// @match        *://4get.perennialte.ch/web?*
-// @match        *://4get.zzls.xyz/web?*
-// @match        *://4getus.zzls.xyz/web?*
-// @match        *://4get.seitan-ayoub.lol/web?*
-// @match        *://4get.dcs0.hu/web?*
-// @match        *://4get.psily.garden/web?*
-// @match        *://4get.lvkaszus.pl/web?*
-// @match        *://4get.kizuki.lol/web?*
+// @match        *://4get.ca/*?*
+// @match        *://4get.silly.computer/*?*
+// @match        *://4get.plunked.party/*?*
+// @match        *://4get.konakona.moe/*?*
+// @match        *://4get.sijh.net/*?*
+// @match        *://4get.hbubli.cc/*?*
+// @match        *://4get.perennialte.ch/*?*
+// @match        *://4get.zzls.xyz/*?*
+// @match        *://4getus.zzls.xyz/*?*
+// @match        *://4get.seitan-ayoub.lol/*?*
+// @match        *://4get.dcs0.hu/*?*
+// @match        *://4get.psily.garden/*?*
+// @match        *://4get.lvkaszus.pl/*?*
+// @match        *://4get.kizuki.lol/*?*
 
 // @match        *://search.ahwx.org/search.php?*
 // @match        *://search2.ahwx.org/search.php?*
@@ -375,43 +376,43 @@
 // @match        *://librey.nezumi.party/search.php?*
 // @match        *://search.zeroish.xyz/search.php?*
 
-// @match        *://stract.com/search?*
+// @match        *://stract.com/*?*
 
-// @match        *://search.albony.xyz/search?*
-// @match        *://search.garudalinux.org/search?*
-// @match        *://search.dr460nf1r3.org/search?*
-// @match        *://search.nezumi.party/search?*
-// @match        *://s.tokhmi.xyz/search?*
-// @match        *://search.sethforprivacy.com/search?*
-// @match        *://whoogle.dcs0.hu/search?*
-// @match        *://whoogle.lunar.icu/search?*
-// @match        *://gowogle.voring.me/search?*
-// @match        *://whoogle.privacydev.net/search?*
-// @match        *://whoogle.hostux.net/search?*
-// @match        *://wg.vern.cc/search?*
-// @match        *://whoogle.hxvy0.gq/search?*
-// @match        *://whoogle.ungovernable.men/search?*
-// @match        *://whoogle2.ungovernable.men/search?*
-// @match        *://whoogle3.ungovernable.men/search?*
-// @match        *://wgl.frail.duckdns.org/search?*
-// @match        *://whoogle.no-logs.com/search?*
-// @match        *://whoogle.ftw.lol/search?*
-// @match        *://whoogle-search--replitcomreside.repl.co/search?*
-// @match        *://search.notrustverify.ch/search?*
-// @match        *://whoogle.datura.network/search?*
-// @match        *://whoogle.yepserver.xyz/search?*
+// @match        *://search.albony.xyz/*?*
+// @match        *://search.garudalinux.org/*?*
+// @match        *://search.dr460nf1r3.org/*?*
+// @match        *://search.nezumi.party/*?*
+// @match        *://s.tokhmi.xyz/*?*
+// @match        *://search.sethforprivacy.com/*?*
+// @match        *://whoogle.dcs0.hu/*?*
+// @match        *://whoogle.lunar.icu/*?*
+// @match        *://gowogle.voring.me/*?*
+// @match        *://whoogle.privacydev.net/*?*
+// @match        *://whoogle.hostux.net/*?*
+// @match        *://wg.vern.cc/*?*
+// @match        *://whoogle.hxvy0.gq/*?*
+// @match        *://whoogle.ungovernable.men/*?*
+// @match        *://whoogle2.ungovernable.men/*?*
+// @match        *://whoogle3.ungovernable.men/*?*
+// @match        *://wgl.frail.duckdns.org/*?*
+// @match        *://whoogle.no-logs.com/*?*
+// @match        *://whoogle.ftw.lol/*?*
+// @match        *://whoogle-search--replitcomreside.repl.co/*?*
+// @match        *://search.notrustverify.ch/*?*
+// @match        *://whoogle.datura.network/*?*
+// @match        *://whoogle.yepserver.xyz/*?*
 
 // @match        *://www.etools.ch/searchSubmit.do*
 // @match        *://www.etools.ch/mobileSearch.do*
 
-// @match        *://www.mojeek.com/search?*
-// @match        *://www.mojeek.co.uk/search?*
+// @match        *://www.mojeek.com/*?*
+// @match        *://www.mojeek.co.uk/*?*
 
 // @match        *://wiby.me/?*
 // @match        *://yep.com/web?*
 // @match        *://www.torry.io/search*
 // @match        *://www.qwant.com/?*
-// @match        *://www.ecosia.org/search?*
+// @match        *://www.ecosia.org/*?*
 // @match        *://search.becovi.com/serp.php?*
 // @match        *://good-search.org/*search/?*
 // @match        *://www.alltheinternet.com/?*
@@ -424,15 +425,15 @@
 // @match        *://swisscows.com/*/web?*
 
 // @match        *://search.lilo.org/?*
-// @match        *://search.entireweb.com/search?*
-// @match        *://www.tadadoo.com/search?*
+// @match        *://search.entireweb.com/*?*
+// @match        *://www.tadadoo.com/*?*
 // @match        *://search.gmx.com/web/result?*
 // @match        *://search.gmx.com/web?*
 // @match        *://youcare.world/all?*
 // @match        *://search.lycos.com/web/?*
 // @match        *://alohafind.com/search/?*
 // @match        *://spot.ecloud.global/search*
-// @match        *://qmamu.com/search?*
+// @match        *://qmamu.com/*?*
 // @match        *://search.carrot2.org/*
 // @match        *://www.nona.de/?*
 // @match        *://www.sapo.pt/pesquisa/web/tudo?*
@@ -440,15 +441,15 @@
 // @match        *://cgi.search.biglobe.ne.jp/cgi-bin/search2-b?*
 // @match        *://search.goo.ne.jp/web.jsp?*
 // @match        *://search.walla.co.il/?*
-// @match        *://coccoc.com/search?*
+// @match        *://coccoc.com/*?*
 // @match        *://search.seznam.cz/?*
 // @match        *://www.startsiden.no/sok/?*
-// @match        *://search.marginalia.nu/search?*
+// @match        *://search.marginalia.nu/*?*
 // @match        *://mwmbl.org/?*
 // @match        *://search.naver.com/search.naver?*
 // @match        *://gibiru.com/results.html?*
 // @match        *://www.lukol.com/s.php?*
-// @match        *://www.draze.com/web/search?*
+// @match        *://www.draze.com/web/*?*
 
 // @match        *://www.yelliot.com/search/?*
 // @match        *://fr.yelliot.com/search/?*
@@ -462,19 +463,19 @@
 // @match        *://pt.yelliot.com/search/?*
 
 // @match        *://efind.com/search*
-// @match        *://fireball.de/de/search?*
+// @match        *://fireball.de/de/*?*
 // @match        *://freespoke.com/search/web?*
 // @match        *://gogoprivate.com/search*
-// @match        *://resulthunter.com/search?*
+// @match        *://resulthunter.com/*?*
 // @match        *://search.givewater.com/serp?*
 // @match        *://results.excite.com/serp?*
 // @match        *://www.webcrawler.com/serp?*
 // @match        *://www.metacrawler.com/serp?*
 // @match        *://www.dogpile.com/serp?*
 // @match        *://www.infospace.com/serp?*
-// @match        *://www.refseek.com/search?*
-// @match        *://www.zapmeta.com/search?*
-// @match        *://www.izito.com/search?*
+// @match        *://www.refseek.com/*?*
+// @match        *://www.zapmeta.com/*?*
+// @match        *://www.izito.com/*?*
 // @match        *://www.ask.com/web?*
 // @match        *://www.pronto.com/web?*
 // @match        *://anoox.com/find.php?*
@@ -806,15 +807,25 @@
         ],
         'startpage': [
             {
-                selector: 'a.w-gl__result-url.result-link',
+                selector: 'div.result div.upper a',
                 updateTextByOverwrite: true,
                 urlDisplayMethod: 2
             },
             {
-                selector: 'a.w-gl__result-title.result-link'
+                selector: 'div.result a.result-link'
             },
             {
-                selector: 'div.sx-kp-main a'
+                selector: 'div.bg-sitelinks div.sitelink-container a.sitelink'
+            },
+            {
+                selector: 'div.search-expander-top a'
+            },
+            {
+                selector: 'div.sx-kp-inner a'
+            },
+            // video page
+            {
+                selector: 'div.result div.details a'
             }
         ],
         'brave': [
@@ -830,6 +841,10 @@
             },
             {
                 selector: 'div#infobox-snippet.snippet a'
+            },
+            // video page
+            {
+                selector: 'div.video-snippet a'
             }
         ],
         'duckduckgo': [
@@ -849,6 +864,10 @@
             },
             {
                 selector: 'div.react-module div section div a'
+            },
+            // video page
+            {
+                selector: 'div.tile.tile--vid div.tile__body a'
             }
         ],
         'ghostery': [
@@ -870,6 +889,17 @@
             },
             {
                 selector: 'div.relative div.inline-block a'
+            },
+            {
+                parentSelector: 'div.relative div.flex div.mr-2',
+                linkNodeSelector: 'a',
+                textNodeSelector: 'div.text-results-link',
+                updateTextByOverwrite: true,
+                urlDisplayMethod: 3
+            },
+            // video page
+            {
+                selector: 'div.relative div.flex a.flex'
             }
         ],
         'metager': [
@@ -1020,27 +1050,25 @@
         ],
         'qwant': [
             {
-                selector: 'div._35zId._3A7p7 a.external'
-            },
-            {
-                selector: 'div._35zId._3WA-c a.external',
+                selector: 'div[data-testid="breadcrumbs"] a.external',
                 childSelector: 'span',
                 updateChildText: true,
                 containProtocol: false,
                 multiElementsForUrlDisplay: 1
             },
             {
-                // Selector for sub-results
-                selector: 'div._12BMd div._2-LMx._2E8gc._16lFV.Ks7KS.tCpbb.m_hqb a.external'
+                selector: 'a.external'
             },
             {
-                selector: 'div._3McWE.is-sidebar a.external'
+                selector: 'div[data-testid="videosList"] a'
             }
         ],
         'ecosia': [
             {
-                selector: 'div.mainline__result-wrapper div.result__header div.result__info a',
-                childSelector: 'span span',
+                parentSelector: 'div.mainline__result-wrapper div.result__header div.result__info',
+                linkNodeSelector: 'a',
+                textNodeSelector: 'div.result__link',
+                childSelector: 'span',
                 updateChildText: true,
                 containProtocol: true,
                 multiElementsForUrlDisplay: 1
@@ -1056,6 +1084,9 @@
             },
             {
                 selector: 'aside.sidebar article div.entity__content p a'
+            },
+            {
+                selector: 'div.videos__result-wrapper a'
             }
         ],
         'oscobo': [
@@ -1818,10 +1849,7 @@
             ]
         },
         'startpage': {
-            hosts: ['startpage.com'],
-            resultContainerSelectors: [
-                'div.show-results',
-            ]
+            hosts: ['startpage.com']
         },
         'brave': {
             hosts: ['search.brave.com'],
@@ -1834,7 +1862,8 @@
             hosts: ['duckduckgo.com'],
             resultContainerSelectors: [
                 'section[data-testid="mainline"][data-area="mainline"]',
-                'section[data-testid="sidebar"][data-area="sidebar"]'
+                'section[data-testid="sidebar"][data-area="sidebar"]',
+                'div#zero_click_wrapper.zci-wrap'
             ]
         },
         'ghostery': {
@@ -1963,14 +1992,14 @@
         },
         'qwant': {
             hosts: ['qwant.com'],
-            resultContainerSelectors: ['div._35zId']
+            // resultContainerSelectors: [
+            //     'div[data-testid="containerWeb"]',
+            //     'div.is-sidebar'
+            // ]
         },
         'ecosia': {
             hosts: ['ecosia.org'],
-            resultContainerSelectors: [
-                'section.mainline.web__mainline',
-                'aside.sidebar.web__sidebar'
-            ]
+            resultContainerSelectors: ['main#main']
         },
         'oscobo': {
             hosts: ['search.becovi.com'],
@@ -2533,17 +2562,24 @@
         return url.replace(/^https?:\/\//, '');
     };
 
-    // Remove unnecessary tailing in the URL link
+    // Remove unnecessary tailing in the URL link (for link displaying)
     const removeUnnecessaryTailing = (url) => {
         // Remove tailing slash '/'
         // Check if the URL ends with a slash and remove it if present
         url = url.endsWith('/') ? url.slice(0, -1) : url;
 
         // Remove parameters (the part behind ?)
-        url = url.split('?')[0];
+        if (url.includes('?') && !url.split('?')[1].startsWith('v=')) {
+            url = url.split('?')[0];
+        }
+
+        // Remove parameters (the part behind &)
+        url = url.split('&')[0];
 
         // Remove article section indicator (the part behind #)
-        return url.split('#')[0];
+        url = url.split('#')[0];
+
+        return url;
     };
 
     // Function to clear existing content of an element
