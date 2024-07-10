@@ -671,6 +671,13 @@
                 urlDisplayMethod: 1
             },
             {
+                selector: 'div.PKBwyd div.yuRUbf div span a',
+                childSelector: 'div cite',
+                updateChildText: true,
+                containProtocol: true,
+                urlDisplayMethod: 1
+            },
+            {
                 // selector for sub-results
                 selector: 'div.MjjYud div div a'
             },
