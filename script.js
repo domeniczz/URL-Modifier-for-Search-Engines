@@ -28,7 +28,7 @@
 // @name:hi      सर्च इंजनों के लिए URL संशोधक
 // @name:fa      تغییردهنده URL برای موتورهای جستجو
 
-// @version      2.6.3
+// @version      2.6.4
 // @author       Domenic
 // @namespace    http://tampermonkey.net/
 
