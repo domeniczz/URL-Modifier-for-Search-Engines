@@ -480,6 +480,8 @@
 // @match        *://www.pronto.com/web?*
 // @match        *://anoox.com/find.php?*
 
+// @match        *://kagi.com/search*
+
 // @grant        none
 // @run-at       document-end
 // @license      GPL-2.0-only
@@ -1745,6 +1747,36 @@
                 updateTextByOverwrite: true,
                 urlDisplayMethod: 2
             }
+        ],
+        'kagi': [
+            {
+                selector: 'div._0_SRI.search-result div._0_TITLE.__sri-title a.__sri_title_link'
+            },
+            {
+                selector: 'div._0_SRI.search-result div.__sri-url-box a.__sri-url',
+                childSelector: 'div span',
+                updateChildText: true,
+                containProtocol: false,
+                urlDisplayMethod: 1
+            },
+            {
+                selector: 'div.sri-group div.sr-group a._0_URL'
+            },
+            {
+                selector: 'div.widgetContent div.widgetItem a'
+            },
+            {
+                selector: 'div.widgetContent div._0_SRI.search-result a'
+            },
+            {
+                selector: 'div._0_right_sidebar a'
+            },
+            {
+                selector: 'div.videoResultItem._0_SRI a'
+            },
+            {
+                selector: 'div.newsResultItem div.newsResultTitle a._0_URL'
+            },
         ]
         // Additional search engines can be defined here...
     };
@@ -2213,7 +2245,11 @@
         'anoox': {
             hosts: ['anoox.com'],
             resultContainerSelectors: ['div#main_srch_window div#se_holder_center'],
-        }
+        },
+        'kagi': {
+            hosts: ['kagi.com'],
+            resultContainerSelectors: ['main#main']
+        },
         // ... more search engines
     };
 
