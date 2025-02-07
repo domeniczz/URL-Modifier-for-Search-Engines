@@ -139,6 +139,7 @@ La modifica dell'URL utilizza Espressioni Regolari.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Puoi aggiungere manualmente il selettore DOM nel codice per supportare altri motori di ricerca.
 

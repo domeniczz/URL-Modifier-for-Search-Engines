@@ -139,6 +139,7 @@ URL değiştirme Düzenli İfade (Regular Expression) kullanır.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Kodda manuel olarak DOM seçici ekleyerek diğer arama motorlarını destekleyebilirsiniz.
 

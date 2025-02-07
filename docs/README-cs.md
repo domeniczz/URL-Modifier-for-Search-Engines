@@ -139,6 +139,7 @@ Modifikace URL využívá regulární výrazy.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Do kódu můžete manuálně přidat DOM selektor pro podporu dalších vyhledávačů.
 

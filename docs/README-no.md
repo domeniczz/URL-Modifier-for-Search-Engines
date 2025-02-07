@@ -139,6 +139,7 @@ URL-modifikasjon bruker regulære uttrykk.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Du kan manuelt legge til DOM-selektor i koden for å støtte andre søkemotorer.
 

@@ -139,6 +139,7 @@ URL-ændring bruger Regulære Udtryk.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Du kan manuelt tilføje DOM-vælger i koden for at understøtte andre søgemaskiner.
 

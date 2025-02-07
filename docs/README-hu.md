@@ -139,6 +139,7 @@ Az URL módosítás reguláris kifejezéseket használ.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Manuálisan hozzáadhatsz DOM szelektort a kódhoz, hogy támogass más keresőmotorokat.
 

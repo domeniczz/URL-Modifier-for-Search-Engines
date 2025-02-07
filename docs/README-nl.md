@@ -139,6 +139,7 @@ URL-wijziging gebruikt Regelmatige Expressie.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 U kunt handmatig DOM-selector in de code toevoegen om andere zoekmachines te ondersteunen.
 

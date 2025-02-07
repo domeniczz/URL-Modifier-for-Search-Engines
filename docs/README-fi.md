@@ -139,6 +139,7 @@ URL-muokkaus käyttää säännöllisiä lausekkeita.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Voit manuaalisesti lisätä DOM-selektori koodiin tukeaksesi muita hakukoneita.
 

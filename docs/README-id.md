@@ -139,6 +139,7 @@ Modifikasi URL menggunakan Ekspresi Reguler.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Anda dapat menambahkan pemilih DOM secara manual dalam kode untuk mendukung mesin pencari lainnya.
 

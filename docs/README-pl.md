@@ -139,6 +139,7 @@ Modyfikacja URL korzysta z Wyrażeń Regularnych.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Możesz ręcznie dodać selektor DOM w kodzie, aby obsługiwać inne wyszukiwarki.
 

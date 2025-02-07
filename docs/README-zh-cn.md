@@ -139,6 +139,7 @@ URL 修改使用正则表达式。
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 您可以手动在代码中添加 DOM 选择器以支持其他搜索引擎。
 

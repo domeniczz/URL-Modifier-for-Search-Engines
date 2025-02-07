@@ -139,6 +139,7 @@ Chỉnh sửa URL sử dụng Biểu thức chính quy.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Bạn có thể tự thêm bộ chọn DOM vào mã để hỗ trợ thêm công cụ tìm kiếm khác.
 

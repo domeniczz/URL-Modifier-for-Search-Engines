@@ -139,6 +139,7 @@
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 ניתן להוסיף ידנית בורר DOM בקוד כדי לתמוך במנועי חיפוש נוספים.
 

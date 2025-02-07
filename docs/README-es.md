@@ -139,6 +139,7 @@ La modificación de URL utiliza Expresión Regular.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Puedes añadir manualmente un selector DOM en el código para soportar otros motores de búsqueda.
 

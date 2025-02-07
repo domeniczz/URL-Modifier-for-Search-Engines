@@ -139,6 +139,7 @@
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Вы можете вручную добавить селектор DOM в код, чтобы поддержать другие поисковые системы.
 

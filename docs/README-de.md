@@ -139,6 +139,7 @@ URL-Modifikation verwendet Reguläre Ausdrücke.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Sie können manuell DOM-Selektor im Code hinzufügen, um andere Suchmaschinen zu unterstützen.
 

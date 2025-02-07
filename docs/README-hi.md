@@ -139,6 +139,7 @@ URL संशोधन नियमित अभिव्यक्ति (Regula
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 आप कोड में मैन्युअल रूप से DOM सेलेक्टर जोड़कर अन्य सर्च इंजनों का समर्थन कर सकते हैं।
 

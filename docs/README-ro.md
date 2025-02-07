@@ -139,6 +139,7 @@ Modificarea URL-ului utilizează Expresia Regulată.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Puteți adăuga manual selectorul DOM în cod pentru a sprijini alte motoare de căutare.
 

@@ -139,6 +139,7 @@
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 Μπορείτε να προσθέσετε χειροκίνητα τον DOM selector στον κώδικα για να υποστηρίξετε άλλες μηχανές αναζήτησης.
 

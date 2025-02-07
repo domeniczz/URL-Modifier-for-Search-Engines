@@ -139,6 +139,7 @@
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 می‌توانید به صورت دستی انتخاب‌گر DOM را در کد اضافه کنید تا از موتورهای جستجوی دیگر پشتیبانی کنید.
 
