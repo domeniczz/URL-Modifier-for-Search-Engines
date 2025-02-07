@@ -139,6 +139,7 @@ URL modification uses Regular Expression.
 - [Ask](https://www.ask.com)
 - [Pronto](https://www.pronto.com)
 - [Anoox](https://anoox.com)
+- [Kagi](https://kagi.com)
 
 You can manually add DOM selector in the code to support other search engines.
 
